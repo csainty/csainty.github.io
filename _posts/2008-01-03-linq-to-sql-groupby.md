@@ -1,5 +1,5 @@
 ---
-title: LINQ to SQL: GroupBy()
+title: LINQ to SQL&#58; GroupBy()
 layout: post
 permalink: /2008/01/linq-to-sql-groupby.html
 tags: linqtosql dotnet

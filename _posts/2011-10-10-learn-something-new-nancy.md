@@ -1,5 +1,5 @@
 ---
-title: Learn Something New: Nancy
+title: Learn Something New&#58; Nancy
 layout: post
 permalink: /2011/10/learn-something-new-nancy.html
 tags: javascript nancy asp.net learn something new C# knockout dotnet

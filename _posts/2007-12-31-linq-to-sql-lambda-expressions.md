@@ -1,5 +1,5 @@
 ---
-title: LINQ to SQL: Lambda Expressions
+title: LINQ to SQL&#58; Lambda Expressions
 layout: post
 permalink: /2007/12/linq-to-sql-lambda-expressions.html
 tags: linqtosql dotnet

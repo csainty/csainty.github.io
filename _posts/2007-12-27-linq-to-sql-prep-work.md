@@ -1,5 +1,5 @@
 ---
-title: LINQ to SQL: Prep Work
+title: LINQ to SQL&#58; Prep Work
 layout: post
 permalink: /2007/12/linq-to-sql-prep-work.html
 tags: dotnet

@@ -1,5 +1,5 @@
 ---
-title: LINQ to SQL: SQLMetal.exe
+title: LINQ to SQL&#58; SQLMetal.exe
 layout: post
 permalink: /2008/02/linq-to-sql-sqlmetalexe.html
 tags: linqtosql dotnet

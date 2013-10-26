@@ -1,5 +1,5 @@
 ---
-title: Learn Something New: Knockout JS
+title: Learn Something New&#58; Knockout JS
 layout: post
 permalink: /2011/10/learn-something-new-knockout-js.html
 tags: javascript mvc asp.net learn something new knockout

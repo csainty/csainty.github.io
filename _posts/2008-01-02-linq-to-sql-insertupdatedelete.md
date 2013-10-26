@@ -1,5 +1,5 @@
 ---
-title: LINQ to SQL: Insert/Update/Delete
+title: LINQ to SQL&#58; Insert/Update/Delete
 layout: post
 permalink: /2008/01/linq-to-sql-insertupdatedelete.html
 tags: linqtosql dotnet

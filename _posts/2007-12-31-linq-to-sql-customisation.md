@@ -1,5 +1,5 @@
 ---
-title: LINQ to SQL: Customisation
+title: LINQ to SQL&#58; Customisation
 layout: post
 permalink: /2007/12/linq-to-sql-customisation.html
 tags: linqtosql dotnet

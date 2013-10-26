@@ -1,5 +1,5 @@
 ---
-title: LINQ to SQL: Aggregate Functions and more
+title: LINQ to SQL&#58; Aggregate Functions and more
 layout: post
 permalink: /2008/01/linq-to-sql-aggregate-functions-and.html
 tags: linqtosql dotnet

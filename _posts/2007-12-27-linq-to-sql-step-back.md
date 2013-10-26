@@ -1,5 +1,5 @@
 ---
-title: LINQ to SQL: A Step Back
+title: LINQ to SQL&#58; A Step Back
 layout: post
 permalink: /2007/12/linq-to-sql-step-back.html
 tags: linqtosql dotnet

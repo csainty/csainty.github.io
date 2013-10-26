@@ -1,5 +1,5 @@
 ---
-title: LINQ to SQL: Generic Primary Key function
+title: LINQ to SQL&#58; Generic Primary Key function
 layout: post
 permalink: /2008/04/linq-to-sql-generic-primary-key.html
 tags: linqtosql C# dotnet

@@ -1,5 +1,5 @@
 ---
-title: Personal: Travelling
+title: Personal&#58; Travelling
 layout: post
 permalink: /2007/04/personal-travelling.html
 tags: personal

@@ -1,5 +1,5 @@
 ---
-title: Learn Something New: Node
+title: Learn Something New&#58; Node
 layout: post
 permalink: /2011/10/learn-something-new-node.html
 tags: javascript node learn something new heroku

@@ -1,5 +1,5 @@
 ---
-title: Moq: Mocking GetEnumerator()
+title: Moq&#58; Mocking GetEnumerator()
 layout: post
 permalink: /2009/02/moq-mocking-getenumerator.html
 tags: mocks unittest C# dotnet

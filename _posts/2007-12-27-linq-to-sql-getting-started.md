@@ -1,5 +1,5 @@
 ---
-title: LINQ to SQL: Getting Started
+title: LINQ to SQL&#58; Getting Started
 layout: post
 permalink: /2007/12/linq-to-sql-getting-started.html
 tags: linqtosql dotnet

@@ -1,5 +1,5 @@
 ---
-title: LINQ to SQL: Extending Data Classes
+title: LINQ to SQL&#58; Extending Data Classes
 layout: post
 permalink: /2008/01/linq-to-sql-extending-data-classes.html
 tags: linqtosql dotnet

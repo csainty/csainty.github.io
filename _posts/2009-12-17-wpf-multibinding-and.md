@@ -1,5 +1,5 @@
 ---
-title: WPF: MultiBinding and IMultiValueConverter
+title: WPF&#58; MultiBinding and IMultiValueConverter
 layout: post
 permalink: /2009/12/wpf-multibinding-and.html
 tags: wpf silverlight C# dotnet

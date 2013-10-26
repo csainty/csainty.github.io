@@ -1,5 +1,5 @@
 ---
-title: Personal: Crazy Weather
+title: Personal&#58; Crazy Weather
 layout: post
 permalink: /2007/06/personal-crazy-weather.html
 tags: personal vista dotnet

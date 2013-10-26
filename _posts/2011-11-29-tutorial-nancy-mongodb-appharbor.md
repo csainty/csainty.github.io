@@ -1,5 +1,5 @@
 ---
-title: Tutorial: Nancy + MongoDb + AppHarbor
+title: Tutorial&#58; Nancy + MongoDb + AppHarbor
 layout: post
 permalink: /2011/11/tutorial-nancy-mongodb-appharbor.html
 tags: nancy asp.net appharbor C# mongodb knockout dotnet

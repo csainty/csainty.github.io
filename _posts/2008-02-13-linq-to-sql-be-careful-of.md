@@ -1,5 +1,5 @@
 ---
-title: LINQ to SQL: Be careful of CreateDatabase()
+title: LINQ to SQL&#58; Be careful of CreateDatabase()
 layout: post
 permalink: /2008/02/linq-to-sql-be-careful-of.html
 tags: linqtosql C# dotnet
