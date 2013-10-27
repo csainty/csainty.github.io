@@ -14,7 +14,7 @@ layout: default
         </a>
     </header>
 
-    <span class="post-meta"><time datetime="{{ page.date | date_to_string }}">{{ page.date | date_to_string }}</time> {% if page.tags %}on {{page.tags | array_to_sentence_string }}{% endif %}</span>
+    <span class="post-meta"><time datetime="{{ page.date | date_to_string }}">{{ page.date | date_to_string }}</time>  {% if post.tags %}in {{ post | tags }}{% endif %}</span>
 
     <h1 class="post-title">{{ page.title }}</h1>
 

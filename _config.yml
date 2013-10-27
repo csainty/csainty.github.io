@@ -4,3 +4,5 @@ markdown: redcarpet
 pygments: false
 paginate: 5
 url: http://blog.csainty.com
+tag_page_layout: tag_page
+tag_page_dir: tag
