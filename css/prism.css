@@ -6,7 +6,7 @@
 
 code[class*="language-"],
 pre[class*="language-"] {
-	color: #2d70c5;
+	color: #4d90e5;
 	text-shadow: 0 1px rgba(0,0,0,0.3);
 	font-family: Consolas, Monaco, 'Andale Mono', monospace;
 	direction: ltr;
@@ -22,6 +22,8 @@ pre[class*="language-"] {
 	-moz-hyphens: none;
 	-ms-hyphens: none;
 	hyphens: none;
+
+	line-height: 1em;
 }
 
 /* Code blocks */
@@ -93,7 +95,7 @@ pre[class*="language-"] {
 }
 
 .token.type {
-	color: #4ec9b0;	
+	color: #4ec9b0;
 }
 
 .token.atrule,
