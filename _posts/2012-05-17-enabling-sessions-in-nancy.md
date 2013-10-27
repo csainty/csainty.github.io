@@ -20,7 +20,7 @@ Nancy ships with a single session provider implemented, CookieBasedSessions. You
 This provider stores the session, encrypted, in the users cookies. Which is really not too bad of a solution to get started. You are up and running with a single line of code added to your ApplicationStartup method in your Bootstrapper.  
  
 
-````
+```clike
 public class Bootstrapper : DefaultNancyBootstrapper
 {
     protected override void ApplicationStartup(TinyIoCContainer container, IPipelines pipelines)
@@ -42,7 +42,7 @@ Now you don’t want to store too much data in a cookie-based session like this,
 If you do any work with sessions, you are likely to need to test them eventually. While the mechanism is a bit awkward, it is essentially pretty easy. My preferred method is to attach an event to the .Before pipeline in your testing Bootstrapper that injects the required session into the request.  
  
 
-````
+```clike
 public static class BootstrapperExtensions
 {
     public static void WithSession(this IPipelines pipeline, IDictionary<string, object> session)

@@ -14,7 +14,7 @@ Before getting too far into WinJS (which is the general term I am going to use f
 The first thing you are going to confronted with upon creating a new project and opening on of the .js files is this structure.  
   
 
-````
+```clike
 ﻿(function () {
   // some code
 })();
@@ -26,7 +26,7 @@ This is a self or immediately executing function. It defines a function, then ex
 The reason for this structure is scope. JavaScript’s scope boundary is at the function level. It is not at the file level, or at the block level (like in C#). For example this code works.  
   
 
-````
+```clike
 if (true) {
 	var x = 1;
 }
@@ -38,7 +38,7 @@ console.log(x);	// Prints 1
 But if we define our variable in a self executing function. Then it does not.  
   
 
-````
+```clike
 (function() {
 	var x = 1;
 })();

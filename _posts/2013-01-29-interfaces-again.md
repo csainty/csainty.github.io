@@ -14,7 +14,7 @@ In an earlier iteration of that same thought process I had a different structure
 So what is my second example for you? Well again it involves tricks of code organisation to change the way the functionality of a class is consumed. This one is more about taking a class that implements multiple interfaces but exposing them in a more structured way. Again I will work in the repository space. For the same reasons as last time, it is a service type we all understand and that we have all seen go wrong at some point. Don’t read this as a guide on how you should structure code it is merely a thought exercise at this point.  
 
 
-````
+```clike
 public interface IQueries
 {
   Foo GetFoo(int fooId);

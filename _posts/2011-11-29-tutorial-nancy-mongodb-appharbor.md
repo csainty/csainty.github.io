@@ -88,7 +88,7 @@ Just to stress this point one more time, normally you are going to have a dev/te
 Now on to some code, to start with add a Models folder with a single Message.cs class.  
   
 
-````
+```clike
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Bson.Serialization.IdGenerators;
 
@@ -110,7 +110,7 @@ Note the Attribute on the Id field, this tells the MongoDb driver which field is
 Now we are going to need a bootstrapper (CustomBootstrapper.cs) to configure Nancy and our Dependency Injection.  
   
 
-````
+```clike
 using System.Configuration;
 using System.Linq;
 using MongoDB.Driver;
@@ -156,7 +156,7 @@ Basically we are creating our Server instance using the connection string from w
 So let’s look at the two Modules (PageModule.cs and ApiModule.cs)  
   
 
-````
+```clike
 using Nancy;
 
 namespace NancyMongo
@@ -176,7 +176,7 @@ namespace NancyMongo
   
   
 
-````
+```clike
 using System.Linq;
 using MongoDB.Driver;
 using Nancy;
@@ -220,7 +220,7 @@ A Module in Nancy is where we wire up how the web server is going to response to
 Then finally we have the View (Views/Homepage.html), which is essentially a static HTML page and is processed by the built in view engine.  
   
 
-````
+```clike
 <!DOCTYPE HTML>
 <html>
 <head>

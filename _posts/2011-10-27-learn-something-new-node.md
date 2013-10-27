@@ -28,7 +28,7 @@ Simply download the stand-alone node.exe from [here](http://nodejs.org/dist/v0.5
 Put it in a folder, and create a HelloWorld.js file with the following content.  
   
 
-````
+```clike
 var http = require('http');
 
 http.createServer(function(request, response) {

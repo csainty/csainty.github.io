@@ -39,7 +39,7 @@ One note, I put a copy of the node-webkit into the node_modules folder. I am sur
  
 Our app.js is very simple, this is the entry point to the app, configures the webkit browser surface and loads an initial page.  
 
-````
+```clike
 var nwebkit = require('node-webkit');
 
 nwebkit.init({
@@ -52,7 +52,7 @@ nwebkit.init({
  
 index.html is also pretty straight forward, it is just basic HTML with Knockout bindings. It includes script references for jQuery, [Knockout](http://csainty.blogspot.com/2011/10/learn-something-new-knockout-js.html) and our own index.js  
 
-````
+```clike
 <html>
 <head>
 	<title>node-webkit-twitter</title>
@@ -79,7 +79,7 @@ index.html is also pretty straight forward, it is just basic HTML with Knockout 
  
 Now for index.js, this is where the really interesting code is.  
 
-````
+```clike
 var request = require('request');
 
 $(function() {

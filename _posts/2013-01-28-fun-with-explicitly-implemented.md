@@ -16,7 +16,7 @@ I still don’t know exactly where this train of thought will take me but I’d 
 A quick refresh on explicitly implementing and interface.  
  
 
-````
+```clike
 public interface IsEmailAlreadyInUse
 {
   Task<bool> Execute(string emailAddress);
@@ -38,7 +38,7 @@ When you implement an interface like this (note the interface name in front of t
 Notice how the SqlRepository is internal, this is saying that you shouldn’t be giving out instances cast as this type. You should be handing out a single instance (per appropriate lifetime scope) cast as its various interfaces.With this done, your code that is applying business logic around these persistence calls suddenly needs to be explicit about what functions it needs. It can no longer say “give me a repository and I will do what I please with it”  
  
 
-````
+```clike
 public interface IsEmailAlreadyInUse
 {
   Task<bool> Execute(string emailAddress);

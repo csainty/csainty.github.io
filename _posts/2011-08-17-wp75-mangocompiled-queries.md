@@ -22,7 +22,7 @@ When you make a query with LINQ-to-SQL, the LINQ provider has to examine your LI
 You define and call a Compiled Query like so  
   
 
-````
+```clike
 public class Repository {
 	private gReadieModelContext _Ctx = gReadieModelContext.Create(gReadieModelContext.ConnectionString);
 
@@ -49,7 +49,7 @@ From my experience with Background Agents this method also uses less memory than
 One final code snippet to show an example with a parameter  
   
 
-````
+```clike
 public class Repository {
 	private gReadieModelContext _Ctx = gReadieModelContext.Create(gReadieModelContext.ConnectionString);
 

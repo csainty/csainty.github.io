@@ -18,7 +18,7 @@ It was previously possible to create the server, but when you closed the app, th
 The callback looks something like this.  
  
 
-````
+```clike
 var nwebkit = require('node-webkit'),
 	http = require('http');
 

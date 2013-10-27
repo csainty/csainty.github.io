@@ -12,7 +12,7 @@ In my last two posts on JavaScript for Windows 8 I looked at [scope](http://csai
 So what about regular classes. There are a couple of ways to define a class in JavaScript, a simple way is to return a hash from a factory method.  
 
 
-````
+```clike
 function createPerson(name) {
     return {
         name: name,
@@ -31,7 +31,7 @@ bill.sayHello();
 We can shift name into a private scope by declaring a new variable inside our constructor which is captured by the resulting object.  
 
 
-````
+```clike
 function createPerson(name) {
     var _name = name;
     return {
@@ -50,7 +50,7 @@ bill.sayHello();
 However, for complex classes you intend to create a lot of, this method is generally not the suggested. Each instance is redefining the functions rather than simply pointing to an existing implementation in memory. This is where prototype inheritance comes in.  
 
 
-````
+```clike
 var Person = function (name) {
     this.name = name;
 };
@@ -73,7 +73,7 @@ Note the capital P in Person, this is a convention to say this function is a cla
 But, we have lost the private scoping on the name property. To get it back, we need to define the property inside the constructor like we did above, but then expose it with a getter method so that the methods on the prototypes can get at it.  
 
 
-````
+```clike
 var Person = (function() {
     var ctor = function(name) {
         var _name = name;
@@ -102,7 +102,7 @@ So what does WinJS bring to the table?
 There is a WinJS.Class namespace that contains a define method. It can be used to wrap up a big ugly class definition like that above into a simple method call that returns a class definition you can new up. It supports passing in your constructor, your instance methods/properties and your static methods/properties.  
 
 
-````
+```clike
 // Person.js
 (function () {
     var Person = WinJS.Class.define(function (name) {

@@ -26,7 +26,7 @@ Then you need to add your node.js code into the app folder. The assumed entry po
 Finally make sure your node_modules folder is in the commit (AppHarbor does not run npm for you yet) and that all the files are being copied into the build folder and you are done.   If you are unsure, check the build output on AppHarbor for lines like the following  
   
 
-````
+```clike
 _CopyOutOfDateSourceItemsToOutputDirectoryAlways:
   Creating directory "D:\temp\vxyr2fjf.bf2\output\app\node_modules\node-logentries".
   Copying file from "D:\temp\vxyr2fjf.bf2\input\NodeWorkerRunner\app\node_modules\node-logentries\package.json" to "D:\temp\vxyr2fjf.bf2\output\app\node_modules\node-logentries\package.json".

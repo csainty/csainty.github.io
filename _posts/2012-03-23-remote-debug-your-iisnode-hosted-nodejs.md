@@ -16,7 +16,7 @@ Even better is that this is built straight into iisnode, you don’t need to tou
 You simply need to make a single change to your web.config rewrite rules so that the urls to launch the debugger are not treated as regular requests and sent through to you app.  
  
 
-````
+```clike
 <configuration>
   <system.webServer>
     <handlers>

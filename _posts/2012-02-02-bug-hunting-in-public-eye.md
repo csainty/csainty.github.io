@@ -27,7 +27,7 @@ First some background on how the profiling actually works.
 
 When you attach your DocumentStore to the profile, the following code is run  
 
-````
+```clike
 public void AddStore(IDocumentStore store)
 {
 	var documentStore = store as DocumentStore;
@@ -67,7 +67,7 @@ This is very important, and the key to why this bug was missed. So I will say it
 
 So lets look at that JavaScript again.  
 
-````
+```clike
 $('body').ajaxComplete(function (event, xhrRequest, ajaxOptions) {
 	var id = xhrRequest.getResponseHeader('X-RavenDb-Profiling-Id');
 	if (id)
