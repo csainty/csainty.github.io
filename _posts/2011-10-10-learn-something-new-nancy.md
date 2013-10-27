@@ -3,6 +3,7 @@ title: Learn Something New&#58; Nancy
 layout: post
 permalink: /2011/10/learn-something-new-nancy.html
 tags: javascript nancy asp.net learn something new C# knockout dotnet
+id: tag:blogger.com,1999:blog-25631453.post-2667713463273702490
 ---
 
 Today my toolset of choice for a quick learning session is Nancy. 
@@ -79,7 +80,7 @@ Here we are subclassing the Ninject bootstrapper, there are other implementation
 
 Of course I have barely scratched the surface here on a very intriguing project. I am hoping to put it to real use in something very soon.
 
-### 
+#### 
 
  Tools and Services Used
 

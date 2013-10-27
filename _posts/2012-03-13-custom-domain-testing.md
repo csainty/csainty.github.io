@@ -3,6 +3,7 @@ title: Custom Domain Testing
 layout: post
 permalink: /2012/03/custom-domain-testing.html
 tags: personal
+id: tag:blogger.com,1999:blog-25631453.post-2777019610098231920
 ---
 
 

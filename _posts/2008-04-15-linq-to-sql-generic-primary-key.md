@@ -3,6 +3,7 @@ title: LINQ to SQL&#58; Generic Primary Key function
 layout: post
 permalink: /2008/04/linq-to-sql-generic-primary-key.html
 tags: linqtosql C# dotnet
+id: tag:blogger.com,1999:blog-25631453.post-6501746339448683482
 ---
 
 An issue I have seen blogged about a number of times with LINQ-to-SQL is that by strong typing queries, you lose the ability to create generic functions for processes such as fetching records by their Primary Key. A recent example is [Rick Strahl](http://west-wind.com/weblog/posts/314663.aspx) who offers a number of good options for getting around this, while not being particularly happy with any of them. In the comments of Rick's post Richard Deeming offers a solution very similar to my own, which is to use the Meta-data provided by LINQ-to-SQL and the functionality of System.Linq.Expressions to create a simple and robust solution.

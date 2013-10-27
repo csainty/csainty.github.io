@@ -3,6 +3,7 @@ title: Avoid branching
 layout: post
 permalink: /2013/01/avoid-branching.html
 tags: meta
+id: tag:blogger.com,1999:blog-25631453.post-2842848493472340326
 ---
 
 
@@ -12,7 +13,7 @@ It seems obvious, but after following along some conversations on twitter recent
  
 About a meter from my desk I have a whiteboard.  
  
-  
+![Photo 8-01-13 1 40 10 PM](/images/1382874050650.png)  
  
 The sections and structure of it don’t really matter, they are what makes sense for my project and the team I am working with.  
  

@@ -3,6 +3,7 @@ title: LINQ to SQL&#58; Extending Data Classes
 layout: post
 permalink: /2008/01/linq-to-sql-extending-data-classes.html
 tags: linqtosql dotnet
+id: tag:blogger.com,1999:blog-25631453.post-9115976822052286810
 ---
 
 Next we are going to look at how you can use partial classes and partial methods to add functionality to your generated LINQ-to-SQL classes. One of the nice things about partial classes and the new partial methods is that you can extend the generated classes into a separate file that is not destroyed when you update the underlying data model. See my complaint [here](http://csainty.blogspot.com/2007/12/linq-to-sql-customisation.html) about other ways of changing the classes that does not have this benefit.
@@ -23,7 +24,7 @@ namespace AdventureWorks
 
 
 Here we will be extending the Address class, but you can extend any of the generated classes. If we type partial we are presented with a list of partial methods we can implement.
-![partial](http://lh5.google.com/saintyc/R311WUxWVrI/AAAAAAAAAD0/hhr65sup57g/partial4) 
+![partial](/images/1382874053382.png) 
 Each property (or field in the database) gets its own Changed() and Changing() property and the class itself has OnCreated(), OnLoaded() and OnValidate().
 So what exactly are partial methods and how do they differ from events or overwriting a base class method. 
   Here is a code snippet from AdventureWorks.designer.cs from the Address class to show the definition and calling of a partial method. I have cut out a bunch of other definitions to keep the snippet small.

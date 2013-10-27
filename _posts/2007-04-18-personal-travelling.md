@@ -3,6 +3,7 @@ title: Personal&#58; Travelling
 layout: post
 permalink: /2007/04/personal-travelling.html
 tags: personal
+id: tag:blogger.com,1999:blog-25631453.post-7060351402258573952
 ---
 
 Just a personal note,

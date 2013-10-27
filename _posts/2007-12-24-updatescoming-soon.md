@@ -3,6 +3,7 @@ title: Updates..coming soon
 layout: post
 permalink: /2007/12/updatescoming-soon.html
 tags: dotnet
+id: tag:blogger.com,1999:blog-25631453.post-940720593407257422
 ---
 
 
@@ -14,6 +15,6 @@ Once I have the first two or three articles put together I will post them up, I 
   
 As a side note, I have started using Live Writer, and it looks great, so bear with me if things get a little screwy around here while posting my first few articles with it. Fingers crossed it goes smooth as silk.    On that note, excuse a quick test of the image upload/hosting from Live Writer, I'd rather know now if this is going to be an issue.  
   
-![Lightning](http://lh3.google.com/saintyc/R29JTUxWVYI/AAAAAAAAABU/l21EoUCBOXQ/Lightning%5B2%5D)   
+![Lightning](/images/1382874053847.png)   
   
 Edit: Looks like it worked! (now to test an edit)  

@@ -3,6 +3,7 @@ title: Phonetics with Double Metaphone and VFP
 layout: post
 permalink: /2006/04/phonetics-with-double-metaphone-and.html
 tags: vfp
+id: tag:blogger.com,1999:blog-25631453.post-114558676161860596
 ---
 
 
@@ -14,10 +15,10 @@ This isn't the tidiest piece of code floating around the internet, but it is sti
   
 
 
-
-## Code
 ```
 
+
+### Code
 
 function double_metaphone(cStr as String)
   local cP, cS, nCur, nLen, cOrig, isSlavo, cRest
@@ -785,10 +786,10 @@ endfunc
 ```
 
 
-
-## Example
 ```
 
+
+### Example
 
 set procedure to Phonetics.prg
 clear

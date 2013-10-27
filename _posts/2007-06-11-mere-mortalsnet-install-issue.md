@@ -3,6 +3,7 @@ title: Mere Mortals.NET Install Issue
 layout: post
 permalink: /2007/06/mere-mortalsnet-install-issue.html
 tags: vista mmnet dotnet
+id: tag:blogger.com,1999:blog-25631453.post-4479413292406346533
 ---
 
 ok well I have fixed my problem with not being able to create Mere Mortals.NET projects, so I will post about it here incase it catches anyone else out.

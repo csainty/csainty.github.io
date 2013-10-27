@@ -3,6 +3,7 @@ title: WinJS - Classes
 layout: post
 permalink: /2012/03/winjs-classes.html
 tags: javascript win8 winjs winrt
+id: tag:blogger.com,1999:blog-25631453.post-695965002839601279
 ---
 
 

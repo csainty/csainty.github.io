@@ -3,6 +3,7 @@ title: Bug hunting in the public eye
 layout: post
 permalink: /2012/02/bug-hunting-in-public-eye.html
 tags: ravendb
+id: tag:blogger.com,1999:blog-25631453.post-2591487606735349656
 ---
 
 

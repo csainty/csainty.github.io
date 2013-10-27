@@ -3,6 +3,7 @@ title: WP7 - Authenticated Push Notifications
 layout: post
 permalink: /2011/01/wp7-authenticated-push-notifications.html
 tags: gReadie wp7dev wp7 C# dotnet
+id: tag:blogger.com,1999:blog-25631453.post-3005825471432915718
 ---
 
 
@@ -20,7 +21,7 @@ Your hosting provider should have a standard process to do this, you just need t
   
 The certificate I used came from [RapidSSL](http://www.rapidssl.com/) and was just the default option for my hosting provider. Microsoft does have a list of [valid providers](http://msdn.microsoft.com/en-us/library/gg521150.aspx), so be sure to check.  
   
-### Problem #1 - Adding an SSL endpoint to an IIS7 WCF Service
+#### Problem #1 - Adding an SSL endpoint to an IIS7 WCF Service
   
 The first problem you will come up against is that when WCF generates a WSDL for your secure service, it will pick up the machine name of the box it is on, and not your domain name.  
   
@@ -136,7 +137,7 @@ Note the Transport security on line 8 and the https address on line 13.
 
 
 
-### Problem #2 - (403) Forbidden
+#### Problem #2 - (403) Forbidden
 
 
 

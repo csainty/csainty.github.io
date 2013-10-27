@@ -3,6 +3,7 @@ title: Node.js Background Workers on AppHarbor
 layout: post
 permalink: /2012/03/nodejs-background-workers-on-appharbor.html
 tags: node appharbor C# dotnet
+id: tag:blogger.com,1999:blog-25631453.post-2558486624826802936
 ---
 
 

@@ -3,6 +3,7 @@ title: LINQ to SQL&#58; Insert/Update/Delete
 layout: post
 permalink: /2008/01/linq-to-sql-insertupdatedelete.html
 tags: linqtosql dotnet
+id: tag:blogger.com,1999:blog-25631453.post-1879691198447788410
 ---
 
 I have been looking at my web stats for the recent run of LINQ-to-SQL posts, and it seems a lot of people are making their way here from searches about some of the more standard features of LINQ-to-SQL. In the interest of addressing these visitors I am going to put together a post that covers the basics of data access.    Make sure you see my earlier post about setting up the AdventureWorks database [here](http://csainty.blogspot.com/2007/12/linq-to-sql-prep-work.html).

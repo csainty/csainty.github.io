@@ -3,6 +3,7 @@ title: WPF&#58; MultiBinding and IMultiValueConverter
 layout: post
 permalink: /2009/12/wpf-multibinding-and.html
 tags: wpf silverlight C# dotnet
+id: tag:blogger.com,1999:blog-25631453.post-3819537496726524457
 ---
 
 
@@ -19,128 +20,103 @@ A MultiBinding works just a regular Binding except it must have a Converter spec
 The first is probably the intended use, which is where you want to combine two data elements into a single value and update that value when either changes.  
   
 For our example we are using a basic dataclass with two properties, a WPF form with a textbox to enter both of these values and a textblock to display the combination, and an implementation of IMultiValueConverter that does the combining. I have cut a few lines of code out for readability, but the whole lot is in the download linked at the bottom of this post.  
-          `   1: public class DataClass`
+  ```
+         public class DataClass
 
 
-
-    `   2: {`
-
+     {
 
 
-    `   3:     public string FirstName { get; set; }`
+         public string FirstName { get; set; }
 
 
-
-    `   4:     public string Surname { get; set; }`
-
+         public string Surname { get; set; }
 
 
-    `   5: }`
+     }
 
 
-
-    `   6:  `
-
+      
 
 
-    `   7: public class NameMultiValueConverter : IMultiValueConverter`
+     public class NameMultiValueConverter : IMultiValueConverter
 
 
-
-    `   8: {`
-
+     {
 
 
-    `   9:     public object Convert(object[] values, Type targetType, object parameter, System.Globalization.CultureInfo culture) {`
+         public object Convert(object[] values, Type targetType, object parameter, System.Globalization.CultureInfo culture) {
 
 
-
-    `  10:         return String.Format("{0} {1}", values[0], values[1]);`
-
+             return String.Format("{0} {1}", values[0], values[1]);
 
 
-    `  11:     }`
+         }
 
 
+     }
 
-    `  12: }`
-
-
+```
 
 
 
 The XAML looks basically like this, again I have cut out non-essential code so grab the download if you need it.  
 
 
+```
 
   
-    `   1: <Window xmlns:local="clr-namespace:BlogIMultiValueConverter">`
+       1: <Window xmlns:local="clr-namespace:BlogIMultiValueConverter">
 
 
-
-    `   2:     <Window.Resources>`
-
+       2:     <Window.Resources>
 
 
-    `   3:         <local:NameMultiValueConverter x:Key="NameMultiValueConverter" />`
+       3:         <local:NameMultiValueConverter x:Key="NameMultiValueConverter" />
 
 
-
-    `   4:     </Window.Resources>`
-
+       4:     </Window.Resources>
 
 
-    `   5:     <Grid>`
+       5:     <Grid>
 
 
-
-    `   6:         <TextBox Text="{Binding Path=FirstName,UpdateSourceTrigger=PropertyChanged}" />`
-
+       6:         <TextBox Text="{Binding Path=FirstName,UpdateSourceTrigger=PropertyChanged}" />
 
 
-    `   7:         <TextBox Text="{Binding Path=Surname,UpdateSourceTrigger=PropertyChanged}" />`
+       7:         <TextBox Text="{Binding Path=Surname,UpdateSourceTrigger=PropertyChanged}" />
 
 
-
-    `   8:         <TextBlock>`
-
+       8:         <TextBlock>
 
 
-    `   9:             <TextBlock.Text>`
+       9:             <TextBlock.Text>
 
 
-
-    `  10:                 <MultiBinding Converter="{StaticResource NameMultiValueConverter}">`
-
+      10:                 <MultiBinding Converter="{StaticResource NameMultiValueConverter}">
 
 
-    `  11:                     <Binding Path="FirstName" />`
+      11:                     <Binding Path="FirstName" />
 
 
-
-    `  12:                     <Binding Path="Surname" />`
-
+      12:                     <Binding Path="Surname" />
 
 
-    `  13:                 </MultiBinding>`
+      13:                 </MultiBinding>
 
 
-
-    `  14:             </TextBlock.Text>`
-
+      14:             </TextBlock.Text>
 
 
-    `  15:         </TextBlock>`
+      15:         </TextBlock>
 
 
-
-    `  16:     </Grid>`
-
+      16:     </Grid>
 
 
-    `  17: </Window>`
+      17: </Window>
 
-
+```
 
 
 
@@ -148,7 +124,7 @@ Fire it up and enter some data and you get this
 
 
 
-![captured_Image.png[4]](http://lh6.ggpht.com/_NNjUBRB0uwA/Symjm28l9jI/AAAAAAAAAFY/n8963I2cr_M/s1600-h/captured_Image.png%5B4%5D%5B2%5D.png)   
+![captured_Image.png[4]](/images/1382874052721.png)   
 
 
 
@@ -163,70 +139,60 @@ What this lets you do is call methods on the object to aid in the production of 
 So our IMultiValueConverter becomes (I have it doing a pointless task simply to show the difference)  
 
 
+```
 
   
-    `   1: public class DataClassMultiValueConverter : IMultiValueConverter`
+       1: public class DataClassMultiValueConverter : IMultiValueConverter
 
 
-
-    `   2: {`
-
+       2: {
 
 
-    `   3:     public object Convert(object[] values, Type targetType, object parameter, System.Globalization.CultureInfo culture) {`
+       3:     public object Convert(object[] values, Type targetType, object parameter, System.Globalization.CultureInfo culture) {
 
 
-
-    `   4:         if (values[0] is DataClass) {`
-
+       4:         if (values[0] is DataClass) {
 
 
-    `   5:             DataClass data = values[0] as DataClass;`
+       5:             DataClass data = values[0] as DataClass;
 
 
-
-    `   6:             return String.Format("{0} {1} {2}", data.FirstName, data.Surname, data.ExtraData());`
-
+       6:             return String.Format("{0} {1} {2}", data.FirstName, data.Surname, data.ExtraData());
 
 
-    `   7:         } else { return ""; }`
+       7:         } else { return ""; }
 
 
-
-    `   8:     }`
-
+       8:     }
 
 
-    `   9: }`
+       9: }
 
-
+```
 
 
 
 And the XAML becomes  
 
 
+```
 
   
-    `   1: <MultiBinding Converter="{StaticResource DataClassMultiValueConverter}">`
+       1: <MultiBinding Converter="{StaticResource DataClassMultiValueConverter}">
 
 
-
-    `   2:     <Binding />`
-
+       2:     <Binding />
 
 
-    `   3:     <Binding Path="FirstName" />`
+       3:     <Binding Path="FirstName" />
 
 
-
-    `   4:     <Binding Path="Surname" />`
-
+       4:     <Binding Path="Surname" />
 
 
-    `   5: </MultiBinding>`
+       5: </MultiBinding>
 
-
+```
 
 
 
@@ -234,7 +200,7 @@ And the result of this useless conversion
 
 
 
-![captured_Image.png[6]](http://lh3.ggpht.com/_NNjUBRB0uwA/SymjoNGhYBI/AAAAAAAAAFg/NozRRzd5CNk/s1600-h/captured_Image.png%5B6%5D%5B2%5D.png)   
+![captured_Image.png[6]](/images/1382874052726.png)   
 
 
 

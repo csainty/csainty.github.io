@@ -3,6 +3,7 @@ title: Scripted Text Generation
 layout: post
 permalink: /2006/04/scripted-text-generation.html
 tags: vfp
+id: tag:blogger.com,1999:blog-25631453.post-114445854422123744
 ---
 
 
@@ -14,10 +15,10 @@ I made mention of this code as part of my presentation at [OzFox Lite](http://ww
   
 
 
-
-## Code
 ```
 
+
+### Code
 
 #define k_NL      chr(13) + chr(10)
 #define k_VARIABLE    "__cS"
@@ -180,10 +181,10 @@ I have provided the basic calling structure, but a better way to do this is to c
 You can also on-the-fly compile these pages off disk as they are called.
   
 
-
-## Example Calling Code
 ```
 
+
+### Example Calling Code
 
 local cIn, cOut, cS
 cIn= filetostr("c:\test.htm")
@@ -204,10 +205,10 @@ Along with the procedure this would generate.
   
 
 
-
-## Example Input
 ```
 
+
+### Example Input
 
 The time is <%= ttoc(datetime()) %>
 <%
@@ -221,10 +222,10 @@ The time is <%= ttoc(datetime()) %>
 
 
 
-
-## Example Output
 ```
 
+
+### Example Output
 
 function __test
 lparameters __cS

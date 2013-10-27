@@ -3,6 +3,7 @@ title: Enabling sessions in Nancy
 layout: post
 permalink: /2012/05/enabling-sessions-in-nancy.html
 tags: appharbify nancy appharbor C#
+id: tag:blogger.com,1999:blog-25631453.post-5401735484008996387
 ---
 
 
@@ -12,7 +13,7 @@ To go with that I am planning to put together some blog posts talking about vari
  
 To start with I am looking at sessions.  
  
-### Getting Started
+#### Getting Started
  
 Nancy ships with a single session provider implemented, CookieBasedSessions. You can of course add your own.  
  
@@ -36,7 +37,7 @@ Request.Session["Key"]
  
 Now you don’t want to store too much data in a cookie-based session like this, as every request is sending the data back across the wire. Also it is theoretically possible the encryption could be broken. Side note: You can control the encryption provider with an optional second parameter to .Enable(). If you do not, then a new key is generated each time the app starts, invalidating all existing sessions.  
  
-### Testing
+#### Testing
  
 If you do any work with sessions, you are likely to need to test them eventually. While the mechanism is a bit awkward, it is essentially pretty easy. My preferred method is to attach an event to the .Before pipeline in your testing Bootstrapper that injects the required session into the request.  
  
@@ -75,7 +76,7 @@ public void TestSession()
  
 By adding this simple extension method and calling it on your Bootstrapper whenever you want to test a route that needs session information, you can very simply abstract away your real session storage mechanism without adding more layers of abstraction to your actual codebase.  
  
-### Future
+#### Future
  
 While AppHarbify is currently running along fine using these cookie based session, for the reasons I have stated above it is not ideal. So the plan is to write Redis based session mechanism and take advantage of the easily installed Redis add-on at AppHarbor. Of course this code will be open-source and released independently of AppHarbify as a nuget package. So watch out for that!  
   

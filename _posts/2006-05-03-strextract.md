@@ -3,6 +3,7 @@ title: STREXTRACT()
 layout: post
 permalink: /2006/05/strextract.html
 tags: vfp
+id: tag:blogger.com,1999:blog-25631453.post-114663484317049464
 ---
 
 
@@ -16,10 +17,10 @@ It's not the best way to parse XML, but it is simple when your input is robust.
   
 
 
-
-## Example
 ```
 
+
+### Example
 
 local cStr
 text to cStr noshow
@@ -46,10 +47,10 @@ endfor
 ```
 
 
-
-## Output
 ```
 
+
+### Output
 
 a1
 Article Title 1

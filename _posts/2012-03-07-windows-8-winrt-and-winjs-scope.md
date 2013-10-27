@@ -3,6 +3,7 @@ title: Windows 8, WinRT and WinJS - Scope
 layout: post
 permalink: /2012/03/windows-8-winrt-and-winjs-scope.html
 tags: javascript win8 winjs winrt code52
+id: tag:blogger.com,1999:blog-25631453.post-5171271232130859416
 ---
 
 

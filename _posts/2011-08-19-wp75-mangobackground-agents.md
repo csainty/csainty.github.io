@@ -3,6 +3,7 @@ title: Wp7.5 Mango–Background Agents
 layout: post
 permalink: /2011/08/wp75-mangobackground-agents.html
 tags: linqtosql gReadie wp7dev wp7 C# dotnet
+id: tag:blogger.com,1999:blog-25631453.post-4232616768076069563
 ---
 
 

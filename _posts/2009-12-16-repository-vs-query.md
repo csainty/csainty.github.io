@@ -3,6 +3,7 @@ title: Repository vs Query
 layout: post
 permalink: /2009/12/repository-vs-query.html
 tags: C# dotnet
+id: tag:blogger.com,1999:blog-25631453.post-6524216130843776483
 ---
 
 
@@ -19,29 +20,25 @@ Then one day I saw in passing someone comment they preferred to use Query object
 The basic requirements I had were a data layer that worked with POCO objects, able to be created as an interface to allow a secondary implementation and a focus on usable querying for both straight entities from the database and ad-hoc queries as needed.  
   
 The objects I ended up with were fluent wrappers for basically a set of query options. These options are then used to construct a query using whatever method of database connection the app is using. Here is an example of a query to give you an idea of how it works.  
-          `IList<Customer> = db.CustomerQuery()`
+  ```
+        IList<Customer> = db.CustomerQuery()
 
 
-
-    `    .FirstName_Contains("Fred")`
-
+        .FirstName_Contains("Fred")
 
 
-    `    .LastName_Is("Blog")`
+        .LastName_Is("Blog")
 
 
-
-    `    .Age_Between(18, 35)`
-
+        .Age_Between(18, 35)
 
 
-    `    .FirstName_Sort(SortOrder.Ascending)`
+        .FirstName_Sort(SortOrder.Ascending)
 
 
+        .List();
 
-    `    .List();`
-
-
+```
 
 
 
@@ -52,27 +49,24 @@ The objects I ended up with were fluent wrappers for basically a set of query op
 And here is an example of how to implement FirstName_Contains() in an implementation of the query layer that uses NHibernate.Linq as it’s data provider.  
 
 
+```
 
   
-    `public ICustomerQuery FirstName_Contains(string name) {`
+    public ICustomerQuery FirstName_Contains(string name) {
 
 
-
-    `    if (!String.IsNullOrEmpty(name))`
-
+        if (!String.IsNullOrEmpty(name))
 
 
-    `        Query = Query.Where(d => d.FirstName.Contains(name));`
+            Query = Query.Where(d => d.FirstName.Contains(name));
 
 
-
-    `    return this;`
-
+        return this;
 
 
-    `}`
+    }
 
-
+```
 
 
 
@@ -83,11 +77,12 @@ And here is an example of how to implement FirstName_Contains() in an implementa
 Obviously that implementation code depends heavily on how you talk to your database. Before I started to utilise NHibernate.Linq it looked more like this  
 
 
+```
 
   
-    `Criteria.Add(Expression.Like("FirstName", name)`
+    Criteria.Add(Expression.Like("FirstName", name)
 
-
+```
 
 
 

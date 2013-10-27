@@ -3,6 +3,7 @@ title: Fun with ASP.NET
 layout: post
 permalink: /2006/08/fun-with-aspnet.html
 tags: dotnet
+id: tag:blogger.com,1999:blog-25631453.post-115672563894619362
 ---
 
 I have spent the last few days setting up an internal wiki for the office.

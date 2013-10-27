@@ -3,6 +3,7 @@ title: Harris Technology Update
 layout: post
 permalink: /2007/01/harris-technology-update.html
 tags: harris
+id: tag:blogger.com,1999:blog-25631453.post-4786304017972888743
 ---
 
 A major update has gone live on [www.ht.com.au](http://www.ht.com.au/) today.

@@ -3,6 +3,7 @@ title: LINQ to SQL&#58; Aggregate Functions and more
 layout: post
 permalink: /2008/01/linq-to-sql-aggregate-functions-and.html
 tags: linqtosql dotnet
+id: tag:blogger.com,1999:blog-25631453.post-2021649708940189750
 ---
 
 In this post I am going to cover off how functions such as Count(), Average() and Sum() work, plus the different ways to call them. Then I will move onto some functions that are not from the domain of SQL but add great features.

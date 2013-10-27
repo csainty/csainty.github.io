@@ -3,10 +3,11 @@ title: LINQ to SQL&#58; GroupBy()
 layout: post
 permalink: /2008/01/linq-to-sql-groupby.html
 tags: linqtosql dotnet
+id: tag:blogger.com,1999:blog-25631453.post-1482896506005821729
 ---
 
 One aspect of LINQ I have not covered yet is the equivalent of a GROUP BY in SQL. The GroupBy() function (which of course can be used from a LINQ expression as well as from the method syntax and I will show both) provides this functionality. One of the interesting things about grouping however is that there is a new interface introduced that you will want to understand, lets take a look at the method signature for GroupBy().
-![GroupBy()](http://lh5.google.com/saintyc/R3xImkxWVpI/AAAAAAAAADk/Z3S3XVeh0fc/GroupBy%5B6%5D) 
+![GroupBy()](/images/1382874053408.png) 
 The function takes a single [Lambda Expression](http://csainty.blogspot.com/2007/12/linq-to-sql-lambda-expressions.html) which returns the value to group by, this can be any basic data type and will flow through to the returned object.
 The return type is a little complicated IQueryable<IGrouping<TKey, Address>>   What this means is you will have an IQueryable collection of IGrouping objects.    An IGrouping object is a collection of data records (in this case of type Address) with a special property added "Key", which holds the grouped value that associated all of the records in that collection together. Confused? Lets take a look at an example. I will start by using the GroupBy() function as I find it easier to read than LINQ Expressions.
 

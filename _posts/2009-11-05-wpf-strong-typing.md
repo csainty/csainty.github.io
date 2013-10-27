@@ -3,16 +3,18 @@ title: WPF + Strong Typing
 layout: post
 permalink: /2009/11/wpf-strong-typing.html
 tags: wpf C# dotnet
+id: tag:blogger.com,1999:blog-25631453.post-425953652379976352
 ---
 
 
 I have been working with WPF recently, and one of the things that annoys me most is the usage of strings to reference object properties. This mainly affects Bindings, but also pops up in other places such as the [IDataErrorInfo](http://msdn.microsoft.com/en-us/library/system.componentmodel.idataerrorinfo.aspx) interface.  
   
 Here is an example that anyone who has touched WPF should understand.  
-     `<TextBox Name="textBox1" Text="{Binding DataItem}" />`
+  ```
+   <TextBox Name="textBox1" Text="{Binding DataItem}" />
 
+  ```
 
-  
 [](http://11011.net/software/vspaste)
 
 
@@ -40,103 +42,81 @@ First things first, this involves moving your bindings from the XAML and into th
 On to the code.   
 
 
+```
 
   
-    `   1: using System;`
+       1: using System;
 
 
+       2: using System.Linq.Expressions;
 
-    `   2: using System.Linq.Expressions;`
 
+       3:  
 
 
-    `   3:  `
+       4: namespace MagicStringBlog
 
 
+       5: {
 
-    `   4: namespace MagicStringBlog`
 
+       6:     public static class MagicString
 
 
-    `   5: {`
+       7:     {
 
 
+       8:         public static string Get<T>(Expression<Func<T, object>> ex) {
 
-    `   6:     public static class MagicString`
 
+       9:             string name;
 
 
-    `   7:     {`
+      10:             switch (ex.Body.NodeType) {
 
 
+      11:                 case ExpressionType.MemberAccess:
 
-    `   8:         public static string Get<T>(Expression<Func<T, object>> ex) {`
 
+      12:                     name = ex.Body.ToString();
 
 
-    `   9:             string name;`
+      13:                     break;
 
 
+      14:                 case ExpressionType.Convert:
 
-    `  10:             switch (ex.Body.NodeType) {`
 
+      15:                     name = ((UnaryExpression)ex.Body).Operand.ToString();
 
 
-    `  11:                 case ExpressionType.MemberAccess:`
+      16:                     break;
 
 
+      17:                 default:
 
-    `  12:                     name = ex.Body.ToString();`
 
+      18:                     throw new Exception(String.Format("Expression type {0} unknown", ex.Body.NodeType));
 
 
-    `  13:                     break;`
+      19:             }
 
 
+      20:             name = name.Substring(name.IndexOf('.') + 1);    // remove the lambda name from expression (d=>d.Test to Test)
 
-    `  14:                 case ExpressionType.Convert:`
 
+      21:             return name;
 
 
-    `  15:                     name = ((UnaryExpression)ex.Body).Operand.ToString();`
+      22:         }
 
 
+      23:     }
 
-    `  16:                     break;`
 
+      24: }
 
-
-    `  17:                 default:`
-
-
-
-    `  18:                     throw new Exception(String.Format("Expression type {0} unknown", ex.Body.NodeType));`
-
-
-
-    `  19:             }`
-
-
-
-    `  20:             name = name.Substring(name.IndexOf('.') + 1);    // remove the lambda name from expression (d=>d.Test to Test)`
-
-
-
-    `  21:             return name;`
-
-
-
-    `  22:         }`
-
-
-
-    `  23:     }`
-
-
-
-    `  24: }`
-
-
+```
 
 
 
@@ -157,68 +137,66 @@ The contents of the method are not as important as the signature, but basically 
 And here is how we call it in the case of a data binding.  
 
 
+```
 
   
-    `textBox2.SetBinding(TextBox.TextProperty, MagicString.Get<DataClass>(x => x.DataItem));`
+    textBox2.SetBinding(TextBox.TextProperty, MagicString.Get<DataClass>(x => x.DataItem));
 
-
+```
 
 
 
 For the record here is the data class that is being used. Complicated!  
 
 
+```
 
   
-    `   1: namespace MagicStringBlog`
+       1: namespace MagicStringBlog
 
 
-
-    `   2: {`
-
+       2: {
 
 
-    `   3:     public class DataClass`
+       3:     public class DataClass
 
 
-
-    `   4:     {`
-
+       4:     {
 
 
-    `   5:         public int DataItem { get; set; }`
+       5:         public int DataItem { get; set; }
 
 
-
-    `   6:     }`
-
+       6:     }
 
 
-    `   7: }`
+       7: }
 
-
+```
 
 
 
 It’s worth noting that I find the binding expression above too long as well, and have created an [Extension Method](http://csainty.blogspot.com/2008/01/extension-methods.html) on controls that has the following signature.  
 
 
+```
 
   
-    `public static void Bind<T>(this FrameworkElement el, DependencyProperty dp, Expression<Func<T, object>> ex)`
+    public static void Bind<T>(this FrameworkElement el, DependencyProperty dp, Expression<Func<T, object>> ex)
 
-
+```
 
 
 
 Which cuts down the call time binding code to  
 
 
+```
 
   
-    `textBox2.Bind<DataClass>(TextBox.TextProperty, d=>d.DataItem);`
+    textBox2.Bind<DataClass>(TextBox.TextProperty, d=>d.DataItem);
 
-
+```
 
 
 

@@ -3,6 +3,7 @@ title: Tutorial&#58; Nancy + MongoDb + AppHarbor
 layout: post
 permalink: /2011/11/tutorial-nancy-mongodb-appharbor.html
 tags: nancy asp.net appharbor C# mongodb knockout dotnet
+id: tag:blogger.com,1999:blog-25631453.post-7690078217695311605
 ---
 
 
@@ -24,17 +25,17 @@ The end result of this tutorial is the app hosted on AppHarbor here [http://nanc
   
 All the code is on GitHub here [https://github.com/csainty/NancyMongo](https://github.com/csainty/NancyMongo)  
   
-## Setting up AppHarbor
+### Setting up AppHarbor
   
-## 
+### 
   
 We are going to start with AppHarbor, once you have an account set up, go to the Applications page and create a new application.  
   
-![CreateAppHbApp](http://lh3.ggpht.com/-Ty7ixR6Yv_I/TtVdDzdK0SI/AAAAAAAAAGs/6blzn8tHKX0/s1600-h/CreateAppHbApp2.png)  
+![CreateAppHbApp](/images/1382874053642.png)  
   
 This will give you the URL for your git repository where we will later be pushing the code. So keep this page open or the URL handy.  
   
-![GitUrl](http://lh6.ggpht.com/-lJyeMnovCMU/TtVdFfNHbYI/AAAAAAAAAG4/Fw-72ouSvN8/s1600-h/GitUrl2.png)  
+![GitUrl](/images/1382874053643.png)  
   
 Down the bottom of this page is an Add-ons section. Hit “View Available Add-ons”  
   
@@ -44,33 +45,33 @@ MongoHQ are a hosted MongoDb provider, they are partnered up with AppHarbor so t
   
 Add the free sandbox MongoDb instance to your site.  
   
-![MongoHQ](http://lh5.ggpht.com/-3X6pXkTYZXI/TtVdHia9j5I/AAAAAAAAAHM/nMCSlSlXb-4/s1600-h/MongoHQ2.png)  
+![MongoHQ](/images/1382874053645.png)  
   
 You should be sent back to the application page with a message saying your instance is configured. Now if you click through to the “Variables” tab you can see a MONGOHQ_URL variable. Any values set up in this tab will be added/replaced in the AppSettings section of your web.config file at build time.  
   
 We are going to break with convention here a little. Normally you do not need to know the value of that key since it is the production server. But to save us setting up test/dev MongoDb instance on our own machines, we are going to point at it for development as well. There is some CSS on the page that truncates the value, but if you view source and search for mongodb:// you can get the full value.  
   
-![MongoURL](http://lh5.ggpht.com/-VWny3pVoo4E/TtVdJyawllI/AAAAAAAAAHY/tseLIbscWfU/s1600-h/MongoURL2.png)  
+![MongoURL](/images/1382874053646.png)  
   
 It includes your username, password and database name. So don’t go sharing this value, and if you are pushing your code to the public, make sure you remove it first, like I have.  
   
 Keep that value at hand, it’s time to jump into Visual Studio.  
   
-## Building our App
+### Building our App
   
 Create a new ASP.NET Empty Web Application.  
   
-![EmptyWebApp](http://lh3.ggpht.com/-cBZ0d9NycqA/TtVdLTHgRKI/AAAAAAAAAHo/aUZYZlDU95o/s1600-h/EmptyWebApp2.png)  
+![EmptyWebApp](/images/1382874053648.png)  
   
 Fire up NuGet (either the GUI from right clicking the references folder in your project and choosing Manage NuGet Packages, or from the command line)  
   
 Install the following packages by searching for them and hitting the install button  
      Nancy     Nancy.Hosting.AspNet     KnockoutJS     Official MongoDb C# driver     NuGetPowerTools    
-![NuGet](http://lh5.ggpht.com/-sbmiSPnQr5s/TtVdNruhwGI/AAAAAAAAAH4/t4xm9lJybpY/s1600-h/NuGet2.png)  
+![NuGet](/images/1382874053649.png)  
   
 One more thing with NuGet, we are going to need to jump into the NuGet “Package Manager Console” from the Tools menu | Library Package Manager sub-menu  
   
-![Console](http://lh5.ggpht.com/-fghvqD7wUDM/TtVdPlvZdjI/AAAAAAAAAII/ZDcA2Gx5YV8/s1600-h/Console2.png)  
+![Console](/images/1382874053650.png)  
   
 Once the console loads type “enable-packagerestore” and hit enter.  
   
@@ -80,7 +81,7 @@ Once that completes you can close the package manager console.
   
 Now open you your web.config file and add an AppSetting of MONGOHQ_URL with the value you grabbed from AppHarbor.  
   
-![webconfig](http://lh4.ggpht.com/-ywX1XAIaG9Y/TtVdRhVYupI/AAAAAAAAAIY/QW99u_7VBfY/s1600-h/webconfig2.png)  
+![webconfig](/images/1382874053651.png)  
   
 Just to stress this point one more time, normally you are going to have a dev/test server. You would be putting it’s URL in here and letting AppHarbor override it with the production URL when you publish.  
   
@@ -290,31 +291,31 @@ Then finally we have the View (Views/Homepage.html), which is essentially a stat
   
 So now we have all the code files in place, run it up and make sure it all works, when it does, it is time to deploy.  
   
-## Creating our Git Repo
+### Creating our Git Repo
   
 Now we have a working project, lets put it into Git and send it up to AppHarbor.  
   
 Fir up the GitExtensions GUI and select “Create new repository”  
   
-![New Repository](http://lh6.ggpht.com/-5usKwypguPc/TtVdTSDDN8I/AAAAAAAAAIo/qWqolHXPakQ/s1600-h/New-Repository2.png)  
+![New Repository](/images/1382874053653.png)  
   
 Choose the folder your solution is in and Initialize as a personal repo. (Pro tip: Init a bare repository in your dropbox/mesh folder and push to it for easy offsite backup)  
   
-![New Repository Location](http://lh3.ggpht.com/-79pt8rsAnR0/TtVdVribpNI/AAAAAAAAAI4/IPddQ0zSn2I/s1600-h/New-Repository-Location2.png)  
+![New Repository Location](/images/1382874053654.png)  
   
 Now you need to edit your .gitignore folder to tell it what files to include and exclude from your folders.  
   
-![GitIgnore](http://lh3.ggpht.com/-bpYh7jQ5eJI/TtVdYNmtFiI/AAAAAAAAAJI/rNPRcSAagG0/s1600-h/GitIgnore2.png)  
+![GitIgnore](/images/1382874053656.png)  
   
 Start by hitting the “Add default” button, remove the *.exe line as we want to include the nuget.exe which was added by NuGetPowerTools. Then add a line “[P]ackages\” at the bottom to filter out the packages folder. This folder contains all the NuGet packages which will be downloaded on the AppHarbor build server by NuGetPowerTools.  
   
 Now you should be able to Commit the changes from the Commands menu.  
   
-## Deploying to AppHarbor
+### Deploying to AppHarbor
   
 Still in GitExtensions, from the Remotes menu choose “manage remote repositories”, click the new button, give it a name and paste in the Git url you were provided when creating your AppHarbor application. Remotes are simply other copies of a repository that you can push code to and pull code from.  
   
-![Remote](http://lh6.ggpht.com/-no_NyWMsm7I/TtVdZwDhDwI/AAAAAAAAAJY/ErUQ_320iuk/s1600-h/Remote2.png)  
+![Remote](/images/1382874053658.png)  
   
 You can then “Push” to this remote (again from the commands menu), which will being the build and deployment process on AppHarbor.  
   
@@ -322,11 +323,11 @@ One thing to watch out for, with OpenSSH selected as your SSH client (chosen whe
   
 If I get a chance I hope to look into the GitExtensions code and improve this if at all possible.  
   
-## It Lives!
+### It Lives!
   
 Now if you go back to your application page in AppHarbor and refresh you should be presented with something like this.  
   
-![PostBuild](http://lh6.ggpht.com/-DWdEMutFlwA/TtVdbgl2P0I/AAAAAAAAAJo/FMAU_xks-dk/s1600-h/PostBuild2.png)  
+![PostBuild](/images/1382874053661.png)  
   
 You will have the status of your build, which you can dig into to get the full console output from the build process. Assuming the build worked, you will also have a link to your app. Click it and be amazed.  
   

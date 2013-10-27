@@ -3,6 +3,7 @@ title: Launching a Metro.css + Node.js site on AppHarbor
 layout: post
 permalink: /2012/02/launching-metrocss-nodejs-site-on.html
 tags: open-source node appharbor code52
+id: tag:blogger.com,1999:blog-25631453.post-4685469724362351959
 ---
 
 
@@ -16,11 +17,11 @@ I also assume you have git installed and that you have created your AppHarbor ac
   
 While at AppHarbor you will need to do two things. The first is to take a copy of your repository URL, which is now accessed by pressing the button shown in this screenshot.  
   
-![AppHbUrl](http://lh5.ggpht.com/-Lw8w6EyPoqM/Tz2FgQpu8rI/AAAAAAAAAKM/uu52ykefOT0/s1600-h/AppHbUrl%25255B2%25255D.png)  
+![AppHbUrl](/images/1382874051194.png)  
   
 The second is to turn on file system write access. You do this from the settings page by enabling the checkbox shown below and hitting update application.  
   
-![AppHarborFiles](http://lh6.ggpht.com/-o08v02AsQj0/Tz2FilDeOQI/AAAAAAAAAKY/kDF26B_iEZ4/s1600-h/AppHarborFiles%25255B2%25255D.png)  
+![AppHarborFiles](/images/1382874051195.png)  
   
 What this does is allow the LESS compiler to generate and cache CSS files on demand, rather than having to compile them in a build step.  
   
@@ -40,11 +41,11 @@ node metro –i c:\projects\metrosite      cd \projects\metrosite       npm inst
    
 Simple as that, our site has been generated and is ready to be deployed. This whole process will look something like this.  
   
-![SiteCreation](http://lh4.ggpht.com/-288qWcNqOGM/Tz2FlX2F5cI/AAAAAAAAAKs/y7vyOk_czdc/s1600-h/SiteCreation%25255B2%25255D.png)  
+![SiteCreation](/images/1382874051196.png)  
   
 If you want to see it running locally, just fire it up (node app.js) and point your browser to localhost using the port specified.  
   
-![Running Locally](http://lh6.ggpht.com/-Ibgz8Wla7LM/Tz2FoJS4zsI/AAAAAAAAAK8/E-cOaUyEAMs/s1600-h/Running%252520Locally%25255B2%25255D.png)  
+![Running Locally](/images/1382874051198.png)  
   
 So to deploy to AppHarbor, we need to first create a git repository for our site, commit the changes and then push this commit up to AppHarbor. From the folder that contains our generated site (c:\projects\metrosite in my example) we do the following.  
      
@@ -52,17 +53,17 @@ git init     git add .      git commit –m “Initial commit”      git remote
    
 Which will look something like this, though I supressed the commit output for the purposes of the screenshot.  
   
-![GitCLI](http://lh5.ggpht.com/-E9BlL3c237E/Tz2FqXrqIXI/AAAAAAAAALI/7H6lvMIybLc/s1600-h/GitCLI%25255B2%25255D.png)  
+![GitCLI](/images/1382874051199.png)  
   
 This sends your site up to AppHarbor, where it is loaded up and made live.  
   
 Back at AppHarbor, your application page will show the current build status. Usually the build will be fairly instant, but if the Status column has a little spinning indicator, then you will need to wait for the build to complete. Give it the occasional refresh.  
   
-![BuildStatus](http://lh3.ggpht.com/-gdzGRUmHbe0/Tz2Fsi6LTOI/AAAAAAAAALY/Dz2ESX5tLuc/s1600-h/BuildStatus%25255B2%25255D.png)  
+![BuildStatus](/images/1382874051200.png)  
           
 When that is done, click the “Go to your application link” and marvel at your creation.  
   
-![MetroSite](http://lh5.ggpht.com/-M7qNvCM_uro/Tz2Fum5du3I/AAAAAAAAALs/UXmvnZ8kFMI/s1600-h/MetroSite%25255B2%25255D.png)  
+![MetroSite](/images/1382874051201.png)  
   
 See my copy live at [http://nodemetro.apphb.com/](http://nodemetro.apphb.com/)  
   

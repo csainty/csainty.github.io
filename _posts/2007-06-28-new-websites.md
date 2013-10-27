@@ -3,6 +3,7 @@ title: New Websites
 layout: post
 permalink: /2007/06/new-websites.html
 tags: dt vfp
+id: tag:blogger.com,1999:blog-25631453.post-2150686021601233561
 ---
 
 We have recently launched a couple of new websites.

@@ -3,6 +3,7 @@ title: RenderComponent() or RenderUserControl()
 layout: post
 permalink: /2008/03/rendercomponent-or-renderusercontrol.html
 tags: mvc asp.net C# dotnet
+id: tag:blogger.com,1999:blog-25631453.post-7496293604195028717
 ---
 
 

@@ -3,6 +3,7 @@ title: Useful Extension Method for IEnumerable
 layout: post
 permalink: /2008/02/useful-extension-method-for-ienumerable.html
 tags: linqtosql linq C# dotnet
+id: tag:blogger.com,1999:blog-25631453.post-6951048548340824969
 ---
 
 

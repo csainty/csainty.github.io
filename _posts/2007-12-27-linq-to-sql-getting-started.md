@@ -3,13 +3,14 @@ title: LINQ to SQL&#58; Getting Started
 layout: post
 permalink: /2007/12/linq-to-sql-getting-started.html
 tags: linqtosql dotnet
+id: tag:blogger.com,1999:blog-25631453.post-2825128679565587450
 ---
 
 I am going to start by showing a few new language features that are important to LINQ (and hence LINQ-to-SQL) that you may not have come across yet if you are not already playing around with this stuff.
 A great place to start is to bring up intellisense and have a look at the structure of the classes that have been created for you.
-![Intellisense](http://lh5.google.com/saintyc/R3L_hExWVeI/AAAAAAAAACI/YKhJVjyRvOA/Intellisense4) 
+![Intellisense](/images/1382874053760.png) 
 Each table in the database is given a property on the Data Context object. The type of this property (using Addresses as the example) will be System.Data.Linq.Table<Address>. This class implements the IEnumerable<> and IQueryable<> interfaces that provides the underlying LINQ functionality.
-![IEnumerable](http://lh5.google.com/saintyc/R3L_iExWVgI/AAAAAAAAACY/0tb0DzrtoYE/IEnumerable%5B1%5D) 
+![IEnumerable](/images/1382874053761.png) 
 You will note a Count() method here, as well as a number of other interesting functions such as Average(), Contains() and DeleteAllOnSubmit(). We will take a look at a number of these later. First however I want to talk about what the <> symbols that are being scattered around.    When we define a class, for example List, as List<MyCustomClass> it tells the compiler that this List instance should substitute MyCustomClass for object in its definition. The actual definition of the List class decides where and how the Type is used, but we will not go into that detail here. What this means is that you can have a List whose methods will take/return the objects of type MyCustomClass without messing around with casting to/from object or creating a custom sub-class.     This technique is used heavily in LINQ-to-SQL to provide strong compile time type checking.     What this means for you in practice is that if you try to add an Order record to the Address table, it will pick this mistake up at compile-time, not with a run-time error.
 Now lets put a few things together and add a record to one of the tables.
 

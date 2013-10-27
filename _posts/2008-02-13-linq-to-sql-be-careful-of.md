@@ -3,6 +3,7 @@ title: LINQ to SQL&#58; Be careful of CreateDatabase()
 layout: post
 permalink: /2008/02/linq-to-sql-be-careful-of.html
 tags: linqtosql C# dotnet
+id: tag:blogger.com,1999:blog-25631453.post-3735723514418108029
 ---
 
 I have recently started work on what will become our first production application using LINQ-to-SQL and had hoped to use the CreateDatabase() function that is found on the generated DataContext to simplify the process of setting up the database on the client machine.

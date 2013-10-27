@@ -3,6 +3,7 @@ title: Learn Something New&#58; Knockout JS
 layout: post
 permalink: /2011/10/learn-something-new-knockout-js.html
 tags: javascript mvc asp.net learn something new knockout
+id: tag:blogger.com,1999:blog-25631453.post-1473986324507487925
 ---
 
 First in my “Learn Something New” series is [Knockout](http://knockoutjs.com/), a javascript MVVM framework.
@@ -79,7 +80,7 @@ It really is as simple as that.
 I highly recommend the [tutorials](http://learn.knockoutjs.com/) at the Knockout website, they have created a wonderful live tutorial that takes you through each step of the process.
 
 
-### 
+#### 
 
 Tools and Services Used
 

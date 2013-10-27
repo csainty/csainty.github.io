@@ -3,6 +3,7 @@ title: Creating desktop apps with NodeJS
 layout: post
 permalink: /2012/01/creating-desktop-apps-with-nodejs.html
 tags: javascript node node-webkit knockout
+id: tag:blogger.com,1999:blog-25631453.post-7724822284027989051
 ---
 
 
@@ -111,7 +112,7 @@ Now of cource everything in this little demo can be done client side already. Bu
  
 To fire it up just run “node app.js”  
  
-![Node](http://lh5.ggpht.com/-cfwDbp_TcvY/TwvPW5ZODHI/AAAAAAAAAJ8/-0LgIbO_aUE/s1600-h/Node%25255B3%25255D.png)  
+![Node](/images/1382874053234.png)  
  
 I hope to put together a more in-depth demo soon, one that involves local storage, and one of the HTML5 UI frameworks to pretty it up a bit. I’ll keep you posted on how that goes.  
  

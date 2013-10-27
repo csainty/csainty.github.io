@@ -3,6 +3,7 @@ title: ASP.NET MVC Application Layout
 layout: post
 permalink: /2008/03/aspnet-mvc-application-layout.html
 tags: mvc asp.net dotnet
+id: tag:blogger.com,1999:blog-25631453.post-879390250247104179
 ---
 
 

@@ -3,6 +3,7 @@ title: LINQ to SQL&#58; Custom Queries
 layout: post
 permalink: /2007/12/linq-to-sql-custom-queries.html
 tags: linqtosql dotnet
+id: tag:blogger.com,1999:blog-25631453.post-2872244781585131033
 ---
 
 Now I have some of the foundations out of the way, albeit in a rather brief overview that assumes a reasonable level of competency, it is time to move onto some of the more interesting code snippets.

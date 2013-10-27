@@ -3,6 +3,7 @@ title: Introducing gReadie
 layout: post
 permalink: /2010/10/introducing-greadie.html
 tags: gReadie wp7
+id: tag:blogger.com,1999:blog-25631453.post-4827692463088301455
 ---
 
 

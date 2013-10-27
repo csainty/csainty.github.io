@@ -3,6 +3,7 @@ title: Wrapping synchronous code in a Task returning method
 layout: post
 permalink: /2013/02/wrapping-synchronous-code-in-task.html
 tags: C# dotnet
+id: tag:blogger.com,1999:blog-25631453.post-6213335283032802708
 ---
 
 
@@ -52,7 +53,7 @@ public class AsyncCommand3 : IAsyncCommand
  
 So what is the difference between these three?In terms of the IL being generated, the answer is quite a lot. In terms of relative performance though, the following falls strictly into the category of extreme micro-optimization.  
  
-### The code
+#### The code
  
 The first implementation is the most optimal approach. It turns out that Task has an internal constructor that takes a result. So the static FromResult() method is just a public wrapper around that constructor which returns a completed Task with your value. Task<T> is then cast to Task and off we go.  
  
@@ -112,11 +113,11 @@ That is a lot of generated code just to save me explicitly returning a Task!
  
 The third option generates the code for the lambda, then passes it off to Task. The task is then handed to the scheduler and what happens next will depend on your scheduler. While this option is lighter on code-gen, the hand-off process makes this the slowest option.  
  
-### Performance
+#### Performance
  
 I ran a couple of quick and dirty performance checks over these three. In each case firing off the method 100,000 times and blocking on the result in a tight for-loop.The first implementation runs in about 2ms, the second in about 15ms and the third in about 170ms. Like I said, firmly in the realms of micro-optimization.Something interesting to note though is that if you repeat the test with the debugger attached, the third option blows out to more like 30000ms! I guess there is some more context switching going on with the debugger attached which affects the performance.  
  
-### Conclusion
+#### Conclusion
  
 Ideally you want to avoid doing any of this. Your best option is to support both synchronous and asynchronous implementations where appropriate. In practice I am finding that I often need to handle this wrapping process and so it is handy to understand exactly what I am asking of the compiler when I do. It may be a micro-optimization but it costs me nothing to do it the best way!  
   

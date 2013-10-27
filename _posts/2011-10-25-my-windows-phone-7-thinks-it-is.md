@@ -3,6 +3,7 @@ title: My Windows Phone 7 thinks it is developer locked?
 layout: post
 permalink: /2011/10/my-windows-phone-7-thinks-it-is.html
 tags: gReadie wp7dev wp7
+id: tag:blogger.com,1999:blog-25631453.post-9217094306162452044
 ---
 
 

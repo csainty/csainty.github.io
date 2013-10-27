@@ -3,6 +3,7 @@ title: Personal&#58; Crazy Weather
 layout: post
 permalink: /2007/06/personal-crazy-weather.html
 tags: personal vista dotnet
+id: tag:blogger.com,1999:blog-25631453.post-140110315369509206
 ---
 
 We have been having a very eventful weekend here in Newcastle.

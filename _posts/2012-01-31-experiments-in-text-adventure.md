@@ -3,6 +3,7 @@ title: Experiments in text adventure
 layout: post
 permalink: /2012/01/experiments-in-text-adventure.html
 tags: javascript design
+id: tag:blogger.com,1999:blog-25631453.post-8331969726941301774
 ---
 
 
