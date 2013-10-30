@@ -530,7 +530,8 @@ table.plain {
 }
 
 /* Keep large images within the bounds of the post-width */
-.post-content img {
+.post-content img,
+.post-excerpt img {
     display: block;
     max-width: 100%;
     margin: 0 auto;
