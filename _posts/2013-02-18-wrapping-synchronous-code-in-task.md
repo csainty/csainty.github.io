@@ -9,7 +9,7 @@ tidied: true
 
 Imagine you have an interface.
 
-```clike
+```csharp
 public interface IAsyncCommand
 {
   Task ExecuteAsync();
@@ -20,7 +20,7 @@ Now imagine you want to implement this interface, but the code to go in there is
 There are three ways to do this that I know of.
 
 
-```clike
+```csharp
 public class AsyncCommand1 : IAsyncCommand
 {
   public Task ExecuteAsync()
@@ -56,7 +56,7 @@ The first implementation is the most optimal approach. It turns out that Task ha
 I find the second approach to be the easiest to read because you just need your async and no weird faux-return. This one actually generates quite a bit of IL. You get a full state machine created, it gets initialized and then executed.
 
 
-```clike
+```csharp
 [AsyncStateMachine(typeof (Class1.<ExecuteAsync>d__0))]
 [DebuggerStepThrough]
 public Task ExecuteAsync()

@@ -45,7 +45,7 @@ First we need to add a few options to our UI in Window1.xaml
 
 Then we replace the click event with the following code.
 
-```clike
+```csharp
 private void button1_Click(object sender, RoutedEventArgs e)
 {
     AdventureWorksDataContext db = new AdventureWorksDataContext();

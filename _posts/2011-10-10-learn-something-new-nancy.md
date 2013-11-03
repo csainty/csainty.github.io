@@ -26,7 +26,7 @@ The interesting code in this project mainly lies in the Modules.
 First we have a PageModule, which is serving requests for regular pages.
 
 
-```clike
+```csharp
 public class PageModule : NancyModule
 {
 	public PageModule()
@@ -42,7 +42,7 @@ It really is as simple as that to catch requests to “/” and serve up a View 
 Second we have the ApiModule, which is handling the API requests being made by AJAX.
 
 
-```clike
+```csharp
 public class ApiModule : NancyModule
 {
 	private readonly IDataStore _Data;
@@ -64,7 +64,7 @@ Again, you can see that is very simple.
 To demonstrate Dependency Injection using Ninject, there is a simple data store interface and an in memory implementation.
 
 
-```clike
+```csharp
 public class CustomBootstrapper : NinjectNancyBootstrapper
 {
 	protected override void InitialiseInternal(IKernel container)

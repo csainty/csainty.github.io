@@ -20,7 +20,7 @@ The page basically consists of a textbox to enter a search term, a button to run
 Here is a trimmed down version of the javascript to highlight the main features.
 
 
-```clike
+```csharp
 var viewModel = {
 	searchTerm: ko.observable(""),
 	tweets: ko.observableArray([]),
@@ -54,7 +54,7 @@ So we define our viewModel, give it an observable value for the search string, a
 We apply these bindings and that is it for the javascript. The actual binding to the UI happens in the UI, using HTML5 data attributes.
 
 
-```clike
+```csharp
 <ul data-bind="template: { name : 'tweetTemplate', foreach: tweets }"></ul>
 
 <input type="text" placeholder="search..." data-bind="value: searchTerm" />

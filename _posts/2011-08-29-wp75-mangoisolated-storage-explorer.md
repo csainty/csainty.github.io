@@ -20,7 +20,7 @@ The second is when I find a bug with while using a retail copy of my app which I
 To speed the process along I have created four windows .bat files that to perform each of the tasks I need.  
   
  
-```clike
+```csharp
 "C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v7.1\Tools\IsolatedStorageExplorerTool\ISETool.exe" ts de b8c6eab0-543c-4b55-be96-0b3da982df37 "C:\Users\chris_sainty\Desktop\IsoStore"
 
 

@@ -14,7 +14,7 @@ I was therefore delighted when details about Mango were released as this is basi
 Background Agents in Mango take the form of a separate assembly, which gets linked in your WMAppManifest.xml  
   
 
-```clike
+```csharp
 <Tasks>
 	<DefaultTask Name="_default" NavigationPage="Home.xaml" />
 	<ExtendedTask Name="BackgroundTask">
@@ -30,7 +30,7 @@ You should also place a reference to this library in your main app just to make 
 You Background Agent library should contain a class based on ScheduledTaskAgent which performs the actual tasks.  
   
 
-```clike
+```csharp
 public class ScheduledAgent : ScheduledTaskAgent
 {
 	protected override void OnInvoke(ScheduledTask task) {
@@ -62,7 +62,7 @@ LINQ-to-SQL is a little more complex, recycling your DataContext and [Compiled Q
 I suggest writing some code to monitor the memory usage between each job (assuming you have multiple to perform, say downloading multiple RSS feeds like gReadie does) and if you stray too high, then perform a garbage collection and recycle your LINQ-to-SQL and see how much you can get back. If it is not enough, then NotifyComplete() and try exit gracefully. It is not bullet-proof but in my testing it allows me to get more work done before running out of memory.  
   
 
-```clike
+```csharp
 if (((double)DeviceStatus.ApplicationCurrentMemoryUsage / (double)DeviceStatus.ApplicationMemoryUsageLimit) * 100d > 97d) {
 	// We are using too much memory, try clean a few things up
 	if (_Ctx != null)

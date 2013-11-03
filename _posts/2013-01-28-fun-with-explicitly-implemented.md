@@ -20,7 +20,7 @@ So when I stumbled across the long forgotten (by me) practice of explicitly impl
 I still don’t know exactly where this train of thought will take me but I’d like to throw it out there and see if it gets the gears turning for anyone else. I am using this heavily in a new personal project, so by the end of it I should have a good idea of whether it has helped or hindered me.  
 A quick refresh on explicitly implementing and interface.  
  
-```clike
+```csharp
 public interface IsEmailAlreadyInUse
 {
   Task<bool> Execute(string emailAddress);
@@ -41,7 +41,7 @@ Through a dependency injection container, which preferably includes an `AsImplem
 Notice how the `SqlRepository` is internal, this is saying that you shouldn’t be giving out instances cast as this type. You should be handing out a single instance (per appropriate lifetime scope) cast as its various interfaces.  
 With this done, your code that is applying business logic around these persistence calls suddenly needs to be explicit about what functions it needs. It can no longer say _“give me a repository and I will do what I please with it”_.
  
-```clike
+```csharp
 public interface IsEmailAlreadyInUse
 {
   Task<bool> Execute(string emailAddress);

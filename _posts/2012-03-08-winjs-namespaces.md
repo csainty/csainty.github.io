@@ -14,7 +14,7 @@ One note about my code snippets. For simplicity I will be concatenating what wou
 So let’s imagine you are creating a helper function to do something really useful, like add two numbers together.   
   
 
-```clike
+```csharp
 // helpers.js
 function add(x,y) {
 	return x + y;
@@ -29,7 +29,7 @@ console.log(add(1,1)); // prints 2
 We have defined this function in the global scope, let’s do the right thing and wrap a function scope around each file.  
   
 
-```clike
+```csharp
 // helpers.js
 (function() {
 	function add(x,y) {
@@ -56,7 +56,7 @@ Basically a namespace is an object that sits in the global scope. They can be ne
 So let’s expose our add function through a namespace.  
   
 
-```clike
+```csharp
 // helpers.js
 (function() {
 	WinJS.Namespace.define("MyApp.Functions", {
@@ -80,7 +80,7 @@ Another interesting feature of Namespaces is that they are composed, so if you d
 Suppose we now want to add a subtract method, but we want it to be in a separate file from our add method. A better example, which we are using at [Code52](http://code52.org/), suppose you have two implementations for your data access layer. You want them in the same namespace but in separate physical files.  
   
 
-```clike
+```csharp
 // add.js
 (function() {
 	WinJS.Namespace.define("MyApp.Functions", {
@@ -114,7 +114,7 @@ One last note on namespaces. Remember that the context in which you are defining
 To demonstrate this I will keep a running total of all the sum operations, and add a new function to return that total.  
   
 
-```clike
+```csharp
 // helpers.js
 (function() {
 	var runningTotal = 0;
@@ -148,7 +148,7 @@ The runningTotal variable and the adjustTotal method are both local to the helpe
 So that is a quick introduction to namespaces. I have only shown exposing functions, but variables can be exposed as well. What I have shown here is most similar to a static class in C#.   
   
 
-```clike
+```csharp
 namespace MyApp
 {
     public static class Functions
