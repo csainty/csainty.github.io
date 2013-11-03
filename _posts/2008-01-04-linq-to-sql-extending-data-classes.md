@@ -6,7 +6,7 @@ tags: linqtosql dotnet
 id: tag:blogger.com,1999:blog-25631453.post-9115976822052286810
 ---
 
-Next we are going to look at how you can use partial classes and partial methods to add functionality to your generated LINQ-to-SQL classes. One of the nice things about partial classes and the new partial methods is that you can extend the generated classes into a separate file that is not destroyed when you update the underlying data model. See my complaint [here](http://csainty.blogspot.com/2007/12/linq-to-sql-customisation.html) about other ways of changing the classes that does not have this benefit.
+Next we are going to look at how you can use partial classes and partial methods to add functionality to your generated LINQ-to-SQL classes. One of the nice things about partial classes and the new partial methods is that you can extend the generated classes into a separate file that is not destroyed when you update the underlying data model. See my complaint [here]({% post_url 2007-12-31-linq-to-sql-customisation %}) about other ways of changing the classes that does not have this benefit.
 First things first is to create a new C# class file, I have called it AdventureWorks_Extra.cs to sort it below the AdventureWorks.dbml
 
 `using System;

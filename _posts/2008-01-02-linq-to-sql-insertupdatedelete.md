@@ -4,12 +4,16 @@ layout: post
 permalink: /2008/01/linq-to-sql-insertupdatedelete.html
 tags: linqtosql dotnet
 id: tag:blogger.com,1999:blog-25631453.post-1879691198447788410
+tidied: true
 ---
 
-I have been looking at my web stats for the recent run of LINQ-to-SQL posts, and it seems a lot of people are making their way here from searches about some of the more standard features of LINQ-to-SQL. In the interest of addressing these visitors I am going to put together a post that covers the basics of data access.    Make sure you see my earlier post about setting up the AdventureWorks database [here](http://csainty.blogspot.com/2007/12/linq-to-sql-prep-work.html).
-First we will look at a complicated INSERT, adding a new customer to the AdventureWorks database.  Note: This is not a very good example from the standpoint of keeping the AdventureWorks database clean and correct, we are only interested in meeting each of the SQL Constraints, not the business logic.
+I have been looking at my web stats for the recent run of LINQ-to-SQL posts, and it seems a lot of people are making their way here from searches about some of the more standard features of LINQ-to-SQL. In the interest of addressing these visitors I am going to put together a post that covers the basics of data access.
+Make sure you see my earlier post about setting up the AdventureWorks database [here]({% post_url 2007-12-27-linq-to-sql-prep-work %}).  
+First we will look at a complicated `INSERT`, adding a new customer to the AdventureWorks database.  
+**Note:** This is not a very good example from the standpoint of keeping the AdventureWorks database clean and correct, we are only interested in meeting each of the SQL Constraints, not the business logic.
 
-`AdventureWorksDataContext db = new AdventureWorksDataContext();
+```csharp
+AdventureWorksDataContext db = new AdventureWorksDataContext();
 db.Log = Console.Out;
 
 // LINQ query to get StateProvince
@@ -61,12 +65,14 @@ newCustomer.CustomerAddresses.Add(new CustomerAddress() { Address = newAddress, 
 // Save changes to the database
 db.SubmitChanges();
 
-Console.WriteLine("Customer ID - " + newCustomer.CustomerID.ToString());`
+Console.WriteLine("Customer ID - " + newCustomer.CustomerID.ToString());
+```
 
 
 This code generates and executes the following SQL.
 
-`SELECT TOP (1) [t0].[StateProvinceID], [t0].[StateProvinceCode], [t0].[CountryRegionCode], [t0].[IsOnlyStateProvinceFlag], [t0].[Name], [t0].[TerritoryID], [t0].[rowguid], [t0].[ModifiedDate]
+```sql
+SELECT TOP (1) [t0].[StateProvinceID], [t0].[StateProvinceCode], [t0].[CountryRegionCode], [t0].[IsOnlyStateProvinceFlag], [t0].[Name], [t0].[TerritoryID], [t0].[rowguid], [t0].[ModifiedDate]
 FROM [Person].[StateProvince] AS [t0]
 WHERE ([t0].[CountryRegionCode] = @p0) AND ([t0].[StateProvinceCode] = @p1)
 -- @p0: Input NVarChar (Size = 2; Prec = 0; Scale = 0) [AU]
@@ -141,33 +147,37 @@ VALUES (@p0, @p1, @p2, @p3)
 -- @p3: Input DateTime (Size = 0; Prec = 0; Scale = 0) [2/01/2008 11:34:04 AM]
 -- Context: SqlProvider(Sql2005) Model: AttributedMetaModel Build: 3.5.21022.8
 
-Customer ID - 29487`
+Customer ID - 29487
+```
 
 
-One of the first things to know is that SubmitChanges() will wrap up all of the changes you have made to the database and submit them as a single transaction, this is good news because if any of them changes fail, they all fail. (Exceptions are thrown to catch failures)
-  You may note the lack of any explicit InsertOnSubmit() calls, these are largely optional, though there are benefits from using them that you will see further down in the DELETE example.
-Running through the code snippet, you will see that the first thing we do is find a StateProvince record and an AddressType record, these are required to give the appropriate foreign keys to our Address record.
-Creating a new record keeps with the mind set of working with objects, so you simply create a new object of the appropriate record type and set its properties. 
-  When linking two records together, you have two choices, both of which I have given an example of. If you know the keys involved in the relationship you can explicitly set the Foreign Key field eg "TerritoryID = state.TerritoryID". 
+One of the first things to know is that `SubmitChanges()` will wrap up all of the changes you have made to the database and submit them as a single transaction, this is good news because if any of them changes fail, they all fail. (Exceptions are thrown to catch failures).  
+You may note the lack of any explicit `InsertOnSubmit()` calls, these are largely optional, though there are benefits from using them that you will see further down in the `DELETE` example.
 
-  However, you do not always know the key, especially if the record has just been created, so you can actually link two objects together and LINQ-to-SQL will work out the keys for you. You can see this best when I create the Individual record and attach it to newContact and newCustomer, neither of which is in the database yet, and hence neither has a Primary Key.
-The CustomerAddress table is a Many-to-Many relationship table between Customer and Address. We can add a new record to it directly or via the CustomerAddresses collection that is on both Customer and Address records. I have used in-line syntax to create this record simply to show off another way of structuring your code.
-Right at the end we write out the Primary Key for the Customer record, to show that LINQ-to-SQL will automatically query this value after it has inserted the record and pop it onto the object. Very useful.
-The other cool feature here is that the order of the SQL statements is decided for you to ensure that all of the keys can be correctly set without tripping up the constraints along the way.
+Running through the code snippet, you will see that the first thing we do is find a `StateProvince` record and an `AddressType` record, these are required to give the appropriate foreign keys to our `Address` record.  
+Creating a new record keeps with the mind set of working with objects, so you simply create a new object of the appropriate record type and set its properties.  
+When linking two records together, you have two choices, both of which I have given an example of. If you know the keys involved in the relationship you can explicitly set the Foreign Key field eg `TerritoryID = state.TerritoryID`. 
+
+However, you do not always know the key, especially if the record has just been created, so you can actually link two objects together and LINQ-to-SQL will work out the keys for you. You can see this best when I create the `Individual` record and attach it to `newContact` and `newCustomer`, neither of which is in the database yet, and hence neither has a Primary Key.
+
+The `CustomerAddress` table is a Many-to-Many relationship table between `Customer` and `Address`. We can add a new record to it directly or via the `CustomerAddresses` collection that is on both `Customer` and `Address` records. I have used in-line syntax to create this record simply to show off another way of structuring your code.  
+Right at the end we write out the Primary Key for the `Customer` record, to show that LINQ-to-SQL will automatically query this value after it has inserted the record and pop it onto the object. Very useful.  
+The other cool feature here is that the order of the SQL statements is decided for you to ensure that all of the keys can be correctly set without tripping up the constraints along the way.  
 Update statements are even simpler, again keeping with the mindset of working with objects we simply get an object representing a row, changes it properties and save it back.
 
-`AdventureWorksDataContext db = new AdventureWorksDataContext();
+```csharp
+AdventureWorksDataContext db = new AdventureWorksDataContext();
 db.Log = Console.Out;
 
 // Get hte first customer record
 Customer c = (from cust in db.Customers select cust).FirstOrDefault();
 Console.WriteLine(c.CustomerType);
 c.CustomerType = 'I';
-db.SubmitChanges(); // Save the changes away`
+db.SubmitChanges(); // Save the changes away
+```
 
-
-
-`SELECT TOP (1) [t0].[CustomerID], [t0].[TerritoryID], [t0].[AccountNumber], [t0].[CustomerType], [t0].[rowguid], [t0].[ModifiedDate]
+```sql
+SELECT TOP (1) [t0].[CustomerID], [t0].[TerritoryID], [t0].[AccountNumber], [t0].[CustomerType], [t0].[rowguid], [t0].[ModifiedDate]
 FROM [Sales].[Customer] AS [t0]
 -- Context: SqlProvider(Sql2005) Model: AttributedMetaModel Build: 3.5.21022.8
 
@@ -186,12 +196,13 @@ WHERE ((@@ROWCOUNT) > 0) AND ([t1].[CustomerID] = @p6)
 -- @p4: Input DateTime (Size = 0; Prec = 0; Scale = 0) [13/10/2004 11:15:07 AM]
 -- @p5: Input NChar (Size = 1; Prec = 0; Scale = 0) [I]
 -- @p6: Input Int (Size = 0; Prec = 0; Scale = 0) [1]
--- Context: SqlProvider(Sql2005) Model: AttributedMetaModel Build: 3.5.21022.8`
+-- Context: SqlProvider(Sql2005) Model: AttributedMetaModel Build: 3.5.21022.8
+```
 
+Now for a `DELETE`, first we will create a record that we can later delete. This will show you why using `InsertOnSubmit()` explicity can be a good idea.
 
-Now for a Delete, first we will create a record that we can later delete. This will show you why using InsertOnSubmit() explicity can be a good idea.
-
-`AdventureWorksDataContext db = new AdventureWorksDataContext();
+```csharp
+AdventureWorksDataContext db = new AdventureWorksDataContext();
 db.Log = Console.Out;
 Console.WriteLine("Count Start - " + db.Currencies.Count().ToString());
 Currency c = new Currency()
@@ -206,11 +217,11 @@ Console.WriteLine("Count Middle - " + db.Currencies.Count().ToString());
 
 db.Currencies.DeleteOnSubmit(c);
 db.SubmitChanges();
-Console.WriteLine("Count End - " + db.Currencies.Count().ToString());`
+Console.WriteLine("Count End - " + db.Currencies.Count().ToString());
+```
 
-
-
-`SELECT COUNT(*) AS [value]
+```sql
+SELECT COUNT(*) AS [value]
 FROM [Sales].[Currency] AS [t0]
 -- Context: SqlProvider(Sql2005) Model: AttributedMetaModel Build: 3.5.21022.8
 
@@ -237,10 +248,12 @@ SELECT COUNT(*) AS [value]
 FROM [Sales].[Currency] AS [t0]
 -- Context: SqlProvider(Sql2005) Model: AttributedMetaModel Build: 3.5.21022.8
 
-Count End - 105`
+Count End - 105
+```
 
+You may notice here that I have used `InsertOnSumbit()` when creating my currency record to be deleted, this is because by doing this you "attach" the object to the database, which is required to do some operations with that object later on, such as `DeleteOnSubmit()`. It was not required in my `Insert()` example however. If you attempt to use `DeleteOnSubmit()` with an object that is not attached to your data context, it will throw an exception.  
+There is also a `DeleteAllOnSubmit()` method which takes a collection of records to be deleted.
 
-You may notice here that I have used InsertOnSumbit() when creating my currency record to be deleted, this is because by doing this you "attach" the object to the database, which is required to do some operations with that object later on, such as DeleteOnSubmit(). It was not required in my Insert() example however. If you attempt to use DeleteOnSubmit() with an object that is not attached to your data context, it will throw an exception.
-  There is also a DeleteAllOnSubmit() method which takes a collection of records to be deleted.
-So there you have it, a quick look at three basic functions. The one of real interest should be the INSERT statements and how you link up a complex set of related objects to insert into the database.
-  I will have another post similar to this next that looks at functions like Count(), Sum(), Average() etc. Again I have had some hits from people looking for examples of these so I feel I should cover them off before moving on to future topics.
+So there you have it, a quick look at three basic functions. The one of real interest should be the `INSERT` statements and how you link up a complex set of related objects to insert into the database.
+
+I will have another post similar to this next that looks at functions like `Count()`, `Sum()`, `Average()` etc. Again I have had some hits from people looking for examples of these so I feel I should cover them off before moving on to future topics.
