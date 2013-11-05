@@ -4,12 +4,13 @@ layout: post
 permalink: /2012/01/experiments-in-text-adventure.html
 tags: javascript design
 id: tag:blogger.com,1999:blog-25631453.post-8331969726941301774
+tidied: true
 ---
 
 
 Like many who were into computers “back in the day” I still maintain a nostalgic, warm and fuzzy feeling at the memory of early text based adventure games.  
   
-Back when all I knew were the PRINT and INPUT commands in QBASIC, these were the very first programs I created.  
+Back when all I knew were the `PRINT` and `INPUT` commands in QBASIC, these were the very first programs I created.  
   
 Where am I going with this?  
   

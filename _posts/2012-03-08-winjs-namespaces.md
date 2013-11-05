@@ -4,17 +4,18 @@ layout: post
 permalink: /2012/03/winjs-namespaces.html
 tags: javascript win8 winjs winrt code52
 id: tag:blogger.com,1999:blog-25631453.post-2332020649945843485
+tidied: true
 ---
 
 
-In my [last post](http://csainty.blogspot.com/2012/03/windows-8-winrt-and-winjs-scope.html) I explained a little about scope in JavaScript and why you should (and the default templates do) wrap each of your files in a self executing function.  
+In my [last post]({% post_url 2012-03-07-windows-8-winrt-and-winjs-scope %}) I explained a little about scope in JavaScript and why you should (and the default templates do) wrap each of your files in a self executing function.  
   
 One note about my code snippets. For simplicity I will be concatenating what would in a real application be multiple .js files into a single code snippet. I’ll use comments to show you where the files break.  
   
 So let’s imagine you are creating a helper function to do something really useful, like add two numbers together.   
   
 
-```csharp
+```javascript
 // helpers.js
 function add(x,y) {
 	return x + y;
@@ -29,7 +30,7 @@ console.log(add(1,1)); // prints 2
 We have defined this function in the global scope, let’s do the right thing and wrap a function scope around each file.  
   
 
-```csharp
+```javascript
 // helpers.js
 (function() {
 	function add(x,y) {
@@ -56,7 +57,7 @@ Basically a namespace is an object that sits in the global scope. They can be ne
 So let’s expose our add function through a namespace.  
   
 
-```csharp
+```javascript
 // helpers.js
 (function() {
 	WinJS.Namespace.define("MyApp.Functions", {
@@ -80,7 +81,7 @@ Another interesting feature of Namespaces is that they are composed, so if you d
 Suppose we now want to add a subtract method, but we want it to be in a separate file from our add method. A better example, which we are using at [Code52](http://code52.org/), suppose you have two implementations for your data access layer. You want them in the same namespace but in separate physical files.  
   
 
-```csharp
+```javascript
 // add.js
 (function() {
 	WinJS.Namespace.define("MyApp.Functions", {
@@ -114,7 +115,7 @@ One last note on namespaces. Remember that the context in which you are defining
 To demonstrate this I will keep a running total of all the sum operations, and add a new function to return that total.  
   
 
-```csharp
+```javascript
 // helpers.js
 (function() {
 	var runningTotal = 0;
