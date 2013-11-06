@@ -234,7 +234,7 @@ Then finally we have the View (`Views/Homepage.html`), which is essentially a st
 <body>
     <h1>Nancy Message Demo</h1>
     <p>
-        A demo page for using Nancy + MongoDb + AppHarbor. See <a href="http://csainty.blogspot.com">here</a>
+        A demo page for using Nancy + MongoDb + AppHarbor. See <a href="http://blog.csainty.com">here</a>
     </p>
     <h2>Messages</h2>
     <ul data-bind="foreach: messages">
