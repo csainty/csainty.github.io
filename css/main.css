@@ -157,6 +157,9 @@ h4 a, h5 a, h6 a {
     color: #50585D;
 }
 
+.read-more-link {
+    font-size: smaller;
+}
 
 p, ul, ol {
     margin: 1.6em 0;

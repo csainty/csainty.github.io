@@ -4,31 +4,29 @@ layout: post
 permalink: /2011/11/tutorial-nancy-mongodb-appharbor.html
 tags: nancy asp.net appharbor C# mongodb knockout dotnet
 id: tag:blogger.com,1999:blog-25631453.post-7690078217695311605
+tidied: true
 ---
-
 
 Time for a quick tutorial on how to get a site up and running on [AppHarbor](https://appharbor.com/) using [Nancy](http://www.nancyfx.org/) and [MongoDb](http://www.mongodb.org/).  
   
 First up you are going to need Git installed. On windows my preference for Git is this kit [http://code.google.com/p/gitextensions/](http://code.google.com/p/gitextensions/). It installs everything you need and gives you a nice GUI to work with plus some basic integrations with Visual Studio.  
   
-(Just in case you have missed the craze that is Git, it is a version control system. A very good one. Go learn about it)  
+_(Just in case you have missed the craze that is Git, it is a version control system. A very good one. Go learn about it)_ 
   
 Next you will need [NuGet](http://nuget.org/).  
   
-(In case you missed nuget, it is a package manager for .NET development. Use it to maintain third party libraries you are using in your applications)  
+_(In case you missed nuget, it is a package manager for .NET development. Use it to maintain third party libraries you are using in your applications)_  
   
 Finally, you are also going to need an account at [AppHarbor](https://appharbor.com/user/new).  
   
-(In case you have missed AppHarbor, it is a new form of hosting for asp.net web applications. You push your code to their server, they build it, run your unit tests and then deploy it. From there you can scale the application and install add-ons etc.)  
+_(In case you have missed AppHarbor, it is a new form of hosting for asp.net web applications. You push your code to their server, they build it, run your unit tests and then deploy it. From there you can scale the application and install add-ons etc.)_
   
 The end result of this tutorial is the app hosted on AppHarbor here [http://nancymongo.apphb.com/](http://nancymongo.apphb.com/) which is a basic message posting app that I have used before when playing around with Nancy. It super simple and boils down to two api methods with a page to interact with them.  
   
 All the code is on GitHub here [https://github.com/csainty/NancyMongo](https://github.com/csainty/NancyMongo)  
   
-### Setting up AppHarbor
-  
-### 
-  
+#### Setting up AppHarbor
+
 We are going to start with AppHarbor, once you have an account set up, go to the Applications page and create a new application.  
   
 ![CreateAppHbApp](/images/1382874053642.png)  
@@ -41,15 +39,15 @@ Down the bottom of this page is an Add-ons section. Hit “View Available Add-on
   
 As you can see there are quite a few, since we are using Mongo here, Click through to MongoHQ.  
   
-MongoHQ are a hosted MongoDb provider, they are partnered up with AppHarbor so that it is a single click install to create an instance on their servers for your AppHarbor site. Even better, the build process on AppHarbor will perform a replacement on your web.config file to insert the correct URL to the instance. So you can have a development/testing server configured locally and when you push to the server it will switch to the production server for you!  
+MongoHQ are a hosted MongoDb provider, they are partnered up with AppHarbor so that it is a single click install to create an instance on their servers for your AppHarbor site. Even better, the build process on AppHarbor will perform a replacement on your `web.config` file to insert the correct URL to the instance. So you can have a development/testing server configured locally and when you push to the server it will switch to the production server for you!  
   
 Add the free sandbox MongoDb instance to your site.  
   
 ![MongoHQ](/images/1382874053645.png)  
   
-You should be sent back to the application page with a message saying your instance is configured. Now if you click through to the “Variables” tab you can see a MONGOHQ_URL variable. Any values set up in this tab will be added/replaced in the AppSettings section of your web.config file at build time.  
+You should be sent back to the application page with a message saying your instance is configured. Now if you click through to the “Variables” tab you can see a `MONGOHQ_URL` variable. Any values set up in this tab will be added/replaced in the AppSettings section of your `web.config` file at build time.  
   
-We are going to break with convention here a little. Normally you do not need to know the value of that key since it is the production server. But to save us setting up test/dev MongoDb instance on our own machines, we are going to point at it for development as well. There is some CSS on the page that truncates the value, but if you view source and search for mongodb:// you can get the full value.  
+We are going to break with convention here a little. Normally you do not need to know the value of that key since it is the production server. But to save us setting up test/dev MongoDb instance on our own machines, we are going to point at it for development as well. There is some CSS on the page that truncates the value, but if you view source and search for `mongodb://` you can get the full value.  
   
 ![MongoURL](/images/1382874053646.png)  
   
@@ -57,35 +55,41 @@ It includes your username, password and database name. So don’t go sharing thi
   
 Keep that value at hand, it’s time to jump into Visual Studio.  
   
-### Building our App
+#### Building our App
   
 Create a new ASP.NET Empty Web Application.  
   
 ![EmptyWebApp](/images/1382874053648.png)  
   
-Fire up NuGet (either the GUI from right clicking the references folder in your project and choosing Manage NuGet Packages, or from the command line)  
+Fire up NuGet, either the GUI from right clicking the references folder in your project and choosing Manage NuGet Packages, or from the command line.
   
-Install the following packages by searching for them and hitting the install button  
-     Nancy     Nancy.Hosting.AspNet     KnockoutJS     Official MongoDb C# driver     NuGetPowerTools    
+Install the following packages by searching for them and hitting the install button
+
+* Nancy
+* Nancy.Hosting.AspNet
+* KnockoutJS
+* Official MongoDb C# driver
+* NuGetPowerTools    
+
 ![NuGet](/images/1382874053649.png)  
   
 One more thing with NuGet, we are going to need to jump into the NuGet “Package Manager Console” from the Tools menu | Library Package Manager sub-menu  
   
 ![Console](/images/1382874053650.png)  
   
-Once the console loads type “enable-packagerestore” and hit enter.  
+Once the console loads type `enable-packagerestore` and hit enter.  
   
 This command was added by the nugetpowertools and adds a build step into your project file that ensures all the nuget dependencies have been downloaded. This is very useful since you are not going to be uploading a compiled application to AppHarbor, you are sending up your source which is built on their servers. So you have to give them the dependencies some way, and the alternative is to commit them all to your git repository. Doing this bloats your repository for no good reason. Trust me, this step is worth doing on every project you use NuGet for.  
   
 Once that completes you can close the package manager console.  
   
-Now open you your web.config file and add an AppSetting of MONGOHQ_URL with the value you grabbed from AppHarbor.  
+Now open you your `web.config` file and add an AppSetting of `MONGOHQ_URL` with the value you grabbed from AppHarbor.  
   
 ![webconfig](/images/1382874053651.png)  
   
 Just to stress this point one more time, normally you are going to have a dev/test server. You would be putting it’s URL in here and letting AppHarbor override it with the production URL when you publish.  
   
-Now on to some code, to start with add a Models folder with a single Message.cs class.  
+Now on to some code, to start with add a Models folder with a single `Message.cs` class.  
   
 
 ```csharp
@@ -105,9 +109,9 @@ namespace NancyMongo.Models
 ```  
   
   
-Note the Attribute on the Id field, this tells the MongoDb driver which field is the Id and how to generate an Id for that field. There are many different options for Id generation, we are using one of the string methods.  
+Note the Attribute on the `Id` field, this tells the MongoDb driver which field is the id and how to generate an id for that field. There are many different options for id generation, we are using one of the string methods.  
   
-Now we are going to need a bootstrapper (CustomBootstrapper.cs) to configure Nancy and our Dependency Injection.  
+Now we are going to need a bootstrapper `CustomBootstrapper.cs` to configure Nancy and our Dependency Injection.  
   
 
 ```csharp
@@ -147,13 +151,13 @@ namespace NancyMongo
   
 Bootstrappers are the starting point for all Nancy sites that do a bit more than Hello World.  
   
-First we are adding the Scripts folder as a static content folder. This tells Nancy to automatically handle requests to the Scripts folder as static file requests. The Content folder is added by default, though we don’t use it in this project. There are a number of overrides on the builder we are using here to customise how the mapping works.  
+First we are adding the `Scripts` folder as a static content folder. This tells Nancy to automatically handle requests to the `Scripts` folder as static file requests. The `Content` folder is added by default, though we don’t use it in this project. There are a number of overrides on the builder we are using here to customise how the mapping works.  
   
-Next we hook up Dependency injection on the various MongoDb driver classes we might want to get a handle on. This localises all our creation and init code so that our Modules can just request what they need and let the injection container provide it.  
+Next we hook up dependency injection on the various MongoDb driver classes we might want to get a handle on. This localises all our creation and init code so that our Modules can just request what they need and let the injection container provide it.  
   
-Basically we are creating our Server instance using the connection string from web.config then pulling the database name off this connection string to grab out Database instance, we then create a Collection for our Messages to be stored in. The C# MongoDb driver actually manages it’s own object life time, so even if we called MongoServer.Create() multiple times we would always get back the same instance, but I still like to use Dependency Injection rather than have to create these time and time again in my module code.  
+Basically we are creating our `Server` instance using the connection string from `web.config` then pulling the database name off this connection string to grab our `Database` instance, we then create a `Collection` for our `Messages` to be stored in. The C# MongoDb driver actually manages it’s own object life time, so even if we called `MongoServer.Create()` multiple times we would always get back the same instance, but I still like to use Dependency Injection rather than have to create these time and time again in my module code.  
   
-So let’s look at the two Modules (PageModule.cs and ApiModule.cs)  
+So let’s look at the two Modules (`PageModule.cs` and `ApiModule.cs`)  
   
 
 ```csharp
@@ -215,12 +219,12 @@ namespace NancyMongo
 ```  
   
   
-A Module in Nancy is where we wire up how the web server is going to response to requests. I cover it off in [this](http://csainty.blogspot.com/2011/10/learn-something-new-nancy.html) blog post as well. We inject the Messages collection straight into our Api module without having to worry about how it is being created, or what it’s lifetime is.  
+A Module in Nancy is where we wire up how the web server is going to response to requests. I cover it off in [this]({% post_url 2011-10-10-learn-something-new-nancy %}) blog post as well. We inject the Messages collection straight into our Api module without having to worry about how it is being created, or what it’s lifetime is.  
   
-Then finally we have the View (Views/Homepage.html), which is essentially a static HTML page and is processed by the built in view engine.  
+Then finally we have the View (`Views/Homepage.html`), which is essentially a static HTML page and is processed by the built in view engine.  
   
 
-```csharp
+```markup
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -291,11 +295,11 @@ Then finally we have the View (Views/Homepage.html), which is essentially a stat
   
 So now we have all the code files in place, run it up and make sure it all works, when it does, it is time to deploy.  
   
-### Creating our Git Repo
+#### Creating our Git Repo
   
 Now we have a working project, lets put it into Git and send it up to AppHarbor.  
   
-Fir up the GitExtensions GUI and select “Create new repository”  
+Fire up the GitExtensions GUI and select “Create new repository”  
   
 ![New Repository](/images/1382874053653.png)  
   
@@ -307,11 +311,11 @@ Now you need to edit your .gitignore folder to tell it what files to include and
   
 ![GitIgnore](/images/1382874053656.png)  
   
-Start by hitting the “Add default” button, remove the *.exe line as we want to include the nuget.exe which was added by NuGetPowerTools. Then add a line “[P]ackages\” at the bottom to filter out the packages folder. This folder contains all the NuGet packages which will be downloaded on the AppHarbor build server by NuGetPowerTools.  
+Start by hitting the “Add default” button, remove the `*.exe` line as we want to include the `nuget.exe` which was added by NuGetPowerTools. Then add a line `[Pp]ackages\` at the bottom to filter out the packages folder. This folder contains all the NuGet packages which will be downloaded on the AppHarbor build server by NuGetPowerTools.  
   
 Now you should be able to Commit the changes from the Commands menu.  
   
-### Deploying to AppHarbor
+#### Deploying to AppHarbor
   
 Still in GitExtensions, from the Remotes menu choose “manage remote repositories”, click the new button, give it a name and paste in the Git url you were provided when creating your AppHarbor application. Remotes are simply other copies of a repository that you can push code to and pull code from.  
   
@@ -323,7 +327,7 @@ One thing to watch out for, with OpenSSH selected as your SSH client (chosen whe
   
 If I get a chance I hope to look into the GitExtensions code and improve this if at all possible.  
   
-### It Lives!
+#### It Lives!
   
 Now if you go back to your application page in AppHarbor and refresh you should be presented with something like this.  
   
