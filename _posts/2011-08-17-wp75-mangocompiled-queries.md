@@ -4,6 +4,7 @@ layout: post
 permalink: /2011/08/wp75-mangocompiled-queries.html
 tags: linqtosql gReadie wp7dev wp7 C# dotnet
 id: tag:blogger.com,1999:blog-25631453.post-3157555770616581054
+tidied: true
 ---
 
 
@@ -13,9 +14,9 @@ The original codebase for gReadie was really quite cluttered, and I wasn’t goi
   
 With most of the rewrite behind me now, It is time to start putting together a few blog posts discussing the new features I am using and lessons learnt along the way.  
   
-One of the features I was most looking forward to in the 7.5 release of the phone is developer access to the underling SQL CE database. Access is provided through LINQ-to-SQL, which I have covered in [detail](http://csainty.blogspot.com/search/label/linqtosql) previously. What I want to focus on today is improving the performance of your queries by compiling them and caching that result.  
+One of the features I was most looking forward to in the 7.5 release of the phone is developer access to the underling SQL CE database. Access is provided through LINQ-to-SQL, which I have covered in [detail](http://blog.csainty.com/tag/linqtosql.html) previously. What I want to focus on today is improving the performance of your queries by compiling them and caching that result.  
   
-This post assumes you already have your DataContext created and working queries, if you do not, then please start by reading some of the Microsoft tutorials.  
+This post assumes you already have your `DataContext` created and working queries, if you do not, then please start by reading some of the Microsoft tutorials.  
   
 When you make a query with LINQ-to-SQL, the LINQ provider has to examine your LINQ expression and turn it into SQL, this process is done on every query. However, if you have a query you know you are going to call multiple times then you can run this process once, saving a parameterized result and avoid having to do this step on subsequent calls.  
   
@@ -34,15 +35,14 @@ public class Repository {
 	}
 }
 
-
 ```  
   
   
-The first step is to define a delegate that at the very least takes an instance of your DataContext as a parameter (though you can define more) and also defines the result type.  
+The first step is to define a delegate that at the very least takes an instance of your `DataContext` as a parameter (though you can define more) and also defines the result type.  
   
-You then use the CompiledQuery.Compile() method to provide the body for this delegate. The compilation does not happen until your first call, so don’t worry about setting up a lot of these.  
+You then use the `CompiledQuery.Compile()` method to provide the body for this delegate. The compilation does not happen until your first call, so don’t worry about setting up a lot of these.  
   
-One thing to note is that you can only re-run a compiled query against the same DataContext instance it was compiled against. So you need to ensure they have the same lifespan, and that you are not needlessly recreating your DataContext if you want to run multiple queries.  
+One thing to note is that you can only re-run a compiled query against the same `DataContext` instance it was compiled against. So you need to ensure they have the same lifespan, and that you are not needlessly recreating your `DataContext` if you want to run multiple queries.  
   
 From my experience with Background Agents this method also uses less memory than rerunning the compilation each call.  
   
@@ -60,7 +60,6 @@ public class Repository {
 		return 	Query_FoldersContainingPost(_Ctx, postId);
 	}
 }
-
 ```  
   
   
