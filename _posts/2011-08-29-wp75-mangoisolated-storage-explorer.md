@@ -3,7 +3,7 @@ title: WP7.5 Mango–Isolated Storage Explorer
 layout: post
 permalink: /2011/08/wp75-mangoisolated-storage-explorer.html
 tags: wp7dev wp7 dotnet
-id: tag:blogger.com,1999:blog-25631453.post-5659380481264973808
+guid: tag:blogger.com,1999:blog-25631453.post-5659380481264973808
 tidied: true
 ---
 

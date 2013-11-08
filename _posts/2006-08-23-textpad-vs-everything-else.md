@@ -3,7 +3,7 @@ title: Textpad vs Everything Else
 layout: post
 permalink: /2006/08/textpad-vs-everything-else.html
 tags: personal
-id: tag:blogger.com,1999:blog-25631453.post-115629562980154973
+guid: tag:blogger.com,1999:blog-25631453.post-115629562980154973
 tidied: true
 ---
 

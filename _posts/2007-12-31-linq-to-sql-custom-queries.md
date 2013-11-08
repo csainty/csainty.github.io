@@ -3,7 +3,7 @@ title: LINQ to SQL&#58; Custom Queries
 layout: post
 permalink: /2007/12/linq-to-sql-custom-queries.html
 tags: linqtosql dotnet
-id: tag:blogger.com,1999:blog-25631453.post-2872244781585131033
+guid: tag:blogger.com,1999:blog-25631453.post-2872244781585131033
 tidied: true
 ---
 

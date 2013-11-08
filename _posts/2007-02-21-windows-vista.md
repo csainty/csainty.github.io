@@ -3,7 +3,7 @@ title: Windows Vista
 layout: post
 permalink: /2007/02/windows-vista.html
 tags: vista
-id: tag:blogger.com,1999:blog-25631453.post-8784986867030950107
+guid: tag:blogger.com,1999:blog-25631453.post-8784986867030950107
 ---
 
 I am now running Windows Vista Business on a shiny new PC (Office 2007 too!).

@@ -3,7 +3,7 @@ title: UTF-8 Encoding
 layout: post
 permalink: /2006/08/utf-8-encoding.html
 tags: vfp
-id: tag:blogger.com,1999:blog-25631453.post-115553717502685117
+guid: tag:blogger.com,1999:blog-25631453.post-115553717502685117
 ---
 
 I was recently working on creating RSS feeds dynamically from a product database, and kept finding they would not validate due to invalid characters being used for UTF-8 encoding.

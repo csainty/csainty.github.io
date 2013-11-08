@@ -3,7 +3,7 @@ title: Remote debug your iisnode hosted node.js app
 layout: post
 permalink: /2012/03/remote-debug-your-iisnode-hosted-nodejs.html
 tags: javascript node iisnode appharbor
-id: tag:blogger.com,1999:blog-25631453.post-5855587809037296938
+guid: tag:blogger.com,1999:blog-25631453.post-5855587809037296938
 tidied: true
 ---
 

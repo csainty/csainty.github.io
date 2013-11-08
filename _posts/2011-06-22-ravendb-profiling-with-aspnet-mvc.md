@@ -3,7 +3,7 @@ title: RavenDB Profiling with ASP.NET MVC
 layout: post
 permalink: /2011/06/ravendb-profiling-with-aspnet-mvc.html
 tags: ravendb mvc asp.net C# dotnet
-id: tag:blogger.com,1999:blog-25631453.post-8023995134833538387
+guid: tag:blogger.com,1999:blog-25631453.post-8023995134833538387
 tidied: true
 ---
 

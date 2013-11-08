@@ -3,7 +3,7 @@ title: User Group Round Up
 layout: post
 permalink: /2006/11/user-group-round-up.html
 tags: svfpug
-id: tag:blogger.com,1999:blog-25631453.post-116486054297769240
+guid: tag:blogger.com,1999:blog-25631453.post-116486054297769240
 ---
 
 We had a good meeting in Sydney last night, a good turn out considering both Craig and Andrew were absent (a first?)

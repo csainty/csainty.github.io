@@ -3,7 +3,7 @@ title: Moq&#58; Mocking GetEnumerator()
 layout: post
 permalink: /2009/02/moq-mocking-getenumerator.html
 tags: mocks unittest C# dotnet
-id: tag:blogger.com,1999:blog-25631453.post-224811709119718087
+guid: tag:blogger.com,1999:blog-25631453.post-224811709119718087
 tidied: true
 ---
 

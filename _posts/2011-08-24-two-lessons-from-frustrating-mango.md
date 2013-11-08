@@ -3,7 +3,7 @@ title: Two lessons from a frustrating Mango submission
 layout: post
 permalink: /2011/08/two-lessons-from-frustrating-mango.html
 tags: gReadie wp7dev wp7 C# dotnet
-id: tag:blogger.com,1999:blog-25631453.post-6040999243873799172
+guid: tag:blogger.com,1999:blog-25631453.post-6040999243873799172
 tidied: true
 ---
 

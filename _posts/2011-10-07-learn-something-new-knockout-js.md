@@ -3,7 +3,7 @@ title: Learn Something New&#58; Knockout JS
 layout: post
 permalink: /2011/10/learn-something-new-knockout-js.html
 tags: javascript mvc asp.net learn-something-new knockout
-id: tag:blogger.com,1999:blog-25631453.post-1473986324507487925
+guid: tag:blogger.com,1999:blog-25631453.post-1473986324507487925
 tidied: true
 ---
 

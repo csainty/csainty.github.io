@@ -3,7 +3,7 @@ title: Extension Methods
 layout: post
 permalink: /2008/01/extension-methods.html
 tags: C# dotnet
-id: tag:blogger.com,1999:blog-25631453.post-1568166695711012628
+guid: tag:blogger.com,1999:blog-25631453.post-1568166695711012628
 ---
 
 

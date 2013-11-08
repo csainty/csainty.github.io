@@ -3,7 +3,7 @@ title: Phonetics with Double Metaphone and VFP
 layout: post
 permalink: /2006/04/phonetics-with-double-metaphone-and.html
 tags: vfp
-id: tag:blogger.com,1999:blog-25631453.post-114558676161860596
+guid: tag:blogger.com,1999:blog-25631453.post-114558676161860596
 ---
 
 

@@ -3,7 +3,7 @@ title: Using ServiceStack.Text for JSON processing on Windows Phone 7
 layout: post
 permalink: /2011/10/using-servicestacktext-for-json.html
 tags: gReadie wp7dev wp7 C# dotnet
-id: tag:blogger.com,1999:blog-25631453.post-8735276358524795835
+guid: tag:blogger.com,1999:blog-25631453.post-8735276358524795835
 tidied: true
 ---
 

@@ -3,7 +3,7 @@ title: LINQ to SQL&#58; SQLMetal.exe
 layout: post
 permalink: /2008/02/linq-to-sql-sqlmetalexe.html
 tags: linqtosql dotnet
-id: tag:blogger.com,1999:blog-25631453.post-5240869778132215113
+guid: tag:blogger.com,1999:blog-25631453.post-5240869778132215113
 ---
 
 I have recently switched over to using SQLMetal to generate my LINQ-to-SQL DBML and Context class. There are two things I like about it, one is that it is far faster. I just click a script on my desktop rather than open up the designer and recreate each table that has changed. I also prefer some of its naming conventions, it deals with multiple relationships to a  single table better.

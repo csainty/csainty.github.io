@@ -3,7 +3,7 @@ title: Wrapping synchronous code in a Task returning method
 layout: post
 permalink: /2013/02/wrapping-synchronous-code-in-task.html
 tags: C# dotnet
-id: tag:blogger.com,1999:blog-25631453.post-6213335283032802708
+guid: tag:blogger.com,1999:blog-25631453.post-6213335283032802708
 tidied: true
 ---
 

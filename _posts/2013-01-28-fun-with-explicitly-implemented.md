@@ -3,7 +3,7 @@ title: Fun with Explicitly Implemented Interfaces
 layout: post
 permalink: /2013/01/fun-with-explicitly-implemented.html
 tags: unittest C# dotnet
-id: tag:blogger.com,1999:blog-25631453.post-515965692519899508
+guid: tag:blogger.com,1999:blog-25631453.post-515965692519899508
 tidied: true
 ---
 

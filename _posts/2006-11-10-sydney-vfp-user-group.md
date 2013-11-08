@@ -3,7 +3,7 @@ title: Sydney VFP User Group
 layout: post
 permalink: /2006/11/sydney-vfp-user-group.html
 tags: svfpug personal
-id: tag:blogger.com,1999:blog-25631453.post-116311481772891655
+guid: tag:blogger.com,1999:blog-25631453.post-116311481772891655
 ---
 
 I have been invited to speak at November's User Group in Sydney ([link](http://www.svfpug.com.au/)).

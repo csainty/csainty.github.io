@@ -3,7 +3,7 @@ title: WinJS - Namespaces
 layout: post
 permalink: /2012/03/winjs-namespaces.html
 tags: javascript win8 winjs winrt code52
-id: tag:blogger.com,1999:blog-25631453.post-2332020649945843485
+guid: tag:blogger.com,1999:blog-25631453.post-2332020649945843485
 tidied: true
 ---
 

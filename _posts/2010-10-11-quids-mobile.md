@@ -3,7 +3,8 @@ title: Quids Mobile
 layout: post
 permalink: /2010/10/quids-mobile.html
 tags: wp7
-id: tag:blogger.com,1999:blog-25631453.post-318836494810033488
+guid: tag:blogger.com,1999:blog-25631453.post-318836494810033488
+tidied: true
 ---
 
 

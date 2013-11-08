@@ -3,9 +3,9 @@ title: ASP.NET MVC Application Layout
 layout: post
 permalink: /2008/03/aspnet-mvc-application-layout.html
 tags: mvc asp.net dotnet
-id: tag:blogger.com,1999:blog-25631453.post-879390250247104179
+guid: tag:blogger.com,1999:blog-25631453.post-879390250247104179
+tidied: true
 ---
-
 
 I am slowly evolving my general layout for ASP.NET MVC applications as I come more and more to grips with the framework and they ways I am most comfortable using it.  
   

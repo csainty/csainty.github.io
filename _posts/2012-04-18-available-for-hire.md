@@ -3,7 +3,7 @@ title: Available for hire!
 layout: post
 permalink: /2012/04/available-for-hire.html
 tags: personal
-id: tag:blogger.com,1999:blog-25631453.post-1299723451731520347
+guid: tag:blogger.com,1999:blog-25631453.post-1299723451731520347
 tidied: true
 ---
 

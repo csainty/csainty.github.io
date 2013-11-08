@@ -3,7 +3,7 @@ title: Creating desktop apps with NodeJS
 layout: post
 permalink: /2012/01/creating-desktop-apps-with-nodejs.html
 tags: javascript node node-webkit knockout
-id: tag:blogger.com,1999:blog-25631453.post-7724822284027989051
+guid: tag:blogger.com,1999:blog-25631453.post-7724822284027989051
 tidied: true
 ---
 

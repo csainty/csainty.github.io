@@ -3,7 +3,7 @@ title: LINQ to SQL&#58; GroupBy()
 layout: post
 permalink: /2008/01/linq-to-sql-groupby.html
 tags: linqtosql dotnet
-id: tag:blogger.com,1999:blog-25631453.post-1482896506005821729
+guid: tag:blogger.com,1999:blog-25631453.post-1482896506005821729
 tidied: true
 ---
 

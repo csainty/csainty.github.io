@@ -3,7 +3,7 @@ title: Further thoughts on NodeJS desktop applications
 layout: post
 permalink: /2012/01/further-thoughts-on-nodejs-desktop.html
 tags: javascript node node-webkit
-id: tag:blogger.com,1999:blog-25631453.post-5814689327629067619
+guid: tag:blogger.com,1999:blog-25631453.post-5814689327629067619
 tidied: true
 ---
 

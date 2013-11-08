@@ -3,7 +3,7 @@ title: STREXTRACT()
 layout: post
 permalink: /2006/05/strextract.html
 tags: vfp
-id: tag:blogger.com,1999:blog-25631453.post-114663484317049464
+guid: tag:blogger.com,1999:blog-25631453.post-114663484317049464
 ---
 
 

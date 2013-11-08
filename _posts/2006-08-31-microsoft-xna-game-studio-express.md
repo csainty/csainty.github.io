@@ -3,7 +3,7 @@ title: Microsoft XNA Game Studio Express
 layout: post
 permalink: /2006/08/microsoft-xna-game-studio-express.html
 tags: dotnet
-id: tag:blogger.com,1999:blog-25631453.post-115697922437685073
+guid: tag:blogger.com,1999:blog-25631453.post-115697922437685073
 ---
 
 Microsoft has just released a beta of their new Game Studio Express product.

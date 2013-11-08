@@ -3,7 +3,7 @@ title: LINQ to SQL&#58; Lambda Expressions
 layout: post
 permalink: /2007/12/linq-to-sql-lambda-expressions.html
 tags: linqtosql dotnet
-id: tag:blogger.com,1999:blog-25631453.post-9065696726743482705
+guid: tag:blogger.com,1999:blog-25631453.post-9065696726743482705
 ---
 
 At first glance, Lambda Expressions are bound to confuse most people. Myself included. However, a little digging and experimenting will show they are a simple enough concept. I will cover them now to try remove any confusion in later code snippets.

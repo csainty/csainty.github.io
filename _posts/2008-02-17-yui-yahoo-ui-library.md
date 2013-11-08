@@ -3,7 +3,7 @@ title: YUI - Yahoo! UI Library
 layout: post
 permalink: /2008/02/yui-yahoo-ui-library.html
 tags: YUI design
-id: tag:blogger.com,1999:blog-25631453.post-2978204529359187613
+guid: tag:blogger.com,1999:blog-25631453.post-2978204529359187613
 ---
 
 

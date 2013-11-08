@@ -3,7 +3,7 @@ title: An Introduction
 layout: post
 permalink: /2006/04/introduction.html
 tags: personal
-id: tag:blogger.com,1999:blog-25631453.post-114445361705003211
+guid: tag:blogger.com,1999:blog-25631453.post-114445361705003211
 tidied: true
 ---
 

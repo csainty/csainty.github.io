@@ -3,7 +3,7 @@ title: LINQ to SQL&#58; Insert/Update/Delete
 layout: post
 permalink: /2008/01/linq-to-sql-insertupdatedelete.html
 tags: linqtosql dotnet
-id: tag:blogger.com,1999:blog-25631453.post-1879691198447788410
+guid: tag:blogger.com,1999:blog-25631453.post-1879691198447788410
 tidied: true
 ---
 

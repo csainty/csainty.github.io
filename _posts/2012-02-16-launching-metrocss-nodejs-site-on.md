@@ -3,7 +3,7 @@ title: Launching a Metro.css + Node.js site on AppHarbor
 layout: post
 permalink: /2012/02/launching-metrocss-nodejs-site-on.html
 tags: open-source node appharbor code52
-id: tag:blogger.com,1999:blog-25631453.post-4685469724362351959
+guid: tag:blogger.com,1999:blog-25631453.post-4685469724362351959
 tidied: true
 ---
 

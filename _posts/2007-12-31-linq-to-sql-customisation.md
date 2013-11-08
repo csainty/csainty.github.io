@@ -3,7 +3,7 @@ title: LINQ to SQL&#58; Customisation
 layout: post
 permalink: /2007/12/linq-to-sql-customisation.html
 tags: linqtosql dotnet
-id: tag:blogger.com,1999:blog-25631453.post-5079852828439295144
+guid: tag:blogger.com,1999:blog-25631453.post-5079852828439295144
 ---
 
 Before we proceed, this is a good time to see another feature of LINQ-to-SQL which allows you to change the property names of the generated classes to no longer match the underlying field names, this could be useful if you have a strange naming convention for your field names, or in our case with AdventureWorks we have instances like on the SalesOrderHeader class where it has two links to the Address table (BillTo and ShipTo) but these relationships get modelled Address and Address1.    This is obviously undesirable as there is no clear indication which one links to Address based on ShipToAddressID and which on BillToAddressID.     Luckily we have a solution close at hand.

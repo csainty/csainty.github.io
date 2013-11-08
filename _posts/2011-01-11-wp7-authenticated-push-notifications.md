@@ -3,7 +3,7 @@ title: WP7 - Authenticated Push Notifications
 layout: post
 permalink: /2011/01/wp7-authenticated-push-notifications.html
 tags: gReadie wp7dev wp7 C# dotnet
-id: tag:blogger.com,1999:blog-25631453.post-3005825471432915718
+guid: tag:blogger.com,1999:blog-25631453.post-3005825471432915718
 tidied: true
 ---
 

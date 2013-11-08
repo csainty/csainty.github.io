@@ -3,7 +3,7 @@ title: LINQ to SQL&#58; Prep Work
 layout: post
 permalink: /2007/12/linq-to-sql-prep-work.html
 tags: dotnet
-id: tag:blogger.com,1999:blog-25631453.post-2403393474308477086
+guid: tag:blogger.com,1999:blog-25631453.post-2403393474308477086
 ---
 
 Time for a series of technical articles I think.    There are a number of great articles and blogs online for LINQ-to-SQL already. A great place to start is Scott Guthrie’s [blog](http://weblogs.asp.net/scottgu/archive/2007/05/19/using-linq-to-sql-part-1.aspx)     However, I am going to wade into the discussion with my own thoughts.

@@ -3,7 +3,7 @@ title: Windows Phone 7–Images
 layout: post
 permalink: /2010/10/windows-phone-7images.html
 tags: wp7dev wp7 C#
-id: tag:blogger.com,1999:blog-25631453.post-5945364718702986493
+guid: tag:blogger.com,1999:blog-25631453.post-5945364718702986493
 tidied: true
 ---
 

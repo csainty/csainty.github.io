@@ -3,7 +3,7 @@ title: Windows Phone 7 Marketplace–Early Access
 layout: post
 permalink: /2010/10/windows-phone-7-marketplaceearly-access.html
 tags: gReadie wp7
-id: tag:blogger.com,1999:blog-25631453.post-7741490711876713057
+guid: tag:blogger.com,1999:blog-25631453.post-7741490711876713057
 tidied: true
 ---
 

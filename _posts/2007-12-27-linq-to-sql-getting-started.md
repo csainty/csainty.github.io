@@ -3,7 +3,7 @@ title: LINQ to SQL&#58; Getting Started
 layout: post
 permalink: /2007/12/linq-to-sql-getting-started.html
 tags: linqtosql dotnet
-id: tag:blogger.com,1999:blog-25631453.post-2825128679565587450
+guid: tag:blogger.com,1999:blog-25631453.post-2825128679565587450
 ---
 
 I am going to start by showing a few new language features that are important to LINQ (and hence LINQ-to-SQL) that you may not have come across yet if you are not already playing around with this stuff.

@@ -3,7 +3,7 @@ title: Learn Something New&#58; Nancy
 layout: post
 permalink: /2011/10/learn-something-new-nancy.html
 tags: javascript nancy asp.net learn-something-new C# knockout dotnet
-id: tag:blogger.com,1999:blog-25631453.post-2667713463273702490
+guid: tag:blogger.com,1999:blog-25631453.post-2667713463273702490
 tidied: true
 ---
 

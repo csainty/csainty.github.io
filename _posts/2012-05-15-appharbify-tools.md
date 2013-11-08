@@ -3,12 +3,12 @@ title: AppHarbify Tools
 layout: post
 permalink: /2012/05/appharbify-tools.html
 tags: appharbify appharbor C# ef
-id: tag:blogger.com,1999:blog-25631453.post-3076838595044920362
+guid: tag:blogger.com,1999:blog-25631453.post-3076838595044920362
 tidied: true
 ---
 
 
-An important goal of [AppHarbify](file:///Users/csainty/Code/Blogger2Markdown/appharbify.com) is to make as much open source software as possible be AppHarbor-friendly. To speed this process along I will be creating and/or finding many libraries to solve common problems.  
+An important goal of [AppHarbify](http://appharbify.com) is to make as much open source software as possible be AppHarbor-friendly. To speed this process along I will be creating and/or finding many libraries to solve common problems.  
 
 The first problem I have tackled is handling connection strings with Entity Framework. Specifically conventions based Code-First EF.  
 

@@ -3,7 +3,7 @@ title: Scripted Text Generation
 layout: post
 permalink: /2006/04/scripted-text-generation.html
 tags: vfp
-id: tag:blogger.com,1999:blog-25631453.post-114445854422123744
+guid: tag:blogger.com,1999:blog-25631453.post-114445854422123744
 tidied: true
 ---
 

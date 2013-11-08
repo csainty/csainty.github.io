@@ -3,7 +3,7 @@ title: LINQ to SQL&#58; A Step Back
 layout: post
 permalink: /2007/12/linq-to-sql-step-back.html
 tags: linqtosql dotnet
-id: tag:blogger.com,1999:blog-25631453.post-335903624741575742
+guid: tag:blogger.com,1999:blog-25631453.post-335903624741575742
 ---
 
 In this, my third article on LINQ-to-SQL, I am going to be taking a step away from the code and delve into a discussion about what I will think most people will miss when they first approach this new technology.

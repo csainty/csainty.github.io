@@ -54,7 +54,8 @@ module Jekyll
             item.link = "#{site.config['url']}#{post.url}"
             item.description = parser.convert(post.excerpt)
             item.updated = post.date
-            item.id = post.id
+            item.guid.content = post.data['guid']
+            item.guid.isPermaLink = false
           end
         end
       end

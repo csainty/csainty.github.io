@@ -3,7 +3,7 @@ title: WP7.5 Mango–Compiled Queries
 layout: post
 permalink: /2011/08/wp75-mangocompiled-queries.html
 tags: linqtosql gReadie wp7dev wp7 C# dotnet
-id: tag:blogger.com,1999:blog-25631453.post-3157555770616581054
+guid: tag:blogger.com,1999:blog-25631453.post-3157555770616581054
 tidied: true
 ---
 

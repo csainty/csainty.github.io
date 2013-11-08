@@ -3,7 +3,7 @@ title: LINQ to SQL&#58; Aggregate Functions and more
 layout: post
 permalink: /2008/01/linq-to-sql-aggregate-functions-and.html
 tags: linqtosql dotnet
-id: tag:blogger.com,1999:blog-25631453.post-2021649708940189750
+guid: tag:blogger.com,1999:blog-25631453.post-2021649708940189750
 tidied: true
 ---
 
