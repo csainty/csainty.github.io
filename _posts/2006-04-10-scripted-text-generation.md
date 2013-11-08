@@ -4,20 +4,18 @@ layout: post
 permalink: /2006/04/scripted-text-generation.html
 tags: vfp
 id: tag:blogger.com,1999:blog-25631453.post-114445854422123744
+tidied: true
 ---
-
-
 
 The first piece of code I would like to post is one of my favourites, in that geeky kind of way.
 A quick little routine to take a file that mixes static text with foxpro expressions and scripting then turns it into a foxpro procedure.
+
 We use this code to process HTML and XML template files used by our websites into efficient compiled foxpro code.
 I made mention of this code as part of my presentation at [OzFox Lite](http://www.ozfox.com.au/) in March 2006. So here it is!
   
 
 
-```
-
-
+```clike
 ### Code
 
 #define k_NL      chr(13) + chr(10)
@@ -172,18 +170,12 @@ return m.cStr
 
 ```
 
-
-
-
-
 The precise way to call this code will depend on how you intend to use it.
 I have provided the basic calling structure, but a better way to do this is to compile a directory of script files into one single prg which you can add to your SET PROCEDURE line.
 You can also on-the-fly compile these pages off disk as they are called.
   
 
-```
-
-
+```clike
 ### Example Calling Code
 
 local cIn, cOut, cS
@@ -197,17 +189,12 @@ do __test in C:\test.prg with cS
 close databases all
 ```
 
-
-
-
-You can point the 'compiler' at any text based file you like, a very basic example is provided below.
+You can point the "compiler" at any text based file you like, a very basic example is provided below.
 Along with the procedure this would generate.
   
 
 
-```
-
-
+```clike
 ### Example Input
 
 The time is <%= ttoc(datetime()) %>
@@ -222,9 +209,7 @@ The time is <%= ttoc(datetime()) %>
 
 
 
-```
-
-
+```clike
 ### Example Output
 
 function __test
@@ -238,17 +223,15 @@ endscan
 ```
 
 
-
-
 I find this a nice way to separate the 'design' of text content from your code.
 I am sure we have all at one stage experienced the nightmare of trying to maintain complex string building code inside fox itself.
 Not fun.
 
 To try out this code:
 
- Copy and paste the code block into a procedure file
- SET PROCEDURE TO the above file
- Copy and paste the input example into a file called c:\test.htm
- Run the example calling code from the command window
+* Copy and paste the code block into a procedure file
+* SET PROCEDURE TO the above file
+* Copy and paste the input example into a file called c:\test.htm
+* Run the example calling code from the command window
 
   

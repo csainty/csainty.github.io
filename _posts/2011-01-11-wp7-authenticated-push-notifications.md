@@ -4,6 +4,7 @@ layout: post
 permalink: /2011/01/wp7-authenticated-push-notifications.html
 tags: gReadie wp7dev wp7 C# dotnet
 id: tag:blogger.com,1999:blog-25631453.post-3005825471432915718
+tidied: true
 ---
 
 
@@ -29,162 +30,87 @@ This is a very widely talked about problem, and the usually offered solution is 
   
 What is not very well talked about is how to manage this on shared hosting. As helpful as my support guy was, he was not keen on running some random piece of vbs script for me.  
   
-So the real solution is actually to use a new (4.0) setting in the web.config file called "useRequestHeadersForMetadataAddress", if you are not on a host that supports 4.0, find one that does.  
-  ```
-   <behaviors>
-
-      <serviceBehaviors>
-
-          <behavior>
-
-              <useRequestHeadersForMetadataAddress>
-
-                  <defaultPorts>
-
-                      <add port="443" scheme="https" />
-
-                  </defaultPorts>
-
-              </useRequestHeadersForMetadataAddress>
-
-              <serviceMetadata httpGetEnabled="false" httpsGetEnabled="false" />
-
-              <serviceDebug includeExceptionDetailInFaults="false" />
-
-          </behavior>
-
-      </serviceBehaviors>
-
-  </behaviors>
+So the real solution is actually to use a new (4.0) setting in the web.config file called `useRequestHeadersForMetadataAddress`, if you are not on a host that supports 4.0, find one that does.  
+  
+```markup
+ <behaviors>
+    <serviceBehaviors>
+        <behavior>
+            <useRequestHeadersForMetadataAddress>
+                <defaultPorts>
+                    <add port="443" scheme="https" />
+                </defaultPorts>
+            </useRequestHeadersForMetadataAddress>
+            <serviceMetadata httpGetEnabled="false" httpsGetEnabled="false" />
+            <serviceDebug includeExceptionDetailInFaults="false" />
+        </behavior>
+    </serviceBehaviors>
+</behaviors>
 ```
-
-
-
 
 You also need to turn on Transport security for your binding. Though this is standard WCF, nothing special here.  
 
 
-```
-
+```markup
   <bindings>
-
       <basicHttpBinding>
-
           <binding>
-
               <security mode="Transport" />
-
           </binding>
-
       </basicHttpBinding>
-
   </bindings>
 ```
-
-
-
 
 On the phone, if you grab the metadata from your secure service, then it should point everything correctly, but if you need to do it by hand, the service configuration file will be along these lines.  
 
 
-```
-
+```markup
   <system.serviceModel>
-
       <bindings>
-
           <basicHttpBinding>
-
               <binding 
-
                       name="BasicHttpBinding_Service"
-
                       maxBufferSize="2147483647"
-
                       maxReceivedMessageSize="2147483647">
-
                   <security mode="Transport" />
-
               </binding>
-
           </basicHttpBinding>
-
       </bindings>
-
       <client>
-
           <endpoint address="https://[yourservicedomain]/[yourservicename].svc"
-
                               binding="basicHttpBinding" 
-
                               bindingConfiguration="BasicHttpBinding_Service"
-
                               contract="[ContractName]" 
-
                               name="BasicHttpBinding_Service" />
-
       </client>
-
   </system.serviceModel>
 ```
 
-
-
-
-
-
 Note the Transport security on line 8 and the https address on line 13.  
-
-
 
 #### Problem #2 - (403) Forbidden
 
-
-
 The next problem you will encounter, is that when you actually POST your notification to the Microsoft servers you will get a (403) Forbidden response back.  
-
-
 
 I could not find a single piece of Microsoft documentation on this, and a single obscure reference on a forum finally pointed me in the right direction.  
 
-
-
 When you make your POST, you actually need to attach the certificate to it. Microsoft will then match this against the one you uploaded to them to ensure you are who you say you are.  
 
+You do this using the `ClientCertificates` collection on your HTTP Request.  
 
 
-You do this using the ClientCertificates collection on your HTTP Request.  
+```csharp
+// Standard header code
+request.ClientCertificates.Add(new X509Certificate2("[Path To Certificate]", "[Password]"));
 
+using (Stream requestStream = request.GetRequestStream()) {
+    requestStream.Write(payload, 0, payload.Length);
+}
 
+WebResponse response = request.GetResponse();
 ```
-
-  // Standard header code
-
-   
-
-  request.ClientCertificates.Add(new X509Certificate2("[Path To Certificate]", "[Password]"));
-
-   
-
-  using (Stream requestStream = request.GetRequestStream()) {
-
-      requestStream.Write(payload, 0, payload.Length);
-
-  }
-
-   
-
-  WebResponse response = request.GetResponse();
-```
-
-
-
-
-
 
 Once this is added in you should be finally able to send authenticated push notifications.  
-
-
 
 Hopefully this saves a few people some time as I pulled my hair out over the course of a weekend solving both of these.  
   

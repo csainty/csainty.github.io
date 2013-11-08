@@ -4,12 +4,13 @@ layout: post
 permalink: /2011/08/two-lessons-from-frustrating-mango.html
 tags: gReadie wp7dev wp7 C# dotnet
 id: tag:blogger.com,1999:blog-25631453.post-6040999243873799172
+tidied: true
 ---
 
 
 I thought I would share two quick lessons today. Learnt while submitting the latest gReadie update to the marketplace.  
   
-### Lesson 1
+#### Lesson 1
   
 When updating an application in the marketplace, you can not remove supported languages.   
   
@@ -23,7 +24,7 @@ With apologies to my French and German users, I had to rush together a mix of hu
   
 So keep this in mind if you are considering localising you application, you will need to do the same for all future versions.  
   
-### Lesson 2
+#### Lesson 2
   
 Be very careful what code is referenced by your Background Agent.  
   

@@ -2,11 +2,12 @@
 title: Learn Something New&#58; Knockout JS
 layout: post
 permalink: /2011/10/learn-something-new-knockout-js.html
-tags: javascript mvc asp.net learn something new knockout
+tags: javascript mvc asp.net learn-something-new knockout
 id: tag:blogger.com,1999:blog-25631453.post-1473986324507487925
+tidied: true
 ---
 
-First in my “Learn Something New” series is [Knockout](http://knockoutjs.com/), a javascript MVVM framework.
+First in my _“Learn Something New”_ series is [Knockout](http://knockoutjs.com/), a javascript MVVM framework.
 
 Knockout is beautifully simplistic. You define a ViewModel, bind it to your UI, and away it goes keeping the two in sync. It really is beautiful stuff for a javascript heavy UI.
 
@@ -20,7 +21,7 @@ The page basically consists of a textbox to enter a search term, a button to run
 Here is a trimmed down version of the javascript to highlight the main features.
 
 
-```csharp
+```javascript
 var viewModel = {
 	searchTerm: ko.observable(""),
 	tweets: ko.observableArray([]),
@@ -47,14 +48,13 @@ function handleTwitterResponse(result) {
 		viewModel.tweets.unshift(result.results[index]);
 	}
 }
-
 ```  
 
-So we define our viewModel, give it an observable value for the search string, an observable array for the results and a function to perform the search.
+So we define our `viewModel`, give it an observable value for the search string, an observable array for the results and a function to perform the search.
 We apply these bindings and that is it for the javascript. The actual binding to the UI happens in the UI, using HTML5 data attributes.
 
 
-```csharp
+```markup
 <ul data-bind="template: { name : 'tweetTemplate', foreach: tweets }"></ul>
 
 <input type="text" placeholder="search..." data-bind="value: searchTerm" />
@@ -71,7 +71,6 @@ We apply these bindings and that is it for the javascript. The actual binding to
 		<div class="ui-helper-clearfix"></div>
     </li>
 </script>
-
 ```  
 
 Here are the key elements from the HTML, as you can see we bind the UI with a jQuery.tmpl template, and wire up the value for the textbox and the click event for the button.
@@ -80,10 +79,7 @@ It really is as simple as that.
 I highly recommend the [tutorials](http://learn.knockoutjs.com/) at the Knockout website, they have created a wonderful live tutorial that takes you through each step of the process.
 
 
-#### 
-
-Tools and Services Used
-
+#### Tools and Services Used
 
 [Knockout JS](http://knockoutjs.com/)  
 [ASP.NET MVC / C#](http://www.asp.net/mvc)  

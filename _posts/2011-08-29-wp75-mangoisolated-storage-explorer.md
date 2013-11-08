@@ -4,6 +4,7 @@ layout: post
 permalink: /2011/08/wp75-mangoisolated-storage-explorer.html
 tags: wp7dev wp7 dotnet
 id: tag:blogger.com,1999:blog-25631453.post-5659380481264973808
+tidied: true
 ---
 
 
@@ -20,13 +21,9 @@ The second is when I find a bug with while using a retail copy of my app which I
 To speed the process along I have created four windows .bat files that to perform each of the tasks I need.  
   
  
-```csharp
+```bash
 "C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v7.1\Tools\IsolatedStorageExplorerTool\ISETool.exe" ts de b8c6eab0-543c-4b55-be96-0b3da982df37 "C:\Users\chris_sainty\Desktop\IsoStore"
-
-
-
 ```  
   
-  
-To use these yourself you will need to adjust the path if you are not on a 64bit system, and you will need to replace the GUID with the value from your WMAppManifest file.  
+To use these yourself you will need to adjust the path if you are not on a 64bit system, and you will need to replace the GUID with the value from your `WMAppManifest` file.  
   

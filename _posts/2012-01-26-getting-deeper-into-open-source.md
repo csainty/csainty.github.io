@@ -4,8 +4,8 @@ layout: post
 permalink: /2012/01/getting-deeper-into-open-source.html
 tags: javascript personal open-source node glimpse nancy appharbor C# dotnet
 id: tag:blogger.com,1999:blog-25631453.post-2526950740026506989
+tidied: true
 ---
-
 
 It’s about 8 months since my [first](https://github.com/csainty/ravendb/commit/852a65cf300fa86a6ec69ee61f63b1841333bddf) contribution to an open source project. It was followed up minutes later by one to reverse all the accidental formatting changes I made. Damn you Visual Studio!  
  

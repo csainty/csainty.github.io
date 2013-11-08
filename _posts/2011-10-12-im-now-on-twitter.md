@@ -4,6 +4,7 @@ layout: post
 permalink: /2011/10/im-now-on-twitter.html
 tags: personal
 id: tag:blogger.com,1999:blog-25631453.post-4565660389989239767
+tidied: true
 ---
 
 

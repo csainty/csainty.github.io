@@ -4,6 +4,7 @@ layout: post
 permalink: /2011/06/ravendb-profiling-with-aspnet-mvc.html
 tags: ravendb mvc asp.net C# dotnet
 id: tag:blogger.com,1999:blog-25631453.post-8023995134833538387
+tidied: true
 ---
 
 
@@ -15,15 +16,15 @@ There is a live demo up on Oren's blog right now, simply look for and click on t
   
 If you are working with RavenDB and want to add this to your own project, it is really simple. As of right now you are going to need to grab an [unstable build](http://builds.hibernatingrhinos.com/builds/ravendb-unstable), at least 391. But these changes will make it into the stable builds soon enough.  
   
-You then need to explicitly add a reference to Raven.Client.MvcIntegration to your project. There are security risks with showing the profiling data to just anyone, so you need to explicitly add the support.  
+You then need to explicitly add a reference to `Raven.Client.MvcIntegration` to your project. There are security risks with showing the profiling data to just anyone, so you need to explicitly add the support.  
   
 Next go to the code where you create your DocumentStore and pass a reference off to the profiler.  
   
-Raven.Client.MvcIntegration.RavenProfiler.InitializeFor(myDocumentStore);  
+`Raven.Client.MvcIntegration.RavenProfiler.InitializeFor(myDocumentStore);`
   
 Finally in your master page <head> section add (assuming the Razor view engine)  
   
-@Raven.Client.MvcIntegration.RavenProfiler.CurrentRequestSessions()  
+`@Raven.Client.MvcIntegration.RavenProfiler.CurrentRequestSessions()`
   
 The only other dependency is jQuery, if you are not already using jQuery you can add it off the Google CDN, or from Nuget.  
   

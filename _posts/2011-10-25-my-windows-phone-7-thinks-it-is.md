@@ -4,8 +4,8 @@ layout: post
 permalink: /2011/10/my-windows-phone-7-thinks-it-is.html
 tags: gReadie wp7dev wp7
 id: tag:blogger.com,1999:blog-25631453.post-9217094306162452044
+tidied: true
 ---
-
 
 I ran into an interesting problem today that warrants a blog post to hopefully help someone searching when they hit it themselves.  
   
@@ -15,7 +15,7 @@ After a moment of panic, I realised that I didn’t actually have a retail copy 
   
 That plan failed though when Visual Studio informed me my device was developer locked, and I could not deploy my application.  
   
-Strange.  
+_Strange._  
   
 So I ran the developer unlock tool, it connected to App Hub, then to my device and said my phone was unlocked again. Great, back into Visual Studio, and up pops the same error.  
   
@@ -25,15 +25,13 @@ At this point I logged into App Hub, to check my registration was still valid an
   
 To do this, click you name in the top right corner, then choose the devices tab.  
   
-Bingo!  
+_Bingo!_  
   
-Chris’ Phone, Registered 24th Oct 2010, Expiration Date  24th Oct 2011.  
+> Chris’ Phone, Registered 24th Oct 2010, Expiration Date  24th Oct 2011.  
   
 My unlock registration had expired, and the phone unlock tool shipped with the phone tools does not renew it.  
   
 So I simply hit the remove button inside App Hub, went through the unlock tool once more, and everything was working again.  
-  
-   
   
 So keep this in mind as you approach your one year anniversary of owning an unlocked WP7 device. You will need to pop into App Hub and renew the unlock registration yourself.  
   
