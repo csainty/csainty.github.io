@@ -9,7 +9,9 @@ guid: tag:blogger.com,1999:blog-25631453.post-2978204529359187613
 
 I am spending the weekend getting to know a bit more about the Yahoo! User Interface Library.   You can find more details yourself here [http://developer.yahoo.com/yui/](http://developer.yahoo.com/yui/)  
   
-They do a good summary on their site, so let me start by simply quoting Yahoo!  
+They do a good summary on their site, so let me start by simply quoting Yahoo!
+
+<!-- more -->
      
 The Yahoo! User Interface (YUI) Library is a set of utilities and controls, written in JavaScript, for building richly interactive web applications using techniques such as DOM scripting, DHTML and AJAX. The YUI Library also includes several core CSS resources. All components in the YUI Library have been released as open source under a [BSD license](http://developer.yahoo.com/license.html) and are free for all uses.  
    

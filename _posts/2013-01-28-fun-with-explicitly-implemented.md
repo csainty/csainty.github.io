@@ -14,6 +14,8 @@ I’ve always been a bit uncomfortable with the 1:1 relationship between class a
 When you take a dependency on a large service interface you are hiding all the details about what you are actually dependent on, which can cause you problems down the line with your tests and refactorings.  
 Repositories in particular quickly escalate to large numbers of functions. If I am working on tests for a piece of code that takes a dependency on that repository I have no option other than to read the code to see what methods it is calling. Tedious.
 
+<!-- more -->
+
 So when I stumbled across the long forgotten (by me) practice of explicitly implementing an interface I saw potential to take a fresh look at some of these concerns.
 
 

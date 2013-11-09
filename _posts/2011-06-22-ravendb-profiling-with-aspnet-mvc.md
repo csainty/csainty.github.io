@@ -11,7 +11,9 @@ tidied: true
 I have recently been using (and occasionally contributing to) [RavenDB](http://www.ravendb.net/), a NoSQL (or Document) database for .NET written by Oren Eini, aka [ayende](http://ayende.com/).  
   
 My biggest contribution yet has been to help with the basic "glue" to drive the new UI for profiling RavenDB requests in an ASP.NET MVC web application.  
-  
+
+<!-- more -->
+
 There is a live demo up on Oren's blog right now, simply look for and click on the RavenDB Profiler box in the top left hand corner.  
   
 If you are working with RavenDB and want to add this to your own project, it is really simple. As of right now you are going to need to grab an [unstable build](http://builds.hibernatingrhinos.com/builds/ravendb-unstable), at least 391. But these changes will make it into the stable builds soon enough.  

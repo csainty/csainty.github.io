@@ -10,6 +10,8 @@ tidied: true
 I have been working on a more complete demo of creating a desktop app with NodeJS.  
  
 This one will use a full UI ([KendoUI](http://www.kendoui.com/)) and a Sqlite database to create a basic CRUD style app based on the Northwind dataset. Someone really needs to put together another (and actually well designed) standard database that people can use for apps like this.  
+
+<!-- more -->
  
 While putting this together I have been considering reasons why you might actually write an application like this.  
  

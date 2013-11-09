@@ -10,6 +10,8 @@ tidied: true
 
 An important goal of [AppHarbify](http://appharbify.com) is to make as much open source software as possible be AppHarbor-friendly. To speed this process along I will be creating and/or finding many libraries to solve common problems.  
 
+<!-- more -->
+
 The first problem I have tackled is handling connection strings with Entity Framework. Specifically conventions based Code-First EF.  
 
 AppHarbor already has quite an elegant solution where you log into the Sequelizer add-on and set your desired connection string, then at deployment that connection string is either inserted or updated with the connection details for your instance.  

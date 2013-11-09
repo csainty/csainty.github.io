@@ -8,6 +8,8 @@ tidied: true
 ---
 
 I came across the [MultiBinding](http://msdn.microsoft.com/en-us/library/system.windows.data.multibinding.aspx) markup extension and [IMultiValueConveter](http://msdn.microsoft.com/en-us/library/system.windows.data.imultivalueconverter.aspx) today when looking for a solution to a problem. Not sure how I missed it previously. If you didn’t I probably don’t have a lot to add, but if you have not heard of them then read on.  
+
+<!-- more -->
   
 The problem basically went like this, I have a `TabControl` that is hosting content with a `Title` property and an `IsChanged` property. I was binding the `Header` of the `TabControl` item to the `Title` of the content, but I wanted to add an ‘*’ to the end of the text if `IsChanged` was `True`.  
   

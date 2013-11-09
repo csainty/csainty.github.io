@@ -7,7 +7,9 @@ guid: tag:blogger.com,1999:blog-25631453.post-7496293604195028717
 tidied: true
 ---
 
-One thing I have always needed to do in my web sites is break sections of pages out into a re-usable component.   If you look at [http://www.ht.com.au](http://www.ht.com.au/) the "Featured Product Of The Month" panel displays three product "patches". This exact same patch is used on the [Cart](http://www.ht.com.au/cart.hts) page and the [Hub](http://www.ht.com.au/N/Computers/area.hts) pages. It is a nice little class/template that you pass a product number to and it spits back the HTML for that patch, which you write out like any other expression in your template.  
+One thing I have always needed to do in my web sites is break sections of pages out into a re-usable component.   If you look at [http://www.ht.com.au](http://www.ht.com.au/) the "Featured Product Of The Month" panel displays three product "patches". This exact same patch is used on the [Cart](http://www.ht.com.au/cart.hts) page and the [Hub](http://www.ht.com.au/N/Computers/area.hts) pages. It is a nice little class/template that you pass a product number to and it spits back the HTML for that patch, which you write out like any other expression in your template.
+
+<!-- more -->
   
 When I first went looking for this functionality in ASP.NET MVC all I could find was the RenderUserControl() method on the Html Helper class. Called like this `<%= Html.RenderUserControl("path_to_ascx_file") %>`  
   

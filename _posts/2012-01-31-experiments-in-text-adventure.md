@@ -12,7 +12,9 @@ Like many who were into computers “back in the day” I still maintain a nosta
   
 Back when all I knew were the `PRINT` and `INPUT` commands in QBASIC, these were the very first programs I created.  
   
-Where am I going with this?  
+Where am I going with this?
+
+<!-- more -->
   
 Well over the weekend I was learning the [Impress.js](http://bartaz.github.com/impress.js) presentation library and thought to myself that it really was a beautiful way to display text in a web browser. Then a little light bulb went off in my head.  
   

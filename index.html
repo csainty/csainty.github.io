@@ -21,10 +21,16 @@ title: Chris Sainty
         <span class="post-meta"><time datetime="{{ post.date | date_to_string }}">{{ post.date | date_to_string }}</time> {% if post.tags %}in {{ post | tags }}{% endif %}</span>
         <h2 class="post-title"><a href="{{post.url}}">{{post.title}}</a></h2>
     </header>
-    <section class="post-excerpt">
-        <p>{{post.excerpt}}</p>
-        <p><a href="{{post.url}}" class="read-more-link">Read More</a></p>
-    </section>
+    {% if post.next %}
+      <section class="post-excerpt">
+          <p>{{post.excerpt}}</p>
+          <p><a href="{{post.url}}" class="read-more-link">Read More</a></p>
+      </section>
+    {% else %}
+      <section class="post-content">
+          <p>{{post.content}}</p>
+      </section>
+    {% endif %}
 </article>
 
 {% endfor %}

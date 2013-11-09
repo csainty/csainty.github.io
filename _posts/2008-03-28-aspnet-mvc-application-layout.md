@@ -10,6 +10,8 @@ tidied: true
 I am slowly evolving my general layout for ASP.NET MVC applications as I come more and more to grips with the framework and they ways I am most comfortable using it.  
   
 This post is going to be a bit of an overview of how I am laying out my project at the moment in case it is of use to anyone.  
+
+<!-- more -->
   
 #### Controllers
   

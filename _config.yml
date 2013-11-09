@@ -9,3 +9,4 @@ tag_page_layout: tag_page
 tag_page_dir: tag
 rss_post_limit: 10
 feed_url: http://blog.csainty.com/rss.xml
+excerpt_separator: "<!-- more -->"

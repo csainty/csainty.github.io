@@ -9,6 +9,8 @@ tidied: true
 
 Today AppHarbor [announced](http://blog.appharbor.com/2012/03/08/background-workers-in-beta) beta support for Background Workers, I have been eagerly awaiting this announcement as it is something I need all the time when hosting sites.  
 
+<!-- more -->
+
 Background Workers are simply `.exe` files that the server now knows to look for and run if you have a worker assigned to background tasks in your subscription. It should be noted that if you are using the free single worker plan, then you can not run both a web and background worker. You do have the option to run a web OR a background worker though. So you can still try these out on your free account.  
 It should also be noted that trying to run two free accounts (one for web, one for background) that are servicing the same site is against the terms of service.  
 

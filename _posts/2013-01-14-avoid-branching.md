@@ -11,6 +11,8 @@ One thing I have noticed recently is that I like to avoid branching. Now what I 
 
 It seems obvious, but after following along some conversations on twitter recently I think I need to post more, even for things I find obvious. So…
 
+<!-- more -->
+
 About a meter from my desk I have a whiteboard.
 
 ![Branching Board](/images/1382874050650.png)

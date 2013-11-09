@@ -9,7 +9,9 @@ tidied: true
 
 
 Last week I contributed a tiny piece of code to the [Code52](http://code52.org/) [Metro.css](https://github.com/Code52/metro.css) project. My contribution was a node script that creates a boilerplate Node.js website for you using the Metro.css styles, Express and wires up the LESS compilation.  
-  
+
+<!-- more -->
+
 Today I am going to run you through using this code to generate a site and push it to AppHarbor, who now support hosting Node.js sites.  
   
 I assume that you have Node.js and npm installed on your dev machine and referenced in the path. All of which should happen if you use the excellent [Windows Installer package](http://nodejs.org/#download).  

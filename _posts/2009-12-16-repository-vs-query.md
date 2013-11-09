@@ -9,6 +9,8 @@ tidied: true
 
 I’ve read a lot of blog posts about the Repository pattern. Whenever I have looked at implementing it, I always come away underwhelmed. It’s one of those things that displays nicely in a small example but in practice you end up with a huge number of methods that each query the data in a similar but slightly different manner, and for me it’s fault is with querying.    
 
+<!-- more -->
+
 ```csharp
 GetCustomersByFirstName();
 GetCustomersByFirstAndLastName();

@@ -15,8 +15,11 @@ This was followed by a post about how this bug had come into being and survived 
 
 [http://ayende.com/blog/153825/ask-ayende-what-about-the-qa-env](http://ayende.com/blog/153825/ask-ayende-what-about-the-qa-env)  
 
-So confession time, that’s my bug. I contributed the early code for the profiler.  
-So since then I have been trying to work out how I missed it. Was I really so oblivious to what was going on while writing that code?  
+So confession time, that’s my bug. I contributed the early code for the profiler.
+
+<!-- more -->
+
+Since then I have been trying to work out how I missed it. Was I really so oblivious to what was going on while writing that code?  
 
 Second to that, how had it sat in production on ayende’s blog for 6 months or so without being noticed?  
 

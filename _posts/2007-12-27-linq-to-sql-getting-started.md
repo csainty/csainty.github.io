@@ -7,6 +7,9 @@ guid: tag:blogger.com,1999:blog-25631453.post-2825128679565587450
 ---
 
 I am going to start by showing a few new language features that are important to LINQ (and hence LINQ-to-SQL) that you may not have come across yet if you are not already playing around with this stuff.
+
+<!-- more -->
+
 A great place to start is to bring up intellisense and have a look at the structure of the classes that have been created for you.
 ![Intellisense](/images/1382874053760.png) 
 Each table in the database is given a property on the Data Context object. The type of this property (using Addresses as the example) will be System.Data.Linq.Table<Address>. This class implements the IEnumerable<> and IQueryable<> interfaces that provides the underlying LINQ functionality.

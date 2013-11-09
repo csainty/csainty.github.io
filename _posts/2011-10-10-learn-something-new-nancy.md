@@ -15,6 +15,8 @@ Reading straight from the box
 
 Got that? Think of it as a replacement for WebForms or ASP.NET MVC.
 
+<!-- more -->
+
 Nancy is available on [NuGet](http://nuget.org/List/Packages/Nancy) or on [GitHub](https://github.com/NancyFx/Nancy) if you want the source and docs. The docs are well worth a look over, and you are bound to need the aid of a sample project as you find your feet. Having said that, it is really quite simple so you should be up to speed in no time.
 
 These posts are not supposed to be walkthroughs, so I won’t go into detail getting you started other than to say that you start with an “ASP.NET Empty Web Application”, add the Nancy bits from NuGet (grab the [AspNet](http://nuget.org/List/Packages/Nancy.Hosting.Aspnet) hosting package and [Razor view engine](http://nuget.org/List/Packages/Nancy.Viewengines.Razor) as well for simplicity), create a subclass of `NancyModule` and away you go.

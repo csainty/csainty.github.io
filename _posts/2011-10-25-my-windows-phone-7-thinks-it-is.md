@@ -11,6 +11,8 @@ I ran into an interesting problem today that warrants a blog post to hopefully h
   
 Last night, I turned on my phone only to be greeted with a helpful message informing me that my application gReadie had been revoked by Microsoft and that I should uninstall it.  
   
+<!-- more -->
+  
 After a moment of panic, I realised that I didn’t actually have a retail copy of gReadie installed on my phone, just the developer build I had been working on. So I didn’t think a lot more about it intending just to copy a new version on when I arrived at the office this morning.  
   
 That plan failed though when Visual Studio informed me my device was developer locked, and I could not deploy my application.  

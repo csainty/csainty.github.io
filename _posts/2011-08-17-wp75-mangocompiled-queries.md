@@ -13,7 +13,9 @@ Over the last few weeks I have been doing a complete rewrite of [gReadie](http:/
 The original codebase for gReadie was really quite cluttered, and I wasn’t going to be able to take advantage of the new features Mango enables without pulling it all out and starting again.  
   
 With most of the rewrite behind me now, It is time to start putting together a few blog posts discussing the new features I am using and lessons learnt along the way.  
-  
+ 
+<!-- more -->
+ 
 One of the features I was most looking forward to in the 7.5 release of the phone is developer access to the underling SQL CE database. Access is provided through LINQ-to-SQL, which I have covered in [detail](http://blog.csainty.com/tag/linqtosql.html) previously. What I want to focus on today is improving the performance of your queries by compiling them and caching that result.  
   
 This post assumes you already have your `DataContext` created and working queries, if you do not, then please start by reading some of the Microsoft tutorials.  

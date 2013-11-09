@@ -12,7 +12,9 @@ One of the most useful new tools with the latest Windows Phone SDK is the Isolat
   
 It is a command line tool used for downloading and uploading the contents of an application’s Isolated Storage folders to either the Emulator or a Device.  
   
-There are two times when this is invaluable.  
+There are two times when this is invaluable. 
+
+<!-- more -->
   
 The first is when you are deploying a new version and you do not want to lose the data. Since day one I have been annoyed with the frequency that that deployment mechanism decides to delete the application and reinstall it. By using this tool I never need to worry about that again as I can just save a snapshot, deploy, load the snapshot back in.  
   

@@ -11,6 +11,8 @@ tidied: true
 I recently came across iisnode’s built in [support](http://tomasz.janczuk.org/2011/11/debug-nodejs-applications-on-windows.html) for the excellent [node-inspector](https://github.com/dannycoates/node-inspector) package. My iisnode host of choice being AppHarbor, I proceeded to set up a repo and make sure it all works there.  
 The good news is… It does!  
 
+<!-- more -->
+
 Even better is that this is built straight into iisnode, you don’t need to touch your app code to get it working, you don’t even need to install the node-inspector package. It is all bundled in with iisnode.  
 You simply need to make a single change to your `web.config` rewrite rules so that the urls to launch the debugger are not treated as regular requests and sent through to you app.  
 

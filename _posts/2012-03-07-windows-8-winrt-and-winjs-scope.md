@@ -9,7 +9,9 @@ tidied: true
 
 
 This week at [Code52](http://code52.org/) we are taking on our first [Windows 8](http://code52.org/finances-windows8.html) app. Just to make it interesting we are doing it using the HTML / JS stack instead of C# / XAML.  
-  
+
+<!-- more -->
+
 Before getting too far into WinJS (which is the general term I am going to use for referring to WinRT apps written in JS until someone tells me otherwise) it is a good idea to get a basic understanding of JavaScript as a language. It is a lot more in-depth than jQuery and the DOM would lead you to believe.  
   
 The first thing you are going to confronted with upon creating a new project and opening on of the .js files is this structure.  

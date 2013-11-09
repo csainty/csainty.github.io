@@ -11,6 +11,8 @@ tidied: true
 Next week, after more than 11 years, I will be leaving Quids in search of a new adventure. In fact I will be hoping to roll two adventures into one, a new job and a new country.  
 I’ll keep this blog post relatively short so if you want to talk details drop me an email at [csainty@hotmail.com](mailto:csainty@hotmail.com)  
 
+<!-- more -->
+
 #### Let’s begin with the job.
 
 Having worked my entire career with a single company, I am very open minded about the next step in my career. The most important factor is going to be the products I am developing. Something in the consumer web or mobile space would get me the most excited.  

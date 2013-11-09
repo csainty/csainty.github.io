@@ -11,7 +11,9 @@ Now about that Image Control. I mentioned in my last post that it seems to downl
   
 Personally I think this is going to be a major issue with v1 apps in the marketplace when used on 3G connections.  
   
-It is actually a difficult thing to test, so here is the methodology I have been using and the code I am using to get around the issue.  
+It is actually a difficult thing to test, so here is the methodology I have been using and the code I am using to get around the issue. 
+
+<!-- more -->
   
 First you are going to want a local IIS server, put an image on the server, and then we are ready to go with the phone tools. We are later going to throttle the bandwidth on the server, if you do not have a local server you will need to find a way to throttle your network connection on the PC you are using. I am sure it is possible but have not looked at it.  
   

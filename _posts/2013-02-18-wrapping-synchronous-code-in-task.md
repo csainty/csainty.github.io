@@ -16,6 +16,8 @@ public interface IAsyncCommand
 }
 ```
 
+<!-- more -->
+
 Now imagine you want to implement this interface, but the code to go in there is not actually asynchronous. Neither is it cpu-intensive and requiring it’s own thread. It is just a regular piece of synchronous code.
 There are three ways to do this that I know of.
 

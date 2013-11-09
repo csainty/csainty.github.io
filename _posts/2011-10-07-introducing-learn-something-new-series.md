@@ -11,6 +11,8 @@ Today I am introducing what I hope will be a long term project for this blog, my
  
 The series will be mainly focussed on web development and learning the basics of a tool or framework I did not previously know. Where possible I will be providing all the source on GitHub and links to the project up and running on a free cloud service like AppHarbor or Heroku.  
  
+<!-- more -->
+ 
 To set a few ground rules  
 
 1. These projects will not be “best practice”. Where possible I am trying to focus on a single new piece of kit and anything else will be kept at a minimum to make it work.

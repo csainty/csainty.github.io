@@ -13,6 +13,8 @@ As you may know, [AppHarbify](http://appharbify.com) is built with [Nancy](http:
 To go with that I am planning to put together some blog posts talking about various aspects of the code.
 To start with I am looking at sessions.
 
+<!-- more -->
+
 #### Getting Started
 
 Nancy ships with a single session provider implemented, `CookieBasedSessions`. You can of course add your own.

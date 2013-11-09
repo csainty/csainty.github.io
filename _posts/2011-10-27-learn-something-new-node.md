@@ -10,7 +10,9 @@ tidied: true
 [Node](http://nodejs.org/) seems to be everywhere at the moment. Long on my list of things to take a look at, I finally took the time to sit down with it yesterday and get it up and running and get a feel for what it does.  
   
 In the process I also took my first look at [Heroku](http://www.heroku.com/), which is the cloud hosting platform for Ruby, Node, Java etc.  that [AppHarbor](https://appharbor.com/) borrows heavily from in the .NET world.  
-  
+
+<!-- more -->
+
 As always, my code is on [GitHub](https://github.com/csainty/Node.Test), and the site is live on [Heroku](http://blooming-mist-4131.herokuapp.com/). This sample is literally a Hello World, with so many moving parts, I really wanted to just focus on the raw details of getting Node running first in a Linux VM, then on Windows, then on Heroku.  
   
 Both Node and Heroku provide great instructions to get everything up and running, so they should be your first port of call.  

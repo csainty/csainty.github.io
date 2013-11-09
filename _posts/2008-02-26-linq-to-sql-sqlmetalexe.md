@@ -7,7 +7,11 @@ guid: tag:blogger.com,1999:blog-25631453.post-5240869778132215113
 ---
 
 I have recently switched over to using SQLMetal to generate my LINQ-to-SQL DBML and Context class. There are two things I like about it, one is that it is far faster. I just click a script on my desktop rather than open up the designer and recreate each table that has changed. I also prefer some of its naming conventions, it deals with multiple relationships to a  single table better.
+
+<!-- more -->
+
 Consider the case where you have an Orders table and it has two fields holding Address keys (ie ShippingAddressID and InvoiceAddressID). The LINQ-to-SQL generator in Visual Studio will create 4 properties ShippingAddressID,  InvoiceAddressID, Address, Address1. The last two being references to the Address entities. The problem being you cant work out which is which.   SQLMetal will detect this and one of them will be named ShippingAddress, sadly the other will still be simply Address. There is hope though.
+
 SQLMetal.exe is a pretty straightforward console application that is installed alongside Visual Studio and can be used to generate your classes for you. For more details check out [MSDN](http://msdn2.microsoft.com/en-us/library/bb386987.aspx).    Creating your classes is a two step process, I have a .bat file on my desktop to do it for me.
 
 `cd /d "C:\Program Files\Microsoft SDKs\Windows\v6.0A\bin"

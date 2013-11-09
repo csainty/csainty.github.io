@@ -9,7 +9,9 @@ tidied: true
 
 
 I have been working with WPF recently, and one of the things that annoys me most is the usage of strings to reference object properties. This mainly affects Bindings, but also pops up in other places such as the [IDataErrorInfo](http://msdn.microsoft.com/en-us/library/system.componentmodel.idataerrorinfo.aspx) interface.  
-  
+
+<!-- more -->
+
 Here is an example that anyone who has touched WPF should understand.  
 
 ```markup

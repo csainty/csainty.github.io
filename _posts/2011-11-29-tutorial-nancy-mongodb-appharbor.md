@@ -8,7 +8,9 @@ tidied: true
 ---
 
 Time for a quick tutorial on how to get a site up and running on [AppHarbor](https://appharbor.com/) using [Nancy](http://www.nancyfx.org/) and [MongoDb](http://www.mongodb.org/).  
-  
+
+<!-- more -->
+
 First up you are going to need Git installed. On windows my preference for Git is this kit [http://code.google.com/p/gitextensions/](http://code.google.com/p/gitextensions/). It installs everything you need and gives you a nice GUI to work with plus some basic integrations with Visual Studio.  
   
 _(Just in case you have missed the craze that is Git, it is a version control system. A very good one. Go learn about it)_ 

@@ -8,7 +8,9 @@ tidied: true
 ---
 
 Microsoft released the ASP.NET MVC Release Candidate yesterday ([Link](http://go.microsoft.com/fwlink/?LinkID=140768&clcid=0x409)). One thing that pricked my ears in the release notes was a change to the `ControllerContext` that would apparently make it easier to use a mocking tool to unit test actions that needed to interact with the standard HTTP objects.  
-  
+
+<!-- more -->
+
 I gave up on mocking back at Preview 3 of the MVC framework, and instead I was slowly building up a library of classes using the `Http...Base` (eg `HttpRequestBase`) classes that implemented each feature as needed. It was a little bit of work, but at least it did work.  
   
 With ScottGu's [example](http://weblogs.asp.net/scottgu/archive/2009/01/27/asp-net-mvc-1-0-release-candidate-now-available.aspx) in hand and a copy of [Moq](http://code.google.com/p/moq/) installed and referenced in my test project I set about replacing my own classes with the appropriate mocks in each test of a project I am working on at the moment. The results were surprisingly good, I am now able to mock every part of the web context I am currently using with ease.  

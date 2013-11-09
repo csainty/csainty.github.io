@@ -10,6 +10,8 @@ guid: tag:blogger.com,1999:blog-25631453.post-1535672534721661582
 I have been further exploring the concepts of Test Driven Development of late, in particular around the ASP.NET MVC framework.  
   
 One concept that is very new to me is mocking. I have been using [Rhino Mocks](http://ayende.com/projects/rhino-mocks.aspx). This is not going to be a post about mocking, I am far much of a novice to offer any useful advice on this front just yet. However, it is pretty cool stuff and worth a read.  
+
+<!-- more -->
   
 The MVC team have been talking a lot about testing and mocking lately, and I have found that trying to get a clear picture of exactly where they are at is quite difficult. Most examples and blogs pre-date the latest code refresh and either do or do-not work because of this. One useful resource so far though is this [post](http://www.hanselman.com/blog/ASPNETMVCSessionAtMix08TDDAndMvcMockHelpers.aspx) from [Scott Hanselman](http://feeds.feedburner.com/ScottHanselman).  
   

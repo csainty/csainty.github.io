@@ -13,7 +13,7 @@ A quick little routine to take a file that mixes static text with foxpro express
 We use this code to process HTML and XML template files used by our websites into efficient compiled foxpro code.
 I made mention of this code as part of my presentation at [OzFox Lite](http://www.ozfox.com.au/) in March 2006. So here it is!
   
-
+<!-- more -->
 
 ```clike
 ### Code

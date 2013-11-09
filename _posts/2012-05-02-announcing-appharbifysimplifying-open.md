@@ -14,6 +14,8 @@ Say hello to [AppHarbify](http://appharbify.com/)!
 
 AppHarbify aims to make deploying common software to [AppHarbor](https://appharbor.com/) even easier. So easy that it can be done by non-technical people or from mobile devices.  
 
+<!-- more -->
+
 The plan is to make as much .NET (or Node.js) open source software as possible compatible with the AppHarbor platform. Then bring it all into the one place and offer single step deployment. You can try it out right now with some of the projects I have used for testing [http://appharbify.com/Apps](http://appharbify.com/Apps), including JabbR and FunnelWeb.  
 
 AppHarbify takes care of creating the application, installing the required add-ons, configuring application variables and deploying the code base. All you need to do is authenticate, via OAuth, with AppHarbor and choose which project to deploy.  

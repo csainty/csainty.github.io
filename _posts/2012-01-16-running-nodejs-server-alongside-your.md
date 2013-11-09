@@ -8,7 +8,9 @@ tidied: true
 ---
 
 The _node-webkit_ project added a new feature yesterday, one which I requested. So I feel I should put up a quick post about it and why I think it could be useful.  
- 
+
+<!-- more -->
+
 The change was simple enough, giving you the ability to pass a callback to _node-webkit_ that is called when the application is closing.  
 The primary reason I wanted this was to allow you to create, and then clean up, a local web server within the lifetime of your application.  
  

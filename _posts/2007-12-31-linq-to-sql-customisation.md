@@ -6,7 +6,13 @@ tags: linqtosql dotnet
 guid: tag:blogger.com,1999:blog-25631453.post-5079852828439295144
 ---
 
-Before we proceed, this is a good time to see another feature of LINQ-to-SQL which allows you to change the property names of the generated classes to no longer match the underlying field names, this could be useful if you have a strange naming convention for your field names, or in our case with AdventureWorks we have instances like on the SalesOrderHeader class where it has two links to the Address table (BillTo and ShipTo) but these relationships get modelled Address and Address1.    This is obviously undesirable as there is no clear indication which one links to Address based on ShipToAddressID and which on BillToAddressID.     Luckily we have a solution close at hand.
+Before we proceed, this is a good time to see another feature of LINQ-to-SQL which allows you to change the property names of the generated classes to no longer match the underlying field names, this could be useful if you have a strange naming convention for your field names, or in our case with AdventureWorks we have instances like on the SalesOrderHeader class where it has two links to the Address table (BillTo and ShipTo) but these relationships get modelled Address and Address1.  
+This is obviously undesirable as there is no clear indication which one links to Address based on ShipToAddressID and which on BillToAddressID.
+
+Luckily we have a solution close at hand.
+
+<!-- more -->
+
 Open up the LINQ-to-SQL diagram and find the two relationships between the SalesOrderHeader table and the Address table (Not a simple task, you may need to drag one of the two tables into the open to find its links, or use the Drop-Down above the property box to select it that way). The property box should look like this
 ![Address1](/images/1382874053706.png) 
 Change it to something more useful.

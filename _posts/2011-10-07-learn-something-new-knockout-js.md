@@ -11,6 +11,8 @@ First in my _“Learn Something New”_ series is [Knockout](http://knockoutjs.c
 
 Knockout is beautifully simplistic. You define a ViewModel, bind it to your UI, and away it goes keeping the two in sync. It really is beautiful stuff for a javascript heavy UI.
 
+<!-- more -->
+
 To learn my way with Knockout, I decided to create a basic twitter search client in javascript. The twitter search API is a great resource for quickly adding data to a “hello world”-esque application. I am bound to revisit it later.
 
 Now let’s get a few more details out of the way, you can see the site up and running at [http://twitches.apphb.com/](http://twitches.apphb.com/) and you can get the source code at [https://github.com/csainty/Twitches](https://github.com/csainty/Twitches)

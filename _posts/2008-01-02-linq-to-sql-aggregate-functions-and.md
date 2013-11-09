@@ -9,6 +9,8 @@ tidied: true
 
 In this post I am going to cover off how functions such as `Count()`, `Average()` and `Sum()` work, plus the different ways to call them. Then I will move onto some functions that are not from the domain of SQL but add great features.
 
+<!-- more -->
+
 #### Count()  
 The `Count()` function is used to count the number of rows in a table or returned from a query. `Count()` can optionally take a single [Lambda Expression]({% post_url 2007-12-31-linq-to-sql-lambda-expressions %}) as a parameter that will evaluate to a bool and indicate whether to count each record.
 Here are three examples.

@@ -14,6 +14,8 @@ The premise is simple, gReadie is a Google Reader client for the Windows Phone 7
 
 {% youtube QyiK5MPLYis %}
 
+<!-- more -->
+
 The application is ready for a first release, though I am still adding features to it, so as soon as the Marketplace is open for submissions I will be ready to put something up.
 
 I have implemented a trial version (great idea ported over from the XBox Live Arcade), but I also hope to investigate the advertising integration Microsoft has developed and see if I can run an ad-supported free version along with the paid and trial versions.

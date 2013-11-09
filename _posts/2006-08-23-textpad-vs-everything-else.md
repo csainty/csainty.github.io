@@ -12,6 +12,8 @@ It is small, clean, fast and has served me well for a long time.
 
 I have trialed some other tools, such as Dreamweaver and Visual Web Developer Express, but they have all lacked, in my limited explorations at least, one feature that would really make them useful to me.
 
+<!-- more -->
+
 I develop sites in patches, each page will have some common patches, such as a header and footer, some content specific to the page, and some patches that may be shared with other pages.
 If you look at [www.ht.com.au](http://www.ht.com.au) and the 9 "Feature Products" on the home page, there is a call in the website, which you pass a part number, and it runs off a HTML template, dropping in the details of that part. This gets called 9 times, on the homepage to generate the featured products, but is also used on other pages throughout the site, differences in display are handled by the CSS.
 

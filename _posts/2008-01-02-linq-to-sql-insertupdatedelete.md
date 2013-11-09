@@ -8,6 +8,9 @@ tidied: true
 ---
 
 I have been looking at my web stats for the recent run of LINQ-to-SQL posts, and it seems a lot of people are making their way here from searches about some of the more standard features of LINQ-to-SQL. In the interest of addressing these visitors I am going to put together a post that covers the basics of data access.
+
+<!-- more -->
+
 Make sure you see my earlier post about setting up the AdventureWorks database [here]({% post_url 2007-12-27-linq-to-sql-prep-work %}).  
 First we will look at a complicated `INSERT`, adding a new customer to the AdventureWorks database.  
 **Note:** This is not a very good example from the standpoint of keeping the AdventureWorks database clean and correct, we are only interested in meeting each of the SQL Constraints, not the business logic.

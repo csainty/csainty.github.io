@@ -11,7 +11,9 @@ tidied: true
 This post is going to offer a few tips about changing your Windows Phone 7 push notification service from unauthenticated to authenticated.  
   
 Specifically it will focus on the challenges I ran into hosting a WCF service, in IIS7 on a cheap shared hosting account.  
-  
+
+<!-- more -->
+
 It will not be a full step by step tutorial, there are a lot of those out there, though I found many missed a few steps. If you are starting out, see the [MSDN](http://msdn.microsoft.com/en-us/library/ff941099.aspx) documentation.  
   
 The reason you will want an authenticated service is that it allows you to send an unlimited amount of updates to the phone. If the service is not authenticated it will be limited to 500 per device per day. Which might be plenty for some services, but was not going to be enough for me. Users do not like their Live Tiles pausing for half a day simply because they are a heavy user.  

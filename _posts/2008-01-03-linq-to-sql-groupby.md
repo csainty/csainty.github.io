@@ -9,6 +9,8 @@ tidied: true
 
 One aspect of LINQ I have not covered yet is the equivalent of a `GROUP BY` in SQL. The `GroupBy()` function (which of course can be used from a LINQ expression as well as from the method syntax and I will show both) provides this functionality. One of the interesting things about grouping however is that there is a new interface introduced that you will want to understand, lets take a look at the method signature for `GroupBy()`.
 
+<!-- more -->
+
 ![GroupBy()](/images/1382874053408.png) 
 
 The function takes a single [Lambda Expression]({% post_url 2007-12-31-linq-to-sql-lambda-expressions %}) which returns the value to group by, this can be any basic data type and will flow through to the returned object.

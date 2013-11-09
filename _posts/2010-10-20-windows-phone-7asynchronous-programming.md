@@ -8,7 +8,9 @@ tidied: true
 ---
 
   
-I am going to start putting together some posts on my experience writing our first Windows Phone 7 application, [gReadie](http://www.quidsmobile.com/gReadie/).  
+I am going to start putting together some posts on my experience writing our first Windows Phone 7 application, [gReadie](http://www.quidsmobile.com/gReadie/).
+
+<!-- more -->
   
 One thing that will strike you quickly if you go to make an app that communicates over the internet is that everything has to be done asynchronously. While this is bound to annoy at first, it is actually a good design decision by the development team because it forces the developer to keep the UI responsive. Sadly there is at least one instance where they broke their own rules but we will get to that another time, I will just say watch out for the Image control.  
   

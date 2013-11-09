@@ -10,7 +10,9 @@ tidied: true
 Late last year when I implemented the unread count Live Tile in [gReadie](http://www.quidsmobile.com/greadie/) I found myself stunned at just how complicated it was. It seemed to me that it would make a lot more sense if I could just whack a `[LiveTileUpdater]` attribute on a static method in a class and the phone would run that method occasionally.  
   
 I was therefore delighted when details about Mango were released as this is basically what Microsoft implemented.  
-  
+
+<!-- more --> 
+
 Background Agents in Mango take the form of a separate assembly, which gets linked in your `WMAppManifest.xml`  
   
 

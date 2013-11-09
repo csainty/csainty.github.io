@@ -8,7 +8,9 @@ tidied: true
 ---
 
 
-Today my post is to announce the release of a small plugin I have been working on over the last few days. It is a plugin for the [Glimpse](http://getglimpse.com/) client side debug tool that integrates profiling information from [RavenDb](http://www.ravendb.net/).  
+Today my post is to announce the release of a small plugin I have been working on over the last few days. It is a plugin for the [Glimpse](http://getglimpse.com/) client side debug tool that integrates profiling information from [RavenDb](http://www.ravendb.net/). 
+
+<!-- more -->
   
 The plugin is available on NuGet - [http://nuget.org/List/Packages/Glimpse.RavenDb](http://nuget.org/List/Packages/Glimpse.RavenDb)  
   

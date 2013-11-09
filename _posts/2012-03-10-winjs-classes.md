@@ -10,6 +10,8 @@ tidied: true
 
 In my last two posts on JavaScript for Windows 8 I looked at [scope]({% post_url 2012-03-07-windows-8-winrt-and-winjs-scope %}) and [namespaces]({% post_url 2012-03-08-winjs-namespaces %}). I pointed out that namespaces could be used to create “static” classes. I hasten to add they can be used for more, don’t make a hard link in your brain between namespaces and static classes.
 
+<!-- more -->
+
 So what about regular classes. There are a couple of ways to define a class in JavaScript, a simple way is to return a hash from a factory method.
 
 

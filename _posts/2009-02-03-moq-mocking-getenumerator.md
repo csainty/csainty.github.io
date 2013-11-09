@@ -10,6 +10,8 @@ tidied: true
 In my last post I made mention that it was easier not to use the Enumerators on HTTP context objects when you want to unit test with mocking. This is due to some annoyances with casting (as they predate generics) that can be avoided with simple `for()` loops instead of `foreach()`.
 
 Today however, I am going to look at mocking `GetEnumerator()` in a more general sense should you ever need it.
+
+<!-- more -->
   
 We start with a simple "business object" that iterates over a set of products returning a list of their names. Nice useless test code as always.  
 

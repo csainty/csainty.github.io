@@ -12,6 +12,8 @@ In my [last post]({% post_url 2012-03-07-windows-8-winrt-and-winjs-scope %}) I e
   
 One note about my code snippets. For simplicity I will be concatenating what would in a real application be multiple .js files into a single code snippet. I’ll use comments to show you where the files break.  
   
+<!-- more -->
+  
 So let’s imagine you are creating a helper function to do something really useful, like add two numbers together.   
   
 

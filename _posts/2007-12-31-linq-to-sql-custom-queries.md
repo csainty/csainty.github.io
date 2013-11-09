@@ -8,7 +8,11 @@ tidied: true
 ---
 
 Now I have some of the foundations out of the way, albeit in a rather brief overview that assumes a reasonable level of competency, it is time to move onto some of the more interesting code snippets.
+
 One thing I never liked much about writing SQL in either FoxPro or with PassThrough technologies is how you piece together a complex query from a number of UI selections. The most common occurrence of this is in reporting. The number of ways you can usually slice and dice a sales report makes for some fairly nasty code to build a string based SQL statement.
+
+<!-- more -->
+
 LINQ-to-SQL offers us a new paradigm for dealing with this sort of problem.
 
 First we need to add a few options to our UI in Window1.xaml

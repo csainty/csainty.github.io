@@ -10,6 +10,8 @@ tidied: true
 I have recently started work on what will become our first production application using LINQ-to-SQL and had hoped to use the `CreateDatabase()` function that is found on the generated `DataContext` to simplify the process of setting up the database on the client machine.  
 Ideally I wanted a nice simple piece of code like this
 
+<!-- more -->
+
 ```csharp
 AdventureWorksDataContext db = new AdventureWorksDataContext();
 if (!db.DatabaseExists())

@@ -10,6 +10,8 @@ guid: tag:blogger.com,1999:blog-25631453.post-1568166695711012628
 In this article I am going to look at Extension Methods. Although this is not a specific to LINQ post, Extension Methods are the compiler concept that LINQ was built on.  
   
 The basic premise is to allow the developer to add functionality to any class they like without the need to subclass it or wrap it in a wrapper class. This is a great new technique because it allows you to continue using a class like String or DateTime and not need to remember to use MyString and MyDateTime or fall back on static helper classes.  
+
+<!-- more -->
   
 So how do we go about doing this?    I have recently been working on a tool that constantly needs to convert DateTime values from my local time zone here in Australia (GMT +10) to Central US time (GMT -6). Traditionally you would probably create a static helper class with a method that takes the time in one form and passes it back in the other, just to save you writing the conversion code in every place that uses it. Ignore the simplicity of the time conversion here, this is simply to keep the code short.  
      `using System;

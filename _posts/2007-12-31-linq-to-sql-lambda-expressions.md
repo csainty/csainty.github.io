@@ -7,8 +7,13 @@ guid: tag:blogger.com,1999:blog-25631453.post-9065696726743482705
 ---
 
 At first glance, Lambda Expressions are bound to confuse most people. Myself included. However, a little digging and experimenting will show they are a simple enough concept. I will cover them now to try remove any confusion in later code snippets.
+
+<!-- more -->
+
 Lets have a look at one of the overloads for the Where() method.    Note: All clauses in a LINQ expression can also be expressed as methods. They behave identically and are interchangeable, even within a LINQ expression!
+
 ![Where](/images/1382874053694.png) 
+
 You will see the parameter "predicate" is of type Func<SaleOrderHeader,bool>    What this means is that you pass the Where() method an anonymous function that takes a SaleOrderHeader object (representing a row from the table) and returns a bool that indicates is this row is to be included in the results.
 The old (cumbersome) way of specifying this function was as follows
 

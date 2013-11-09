@@ -9,7 +9,9 @@ tidied: true
 
 
 I thought I would share two quick lessons today. Learnt while submitting the latest gReadie update to the marketplace.  
-  
+
+<!-- more -->
+
 #### Lesson 1
   
 When updating an application in the marketplace, you can not remove supported languages.   

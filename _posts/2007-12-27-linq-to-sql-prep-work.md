@@ -7,6 +7,9 @@ guid: tag:blogger.com,1999:blog-25631453.post-2403393474308477086
 ---
 
 Time for a series of technical articles I think.    There are a number of great articles and blogs online for LINQ-to-SQL already. A great place to start is Scott Guthrie’s [blog](http://weblogs.asp.net/scottgu/archive/2007/05/19/using-linq-to-sql-part-1.aspx)     However, I am going to wade into the discussion with my own thoughts.
+
+<!-- more -->
+
 There are three pre-requisites for the examples I will be showing off
 1. Visual Studio C# 2008 Express Edition ([link](http://www.microsoft.com/express/vcsharp/Default.aspx))     2. SQL Server 2005 Express Edition ([link](http://www.microsoft.com/express/sql/Default.aspx))     3. AdventureWorks Sample Database ([link](http://www.codeplex.com/MSFTDBProdSamples/Release/ProjectReleases.aspx?ReleaseId=4004))
 All three should install in a straight forward manner. You can then create a new C# project inside Visual Studio and in the Database Explorer add a new connection to the AdventureWorks database file. 

@@ -17,6 +17,8 @@ Roger Wang from the Intel Open Source Technology Center posted about a new proje
 [https://github.com/rogerwang/node-webkit](https://github.com/rogerwang/node-webkit)  
 
 > node-webkit brings WebKit to NodeJS. With it, client side applications can be written with a HTML/CSS UI on the NodeJS platform. We believe the async I/O framework and Javascript language is a perfect combination for client (mobile) side applications.  
+
+<!-- more -->
  
 Basically it allows you to write HTML/JS/Node client side applications using webkit as the renderer.    
 
