@@ -157,6 +157,11 @@ h4 a, h5 a, h6 a {
     color: #50585D;
 }
 
+header a {
+    color: #fff;
+    text-decoration: none;
+}
+
 .read-more-link {
     font-size: smaller;
 }
