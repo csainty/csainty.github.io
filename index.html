@@ -24,7 +24,9 @@ title: Chris Sainty
     {% if post.next %}
       <section class="post-excerpt">
           <p>{{post.excerpt}}</p>
+          {% if post.excerpt != post.content %}
           <p><a href="{{post.url}}" class="read-more-link">Read More</a></p>
+          {% endif %}
       </section>
     {% else %}
       <section class="post-content">
