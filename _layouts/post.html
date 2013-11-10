@@ -4,16 +4,6 @@ layout: default
 
 <article class="post">
 
-    <header class="post-header">
-        <a id="blog-logo" href="{{ site.url }}">
-            {% if site.logo %}
-                <img src="{{ site.logo }}" alt="{{ site.name }}" />
-            {% else %}
-                {{ site.name }}
-            {% endif %}
-        </a>
-    </header>
-
     <span class="post-meta"><time datetime="{{ page.date | date_to_string }}">{{ page.date | date_to_string }}</time>  {% if post.tags %}in {{ post | tags }}{% endif %}</span>
 
     <h1 class="post-title">{{ page.title }}</h1>

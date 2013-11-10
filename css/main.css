@@ -157,10 +157,16 @@ h4 a, h5 a, h6 a {
     color: #50585D;
 }
 
-header a {
+header.dark a {
     color: #fff;
     text-decoration: none;
+    transition: color ease 0.3s;
 }
+
+header.dark a:hover {
+    color: #57A3E8;
+}
+
 
 .read-more-link {
     font-size: smaller;
