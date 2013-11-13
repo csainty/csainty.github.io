@@ -4,6 +4,7 @@ layout: post
 permalink: /2007/01/harris-technology-update.html
 tags: harris
 guid: tag:blogger.com,1999:blog-25631453.post-4786304017972888743
+tidied: true
 ---
 
 A major update has gone live on [www.ht.com.au](http://www.ht.com.au/) today.

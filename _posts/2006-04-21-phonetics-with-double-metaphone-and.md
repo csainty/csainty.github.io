@@ -4,9 +4,8 @@ layout: post
 permalink: /2006/04/phonetics-with-double-metaphone-and.html
 tags: vfp
 guid: tag:blogger.com,1999:blog-25631453.post-114558676161860596
+tidied: true
 ---
-
-
 
 Something that has been floating around in my "to-do" list for quite some time is to write a class for phonetic keyword matching in a fox database.
 The idea is for it to be a step down from PhDbase ([link](http://fox.wikis.com/wc.dll?Wiki~PhdBase~VFP)) without losing the functionality I personally find most useful, phonetic matching.
@@ -15,12 +14,8 @@ The idea is for it to be a step down from PhDbase ([link](http://fox.wikis.com/w
 
 At the core of this class is a VFP version of the Double Metaphone algorithm ([link](http://en.wikipedia.org/wiki/Double_Metaphone)) originally written by Lawrence Philips in C/C++.
 This isn't the tidiest piece of code floating around the internet, but it is still pretty clever, and I hope to someday soon find the time to wrap it in a class with some support for boolean logic and a good word boundary algorithm for indexing.
-  
 
-
-```
-
-
+```clike
 ### Code
 
 function double_metaphone(cStr as String)
@@ -785,13 +780,10 @@ function Slavo_Germanic(cStr)
     or occurs("CZ", m.cStr) > 0 ;
     or occurs("WITZ", m.cStr) > 0
 endfunc
-
 ```
 
 
-```
-
-
+```clike
 ### Example
 
 set procedure to Phonetics.prg
@@ -799,5 +791,4 @@ clear
 ?double_metaphone("foxpro")    && FKSP
 ?double_metaphone("phoxpro")  && FKSP
 ?double_metaphone("phocksprow")  && FKSP
-
 ```

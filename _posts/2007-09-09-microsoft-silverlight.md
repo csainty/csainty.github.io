@@ -4,6 +4,7 @@ layout: post
 permalink: /2007/09/microsoft-silverlight.html
 tags: silverlight dotnet
 guid: tag:blogger.com,1999:blog-25631453.post-6495554585459666436
+tidied: true
 ---
 
 I have recently been playing with Microsoft's new [Silverlight](http://www.silverlight.net/) technology, both version 1.0 and 1.1

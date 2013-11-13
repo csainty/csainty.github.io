@@ -4,6 +4,7 @@ layout: post
 permalink: /2007/04/creating-fll.html
 tags: vfp
 guid: tag:blogger.com,1999:blog-25631453.post-3099640183909124277
+tidied: true
 ---
 
 I have been playing around in the last week or so with creating an FLL.

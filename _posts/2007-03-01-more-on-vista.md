@@ -4,6 +4,7 @@ layout: post
 permalink: /2007/03/more-on-vista.html
 tags: vista ozfox
 guid: tag:blogger.com,1999:blog-25631453.post-4860126285424322432
+tidied: true
 ---
 
 I been seeing a strange quirk pop up in Vista time to time. It has a strange habit of forgetting things.
