@@ -2,7 +2,7 @@
 title: A RavenDb profiling plugin for Glimpse
 layout: post
 permalink: /2011/07/ravendb-profiling-plugin-for-glimpse.html
-tags: ravendb glimpse mvc asp.net C# dotnet
+tags: ravendb glimpse mvc asp.net csharp dotnet
 guid: tag:blogger.com,1999:blog-25631453.post-5559930358189176459
 tidied: true
 ---

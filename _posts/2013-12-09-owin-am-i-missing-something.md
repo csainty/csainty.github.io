@@ -2,7 +2,7 @@
 title: OWIN - Am I missing something?
 layout: post
 permalink: /2013/12/owin-am-i-missing-something.html
-tags: c# dotnet owin opinions
+tags: csharp dotnet owin opinions
 ---
 
 Time for some opinion, in the last few days I have taken my first serious look at [OWIN](http://owin.org/) and I can't help but feel the whole idea is being polluted by the [Katana](http://katanaproject.codeplex.com/) project.

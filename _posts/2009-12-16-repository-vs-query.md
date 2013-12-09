@@ -2,7 +2,7 @@
 title: Repository vs Query
 layout: post
 permalink: /2009/12/repository-vs-query.html
-tags: C# dotnet
+tags: csharp dotnet
 guid: tag:blogger.com,1999:blog-25631453.post-6524216130843776483
 tidied: true
 ---

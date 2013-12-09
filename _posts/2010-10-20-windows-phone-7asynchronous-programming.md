@@ -2,7 +2,7 @@
 title: Windows Phone 7–Asynchronous Programming
 layout: post
 permalink: /2010/10/windows-phone-7asynchronous-programming.html
-tags: wp7dev wp7 C# dotnet
+tags: wp7dev wp7 csharp dotnet
 guid: tag:blogger.com,1999:blog-25631453.post-6088405555173488592
 tidied: true
 ---

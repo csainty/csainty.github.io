@@ -2,7 +2,7 @@
 title: Getting deeper into Open Source
 layout: post
 permalink: /2012/01/getting-deeper-into-open-source.html
-tags: javascript personal open-source node glimpse nancy appharbor C# dotnet
+tags: javascript personal open-source node glimpse nancy appharbor csharp dotnet
 guid: tag:blogger.com,1999:blog-25631453.post-2526950740026506989
 tidied: true
 ---

@@ -2,7 +2,7 @@
 title: ASP.NET MVC3 + Ninject + Moq + Unit Testing
 layout: post
 permalink: /2011/07/aspnet-mvc3-ninject-moq-unit-testing.html
-tags: unittest mvc asp.net C# dotnet
+tags: unittest mvc asp.net csharp dotnet
 guid: tag:blogger.com,1999:blog-25631453.post-157351919268260004
 tidied: true
 ---

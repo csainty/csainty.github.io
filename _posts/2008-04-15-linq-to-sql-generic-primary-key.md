@@ -2,7 +2,7 @@
 title: LINQ to SQL&#58; Generic Primary Key function
 layout: post
 permalink: /2008/04/linq-to-sql-generic-primary-key.html
-tags: linqtosql C# dotnet
+tags: linqtosql csharp dotnet
 guid: tag:blogger.com,1999:blog-25631453.post-6501746339448683482
 tidied: true
 ---

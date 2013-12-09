@@ -1,6 +1,6 @@
 name: Chris Sainty
 author: Chris Sainty
-description: A technical blog about software development. Usual topics include C#, Node.js, WP7, RavenDb, Nancy.
+description: A technical blog about software development. Usual topics include C#, Node.js and anything web.
 markdown: redcarpet
 pygments: false
 paginate: 5

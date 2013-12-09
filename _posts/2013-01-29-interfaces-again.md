@@ -2,7 +2,7 @@
 title: Interfaces again
 layout: post
 permalink: /2013/01/interfaces-again.html
-tags: C# dotnet
+tags: csharp dotnet
 guid: tag:blogger.com,1999:blog-25631453.post-2325482393140941532
 tidied: true
 ---

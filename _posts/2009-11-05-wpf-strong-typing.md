@@ -2,7 +2,7 @@
 title: WPF + Strong Typing
 layout: post
 permalink: /2009/11/wpf-strong-typing.html
-tags: wpf C# dotnet
+tags: wpf csharp dotnet
 guid: tag:blogger.com,1999:blog-25631453.post-425953652379976352
 tidied: true
 ---

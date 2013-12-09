@@ -2,7 +2,7 @@
 title: ScriptCS for quick Mutex tests
 layout: post
 permalink: /2013/11/scriptcs-for-quick-mutex-tests.html
-tags: c# dotnet scriptcs
+tags: csharp dotnet scriptcs
 ---
 
 I've been looking out for ways to use [ScriptCS](http://scriptcs.net/) in my day-to-day work lately. Each time I do, I am impressed by how much time it saves me.

@@ -2,7 +2,7 @@
 title: Announcing AppHarbify–Simplifying open source deployment
 layout: post
 permalink: /2012/05/announcing-appharbifysimplifying-open.html
-tags: appharbify open-source nancy appharbor C#
+tags: appharbify open-source nancy appharbor csharp
 guid: tag:blogger.com,1999:blog-25631453.post-257606768672944307
 tidied: true
 ---

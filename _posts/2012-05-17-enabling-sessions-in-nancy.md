@@ -2,7 +2,7 @@
 title: Enabling sessions in Nancy
 layout: post
 permalink: /2012/05/enabling-sessions-in-nancy.html
-tags: appharbify nancy appharbor C#
+tags: appharbify nancy appharbor csharp
 guid: tag:blogger.com,1999:blog-25631453.post-5401735484008996387
 tidied: true
 ---

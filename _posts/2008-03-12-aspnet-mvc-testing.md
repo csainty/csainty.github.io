@@ -2,7 +2,7 @@
 title: ASP.NET MVC - Testing
 layout: post
 permalink: /2008/03/aspnet-mvc-testing.html
-tags: mvc asp.net C# dotnet
+tags: mvc asp.net csharp dotnet
 guid: tag:blogger.com,1999:blog-25631453.post-1535672534721661582
 tidied: true
 ---
