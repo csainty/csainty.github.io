@@ -9,6 +9,8 @@ Time for some opinion. In the last few days I have taken my first serious look a
 
 <!-- more -->
 
+> *Update:* I made a slight mistake in laying all these problems at the feet of Katana. The origins of the practices I don't agree with lie with the reference implementations on the [OWIN github](https://github.com/owin) account. I mistakenly thought these had been *moved* to Katana, but that was a mistake, Katana is simply built on top of these concepts.
+
 My motivator to take a closer look came from checking in on how the [Glimpse](http://getglimpse.com/) middleware for OWIN is coming along. The first thing I see is that the `Glimpse.Owin` library has 3 nuget dependencies - `Owin`, `Owin.Extensions` and `Owin.Types`. *"WTF? OWIN doesn't have packages!"*, I thought to myself. Worse still, it isn't even a real piece of OWIN middleware, it is an `IAppBuilder` from one of these packages.
 
 So I asked myself why this approach had been taken. I did a bit of searching on Nuget, on GitHub and on blogs. Almost everyone is doing the same thing. Almost all introductory posts pull in these libraries and build against them.
