@@ -1,7 +1,7 @@
 ---
 title: Veil - Getting Started Standalone
 layout: post
-permalink: /2014/06/veil-getting-started-standalone.html
+permalink: /2014/07/veil-getting-started-standalone.html
 tags: open-source veil dotnet
 ---
 
