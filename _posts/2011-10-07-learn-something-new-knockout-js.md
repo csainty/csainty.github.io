@@ -56,7 +56,7 @@ So we define our `viewModel`, give it an observable value for the search string,
 We apply these bindings and that is it for the javascript. The actual binding to the UI happens in the UI, using HTML5 data attributes.
 
 
-```markup
+```xml
 <ul data-bind="template: { name : 'tweetTemplate', foreach: tweets }"></ul>
 
 <input type="text" placeholder="search..." data-bind="value: searchTerm" />

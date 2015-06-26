@@ -51,7 +51,7 @@ ko.bindingHandlers.grouped = {
 
 Now where we previous had a `foreach: items` binding we replace it with this.
 
-```markup
+```xml
 <ul data-bind="grouped: { data: items, by: function (i) { return i % 2 === 0 ? 'Even' : 'Odd'; } }">
   <li>
     <span data-bind="text:  key"></span>

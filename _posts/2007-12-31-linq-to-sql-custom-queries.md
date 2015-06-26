@@ -17,7 +17,7 @@ LINQ-to-SQL offers us a new paradigm for dealing with this sort of problem.
 
 First we need to add a few options to our UI in Window1.xaml
 
-```markup
+```xml
 <Window x:Class="AdventureWorks.Window1"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"

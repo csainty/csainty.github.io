@@ -14,7 +14,7 @@ I have been working with WPF recently, and one of the things that annoys me most
 
 Here is an example that anyone who has touched WPF should understand.  
 
-```markup
+```xml
  <TextBox Name="textBox1" Text="{Binding DataItem}" />
 ```
 

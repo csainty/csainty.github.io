@@ -34,7 +34,7 @@ What is not very well talked about is how to manage this on shared hosting. As h
   
 So the real solution is actually to use a new (4.0) setting in the web.config file called `useRequestHeadersForMetadataAddress`, if you are not on a host that supports 4.0, find one that does.  
   
-```markup
+```xml
  <behaviors>
     <serviceBehaviors>
         <behavior>
@@ -53,7 +53,7 @@ So the real solution is actually to use a new (4.0) setting in the web.config fi
 You also need to turn on Transport security for your binding. Though this is standard WCF, nothing special here.  
 
 
-```markup
+```xml
   <bindings>
       <basicHttpBinding>
           <binding>
@@ -66,7 +66,7 @@ You also need to turn on Transport security for your binding. Though this is sta
 On the phone, if you grab the metadata from your secure service, then it should point everything correctly, but if you need to do it by hand, the service configuration file will be along these lines.  
 
 
-```markup
+```xml
   <system.serviceModel>
       <bindings>
           <basicHttpBinding>

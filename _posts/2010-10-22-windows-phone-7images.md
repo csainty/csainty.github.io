@@ -19,7 +19,7 @@ First you are going to want a local IIS server, put an image on the server, and 
   
 For this post I am just creating a basic Windows Phone Application, add the following XAML to the Grid in the MainPage.xaml and pop in your image URL.  
   
-```markup
+```xml
 <!--ContentPanel - place additional content here-->
 
 <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">

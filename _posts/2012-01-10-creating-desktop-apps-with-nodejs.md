@@ -68,7 +68,7 @@ nwebkit.init({
  
 `index.html` is also pretty straight forward, it is just basic HTML with Knockout bindings. It includes script references for jQuery, [Knockout](http://csainty.blogspot.com/2011/10/learn-something-new-knockout-js.html) and our own index.js  
 
-```markup
+```xml
 <html>
 <head>
 	<title>node-webkit-twitter</title>

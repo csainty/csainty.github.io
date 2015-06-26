@@ -37,7 +37,7 @@ Now finally we want to hook up a button on our XAML page to a method in the code
 
 `Window1.xaml`
 
-```markup
+```xml
 <Window x:Class="AdventureWorks.Window1"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"

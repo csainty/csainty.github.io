@@ -21,7 +21,7 @@ It's not the best way to parse XML, but it is simple when your input is robust.
   
 #### Example
 
-```clike
+```XBase
 local cStr
 text to cStr noshow
   <article key="a1">

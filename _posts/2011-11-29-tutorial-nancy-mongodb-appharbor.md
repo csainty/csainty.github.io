@@ -226,7 +226,7 @@ A Module in Nancy is where we wire up how the web server is going to response to
 Then finally we have the View (`Views/Homepage.html`), which is essentially a static HTML page and is processed by the built in view engine.  
   
 
-```markup
+```xml
 <!DOCTYPE HTML>
 <html>
 <head>

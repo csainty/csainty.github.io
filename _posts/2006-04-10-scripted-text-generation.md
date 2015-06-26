@@ -15,7 +15,7 @@ I made mention of this code as part of my presentation at [OzFox Lite](http://ww
   
 <!-- more -->
 
-```clike
+```XBase
 ### Code
 
 #define k_NL      chr(13) + chr(10)
@@ -175,7 +175,7 @@ I have provided the basic calling structure, but a better way to do this is to c
 You can also on-the-fly compile these pages off disk as they are called.
   
 
-```clike
+```XBase
 ### Example Calling Code
 
 local cIn, cOut, cS
@@ -194,7 +194,7 @@ Along with the procedure this would generate.
   
 
 
-```clike
+```XBase
 ### Example Input
 
 The time is <%= ttoc(datetime()) %>
@@ -209,7 +209,7 @@ The time is <%= ttoc(datetime()) %>
 
 
 
-```clike
+```XBase
 ### Example Output
 
 function __test

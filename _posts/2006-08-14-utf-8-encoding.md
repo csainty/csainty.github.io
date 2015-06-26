@@ -11,7 +11,7 @@ I was recently working on creating RSS feeds dynamically from a product database
 
 I found a quick one liner that seems to tidy this up, albeit in a way i'm somewhat less than comfortable with (I never did exhaustive tests to be sure it didnt mess with the valid data in some way). Anyway here is my code
 
-```clike
+```XBase
 cStr= strconv(strconv(m.cStr,11),9)
 ```
 

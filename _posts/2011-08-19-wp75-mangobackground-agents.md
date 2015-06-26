@@ -16,7 +16,7 @@ I was therefore delighted when details about Mango were released as this is basi
 Background Agents in Mango take the form of a separate assembly, which gets linked in your `WMAppManifest.xml`  
   
 
-```markup
+```xml
 <Tasks>
 	<DefaultTask Name="_default" NavigationPage="Home.xaml" />
 	<ExtendedTask Name="BackgroundTask">

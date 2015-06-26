@@ -44,7 +44,7 @@ public class NameMultiValueConverter : IMultiValueConverter
 The XAML looks basically like this, again I have cut out non-essential code so grab the download if you need it.  
 
 
-```markup
+```xml
 <Window xmlns:local="clr-namespace:BlogIMultiValueConverter">
     <Window.Resources>
         <local:NameMultiValueConverter x:Key="NameMultiValueConverter" />
@@ -92,7 +92,7 @@ public class DataClassMultiValueConverter : IMultiValueConverter
 
 And the XAML becomes  
 
-```markup
+```xml
 <MultiBinding Converter="{StaticResource DataClassMultiValueConverter}">
     <Binding />
     <Binding Path="FirstName" />
