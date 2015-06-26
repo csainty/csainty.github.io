@@ -2,8 +2,8 @@ name: Chris Sainty
 author: Chris Sainty
 description: A technical blog about software development. Usual topics include C#, Node.js and anything web.
 markdown: redcarpet
-pygments: false
 paginate: 5
+highlighter: pygments
 url: http://blog.csainty.com
 tag_page_layout: tag_page
 tag_page_dir: tag

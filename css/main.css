@@ -22,9 +22,6 @@
    0. Includes - Ground zero
    ========================================================================== */
 
-@import url(normalize.css);
-
-
 /* ==========================================================================
    1. Icons - Sets up the icon font and respective classes
    ========================================================================== */
@@ -272,6 +269,7 @@ pre {
     overflow: auto;
     background: #F7FAFB;
     border-radius: 3px;
+    line-height: 1em;
 }
 
 pre code, tt {
