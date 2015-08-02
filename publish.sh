@@ -1,3 +1,4 @@
+jekyll build
 rm -rf tmpdir
 mkdir tmpdir
 rsync -av --exclude='*.sh' --exclude='Vagrantfile' _site/ tmpdir/
