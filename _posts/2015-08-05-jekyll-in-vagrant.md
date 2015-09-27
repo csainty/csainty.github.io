@@ -28,7 +28,7 @@ You'll need a second terminal window to run `vagrant rsync-auto` which is going 
 
 When you are done you can run `publish.sh` which will do a fresh build, then push the built assets to a GitHub branch ready for hosting.
 
-Finallt `stop.sh` will simply shutdown the VM to free up resources.
+Finally `stop.sh` will simply shutdown the VM to free up resources.
 
 ### Customization
 Obviously these scripts and this setup are designed for my blog. It installs the plugins I need and publishes to my repo. So you are going to need to tweak it for your own purposes, but I hope it can help you on the way.
