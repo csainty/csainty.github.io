@@ -1,7 +1,7 @@
 ---
 title: Developing with Docker on OSX
 layout: post
-permalink: /2015/09/docker-on-osx.html
+permalink: /2015/10/docker-on-osx.html
 tags: docker
 ---
 
