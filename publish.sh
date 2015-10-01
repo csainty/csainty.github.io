@@ -1,3 +1,4 @@
+vagrant rsync
 vagrant ssh -c "cd /vagrant &&
 jekyll build &&
 rm -rf tmpdir &&
