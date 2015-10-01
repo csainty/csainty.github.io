@@ -51,7 +51,7 @@
     text-decoration: none;
 }
 
-/* Each icon is created by inserting the corret character into the 
+/* Each icon is created by inserting the corret character into the
    content of the :before pseudo element. Like a boss. */
 .icon-ghost:before {
     content: "\e000";
@@ -292,8 +292,8 @@ kbd {
     font-weight: bold;
     background: #f4f4f4;
     border-radius: 4px;
-    box-shadow: 
-        0 1px 0 rgba(0, 0, 0, 0.2), 
+    box-shadow:
+        0 1px 0 rgba(0, 0, 0, 0.2),
         0 1px 0 0 #fff inset;
 }
 
@@ -560,6 +560,7 @@ table.plain {
     margin: 4rem 0 0 0;
     padding: 4rem 0 0 0;
     border-top: #EBF2F6 1px solid;
+    text-align: right;
 }
 
 .post-footer h4 {
@@ -583,10 +584,8 @@ table.plain {
    to be flexible at smaller screen sizes while the share
    links remain at a fixed width the whole time */
 .post-footer .share {
-    position: absolute;
-    top: 4rem;
-    right: 0;
     width: 140px;
+    display: inline-block;
 }
 
 .post-footer .share a {
@@ -798,9 +797,9 @@ table.plain {
     }
 
     #site-head {
-        -webkit-box-sizing: border-box; 
+        -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
-        box-sizing: border-box; 
+        box-sizing: border-box;
         height: auto;
         min-height: 240px;
         padding: 15% 0;
@@ -859,7 +858,7 @@ table.plain {
         max-height: 80px;
     }
 
-    .inner, 
+    .inner,
     .pagination {
         width: auto;
         margin-left: 16px;
