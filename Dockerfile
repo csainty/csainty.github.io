@@ -8,4 +8,4 @@ VOLUME ["/src"]
 
 EXPOSE 4000
 
-CMD jekyll serve -s /src -d /src/_site --host 0.0.0.0 --incremental --watch
+CMD jekyll serve -s /src -d /src/_site --host 0.0.0.0 --watch
