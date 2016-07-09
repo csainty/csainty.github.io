@@ -43,17 +43,17 @@ module Jekyll
         maker.channel.link = site.config['url']
         maker.channel.description = site.config['description'] || "RSS feed for #{site.config['name']}"
         maker.channel.author = site.config["author"]
-        maker.channel.updated = site.posts.map { |p| p.date  }.max
+        maker.channel.updated = site.posts.docs.map { |p| p.date  }.max
         maker.channel.copyright = site.config['copyright']
         maker.channel.id = site.config['url']
 
         post_limit = (site.config['rss_post_limit'] - 1 rescue site.posts.count)
 
-        site.posts.reverse[0..post_limit].each do |post|
+        site.posts.docs.reverse[0..post_limit].each do |post|
           maker.items.new_item do |item|
-            item.title = post.title
+            item.title = post.data['title']
             item.link = "#{site.config['url']}#{post.url}"
-            item.description = parser.convert(post.excerpt)
+            item.description = parser.convert(post.data['excerpt'].content)
             item.updated = post.date
             item.id = post.data['guid'] || post.id
           end

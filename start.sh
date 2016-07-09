@@ -1,2 +1,1 @@
-vagrant up
-vagrant ssh -c "jekyll serve -s /vagrant -d /vagrant/_site --host 0.0.0.0"
+docker run --rm -it -p 4000:4000 -v $(pwd):/src csainty/blog
