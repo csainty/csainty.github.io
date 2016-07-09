@@ -5,6 +5,14 @@ permalink: /2015/10/docker-on-osx.html
 tags: docker
 ---
 
+---
+**Update:**
+
+Much of this post is made irrelevant by the release of [Docker for Mac beta](https://blog.docker.com/2016/03/docker-for-mac-windows-beta/). You no longer need a separate virtualization environment (virtualbox) you no longer need to tunnel ports (docker-pf) and you can now map volumes directly from OSX to docker and have watches etc all work.  
+So just `brew cask install docker` and ignore most of this post!
+
+---
+
 Docker is the talk of the town in recent times. Containerized deployments of micro services are quickly gaining momentum as best-practice architecture for certain classes of applications.
 
 As ever in software development though, understanding how to make a start with these tools isn't easy. Especially if you are working on an existing monolith.
