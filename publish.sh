@@ -1,5 +1,5 @@
 rm -rf _site/
-docker run --rm -v $(pwd):/src csainty/blog -e JEKYLL_ENV=production jekyll build -s /src -d /src/_site
+docker run --rm -v $(pwd):/src -e JEKYLL_ENV=production csainty/blog jekyll build -s /src -d /src/_site
 cd _site/
 git init
 git add .
