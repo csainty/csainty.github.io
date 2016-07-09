@@ -10,3 +10,4 @@ rss_post_limit: 10
 feed_url: http://blog.csainty.com/rss.xml
 excerpt_separator: "<!-- more -->"
 gems: [jekyll-paginate, jekyll-sitemap]
+exclude: [Dockerfile, publish.sh, start.sh]
