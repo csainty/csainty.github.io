@@ -42,8 +42,8 @@ You simply need to make a single change to your `web.config` rewrite rules so th
   </system.webServer>
 </configuration>
 ```  
-  
- 
+
+
 So the way you get to the debug console is to hit up `/app.js/debug` where `app.js` is the entry point for your app. The rewrite rules here simply allow that url through as it is, everything else gets handed off to the app as normal.  
 
 So push up the modified web.config, hit the URL and this nice console pops up.  
@@ -52,7 +52,7 @@ So push up the modified web.config, hit the URL and this nice console pops up.
 
 Clicking into Scripts presents you with a list of all the running JavaScript files on the server. Including those built into node itself. You can pick the file you want to debug, and set a break point by clicking on the line numbers.  
 
-![SetBreakpoints](/images/1382874051665.png)  
+![SetBreakpoints](/images/1382874051665.jpg)  
 
 With the breakpoint set, now you need to fire a hit off to the website that will run over the breakpoint.  
 
