@@ -9,6 +9,13 @@ tag_page_dir: tag
 rss_post_limit: 10
 feed_url: https://blog.csainty.com/rss.xml
 excerpt_separator: "<!-- more -->"
+twitter:
+  username: csainty
+social:
+  name: Chris Sainty
+  links:
+    - https://linkedin.com/in/csainty
+    - https://www.twitter.com/csainty
 gems:
   - jekyll-paginate
   - jekyll-sitemap
