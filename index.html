@@ -5,20 +5,22 @@ title: "@csainty"
 
 {% for post in paginator.posts %}
 
-<article class="post">
-    <header class="post-header">
-        <span class="post-meta"><time datetime="{{ post.date | date_to_string }}">{{ post.date | date_to_string }}</time> {% if post.tags %}in {{ post | tags }}{% endif %}</span>
-        <h2 class="post-title"><a href="{{post.url}}">{{post.title}}</a></h2>
+<article>
+    <header class="a-h">
+        <span class="a-m">
+          <time datetime="{{ post.date | date_to_string }}">{{ post.date | date_to_string }}</time> {% if post.tags %}in {{ post | tags }}{% endif %}
+        </span>
+        <h2><a href="{{post.url}}">{{post.title}}</a></h2>
     </header>
     {% if post.next %}
-      <section class="post-excerpt">
+      <section>
           <p>{{post.excerpt}}</p>
           {% if post.excerpt != post.content %}
-          <p><a href="{{post.url}}" class="read-more-link">Read More</a></p>
+          <p><a class="r-m" href="{{post.url}}">Read More</a></p>
           {% endif %}
       </section>
     {% else %}
-      <section class="post-content">
+      <section>
           <p>{{post.content}}</p>
       </section>
     {% endif %}
@@ -26,16 +28,16 @@ title: "@csainty"
 
 {% endfor %}
 
-<nav class="pagination" role="pagination">
+<nav role="pagination">
   {% if paginator.previous_page %}
 	{% if paginator.previous_page == 1 %}
-		<a href="/" class="newer-posts">Newer Posts</a>
+		<a class="n-p" href="/">Newer Posts</a>
 	{% else %}
-		<a href="{{ paginator.previous_page_path }}" class="newer-posts">Newer Posts</a>
+		<a class="n-p" href="{{ paginator.previous_page_path }}">Newer Posts</a>
 	{% endif %}
   {% endif %}
-  <span class="page-number ">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+  <span>Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
   {% if paginator.next_page %}
-    <a href="/page{{ paginator.next_page }}" class="older-posts">Older Posts</a>
+    <a class="o-p" href="/page{{ paginator.next_page }}">Older Posts</a>
   {% endif %}
 </nav>

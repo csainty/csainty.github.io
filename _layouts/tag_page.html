@@ -2,36 +2,23 @@
 layout: default
 ---
 
-<article class="post">
-    <header class="post-header">
-        <a id="blog-logo" href="{{ site.url }}">
-            {% if site.logo %}
-                <img src="{{ site.logo }}" alt="{{ site.name }}" />
-            {% else %}
-                {{ site.name }}
-            {% endif %}
-        </a>
-    </header>
-
-    <h1 class="post-title">{{ page.tag }}</h1>
-</article>
+<h1 class="t-h">Posts about - {{ page.tag }}</h1>
 
 {% for post in page.posts %}
 
-<article class="post">
-    <header class="post-header">
-        <span class="post-meta"><time datetime="{{ post.date | date_to_string }}">{{ post.date | date_to_string }}</time> {{ post | tags }}</span>
-        <h2 class="post-title"><a href="{{post.url}}">{{post.title}}</a></h2>
+<article>
+    <header class="a-h">
+        <span class="a-m">
+          <time datetime="{{ post.date | date_to_string }}">{{ post.date | date_to_string }}</time> {{ post | tags }}
+        </span>
+        <h2><a href="{{post.url}}">{{post.title}}</a></h2>
     </header>
-    <section class="post-excerpt">
-        <p>{{post.excerpt}}&hellip;</p>
+    <section>
+        <p>{{post.excerpt}}</p>
+        {% if post.excerpt != post.content %}
+        <p><a class="r-m" href="{{post.url}}">Read More</a></p>
+        {% endif %}
     </section>
 </article>
 
 {% endfor %}
-
-<!--
-<div id="tag-cloud">
-  {{ site | tag_cloud }}
-</div>
--->
