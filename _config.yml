@@ -7,6 +7,7 @@ url: https://blog.csainty.com
 tag_page_layout: tag_page
 tag_page_dir: tag
 rss_post_limit: 10
+future: true
 feed_url: https://blog.csainty.com/rss.xml
 excerpt_separator: "<!-- more -->"
 twitter:
