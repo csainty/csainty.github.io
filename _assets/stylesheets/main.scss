@@ -1,26 +1,40 @@
+html {
+  font-size: 16px;
+
+  @media screen and (min-width: 900px) {
+    font-size: 18px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 20px;
+  }
+}
+
 body {
   font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
-  font-size: 1.8rem;
-  line-height: 1.6em;
+  line-height: 0.9em;
   color: #3A4145;
 }
 
 h1 {
-  font-size: 5rem;
+  font-size: 2rem;
   margin: 10px 0 10px 0;
   letter-spacing: -1px;
   line-height: 1.2em;
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: 1.4rem;
   line-height: 1.2em;
   letter-spacing: -1px;
 }
 
 h3 {
-  font-size: 2.5rem;
-  margin-top: 3rem;
+  font-size: 1.3rem;
+}
+
+h4 {
+  font-size: 0.8rem;
 }
 
 a:link,
@@ -66,21 +80,20 @@ pre code {
 
 .m-h {
   text-align: center;
-  margin-bottom: 5rem;
   background-color: #303538;
   color: #fff;
-  padding: 2rem 0;
+  padding: 1rem;
 }
 
 .m-h h2 {
   font-weight: normal;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
 }
 
 article {
-  width: 75%;
-  margin: 4rem auto;
-  padding-bottom: 4rem;
+  width: 80%;
+  margin: 1rem auto;
+  padding-bottom: 1rem;
   border-bottom: #EBF2F6 1px solid;
   word-break: break-word;
   position: relative;
@@ -103,7 +116,7 @@ article::after {
 
 .a-m {
   color: #9EABB3;
-  font-size: 1.3rem;
+  font-size: 0.8rem;
 }
 
 .a-m a:hover {
@@ -122,18 +135,18 @@ article::after {
 nav {
   position: relative;
   width: 75%;
-  margin: 4rem auto;
-  font-size: 1.3rem;
+  margin: 1rem auto;
+  font-size: 0.8rem;
   color: #9EABB3;
   text-align: center;
 }
 
 .m-f {
   position: relative;
-  margin: 8rem 0 0 0;
-  padding: 4rem 0;
+  margin: 2rem 0 0 0;
+  padding: 1rem 1rem 2rem 1rem;
   border-top: #EBF2F6 1px solid;
-  font-size: 1.3rem;
+  font-size: 0.8rem;
   line-height: 1.7em;
   color: #BBC7CC;
   text-align: center;
@@ -144,7 +157,7 @@ nav {
 .n-p {
   position: absolute;
   display: inline-block;
-  padding: 0 15px;
+  padding: 0 0.5rem;
   border: #EBF2F6 2px solid;
   text-decoration: none;
   border-radius: 30px;
@@ -162,21 +175,20 @@ nav {
 .t-h {
   width: 80%;
   margin: 0 auto;
-  font-size: 4rem;
 }
 
 .p-f {
   position: relative;
-  margin: 4rem 0 0 0;
-  padding: 4rem 0 0 0;
+  margin: 1rem 0 0 0;
   border-top: #EBF2F6 1px solid;
   text-align: right;
   color: #BBC7CC;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
 }
 
 .p-f h4 {
   color: #3A4145;
+  margin: 0.5rem 0;
 }
 
 .p-f a {

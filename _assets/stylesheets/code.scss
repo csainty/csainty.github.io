@@ -1,4 +1,8 @@
-.highlight pre { background-color: #49483e; color: white; }
+.highlight pre {
+  background-color: #49483e;
+  color: white;
+  overflow: scroll;
+}
 
 .ge { font-style: italic } /* Generic.Emph */
 .gs { font-weight: bold } /* Generic.Strong */
