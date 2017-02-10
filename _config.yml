@@ -34,7 +34,7 @@ assets:
   compress:
     css: true
     js: true
-  digest: true
+  digest: false
   assets:
     - bundle.css.scss
   sources:
