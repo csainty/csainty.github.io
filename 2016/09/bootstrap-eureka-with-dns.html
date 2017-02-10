@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <style>
+    html,body,li,p{margin:0;padding:0}p,ul,ol,.highlight{margin:1.6em 0}h1,h2,h3,h4{margin:0;padding:0;font-size:100%;font-weight:bold;text-rendering:optimizeLegibility;font-family:sans-serif}ul{list-style:none}html{box-sizing:border-box;font-size:62.5%}*{box-sizing:inherit}*:before,*:after{box-sizing:inherit}img{height:auto;max-width:100%}pre,code{font-family:monospace;margin:0}hr{display:block;height:1px;border:0;border-top:1px solid #efefef;margin:1rem 0;padding:0}blockquote{font-style:italic;margin:1.6em 0 1.6em -2.2em;padding:0 0 0 1.6em;border-left:#4a4a4a 0.4em solid}html{font-size:16px}@media screen and (min-width: 900px){html{font-size:18px}}@media screen and (min-width: 1200px){html{font-size:20px}}body{font-family:serif;color:#3A4145}h1{font-size:2rem;margin:10px 0 10px 0;letter-spacing:-1px}h2{font-size:1.4rem;letter-spacing:-1px}h3{font-size:1.2rem}h4{font-size:1.1rem}a:link,a:visited{color:inherit;text-decoration:none}a:hover{color:#57A3E8;transition:color ease 0.3s}p a:link,p a:visited{text-decoration:underline}pre{border:1px solid #E3EDF3;padding:10px;font-size:0.85em;border-radius:3px}code{padding:1px 3px;font-size:0.85em;white-space:pre;border:1px solid #E3EDF3;background:#F7FAFB;border-radius:2px}pre code{background:transparent;padding:0;border:0}.m-h{text-align:center;background-color:#303538;color:#fff;padding:1rem}.m-h h2{font-weight:normal;font-size:1.5rem}article{width:80%;margin:1rem auto;padding-bottom:1rem;border-bottom:#EBF2F6 1px solid;word-break:break-word;position:relative}article::after{display:block;content:"";width:7px;height:7px;border:#E7EEF2 1px solid;position:absolute;bottom:-5px;left:50%;margin-left:-5px;background:#fff;border-radius:100%;box-shadow:#fff 0 0 0 5px}.a-m{color:#9EABB3;font-size:0.8rem}.a-m a:hover{color:#9EABB3;text-decoration:underline}.a-h{margin-bottom:5px}.r-m{font-size:smaller}nav{position:relative;width:75%;margin:1rem auto;font-size:0.8rem;color:#9EABB3;text-align:center}.m-f{position:relative;margin:2rem 0 0 0;padding:1rem 1rem 2rem 1rem;border-top:#EBF2F6 1px solid;font-size:0.8rem;line-height:1.7em;color:#BBC7CC;text-align:center;background:#F7FAFB}.o-p,.n-p{position:absolute;display:inline-block;padding:0 0.5rem;border:#EBF2F6 2px solid;text-decoration:none;border-radius:30px;transition:border ease 0.3s}.o-p{right:0}.n-p{left:0}.t-h{width:80%;margin:0 auto}.highlight pre{background-color:#49483e;color:white;overflow:scroll}.ge{font-style:italic}.gs{font-weight:bold}.c,.cm,.cp,.c1,.gu,.cs{color:#75715e}.k,.kc,.kd,.kp,.kr,.no,.kt{color:#66d9ef}.l,.mf,.mh,.mi,.mo,.se,.il,.m{color:#ae81ff}.n,.nb,.ni,.nl,.nn,.py,.nv,.w,.bp,.vc,.vg,.vi,.p{color:#f8f8f2}.o,.nt,.ow,.gd,.kn{color:#f92672}.ld,.sb,.sc,.sd,.s2,.sh,.si,.sx,.sr,.s1,.ss,.s{color:#e6db74}.na,.nc,.nd,.ne,.nf,.nx,.gi{color:#a6e22e}
+
+    </style>
+
+    <!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>Bootstrapping Spring Cloud Netflix Eureka using DNS - Chris Sainty</title>
+<meta property="og:title" content="Bootstrapping Spring Cloud Netflix Eureka using DNS" />
+<meta name="description" content="Spring Cloud Netflix is a spring wrapper around many of the core components of the Netflix OSS stack.It makes running some of these components very simple, but the devil is usually in the configuration. Let&#39;s take a look at how to configure your Eureka server instances to discover each other via DNS when running in your own datacenter." />
+<meta property="og:description" content="Spring Cloud Netflix is a spring wrapper around many of the core components of the Netflix OSS stack.It makes running some of these components very simple, but the devil is usually in the configuration. Let&#39;s take a look at how to configure your Eureka server instances to discover each other via DNS when running in your own datacenter." />
+<link rel="canonical" href="https://blog.csainty.com/2016/09/bootstrap-eureka-with-dns.html" />
+<meta property="og:url" content="https://blog.csainty.com/2016/09/bootstrap-eureka-with-dns.html" />
+<meta property="og:site_name" content="Chris Sainty" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-09-04T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@csainty" />
+<meta name="twitter:creator" content="@Chris Sainty" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Bootstrapping Spring Cloud Netflix Eureka using DNS",
+    "datePublished": "2016-09-04T00:00:00+00:00",
+    "description": "Spring Cloud Netflix is a spring wrapper around many of the core components of the Netflix OSS stack.It makes running some of these components very simple, but the devil is usually in the configuration. Let&#39;s take a look at how to configure your Eureka server instances to discover each other via DNS when running in your own datacenter.",
+    "url": "https://blog.csainty.com/2016/09/bootstrap-eureka-with-dns.html"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+</head>
+<body>
+  <header class="m-h">
+    <h1><a href="https://blog.csainty.com">Chris Sainty</a></h1>
+    <h2>A technical blog covering full-stack web development.</h2>
+    <h2><a href="https://twitter.com/csainty" rel="external">twitter</a> | <a href="https://github.com/csainty" rel="external">github</a> | <a href="https://stackoverflow.com/users/625695/chris-sainty" rel="external">stackoverflow</a></h2>
+  </header>
+
+  <article>
+    <span><time datetime="04 Sep 2016">04 Sep 2016</time>  </span>
+    <h1>Bootstrapping Spring Cloud Netflix Eureka using DNS</h1>
+    <section>
+        <p><a href="https://cloud.spring.io/spring-cloud-netflix/">Spring Cloud Netflix</a> is a spring wrapper around many of the core components of the <a href="https://netflix.github.io/">Netflix OSS</a> stack.</p>
+
+<p>It makes running some of these components very simple, but the devil is usually in the configuration. Let&#39;s take a look at how to configure your <a href="https://github.com/Netflix/eureka">Eureka</a> server instances to discover each other via DNS when running in your own datacenter.</p>
+
+<!-- more -->
+
+<h3>Spring Cloud Netflix != Netflix OSS</h3>
+
+<p>First a word of warning. Part of the Spring Cloud Netflix wrapper around the Netflix components is a separate configuration system. The configuration options I use in this post do not match exactly to what you will find if you are using the Netflix libraries directly.</p>
+
+<h3>Creating a Eureka Server with Spring Cloud Netflix</h3>
+
+<p>You only need a tiny piece of java code to bring up a Eureka server using the Spring libraries.</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">storytel</span><span class="o">.</span><span class="na">eureka</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.springframework.boot.Banner</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.boot.autoconfigure.SpringBootApplication</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.boot.builder.SpringApplicationBuilder</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.cloud.netflix.eureka.EnableEurekaClient</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.cloud.netflix.eureka.server.EnableEurekaServer</span><span class="o">;</span>
+
+<span class="nd">@SpringBootApplication</span>
+<span class="nd">@EnableEurekaServer</span>
+<span class="nd">@EnableEurekaClient</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Application</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">new</span> <span class="nf">SpringApplicationBuilder</span><span class="o">(</span><span class="n">Application</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">bannerMode</span><span class="o">(</span><span class="n">Banner</span><span class="o">.</span><span class="na">Mode</span><span class="o">.</span><span class="na">CONSOLE</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">registerShutdownHook</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">web</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="n">args</span><span class="o">);</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></div>
+<h3>Configuring a Spring Cloud Netflix Eureka server for DNS</h3>
+
+<p>There are two ways to link eureka servers to each other. You can either provide static configuration or you can utilize well defined DNS records. Here I show how to do the latter via <code>application.yml</code>.</p>
+<div class="highlight"><pre><code class="language-yml" data-lang="yml"><span class="s">spring</span><span class="pi">:</span>
+  <span class="s">application</span><span class="pi">:</span>
+    <span class="s">name</span><span class="pi">:</span> <span class="s">eureka</span>
+
+<span class="s">server</span><span class="pi">:</span>
+  <span class="s">port</span><span class="pi">:</span> <span class="s">8761</span>
+
+<span class="s">eureka</span><span class="pi">:</span>
+  <span class="s">instance</span><span class="pi">:</span>
+    <span class="s">healthCheckUrlPath</span><span class="pi">:</span> <span class="s">/health</span>
+  <span class="s">client</span><span class="pi">:</span>
+    <span class="s">region</span><span class="pi">:</span> <span class="s">global</span>
+    <span class="s">eurekaServerPort</span><span class="pi">:</span> <span class="s">8761</span>
+    <span class="s">useDnsForFetchingServiceUrls</span><span class="pi">:</span> <span class="s">true</span>
+    <span class="s">eurekaServerDNSName</span><span class="pi">:</span> <span class="s">eureka.storytel</span>
+    <span class="s">eurekaServerURLContext</span><span class="pi">:</span> <span class="s">eureka</span>
+    <span class="s">registerWithEureka</span><span class="pi">:</span> <span class="s">true</span>
+    <span class="s">fetchRegistry</span><span class="pi">:</span> <span class="s">true</span>
+
+<span class="s">endpoints</span><span class="pi">:</span>
+  <span class="s">enabled</span><span class="pi">:</span> <span class="s">false</span>
+  <span class="s">health</span><span class="pi">:</span>
+    <span class="s">enabled</span><span class="pi">:</span> <span class="s">true</span>
+</code></pre></div>
+<p>Here are the important parts :-</p>
+
+<ol>
+<li><code>useDnsForFetchingServiceUrls</code> This must be true for DNS based configuration</li>
+<li><code>eurekaServerDNSName</code> This is the suffix added to the DNS requests, so must match the records you create</li>
+<li><code>eurekaServerURLContext</code> This is the url added to the servers returned from DNS. e.g. <code>eureka01.storytel.local</code> will become <code>http://eureka01.storytel.local/eureka</code></li>
+<li><code>eurekaServerPort</code> This is the port added to the servers returned from DNS. Important if you run a non-standard port.</li>
+</ol>
+
+<p>In addition to these values you bake in to your config, there are some additional properties you should set. We do that via environment variables which can be used to add/override any value in <code>application.yml</code></p>
+
+<ol>
+<li><code>EUREKA_INSTANCE_HOSTNAME</code> The hostname for this instance</li>
+<li><code>EUREKA_INSTANCE_IP_ADDRESS</code> The ip address for this instance</li>
+<li><code>EUREKA_CLIENT_REGION</code> The region this instance is running in</li>
+</ol>
+
+<h3>What&#39;s the deal with regions</h3>
+
+<p>A Eureka topology is modeled as <code>Region &gt; Datacenter &gt; Instance</code> on amazon this might be <code>us-east &gt; us-east-1 &gt; eurkeka01</code> on digital ocean this may be <code>ams &gt; ams2 &gt; eureka01</code></p>
+
+<p>This is important to understand as it is used when the Eureka client queries DNS.</p>
+
+<h3>DNS TXT records</h3>
+
+<p>Eureka will start by querying the TXT records for your region <code>txt.&lt;region&gt;.&lt;eurekaServerDNSName&gt;</code> eg <code>txt.us-east.eureka.storytel</code> where it will expect to find one value for each datacenter in the region <code>us-east-1.eureka.storytel</code>.<br>
+It will then make another TXT lookup this time for <code>txt.&lt;datacenter&gt;</code> e.g. <code>txt.us-east-1.eureka.storytel</code> where it will expect to find one value for each instance in the datacenter <code>eureka01.us-east-1.eureka.storytel</code>, <code>eureka02.us-east-1.eureka.storytel</code>.</p>
+
+<h3>How to add the TXT records</h3>
+
+<p>This will depend heavily on your environment. We use <a href="http://www.thekelleys.org.uk/dnsmasq/doc.html">dnsmasq</a> which you can also read about on my blog <a href="/2016/09/running-dnsmasq-in-docker.html">here</a>.</p>
+
+    </section>
+</article>
+
+
+  <footer class="m-f">
+      <section class="copyright">All content copyright <a href="/">Chris Sainty</a> &copy; 2006-2017 &bull; All rights reserved.</section>
+  </footer>
+</body>
+</html>

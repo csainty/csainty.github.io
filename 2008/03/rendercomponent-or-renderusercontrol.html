@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <style>
+    html,body,li,p{margin:0;padding:0}p,ul,ol,.highlight{margin:1.6em 0}h1,h2,h3,h4{margin:0;padding:0;font-size:100%;font-weight:bold;text-rendering:optimizeLegibility;font-family:sans-serif}ul{list-style:none}html{box-sizing:border-box;font-size:62.5%}*{box-sizing:inherit}*:before,*:after{box-sizing:inherit}img{height:auto;max-width:100%}pre,code{font-family:monospace;margin:0}hr{display:block;height:1px;border:0;border-top:1px solid #efefef;margin:1rem 0;padding:0}blockquote{font-style:italic;margin:1.6em 0 1.6em -2.2em;padding:0 0 0 1.6em;border-left:#4a4a4a 0.4em solid}html{font-size:16px}@media screen and (min-width: 900px){html{font-size:18px}}@media screen and (min-width: 1200px){html{font-size:20px}}body{font-family:serif;color:#3A4145}h1{font-size:2rem;margin:10px 0 10px 0;letter-spacing:-1px}h2{font-size:1.4rem;letter-spacing:-1px}h3{font-size:1.2rem}h4{font-size:1.1rem}a:link,a:visited{color:inherit;text-decoration:none}a:hover{color:#57A3E8;transition:color ease 0.3s}p a:link,p a:visited{text-decoration:underline}pre{border:1px solid #E3EDF3;padding:10px;font-size:0.85em;border-radius:3px}code{padding:1px 3px;font-size:0.85em;white-space:pre;border:1px solid #E3EDF3;background:#F7FAFB;border-radius:2px}pre code{background:transparent;padding:0;border:0}.m-h{text-align:center;background-color:#303538;color:#fff;padding:1rem}.m-h h2{font-weight:normal;font-size:1.5rem}article{width:80%;margin:1rem auto;padding-bottom:1rem;border-bottom:#EBF2F6 1px solid;word-break:break-word;position:relative}article::after{display:block;content:"";width:7px;height:7px;border:#E7EEF2 1px solid;position:absolute;bottom:-5px;left:50%;margin-left:-5px;background:#fff;border-radius:100%;box-shadow:#fff 0 0 0 5px}.a-m{color:#9EABB3;font-size:0.8rem}.a-m a:hover{color:#9EABB3;text-decoration:underline}.a-h{margin-bottom:5px}.r-m{font-size:smaller}nav{position:relative;width:75%;margin:1rem auto;font-size:0.8rem;color:#9EABB3;text-align:center}.m-f{position:relative;margin:2rem 0 0 0;padding:1rem 1rem 2rem 1rem;border-top:#EBF2F6 1px solid;font-size:0.8rem;line-height:1.7em;color:#BBC7CC;text-align:center;background:#F7FAFB}.o-p,.n-p{position:absolute;display:inline-block;padding:0 0.5rem;border:#EBF2F6 2px solid;text-decoration:none;border-radius:30px;transition:border ease 0.3s}.o-p{right:0}.n-p{left:0}.t-h{width:80%;margin:0 auto}.highlight pre{background-color:#49483e;color:white;overflow:scroll}.ge{font-style:italic}.gs{font-weight:bold}.c,.cm,.cp,.c1,.gu,.cs{color:#75715e}.k,.kc,.kd,.kp,.kr,.no,.kt{color:#66d9ef}.l,.mf,.mh,.mi,.mo,.se,.il,.m{color:#ae81ff}.n,.nb,.ni,.nl,.nn,.py,.nv,.w,.bp,.vc,.vg,.vi,.p{color:#f8f8f2}.o,.nt,.ow,.gd,.kn{color:#f92672}.ld,.sb,.sc,.sd,.s2,.sh,.si,.sx,.sr,.s1,.ss,.s{color:#e6db74}.na,.nc,.nd,.ne,.nf,.nx,.gi{color:#a6e22e}
+
+    </style>
+
+    <!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>RenderComponent() or RenderUserControl() - Chris Sainty</title>
+<meta property="og:title" content="RenderComponent() or RenderUserControl()" />
+<meta name="description" content="One thing I have always needed to do in my web sites is break sections of pages out into a re-usable component.   If you look at http://www.ht.com.au the &quot;Featured Product Of The Month&quot; panel displays three product &quot;patches&quot;. This exact same patch is used on the Cart page and the Hub pages. It is a nice little class/template that you pass a product number to and it spits back the HTML for that patch, which you write out like any other expression in your template." />
+<meta property="og:description" content="One thing I have always needed to do in my web sites is break sections of pages out into a re-usable component.   If you look at http://www.ht.com.au the &quot;Featured Product Of The Month&quot; panel displays three product &quot;patches&quot;. This exact same patch is used on the Cart page and the Hub pages. It is a nice little class/template that you pass a product number to and it spits back the HTML for that patch, which you write out like any other expression in your template." />
+<link rel="canonical" href="https://blog.csainty.com/2008/03/rendercomponent-or-renderusercontrol.html" />
+<meta property="og:url" content="https://blog.csainty.com/2008/03/rendercomponent-or-renderusercontrol.html" />
+<meta property="og:site_name" content="Chris Sainty" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2008-03-12T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@csainty" />
+<meta name="twitter:creator" content="@Chris Sainty" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "RenderComponent() or RenderUserControl()",
+    "datePublished": "2008-03-12T00:00:00+00:00",
+    "description": "One thing I have always needed to do in my web sites is break sections of pages out into a re-usable component.   If you look at http://www.ht.com.au the &quot;Featured Product Of The Month&quot; panel displays three product &quot;patches&quot;. This exact same patch is used on the Cart page and the Hub pages. It is a nice little class/template that you pass a product number to and it spits back the HTML for that patch, which you write out like any other expression in your template.",
+    "url": "https://blog.csainty.com/2008/03/rendercomponent-or-renderusercontrol.html"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+</head>
+<body>
+  <header class="m-h">
+    <h1><a href="https://blog.csainty.com">Chris Sainty</a></h1>
+    <h2>A technical blog covering full-stack web development.</h2>
+    <h2><a href="https://twitter.com/csainty" rel="external">twitter</a> | <a href="https://github.com/csainty" rel="external">github</a> | <a href="https://stackoverflow.com/users/625695/chris-sainty" rel="external">stackoverflow</a></h2>
+  </header>
+
+  <article>
+    <span><time datetime="12 Mar 2008">12 Mar 2008</time>  </span>
+    <h1>RenderComponent() or RenderUserControl()</h1>
+    <section>
+        <p>One thing I have always needed to do in my web sites is break sections of pages out into a re-usable component.   If you look at <a href="http://www.ht.com.au/">http://www.ht.com.au</a> the &quot;Featured Product Of The Month&quot; panel displays three product &quot;patches&quot;. This exact same patch is used on the <a href="http://www.ht.com.au/cart.hts">Cart</a> page and the <a href="http://www.ht.com.au/N/Computers/area.hts">Hub</a> pages. It is a nice little class/template that you pass a product number to and it spits back the HTML for that patch, which you write out like any other expression in your template.</p>
+
+<!-- more -->
+
+<p>When I first went looking for this functionality in ASP.NET MVC all I could find was the RenderUserControl() method on the Html Helper class. Called like this <code>&lt;%= Html.RenderUserControl(&quot;path_to_ascx_file&quot;) %&gt;</code>  </p>
+
+<p>What instantly bothered me about this call was that it heads straight off to a &quot;View&quot; if I wanted to supply any logic, say to turn my product number into an actual product object, then go look up some other information about it, all this code would need to go into the View, or at least into the Code Behind page of the View, which is just as bad. It wasn&#39;t very MVC to me.  </p>
+
+<p>In the March Preview 2 release of the MVC Framework however they added a new <code>ComponentController</code> base class and a <code>RenderComponent()</code> method to the Html Helper class. Now you can call <code>&lt;%= Html.RenderComponent&lt;PatchController&gt;(c=&gt;c.ProductPatch(1)) %&gt;</code><br>
+This will call the <code>ProductPatch()</code> method on the <code>PatchController</code> class and pass in the parameter of 1. Now you have a MVC pattern, from within the controller you configure up your model, pick a view to render and fire it all off.<br>
+The result is the output of the view gets stuck on a <code>RenderedHtml</code> property of the controller that the Html Helper picks up and inserts back into the parent page. My dreams had come true!  </p>
+
+<p>Sadly when I went to implement this, a bug popped its head up. If you attempt to pass a variable into the lambda rather than a constant (so <code>ViewData.ProductID</code> instead of 1) there is a Cast Exception thrown where the expression can not be cast from a variable expression to a constant expression.   This bug was reported today on the MVC forums, and as such had prompted me to respond there and put together this post, something I had been intending to do for a few days now since I spotted it.  </p>
+
+<p>I have a work around that is probably a bit hacky but has allowed me to continue on working until the team works out a way around the bug. If you create a subclass of <code>ViewPage</code> from which you subclass all your actual <code>ViewPage</code>s, then you can pop this method in that subclass, alternatively set up an Extension Method for the <code>ViewPage</code> class to save you the trouble.  </p>
+
+<p>This code assumes all your components live in a single Controller (a side effect of which is a cleaner calling syntax), if this is not the case, then you can easily refactor the type of the controller out of the method and pass it in like the <code>HtmlHelper</code> method does.</p>
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="kt">string</span> <span class="nf">RenderComponent</span><span class="p">(</span><span class="n">Expression</span><span class="p">&lt;</span><span class="n">Action</span><span class="p">&lt;</span><span class="n">PatchController</span><span class="p">&gt;&gt;</span> <span class="n">action</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">var</span> <span class="n">controller</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">PatchController</span><span class="p">();</span>
+    <span class="n">controller</span><span class="p">.</span><span class="n">Context</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">ViewContext</span><span class="p">;</span>
+    <span class="kt">var</span> <span class="n">ex</span> <span class="p">=</span> <span class="n">action</span><span class="p">.</span><span class="nf">Compile</span><span class="p">();</span>
+    <span class="n">ex</span><span class="p">.</span><span class="nf">Invoke</span><span class="p">(</span><span class="n">controller</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">controller</span><span class="p">.</span><span class="n">RenderedHtml</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This allows calling a component like this <code>&lt;%= RenderComponent(c =&gt; c.ProductPath(ViewData.ProductID)) %&gt;</code>and will work with both variables and constants. Shorter and better!  </p>
+
+<p>When I have gone looking for prior references to this method on the web, I always seem to run into religious wars about whether Components/UserControls/Partials or various other names for a similar concept have any place in MVC or web sites in general, with most people seeming to think they do not. I personally don&#39;t see how people can live without them. Hopefully this side of the framework does not get overlooked in the future, or worse, dropped.  </p>
+
+    </section>
+</article>
+
+
+  <footer class="m-f">
+      <section class="copyright">All content copyright <a href="/">Chris Sainty</a> &copy; 2006-2017 &bull; All rights reserved.</section>
+  </footer>
+</body>
+</html>

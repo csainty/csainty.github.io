@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <style>
+    html,body,li,p{margin:0;padding:0}p,ul,ol,.highlight{margin:1.6em 0}h1,h2,h3,h4{margin:0;padding:0;font-size:100%;font-weight:bold;text-rendering:optimizeLegibility;font-family:sans-serif}ul{list-style:none}html{box-sizing:border-box;font-size:62.5%}*{box-sizing:inherit}*:before,*:after{box-sizing:inherit}img{height:auto;max-width:100%}pre,code{font-family:monospace;margin:0}hr{display:block;height:1px;border:0;border-top:1px solid #efefef;margin:1rem 0;padding:0}blockquote{font-style:italic;margin:1.6em 0 1.6em -2.2em;padding:0 0 0 1.6em;border-left:#4a4a4a 0.4em solid}html{font-size:16px}@media screen and (min-width: 900px){html{font-size:18px}}@media screen and (min-width: 1200px){html{font-size:20px}}body{font-family:serif;color:#3A4145}h1{font-size:2rem;margin:10px 0 10px 0;letter-spacing:-1px}h2{font-size:1.4rem;letter-spacing:-1px}h3{font-size:1.2rem}h4{font-size:1.1rem}a:link,a:visited{color:inherit;text-decoration:none}a:hover{color:#57A3E8;transition:color ease 0.3s}p a:link,p a:visited{text-decoration:underline}pre{border:1px solid #E3EDF3;padding:10px;font-size:0.85em;border-radius:3px}code{padding:1px 3px;font-size:0.85em;white-space:pre;border:1px solid #E3EDF3;background:#F7FAFB;border-radius:2px}pre code{background:transparent;padding:0;border:0}.m-h{text-align:center;background-color:#303538;color:#fff;padding:1rem}.m-h h2{font-weight:normal;font-size:1.5rem}article{width:80%;margin:1rem auto;padding-bottom:1rem;border-bottom:#EBF2F6 1px solid;word-break:break-word;position:relative}article::after{display:block;content:"";width:7px;height:7px;border:#E7EEF2 1px solid;position:absolute;bottom:-5px;left:50%;margin-left:-5px;background:#fff;border-radius:100%;box-shadow:#fff 0 0 0 5px}.a-m{color:#9EABB3;font-size:0.8rem}.a-m a:hover{color:#9EABB3;text-decoration:underline}.a-h{margin-bottom:5px}.r-m{font-size:smaller}nav{position:relative;width:75%;margin:1rem auto;font-size:0.8rem;color:#9EABB3;text-align:center}.m-f{position:relative;margin:2rem 0 0 0;padding:1rem 1rem 2rem 1rem;border-top:#EBF2F6 1px solid;font-size:0.8rem;line-height:1.7em;color:#BBC7CC;text-align:center;background:#F7FAFB}.o-p,.n-p{position:absolute;display:inline-block;padding:0 0.5rem;border:#EBF2F6 2px solid;text-decoration:none;border-radius:30px;transition:border ease 0.3s}.o-p{right:0}.n-p{left:0}.t-h{width:80%;margin:0 auto}.highlight pre{background-color:#49483e;color:white;overflow:scroll}.ge{font-style:italic}.gs{font-weight:bold}.c,.cm,.cp,.c1,.gu,.cs{color:#75715e}.k,.kc,.kd,.kp,.kr,.no,.kt{color:#66d9ef}.l,.mf,.mh,.mi,.mo,.se,.il,.m{color:#ae81ff}.n,.nb,.ni,.nl,.nn,.py,.nv,.w,.bp,.vc,.vg,.vi,.p{color:#f8f8f2}.o,.nt,.ow,.gd,.kn{color:#f92672}.ld,.sb,.sc,.sd,.s2,.sh,.si,.sx,.sr,.s1,.ss,.s{color:#e6db74}.na,.nc,.nd,.ne,.nf,.nx,.gi{color:#a6e22e}
+
+    </style>
+
+    <!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>Windows Phone 7–Asynchronous Programming - Chris Sainty</title>
+<meta property="og:title" content="Windows Phone 7–Asynchronous Programming" />
+<meta name="description" content="I am going to start putting together some posts on my experience writing our first Windows Phone 7 application, gReadie." />
+<meta property="og:description" content="I am going to start putting together some posts on my experience writing our first Windows Phone 7 application, gReadie." />
+<link rel="canonical" href="https://blog.csainty.com/2010/10/windows-phone-7asynchronous-programming.html" />
+<meta property="og:url" content="https://blog.csainty.com/2010/10/windows-phone-7asynchronous-programming.html" />
+<meta property="og:site_name" content="Chris Sainty" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2010-10-20T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@csainty" />
+<meta name="twitter:creator" content="@Chris Sainty" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Windows Phone 7–Asynchronous Programming",
+    "datePublished": "2010-10-20T00:00:00+00:00",
+    "description": "I am going to start putting together some posts on my experience writing our first Windows Phone 7 application, gReadie.",
+    "url": "https://blog.csainty.com/2010/10/windows-phone-7asynchronous-programming.html"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+</head>
+<body>
+  <header class="m-h">
+    <h1><a href="https://blog.csainty.com">Chris Sainty</a></h1>
+    <h2>A technical blog covering full-stack web development.</h2>
+    <h2><a href="https://twitter.com/csainty" rel="external">twitter</a> | <a href="https://github.com/csainty" rel="external">github</a> | <a href="https://stackoverflow.com/users/625695/chris-sainty" rel="external">stackoverflow</a></h2>
+  </header>
+
+  <article>
+    <span><time datetime="20 Oct 2010">20 Oct 2010</time>  </span>
+    <h1>Windows Phone 7–Asynchronous Programming</h1>
+    <section>
+        <p>I am going to start putting together some posts on my experience writing our first Windows Phone 7 application, <a href="http://www.quidsmobile.com/gReadie/">gReadie</a>.</p>
+
+<!-- more -->
+
+<p>One thing that will strike you quickly if you go to make an app that communicates over the internet is that everything has to be done asynchronously. While this is bound to annoy at first, it is actually a good design decision by the development team because it forces the developer to keep the UI responsive. Sadly there is at least one instance where they broke their own rules but we will get to that another time, I will just say watch out for the Image control.  </p>
+
+<p>My preferred way of handling asynchronous programing is with a callback structure that uses delegates/lambdas. You could also use events but I find most of the memory leaks I create in applications are to do with events and not releasing subscriptions. Luckily for us we now have lambdas that make callbacks a piece of cake to write, you just need to watch out for a few gotchas. If you prefer delegates to lambdas, then the second point here will not apply to you, but the first will still catch the very novice.  </p>
+
+<p>I am going to put together an application that simply lists the top 10 trending topics on twitter. It is a simple easy to access api that will serve our purposes well.  </p>
+
+<p>You can call up the api right now in your browser <a href="http://api.twitter.com/1/trends.json">http://api.twitter.com/1/trends.json</a>  </p>
+
+<p>So we start with a new Windows Phone Pivot application, It comes prepopulated with a list control and a nice ViewModel structure that is a good base to work from.  </p>
+
+<p>The first thing you will want to do is add a reference to <code>System.Servicemodel.Web</code> and another to <code>System.Runtime.Serialization</code>. These dlls contain the classes we need for parsing the JSON we get back from twitter. Next you will want to go into the <code>LoadData</code> method on the <code>ViewModels\MainViewModel.cs</code> class and comment out (or remove) all the sample data.  </p>
+
+<p>Now we have an app that will load up and display nothing. Perfect.  </p>
+
+<p>To parse the JSON we are going to need some classes to parse it into, and here they are.  </p>
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="na">[System.Runtime.Serialization.DataContract]</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">TrendsResult</span>
+<span class="p">{</span>
+    <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">Runtime</span><span class="p">.</span><span class="n">Serialization</span><span class="p">.</span><span class="nf">DataMember</span><span class="p">(</span><span class="n">Name</span> <span class="p">=</span> <span class="s">"as_of"</span><span class="p">)]</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">AsOf</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">Runtime</span><span class="p">.</span><span class="n">Serialization</span><span class="p">.</span><span class="nf">DataMember</span><span class="p">(</span><span class="n">Name</span> <span class="p">=</span> <span class="s">"trends"</span><span class="p">)]</span>
+    <span class="k">public</span> <span class="n">Trend</span><span class="p">[]</span> <span class="n">Trends</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="na">[System.Runtime.Serialization.DataContract]</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">Trend</span>
+<span class="p">{</span>
+    <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">Runtime</span><span class="p">.</span><span class="n">Serialization</span><span class="p">.</span><span class="nf">DataMember</span><span class="p">(</span><span class="n">Name</span> <span class="p">=</span> <span class="s">"url"</span><span class="p">)]</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Url</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">Runtime</span><span class="p">.</span><span class="n">Serialization</span><span class="p">.</span><span class="nf">DataMember</span><span class="p">(</span><span class="n">Name</span> <span class="p">=</span> <span class="s">"name"</span><span class="p">)]</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Put these where you like in the project (I use a JSON subfolder) and add using statements etc to your preferences. I am not going into details about JSON in this post so that is all you get for now sorry.  </p>
+
+<p>With these in place we can now fill out our LoadData method and actually perform the request and parse the results. Filling out the Items collection already provided in the project template.  </p>
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">void</span> <span class="nf">LoadData</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">HttpWebRequest</span> <span class="n">request</span> <span class="p">=</span> <span class="n">HttpWebRequest</span><span class="p">.</span><span class="nf">CreateHttp</span><span class="p">(</span><span class="s">"http://api.twitter.com/1/trends.json"</span><span class="p">);</span>
+    <span class="n">request</span><span class="p">.</span><span class="nf">BeginGetResponse</span><span class="p">(</span><span class="n">result</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="n">HttpWebResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="p">(</span><span class="n">HttpWebResponse</span><span class="p">)((</span><span class="n">HttpWebRequest</span><span class="p">)</span><span class="n">result</span><span class="p">.</span><span class="n">AsyncState</span><span class="p">).</span><span class="nf">EndGetResponse</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+        <span class="n">DataContractJsonSerializer</span> <span class="n">s</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">DataContractJsonSerializer</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">TrendsResult</span><span class="p">));</span>
+        <span class="n">TrendsResult</span> <span class="n">trends</span> <span class="p">=</span> <span class="p">(</span><span class="n">TrendsResult</span><span class="p">)</span><span class="n">s</span><span class="p">.</span><span class="nf">ReadObject</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="nf">GetResponseStream</span><span class="p">());</span>
+
+        <span class="k">foreach</span> <span class="p">(</span><span class="n">Trend</span> <span class="n">trend</span> <span class="k">in</span> <span class="n">trends</span><span class="p">.</span><span class="n">Trends</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="n">Items</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="k">new</span> <span class="n">ItemViewModel</span> <span class="p">{</span> <span class="n">LineOne</span> <span class="p">=</span> <span class="n">trend</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span> <span class="n">LineTwo</span> <span class="p">=</span> <span class="n">trend</span><span class="p">.</span><span class="n">Url</span> <span class="p">});</span>
+        <span class="p">}</span>
+    <span class="p">},</span> <span class="n">request</span><span class="p">);</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="n">IsDataLoaded</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Now this code seems quite reasonable, assuming of course that you have learnt lambdas and can read it. We make a request, when it is done we pass the result text into the deserializer to create the objects we built above and then process these into the ViewModel.  </p>
+
+<p>If you run it though, it will crash with the error “Invalid cross thread access” and this is the first lesson about callbacks. They do not fire on the UI thread and therefore they can not change the UI. But you may notice the callback doesn’t actually change the UI. It just adds an item to a collection. But because this collection it bound to the UI, when it changes it triggers events that change the UI.  </p>
+
+<p>So the first thing we need to do is move the call that adds the item to the collection onto the UI thread. Luckily this is easy enough and involves another lambda!</p>
+
+<p>We simply change the content of the foreach loop to be  </p>
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="p">((</span><span class="n">App</span><span class="p">)</span><span class="n">App</span><span class="p">.</span><span class="n">Current</span><span class="p">).</span><span class="n">RootFrame</span><span class="p">.</span><span class="n">Dispatcher</span><span class="p">.</span><span class="nf">BeginInvoke</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="n">Items</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="k">new</span> <span class="n">ItemViewModel</span> <span class="p">{</span> <span class="n">LineOne</span> <span class="p">=</span> <span class="n">trend</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span> <span class="n">LineTwo</span> <span class="p">=</span> <span class="n">trend</span><span class="p">.</span><span class="n">Url</span> <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div>
+<p>The key here is getting a handle on the <code>Dispatcher</code>. This is the class that controls the UI thread, there are a few ways you can get it, every page has a Dispatcher property, or if have <code>Microsoft.Phone.Reactive.dll</code> referenced then you can use the <code>Scheduler</code> class (my preferred way), or you can get at the App.RootFrame that is the parent UI object in the application which is what I have done above.  </p>
+
+<p>From the Dispatcher you can pass in an Action (callback/delegate/lambda.. choose your own terminology) for the UI thread to execute.  </p>
+
+<p>Now if you run this version up, you will notice that it works. Except hang on, all the trends are the same. Don’t worry you didn’t mess up the Json parsing, though this would be the first thought of many and they could waste a lot of time looking in the wrong direction.  </p>
+
+<p>This brings us to the second lesson about callbacks and it goes to the way lambdas are actually compiled. Notice in line 2 above I reference trend.Name and trend.Url, but the trend object is not actually created inside the lambda, so think for a second about how it is in scope. If you took the content of the Lambda and turned it into a method/delegate (which is what the compiler does) that was called then it becomes clear that we have some trickery going on behind the scenes.  </p>
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="p">((</span><span class="n">App</span><span class="p">)</span><span class="n">App</span><span class="p">.</span><span class="n">Current</span><span class="p">).</span><span class="n">RootFrame</span><span class="p">.</span><span class="n">Dispatcher</span><span class="p">.</span><span class="nf">BeginInvoke</span><span class="p">(</span><span class="n">DoItemAdd</span><span class="p">);</span>
+<span class="k">private</span> <span class="k">void</span> <span class="nf">DoItemAdd</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="n">Items</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="k">new</span> <span class="n">ItemViewModel</span> <span class="p">{</span> <span class="n">LineOne</span> <span class="p">=</span> <span class="n">trend</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span> <span class="n">LineTwo</span> <span class="p">=</span> <span class="n">trend</span><span class="p">.</span><span class="n">Url</span> <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>What the compiler does is add a field to the class, which it sets before the call and uses inside the method. So it would look something like this, you can see it in reflector if you like  </p>
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">private</span> <span class="n">Trend</span> <span class="n">_Compiler_Trend</span><span class="p">;</span>
+
+<span class="k">public</span> <span class="k">void</span> <span class="nf">LoadData</span><span class="p">()</span> <span class="p">{</span>
+    <span class="p">...</span>
+    <span class="n">_Compiler_Trend</span> <span class="p">=</span> <span class="n">trend</span><span class="p">;</span>
+    <span class="p">((</span><span class="n">App</span><span class="p">)</span><span class="n">App</span><span class="p">.</span><span class="n">Current</span><span class="p">).</span><span class="n">RootFrame</span><span class="p">.</span><span class="n">Dispatcher</span><span class="p">.</span><span class="nf">BeginInvoke</span><span class="p">(</span><span class="n">DoItemAdd</span><span class="p">);</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+
+<span class="k">private</span> <span class="k">void</span> <span class="nf">DoItemAdd</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="n">Items</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="k">new</span> <span class="n">ItemViewModel</span> <span class="p">{</span> <span class="n">LineOne</span> <span class="p">=</span> <span class="n">_Compiler_Trend</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span> <span class="n">LineTwo</span> <span class="p">=</span> <span class="n">_Compiler_Trend</span><span class="p">.</span><span class="n">Url</span> <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Now it should be clearer what is happening here. <code>BeginInvoke</code> is asynchronous so our <code>foreach</code> loop keeps updating the <code>_Compiler_Trend</code> without waiting for the last call to <code>DoItemAdd</code> to be finished with it. Therefore when it does get around to running the <code>DoItemAdd</code> calls the field is in an unknown state.  </p>
+
+<p>Luckily we also have a solution to this problem. The <code>BeginInvoke</code> call can also take an <code>Action&lt;T&gt;</code> and a parameter of generic type <code>T</code> to pass in when calling the code.  </p>
+
+<p>So we can rewrite the method like this  </p>
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">void</span> <span class="nf">LoadData</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">HttpWebRequest</span> <span class="n">request</span> <span class="p">=</span> <span class="n">HttpWebRequest</span><span class="p">.</span><span class="nf">CreateHttp</span><span class="p">(</span><span class="s">"http://api.twitter.com/1/trends.json"</span><span class="p">);</span>
+    <span class="n">request</span><span class="p">.</span><span class="nf">BeginGetResponse</span><span class="p">(</span><span class="n">result</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="n">HttpWebResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="p">(</span><span class="n">HttpWebResponse</span><span class="p">)((</span><span class="n">HttpWebRequest</span><span class="p">)</span><span class="n">result</span><span class="p">.</span><span class="n">AsyncState</span><span class="p">).</span><span class="nf">EndGetResponse</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+        <span class="n">DataContractJsonSerializer</span> <span class="n">s</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">DataContractJsonSerializer</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">TrendsResult</span><span class="p">));</span>
+        <span class="n">TrendsResult</span> <span class="n">trends</span> <span class="p">=</span> <span class="p">(</span><span class="n">TrendsResult</span><span class="p">)</span><span class="n">s</span><span class="p">.</span><span class="nf">ReadObject</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="nf">GetResponseStream</span><span class="p">());</span>
+
+        <span class="k">foreach</span> <span class="p">(</span><span class="n">Trend</span> <span class="n">trend</span> <span class="k">in</span> <span class="n">trends</span><span class="p">.</span><span class="n">Trends</span><span class="p">)</span> <span class="p">{</span>
+            <span class="p">((</span><span class="n">App</span><span class="p">)</span><span class="n">App</span><span class="p">.</span><span class="n">Current</span><span class="p">).</span><span class="n">RootFrame</span><span class="p">.</span><span class="n">Dispatcher</span><span class="p">.</span><span class="nf">BeginInvoke</span><span class="p">(</span><span class="k">new</span> <span class="n">Action</span><span class="p">&lt;</span><span class="n">ItemViewModel</span><span class="p">&gt;(</span><span class="n">item</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                <span class="k">this</span><span class="p">.</span><span class="n">Items</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">item</span><span class="p">);</span>
+            <span class="p">}),</span> <span class="k">new</span> <span class="n">ItemViewModel</span> <span class="p">{</span> <span class="n">LineOne</span> <span class="p">=</span> <span class="n">trend</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span> <span class="n">LineTwo</span> <span class="p">=</span> <span class="n">trend</span><span class="p">.</span><span class="n">Url</span> <span class="p">});</span>
+        <span class="p">}</span>
+    <span class="p">},</span> <span class="n">request</span><span class="p">);</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="n">IsDataLoaded</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Only lines 8,9 and 10 are different. Now we are creating a lambda that takes a parameter of type <code>ItemViewModel</code>, adds that passed item into the collection and we give the dispatcher the item to pass in. If we run this code it works!  </p>
+
+<p>If we pulled apart this code to see it like the compiler does it would look more like this, and I should note you can write your code this way if lambdas bend your mind that bit too much, but I personally find them much easier to read and manage.  </p>
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">void</span> <span class="nf">LoadData</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">HttpWebRequest</span> <span class="n">request</span> <span class="p">=</span> <span class="n">HttpWebRequest</span><span class="p">.</span><span class="nf">CreateHttp</span><span class="p">(</span><span class="s">"http://api.twitter.com/1/trends.json"</span><span class="p">);</span>
+    <span class="n">request</span><span class="p">.</span><span class="nf">BeginGetResponse</span><span class="p">(</span><span class="n">result</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="n">HttpWebResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="p">(</span><span class="n">HttpWebResponse</span><span class="p">)((</span><span class="n">HttpWebRequest</span><span class="p">)</span><span class="n">result</span><span class="p">.</span><span class="n">AsyncState</span><span class="p">).</span><span class="nf">EndGetResponse</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+        <span class="n">DataContractJsonSerializer</span> <span class="n">s</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">DataContractJsonSerializer</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">TrendsResult</span><span class="p">));</span>
+        <span class="n">TrendsResult</span> <span class="n">trends</span> <span class="p">=</span> <span class="p">(</span><span class="n">TrendsResult</span><span class="p">)</span><span class="n">s</span><span class="p">.</span><span class="nf">ReadObject</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="nf">GetResponseStream</span><span class="p">());</span>
+        <span class="k">foreach</span> <span class="p">(</span><span class="n">Trend</span> <span class="n">trend</span> <span class="k">in</span> <span class="n">trends</span><span class="p">.</span><span class="n">Trends</span><span class="p">)</span> <span class="p">{</span>
+            <span class="p">((</span><span class="n">App</span><span class="p">)</span><span class="n">App</span><span class="p">.</span><span class="n">Current</span><span class="p">).</span><span class="n">RootFrame</span><span class="p">.</span><span class="n">Dispatcher</span><span class="p">.</span><span class="nf">BeginInvoke</span><span class="p">(</span><span class="n">DoItemAdd</span><span class="p">,</span> <span class="k">new</span> <span class="n">ItemViewModel</span> <span class="p">{</span> <span class="n">LineOne</span> <span class="p">=</span> <span class="n">trend</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span> <span class="n">LineTwo</span> <span class="p">=</span> <span class="n">trend</span><span class="p">.</span><span class="n">Url</span> <span class="p">});</span>
+        <span class="p">}</span>
+    <span class="p">},</span> <span class="n">request</span><span class="p">);</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="n">IsDataLoaded</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">private</span> <span class="k">void</span> <span class="nf">DoItemAdd</span><span class="p">(</span><span class="n">ItemViewModel</span> <span class="n">item</span><span class="p">)</span> <span class="p">{</span>
+ <span class="k">this</span><span class="p">.</span><span class="n">Items</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">item</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>It should be clear now that there are no scope issues with this code.  </p>
+
+<p>So there you have it, a twitter trend downloader that has hopefully pointed out a few things you should look out for when starting down the asynchronous path required by Windows Phone 7.  </p>
+
+    </section>
+</article>
+
+
+  <footer class="m-f">
+      <section class="copyright">All content copyright <a href="/">Chris Sainty</a> &copy; 2006-2017 &bull; All rights reserved.</section>
+  </footer>
+</body>
+</html>

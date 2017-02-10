@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <style>
+    html,body,li,p{margin:0;padding:0}p,ul,ol,.highlight{margin:1.6em 0}h1,h2,h3,h4{margin:0;padding:0;font-size:100%;font-weight:bold;text-rendering:optimizeLegibility;font-family:sans-serif}ul{list-style:none}html{box-sizing:border-box;font-size:62.5%}*{box-sizing:inherit}*:before,*:after{box-sizing:inherit}img{height:auto;max-width:100%}pre,code{font-family:monospace;margin:0}hr{display:block;height:1px;border:0;border-top:1px solid #efefef;margin:1rem 0;padding:0}blockquote{font-style:italic;margin:1.6em 0 1.6em -2.2em;padding:0 0 0 1.6em;border-left:#4a4a4a 0.4em solid}html{font-size:16px}@media screen and (min-width: 900px){html{font-size:18px}}@media screen and (min-width: 1200px){html{font-size:20px}}body{font-family:serif;color:#3A4145}h1{font-size:2rem;margin:10px 0 10px 0;letter-spacing:-1px}h2{font-size:1.4rem;letter-spacing:-1px}h3{font-size:1.2rem}h4{font-size:1.1rem}a:link,a:visited{color:inherit;text-decoration:none}a:hover{color:#57A3E8;transition:color ease 0.3s}p a:link,p a:visited{text-decoration:underline}pre{border:1px solid #E3EDF3;padding:10px;font-size:0.85em;border-radius:3px}code{padding:1px 3px;font-size:0.85em;white-space:pre;border:1px solid #E3EDF3;background:#F7FAFB;border-radius:2px}pre code{background:transparent;padding:0;border:0}.m-h{text-align:center;background-color:#303538;color:#fff;padding:1rem}.m-h h2{font-weight:normal;font-size:1.5rem}article{width:80%;margin:1rem auto;padding-bottom:1rem;border-bottom:#EBF2F6 1px solid;word-break:break-word;position:relative}article::after{display:block;content:"";width:7px;height:7px;border:#E7EEF2 1px solid;position:absolute;bottom:-5px;left:50%;margin-left:-5px;background:#fff;border-radius:100%;box-shadow:#fff 0 0 0 5px}.a-m{color:#9EABB3;font-size:0.8rem}.a-m a:hover{color:#9EABB3;text-decoration:underline}.a-h{margin-bottom:5px}.r-m{font-size:smaller}nav{position:relative;width:75%;margin:1rem auto;font-size:0.8rem;color:#9EABB3;text-align:center}.m-f{position:relative;margin:2rem 0 0 0;padding:1rem 1rem 2rem 1rem;border-top:#EBF2F6 1px solid;font-size:0.8rem;line-height:1.7em;color:#BBC7CC;text-align:center;background:#F7FAFB}.o-p,.n-p{position:absolute;display:inline-block;padding:0 0.5rem;border:#EBF2F6 2px solid;text-decoration:none;border-radius:30px;transition:border ease 0.3s}.o-p{right:0}.n-p{left:0}.t-h{width:80%;margin:0 auto}.highlight pre{background-color:#49483e;color:white;overflow:scroll}.ge{font-style:italic}.gs{font-weight:bold}.c,.cm,.cp,.c1,.gu,.cs{color:#75715e}.k,.kc,.kd,.kp,.kr,.no,.kt{color:#66d9ef}.l,.mf,.mh,.mi,.mo,.se,.il,.m{color:#ae81ff}.n,.nb,.ni,.nl,.nn,.py,.nv,.w,.bp,.vc,.vg,.vi,.p{color:#f8f8f2}.o,.nt,.ow,.gd,.kn{color:#f92672}.ld,.sb,.sc,.sd,.s2,.sh,.si,.sx,.sr,.s1,.ss,.s{color:#e6db74}.na,.nc,.nd,.ne,.nf,.nx,.gi{color:#a6e22e}
+
+    </style>
+
+    <!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>Bug hunting in the public eye - Chris Sainty</title>
+<meta property="og:title" content="Bug hunting in the public eye" />
+<meta name="description" content="A few days ago, ayende put up a post showing a bug that had been found in RavenDb that was causing the profiling tools to enter an infinite loop.  http://ayende.com/blog/152738/bug-hunt-what-made-this-blog-slow  This was followed by a post about how this bug had come into being and survived so long.  http://ayende.com/blog/153825/ask-ayende-what-about-the-qa-env  So confession time, that’s my bug. I contributed the early code for the profiler." />
+<meta property="og:description" content="A few days ago, ayende put up a post showing a bug that had been found in RavenDb that was causing the profiling tools to enter an infinite loop.  http://ayende.com/blog/152738/bug-hunt-what-made-this-blog-slow  This was followed by a post about how this bug had come into being and survived so long.  http://ayende.com/blog/153825/ask-ayende-what-about-the-qa-env  So confession time, that’s my bug. I contributed the early code for the profiler." />
+<link rel="canonical" href="https://blog.csainty.com/2012/02/bug-hunting-in-public-eye.html" />
+<meta property="og:url" content="https://blog.csainty.com/2012/02/bug-hunting-in-public-eye.html" />
+<meta property="og:site_name" content="Chris Sainty" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2012-02-02T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@csainty" />
+<meta name="twitter:creator" content="@Chris Sainty" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Bug hunting in the public eye",
+    "datePublished": "2012-02-02T00:00:00+00:00",
+    "description": "A few days ago, ayende put up a post showing a bug that had been found in RavenDb that was causing the profiling tools to enter an infinite loop.  http://ayende.com/blog/152738/bug-hunt-what-made-this-blog-slow  This was followed by a post about how this bug had come into being and survived so long.  http://ayende.com/blog/153825/ask-ayende-what-about-the-qa-env  So confession time, that’s my bug. I contributed the early code for the profiler.",
+    "url": "https://blog.csainty.com/2012/02/bug-hunting-in-public-eye.html"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+</head>
+<body>
+  <header class="m-h">
+    <h1><a href="https://blog.csainty.com">Chris Sainty</a></h1>
+    <h2>A technical blog covering full-stack web development.</h2>
+    <h2><a href="https://twitter.com/csainty" rel="external">twitter</a> | <a href="https://github.com/csainty" rel="external">github</a> | <a href="https://stackoverflow.com/users/625695/chris-sainty" rel="external">stackoverflow</a></h2>
+  </header>
+
+  <article>
+    <span><time datetime="02 Feb 2012">02 Feb 2012</time>  </span>
+    <h1>Bug hunting in the public eye</h1>
+    <section>
+        <p>A few days ago, ayende put up a post showing a bug that had been found in RavenDb that was causing the profiling tools to enter an infinite loop.  </p>
+
+<p><a href="http://ayende.com/blog/152738/bug-hunt-what-made-this-blog-slow">http://ayende.com/blog/152738/bug-hunt-what-made-this-blog-slow</a>  </p>
+
+<p>This was followed by a post about how this bug had come into being and survived so long.  </p>
+
+<p><a href="http://ayende.com/blog/153825/ask-ayende-what-about-the-qa-env">http://ayende.com/blog/153825/ask-ayende-what-about-the-qa-env</a>  </p>
+
+<p>So confession time, that’s my bug. I contributed the early code for the profiler.</p>
+
+<!-- more -->
+
+<p>Since then I have been trying to work out how I missed it. Was I really so oblivious to what was going on while writing that code?  </p>
+
+<p>Second to that, how had it sat in production on ayende’s blog for 6 months or so without being noticed?  </p>
+
+<p>I am glad to say I have an explanation for both, which I will share now.<br>
+First some background on how the profiling actually works.  </p>
+
+<p>When you attach your <code>DocumentStore</code> to the profile, the following code is run  </p>
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">void</span> <span class="nf">AddStore</span><span class="p">(</span><span class="n">IDocumentStore</span> <span class="n">store</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">var</span> <span class="n">documentStore</span> <span class="p">=</span> <span class="n">store</span> <span class="k">as</span> <span class="n">DocumentStore</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">documentStore</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+        <span class="k">return</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">documentStore</span><span class="p">.</span><span class="n">WasDisposed</span><span class="p">)</span>
+        <span class="k">return</span><span class="p">;</span>
+
+    <span class="kt">object</span> <span class="n">_</span><span class="p">;</span>
+    <span class="n">documentStore</span><span class="p">.</span><span class="n">AfterDispose</span> <span class="p">+=</span> <span class="p">(</span><span class="n">sender</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">stores</span><span class="p">.</span><span class="nf">TryRemove</span><span class="p">(</span><span class="n">documentStore</span><span class="p">,</span> <span class="k">out</span> <span class="n">_</span><span class="p">);</span>
+    <span class="n">documentStore</span><span class="p">.</span><span class="n">SessionCreatedInternal</span> <span class="p">+=</span> <span class="n">OnSessionCreated</span><span class="p">;</span>
+
+    <span class="n">stores</span><span class="p">.</span><span class="nf">TryAdd</span><span class="p">(</span><span class="n">documentStore</span><span class="p">,</span> <span class="k">null</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">private</span> <span class="k">void</span> <span class="nf">OnSessionCreated</span><span class="p">(</span><span class="n">InMemoryDocumentSessionOperations</span> <span class="n">operations</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">RavenProfiler</span><span class="p">.</span><span class="n">ContextualSessionList</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">operations</span><span class="p">.</span><span class="n">Id</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">HttpContext</span><span class="p">.</span><span class="n">Current</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+        <span class="k">return</span><span class="p">;</span>
+
+    <span class="k">try</span>
+    <span class="p">{</span>
+        <span class="n">HttpContext</span><span class="p">.</span><span class="n">Current</span><span class="p">.</span><span class="n">Response</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"X-RavenDb-Profiling-Id"</span><span class="p">,</span> <span class="n">operations</span><span class="p">.</span><span class="n">Id</span><span class="p">.</span><span class="nf">ToString</span><span class="p">());</span>
+    <span class="p">}</span>
+    <span class="k">catch</span> <span class="p">(</span><span class="n">HttpException</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// headers were already written, nothing much that we can do here, ignoring
+</span>    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Basically we attach to the <code>OnSessionCreated</code> event and stuff a header into the response with the session id.  </p>
+
+<p>This is very important, and the key to why this bug was missed. So I will say it again, the <code>X-RavenDb-Profiling-Id</code> header is only added to your response if you actually open a session.  </p>
+
+<p>So lets look at that JavaScript again.  </p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">'body'</span><span class="p">).</span><span class="nx">ajaxComplete</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">xhrRequest</span><span class="p">,</span> <span class="nx">ajaxOptions</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">id</span> <span class="o">=</span> <span class="nx">xhrRequest</span><span class="p">.</span><span class="nx">getResponseHeader</span><span class="p">(</span><span class="s1">'X-RavenDb-Profiling-Id'</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">id</span><span class="p">)</span>
+        <span class="nx">fetchResults</span><span class="p">(</span><span class="nx">id</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">', '</span><span class="p">));</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">fetchResults</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">options</span><span class="p">.</span><span class="nx">url</span><span class="p">,</span> <span class="p">{</span> <span class="na">guid</span><span class="p">:</span> <span class="nx">id</span> <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">obj</span><span class="p">)</span>
+            <span class="nx">addResult</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>
+    <span class="p">},</span> <span class="s1">'json'</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>It only calls back to the server when it gets an AJAX response that has the header set. So if you make an AJAX request to your server for data that does not come from RavenDb, the profiler will not pay any attention to that request.  </p>
+
+<p>The request to get the profiling results does not need a session, and in all my development it did not create a session. So it never set the header. So it never entered a loop.  </p>
+
+<p>So that explained to me how I had missed the bug, the way I deal with session management (creating and disposing of them only as needed) simply does not trigger the bug.  </p>
+
+<p>So with my conscience cleared, I moved on to the second problem. Just because I handle my session this way, clearly <em>RacoonBlog</em> does not, surely that bug hasn’t been there since ayende turned on the profiler for his blog.  </p>
+
+<p>Well let me present a commit to the <em>RacoonBlog</em> source from the very end of December.  </p>
+
+<p><a href="https://github.com/ayende/RaccoonBlog/commit/b284efae61108af991221d948eb891e1310bc64b">https://github.com/ayende/RaccoonBlog/commit/b284efae61108af991221d948eb891e1310bc64b</a>  </p>
+
+<p>In this commit, Racoon switched from creating sessions only as they are needed (my way of handling them) to creating the session in the <code>BeginRequest</code> event of <em>every</em> request. So even requests that don’t use the session still create one. Which obviously adds the profiling header and tells the JavaScript “this request hit RavenDb, so you should fetch it’s profiling results”.  </p>
+
+<p>So until that commit was pushed live <em>RacoonBlog</em>, like my own sites, simply did not trigger this bug, it was sitting there dormant just waiting for someone to take a different approach to session management.  </p>
+
+<p>So there we have it. I really don’t feel so bad about it now.  </p>
+
+<p>To a certain degree the JavaScript was actually correct. It noticed an AJAX request that said it had profiling information attached and it fetched that information. The fallacy in this argument though is that the JavaScript also has enough information available (the request URL) to know that it is being lied to. It should have used that information to avoid the trap that was laid for it. So it’s still a bug for all that I wish it were not.  </p>
+
+    </section>
+</article>
+
+
+  <footer class="m-f">
+      <section class="copyright">All content copyright <a href="/">Chris Sainty</a> &copy; 2006-2017 &bull; All rights reserved.</section>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <style>
+    html,body,li,p{margin:0;padding:0}p,ul,ol,.highlight{margin:1.6em 0}h1,h2,h3,h4{margin:0;padding:0;font-size:100%;font-weight:bold;text-rendering:optimizeLegibility;font-family:sans-serif}ul{list-style:none}html{box-sizing:border-box;font-size:62.5%}*{box-sizing:inherit}*:before,*:after{box-sizing:inherit}img{height:auto;max-width:100%}pre,code{font-family:monospace;margin:0}hr{display:block;height:1px;border:0;border-top:1px solid #efefef;margin:1rem 0;padding:0}blockquote{font-style:italic;margin:1.6em 0 1.6em -2.2em;padding:0 0 0 1.6em;border-left:#4a4a4a 0.4em solid}html{font-size:16px}@media screen and (min-width: 900px){html{font-size:18px}}@media screen and (min-width: 1200px){html{font-size:20px}}body{font-family:serif;color:#3A4145}h1{font-size:2rem;margin:10px 0 10px 0;letter-spacing:-1px}h2{font-size:1.4rem;letter-spacing:-1px}h3{font-size:1.2rem}h4{font-size:1.1rem}a:link,a:visited{color:inherit;text-decoration:none}a:hover{color:#57A3E8;transition:color ease 0.3s}p a:link,p a:visited{text-decoration:underline}pre{border:1px solid #E3EDF3;padding:10px;font-size:0.85em;border-radius:3px}code{padding:1px 3px;font-size:0.85em;white-space:pre;border:1px solid #E3EDF3;background:#F7FAFB;border-radius:2px}pre code{background:transparent;padding:0;border:0}.m-h{text-align:center;background-color:#303538;color:#fff;padding:1rem}.m-h h2{font-weight:normal;font-size:1.5rem}article{width:80%;margin:1rem auto;padding-bottom:1rem;border-bottom:#EBF2F6 1px solid;word-break:break-word;position:relative}article::after{display:block;content:"";width:7px;height:7px;border:#E7EEF2 1px solid;position:absolute;bottom:-5px;left:50%;margin-left:-5px;background:#fff;border-radius:100%;box-shadow:#fff 0 0 0 5px}.a-m{color:#9EABB3;font-size:0.8rem}.a-m a:hover{color:#9EABB3;text-decoration:underline}.a-h{margin-bottom:5px}.r-m{font-size:smaller}nav{position:relative;width:75%;margin:1rem auto;font-size:0.8rem;color:#9EABB3;text-align:center}.m-f{position:relative;margin:2rem 0 0 0;padding:1rem 1rem 2rem 1rem;border-top:#EBF2F6 1px solid;font-size:0.8rem;line-height:1.7em;color:#BBC7CC;text-align:center;background:#F7FAFB}.o-p,.n-p{position:absolute;display:inline-block;padding:0 0.5rem;border:#EBF2F6 2px solid;text-decoration:none;border-radius:30px;transition:border ease 0.3s}.o-p{right:0}.n-p{left:0}.t-h{width:80%;margin:0 auto}.highlight pre{background-color:#49483e;color:white;overflow:scroll}.ge{font-style:italic}.gs{font-weight:bold}.c,.cm,.cp,.c1,.gu,.cs{color:#75715e}.k,.kc,.kd,.kp,.kr,.no,.kt{color:#66d9ef}.l,.mf,.mh,.mi,.mo,.se,.il,.m{color:#ae81ff}.n,.nb,.ni,.nl,.nn,.py,.nv,.w,.bp,.vc,.vg,.vi,.p{color:#f8f8f2}.o,.nt,.ow,.gd,.kn{color:#f92672}.ld,.sb,.sc,.sd,.s2,.sh,.si,.sx,.sr,.s1,.ss,.s{color:#e6db74}.na,.nc,.nd,.ne,.nf,.nx,.gi{color:#a6e22e}
+
+    </style>
+
+    <!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>WPF: MultiBinding and IMultiValueConverter - Chris Sainty</title>
+<meta property="og:title" content="WPF: MultiBinding and IMultiValueConverter" />
+<meta name="description" content="I came across the MultiBinding markup extension and IMultiValueConveter today when looking for a solution to a problem. Not sure how I missed it previously. If you didn’t I probably don’t have a lot to add, but if you have not heard of them then read on.  " />
+<meta property="og:description" content="I came across the MultiBinding markup extension and IMultiValueConveter today when looking for a solution to a problem. Not sure how I missed it previously. If you didn’t I probably don’t have a lot to add, but if you have not heard of them then read on.  " />
+<link rel="canonical" href="https://blog.csainty.com/2009/12/wpf-multibinding-and.html" />
+<meta property="og:url" content="https://blog.csainty.com/2009/12/wpf-multibinding-and.html" />
+<meta property="og:site_name" content="Chris Sainty" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2009-12-17T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@csainty" />
+<meta name="twitter:creator" content="@Chris Sainty" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "WPF: MultiBinding and IMultiValueConverter",
+    "datePublished": "2009-12-17T00:00:00+00:00",
+    "description": "I came across the MultiBinding markup extension and IMultiValueConveter today when looking for a solution to a problem. Not sure how I missed it previously. If you didn’t I probably don’t have a lot to add, but if you have not heard of them then read on.  ",
+    "url": "https://blog.csainty.com/2009/12/wpf-multibinding-and.html"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+</head>
+<body>
+  <header class="m-h">
+    <h1><a href="https://blog.csainty.com">Chris Sainty</a></h1>
+    <h2>A technical blog covering full-stack web development.</h2>
+    <h2><a href="https://twitter.com/csainty" rel="external">twitter</a> | <a href="https://github.com/csainty" rel="external">github</a> | <a href="https://stackoverflow.com/users/625695/chris-sainty" rel="external">stackoverflow</a></h2>
+  </header>
+
+  <article>
+    <span><time datetime="17 Dec 2009">17 Dec 2009</time>  </span>
+    <h1>WPF&#58; MultiBinding and IMultiValueConverter</h1>
+    <section>
+        <p>I came across the <a href="http://msdn.microsoft.com/en-us/library/system.windows.data.multibinding.aspx">MultiBinding</a> markup extension and <a href="http://msdn.microsoft.com/en-us/library/system.windows.data.imultivalueconverter.aspx">IMultiValueConveter</a> today when looking for a solution to a problem. Not sure how I missed it previously. If you didn’t I probably don’t have a lot to add, but if you have not heard of them then read on.  </p>
+
+<!-- more -->
+
+<p>The problem basically went like this, I have a <code>TabControl</code> that is hosting content with a <code>Title</code> property and an <code>IsChanged</code> property. I was binding the <code>Header</code> of the <code>TabControl</code> item to the <code>Title</code> of the content, but I wanted to add an <code>*</code> to the end of the text if <code>IsChanged</code> was <code>True</code>.  </p>
+
+<p>I initially moved the binding to the class itself (instead of the <code>Title</code> property) and added an <code>IValueConverter</code> that could convert convert an instance of the class into the string I wanted <code>Title + (IsChanged ? “ *” : “”)</code> and while this worked when the binding was evaluated the first time, it obviously (if you understand WPF) broke when <code>Title</code> or <code>IsChanged</code> were updated.  </p>
+
+<p>Enter a <code>MultiBinding</code> and its partner in crime <code>IMultiValueConverter</code>. Now anyone who learnt WPF from a book or tutorial probably had a section all about this pair and how useful they are. Those of us who learn as we go however might have missed this one like I did.  </p>
+
+<p>A <code>MultiBinding</code> works just a regular <code>Binding</code> except it must have a <code>Converter</code> specified and can have multiple pieces of data bound to it, so when any of these change it fires a re-evaluation of the lot. There are two cases where this is helpful, and I will explain both.  </p>
+
+<p>The first is probably the intended use, which is where you want to combine two data elements into a single value and update that value when either changes.  </p>
+
+<p>For our example we are using a basic dataclass with two properties, a WPF form with a textbox to enter both of these values and a textblock to display the combination, and an implementation of IMultiValueConverter that does the combining. I have cut a few lines of code out for readability, but the whole lot is in the download linked at the bottom of this post.  </p>
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">class</span> <span class="nc">DataClass</span>
+<span class="p">{</span>
+   <span class="k">public</span> <span class="kt">string</span> <span class="n">FirstName</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+   <span class="k">public</span> <span class="kt">string</span> <span class="n">Surname</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">NameMultiValueConverter</span> <span class="p">:</span> <span class="n">IMultiValueConverter</span>
+<span class="p">{</span>
+   <span class="k">public</span> <span class="kt">object</span> <span class="nf">Convert</span><span class="p">(</span><span class="kt">object</span><span class="p">[]</span> <span class="n">values</span><span class="p">,</span> <span class="n">Type</span> <span class="n">targetType</span><span class="p">,</span> <span class="kt">object</span> <span class="n">parameter</span><span class="p">,</span> <span class="n">System</span><span class="p">.</span><span class="n">Globalization</span><span class="p">.</span><span class="n">CultureInfo</span> <span class="n">culture</span><span class="p">)</span> <span class="p">{</span>
+       <span class="k">return</span> <span class="n">String</span><span class="p">.</span><span class="nf">Format</span><span class="p">(</span><span class="s">"{0} {1}"</span><span class="p">,</span> <span class="n">values</span><span class="p">[</span><span class="m">0</span><span class="p">],</span> <span class="n">values</span><span class="p">[</span><span class="m">1</span><span class="p">]);</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The XAML looks basically like this, again I have cut out non-essential code so grab the download if you need it.  </p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;Window</span> <span class="na">xmlns:local=</span><span class="s">"clr-namespace:BlogIMultiValueConverter"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;Window.Resources&gt;</span>
+        <span class="nt">&lt;local:NameMultiValueConverter</span> <span class="na">x:Key=</span><span class="s">"NameMultiValueConverter"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/Window.Resources&gt;</span>
+    <span class="nt">&lt;Grid&gt;</span>
+        <span class="nt">&lt;TextBox</span> <span class="na">Text=</span><span class="s">"{Binding Path=FirstName, UpdateSourceTrigger=PropertyChanged}"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;TextBox</span> <span class="na">Text=</span><span class="s">"{Binding Path=Surname, UpdateSourceTrigger=PropertyChanged}"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;TextBlock&gt;</span>
+            <span class="nt">&lt;TextBlock.Text&gt;</span>
+                <span class="nt">&lt;MultiBinding</span> <span class="na">Converter=</span><span class="s">"{StaticResource MultiValueConverter}"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;Binding</span> <span class="na">Path=</span><span class="s">"FirstName"</span> <span class="nt">/&gt;</span>
+                    <span class="nt">&lt;Binding</span> <span class="na">Path=</span><span class="s">"Surname"</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;/MultiBinding&gt;</span>
+            <span class="nt">&lt;/TextBlock.Text&gt;</span>
+        <span class="nt">&lt;/TextBlock&gt;</span>
+    <span class="nt">&lt;/Grid&gt;</span>
+<span class="nt">&lt;/Window&gt;</span>
+</code></pre></div>
+<p>Fire it up and enter some data and you get this  </p>
+
+<p><img src="/images/1382874052721.png" alt="captured_Image.png[4]">   </p>
+
+<p>Nice and simple, does just what you would expect. But what I found more useful was to include the object itself as the first <code>Binding</code>, and then use the extra bindings simply for their triggers.  </p>
+
+<p>What this lets you do is call methods on the object to aid in the production of your new value. This could save some duplicating of code if you already have a method that does the transformation (for example builds a name or address string from its components) while still having the update triggered when any component changes.  </p>
+
+<p>So our <code>IMultiValueConverter</code> becomes (I have it doing a pointless task simply to show the difference)  </p>
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">class</span> <span class="nc">DataClassMultiValueConverter</span> <span class="p">:</span> <span class="n">IMultiValueConverter</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">object</span> <span class="nf">Convert</span><span class="p">(</span><span class="kt">object</span><span class="p">[]</span> <span class="n">values</span><span class="p">,</span> <span class="n">Type</span> <span class="n">targetType</span><span class="p">,</span> <span class="kt">object</span> <span class="n">parameter</span><span class="p">,</span> <span class="n">System</span><span class="p">.</span><span class="n">Globalization</span><span class="p">.</span><span class="n">CultureInfo</span> <span class="n">culture</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="k">is</span> <span class="n">DataClass</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">DataClass</span> <span class="n">data</span> <span class="p">=</span> <span class="n">values</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="k">as</span> <span class="n">DataClass</span><span class="p">;</span>
+            <span class="k">return</span> <span class="n">String</span><span class="p">.</span><span class="nf">Format</span><span class="p">(</span><span class="s">"{0} {1} {2}"</span><span class="p">,</span> <span class="n">data</span><span class="p">.</span><span class="n">FirstName</span><span class="p">,</span> <span class="n">data</span><span class="p">.</span><span class="n">Surname</span><span class="p">,</span> <span class="n">data</span><span class="p">.</span><span class="nf">ExtraData</span><span class="p">());</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>And the XAML becomes  </p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;MultiBinding</span> <span class="na">Converter=</span><span class="s">"{StaticResource DataClassMultiValueConverter}"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;Binding</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;Binding</span> <span class="na">Path=</span><span class="s">"FirstName"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;Binding</span> <span class="na">Path=</span><span class="s">"Surname"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/MultiBinding&gt;</span>
+</code></pre></div>
+<p>And the result of this useless conversion  </p>
+
+<p><img src="/images/1382874052726.png" alt="captured_Image.png[6]">   </p>
+
+<p>So there you have it. If you missed the <code>MultiBinding</code> / <code>IMultiValueConverter</code> and need to convert/combine data for display purposes while maintaining the regular Binding trigger mechanism, make sure you take a look.  </p>
+
+    </section>
+</article>
+
+
+  <footer class="m-f">
+      <section class="copyright">All content copyright <a href="/">Chris Sainty</a> &copy; 2006-2017 &bull; All rights reserved.</section>
+  </footer>
+</body>
+</html>

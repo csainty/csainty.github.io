@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"
+  xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <author>
+    <name>Chris Sainty</name>
+  </author>
+  <id>https://blog.csainty.com</id>
+  <link href="https://blog.csainty.com"/>
+  <subtitle>A technical blog covering full-stack web development.</subtitle>
+  <title>Chris Sainty</title>
+  <updated>2016-09-04T00:00:00+00:00</updated>
+  <entry>
+    <id>/2016/09/dns-bootstrap-spring-cloud-netflix-eureka</id>
+    <link href="https://blog.csainty.com/2016/09/bootstrap-eureka-with-dns.html"/>
+    <summary>&lt;p&gt;&lt;a href=&quot;https://cloud.spring.io/spring-cloud-netflix/&quot;&gt;Spring Cloud Netflix&lt;/a&gt; is a spring wrapper around many of the core components of the &lt;a href=&quot;https://netflix.github.io/&quot;&gt;Netflix OSS&lt;/a&gt; stack.&lt;/p&gt;
+
+&lt;p&gt;It makes running some of these components very simple, but the devil is usually in the configuration. Let&amp;#39;s take a look at how to configure your &lt;a href=&quot;https://github.com/Netflix/eureka&quot;&gt;Eureka&lt;/a&gt; server instances to discover each other via DNS when running in your own datacenter.&lt;/p&gt;
+</summary>
+    <title>Bootstrapping Spring Cloud Netflix Eureka using DNS</title>
+    <updated>2016-09-04T00:00:00+00:00</updated>
+    <dc:date>2016-09-04T00:00:00+00:00</dc:date>
+  </entry>
+  <entry>
+    <id>/2016/09/running-dnsmasq-in-docker</id>
+    <link href="https://blog.csainty.com/2016/09/running-dnsmasq-in-docker.html"/>
+    <summary>&lt;p&gt;Today we take a quick look at running &lt;a href=&quot;http://www.thekelleys.org.uk/dnsmasq/doc.html&quot;&gt;dnsmasq&lt;/a&gt; as a docker container.&lt;/p&gt;
+
+&lt;p&gt;dnsmasq is a simple lightweight DNS (amongst other features) that can be used to easily set up various DNS records within your infrastructure. Our particular usecase is to set the TXT records &lt;a href=&quot;https://github.com/Netflix/eureka&quot;&gt;Eureka&lt;/a&gt; requires for DNS based bootstrapping.&lt;/p&gt;
+</summary>
+    <title>Running dnsmasq in Docker</title>
+    <updated>2016-09-03T00:00:00+00:00</updated>
+    <dc:date>2016-09-03T00:00:00+00:00</dc:date>
+  </entry>
+  <entry>
+    <id>/2016/07/useful-docker-commands</id>
+    <link href="https://blog.csainty.com/2016/07/useful-docker-commands.html"/>
+    <summary>&lt;p&gt;Today I&amp;#39;ll share some quick, helpful, docker commands I use in my workflow. These help keep my development and production machines clean of old and unused images.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;m no bash expert, so tweet me or make a &lt;a href=&quot;https://github.com/csainty/csainty.github.io&quot;&gt;PR&lt;/a&gt; if you have any suggestions.&lt;/p&gt;
+</summary>
+    <title>Useful Docker Commands</title>
+    <updated>2016-07-14T00:00:00+00:00</updated>
+    <dc:date>2016-07-14T00:00:00+00:00</dc:date>
+  </entry>
+  <entry>
+    <id>/2016/07/jekyll-in-docker</id>
+    <link href="https://blog.csainty.com/2016/07/jekyll-in-docker.html"/>
+    <summary>&lt;p&gt;Previously I moved my &lt;a href=&quot;%7B%%20post_url%202015-08-05-jekyll-in-vagrant%20%%7D&quot;&gt;jekyll installation&lt;/a&gt; inside a Vagrant image. At the time this was a big improvement over installing and maintaining ruby/jekyll locally on my machines.&lt;/p&gt;
+
+&lt;p&gt;For a while now I have wanted to move this installation inside Docker instead. I actually use Docker daily in my work and am very comfortable in that environment.&lt;br&gt;
+It wasn&amp;#39;t until the recent release of &lt;a href=&quot;https://blog.docker.com/2016/03/docker-for-mac-windows-beta/&quot;&gt;Docker for Mac&lt;/a&gt; beta that this became practical though with the improvements to volume mapping.&lt;/p&gt;
+
+&lt;p&gt;So this morning I finally made the switch.&lt;/p&gt;
+</summary>
+    <title>Running jekyll with docker</title>
+    <updated>2016-07-09T00:00:00+00:00</updated>
+    <dc:date>2016-07-09T00:00:00+00:00</dc:date>
+  </entry>
+  <entry>
+    <id>/2016/07/connecting-docker-containers</id>
+    <link href="https://blog.csainty.com/2016/07/connecting-docker-containers.html"/>
+    <summary>&lt;p&gt;Twice recently I have seen people ask on twitter about how to link docker containers. In both instances they were given overly-complex answers that are out of date with the current state of docker.&lt;/p&gt;
+
+&lt;p&gt;So today I will show you how to do it correctly for docker v1.10.0+&lt;/p&gt;
+</summary>
+    <title>Connecting docker containers</title>
+    <updated>2016-07-09T00:00:00+00:00</updated>
+    <dc:date>2016-07-09T00:00:00+00:00</dc:date>
+  </entry>
+  <entry>
+    <id>/2015/10/docker-on-osx</id>
+    <link href="https://blog.csainty.com/2015/10/docker-on-osx.html"/>
+    <summary>&lt;hr&gt;
+
+&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Much of this post is made irrelevant by the release of &lt;a href=&quot;https://blog.docker.com/2016/03/docker-for-mac-windows-beta/&quot;&gt;Docker for Mac beta&lt;/a&gt;. You no longer need a separate virtualization environment (virtualbox) you no longer need to tunnel ports (docker-pf) and you can now map volumes directly from OSX to docker and have watches etc all work.&lt;br&gt;
+So just &lt;code&gt;brew cask install docker&lt;/code&gt; and ignore most of this post!&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Docker is the talk of the town in recent times. Containerized deployments of micro services are quickly gaining momentum as best-practice architecture for certain classes of applications.&lt;/p&gt;
+
+&lt;p&gt;As ever in software development though, understanding how to make a start with these tools isn&amp;#39;t easy. Especially if you are working on an existing monolith.&lt;/p&gt;
+
+&lt;p&gt;So in this post I will share some basic tips to start using Docker in your existing development workflow, gaining this understanding can be the stepping stone to using Docker in production or in your next project.&lt;/p&gt;
+</summary>
+    <title>Developing with Docker on OSX</title>
+    <updated>2015-10-01T00:00:00+00:00</updated>
+    <dc:date>2015-10-01T00:00:00+00:00</dc:date>
+  </entry>
+  <entry>
+    <id>/2015/08/jekyll-in-vagrant</id>
+    <link href="https://blog.csainty.com/2015/08/jekyll-with-vagrant.html"/>
+    <summary>&lt;p&gt;For a while now this blog has been built with &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; which has generally been a very positive experience.&lt;br&gt;
+It has also felt very fragile though. Installed as a set of global gems just waiting to be clobbered by an update.&lt;/p&gt;
+
+&lt;p&gt;So it was that I broke the setup one day. Instead of trying to fix it, I decided to isolate the setup inside a vagrant VM. This allows me to port it between machines and reproduce it at will.&lt;/p&gt;
+</summary>
+    <title>Running jekyll with vagrant</title>
+    <updated>2015-08-05T00:00:00+00:00</updated>
+    <dc:date>2015-08-05T00:00:00+00:00</dc:date>
+  </entry>
+  <entry>
+    <id>/2015/08/homebrew-and-caskroom</id>
+    <link href="https://blog.csainty.com/2015/08/homebrew-and-caskroom.html"/>
+    <summary>&lt;p&gt;In my last post about &lt;a href=&quot;%7B%%20post_url%202015-07-15-dotfiles%20%%7D&quot;&gt;dotfiles&lt;/a&gt; I spoke of automating the setup and installation of a new mac.&lt;/p&gt;
+
+&lt;p&gt;There are two indepensible tools that deserve mentioning, &lt;a href=&quot;http://brew.sh&quot;&gt;Homebrew&lt;/a&gt; and &lt;a href=&quot;http://caskroom.io&quot;&gt;Caskroom&lt;/a&gt;.&lt;/p&gt;
+</summary>
+    <title>OSX Automation with Homebrew and Caskroom</title>
+    <updated>2015-08-03T00:00:00+00:00</updated>
+    <dc:date>2015-08-03T00:00:00+00:00</dc:date>
+  </entry>
+  <entry>
+    <id>/2015/07/dotfiles</id>
+    <link href="https://blog.csainty.com/2015/07/beginners-guide-to-dotfiles.html"/>
+    <summary>&lt;p&gt;I recently received a new Mac. Before setting it up though I wanted to investigate automation to help speed up the process and to re-use config between machines.&lt;/p&gt;
+
+&lt;p&gt;I am still somewhat of an OSX/nix beginner. I had heard of dotfiles and seen the &lt;a href=&quot;https://dotfiles.github.io/&quot;&gt;GitHub page&lt;/a&gt; but it still wasn&amp;#39;t really clear to me what these repositories contained and how they helped.&lt;/p&gt;
+
+&lt;p&gt;To help anyone in a similar position, here is what I have learned.&lt;/p&gt;
+</summary>
+    <title>Beginners guide to dotfiles</title>
+    <updated>2015-07-15T00:00:00+00:00</updated>
+    <dc:date>2015-07-15T00:00:00+00:00</dc:date>
+  </entry>
+  <entry>
+    <id>/2015/06/webpack</id>
+    <link href="https://blog.csainty.com/2015/06/webpack.html"/>
+    <summary>&lt;p&gt;&lt;a href=&quot;http://webpack.github.io/&quot;&gt;Webpack&lt;/a&gt; has become my standard tooling for front-end assets in recent times. Though for all the in-depth documentation I found the learning curve steep and the number of options confusing. So I&amp;#39;d like to share some of what I learnt.&lt;/p&gt;
+</summary>
+    <title>Webpack</title>
+    <updated>2015-06-26T00:00:00+00:00</updated>
+    <dc:date>2015-06-26T00:00:00+00:00</dc:date>
+  </entry>
+  <dc:date>2016-09-04T00:00:00+00:00</dc:date>
+</feed>

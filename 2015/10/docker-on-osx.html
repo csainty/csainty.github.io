@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <style>
+    html,body,li,p{margin:0;padding:0}p,ul,ol,.highlight{margin:1.6em 0}h1,h2,h3,h4{margin:0;padding:0;font-size:100%;font-weight:bold;text-rendering:optimizeLegibility;font-family:sans-serif}ul{list-style:none}html{box-sizing:border-box;font-size:62.5%}*{box-sizing:inherit}*:before,*:after{box-sizing:inherit}img{height:auto;max-width:100%}pre,code{font-family:monospace;margin:0}hr{display:block;height:1px;border:0;border-top:1px solid #efefef;margin:1rem 0;padding:0}blockquote{font-style:italic;margin:1.6em 0 1.6em -2.2em;padding:0 0 0 1.6em;border-left:#4a4a4a 0.4em solid}html{font-size:16px}@media screen and (min-width: 900px){html{font-size:18px}}@media screen and (min-width: 1200px){html{font-size:20px}}body{font-family:serif;color:#3A4145}h1{font-size:2rem;margin:10px 0 10px 0;letter-spacing:-1px}h2{font-size:1.4rem;letter-spacing:-1px}h3{font-size:1.2rem}h4{font-size:1.1rem}a:link,a:visited{color:inherit;text-decoration:none}a:hover{color:#57A3E8;transition:color ease 0.3s}p a:link,p a:visited{text-decoration:underline}pre{border:1px solid #E3EDF3;padding:10px;font-size:0.85em;border-radius:3px}code{padding:1px 3px;font-size:0.85em;white-space:pre;border:1px solid #E3EDF3;background:#F7FAFB;border-radius:2px}pre code{background:transparent;padding:0;border:0}.m-h{text-align:center;background-color:#303538;color:#fff;padding:1rem}.m-h h2{font-weight:normal;font-size:1.5rem}article{width:80%;margin:1rem auto;padding-bottom:1rem;border-bottom:#EBF2F6 1px solid;word-break:break-word;position:relative}article::after{display:block;content:"";width:7px;height:7px;border:#E7EEF2 1px solid;position:absolute;bottom:-5px;left:50%;margin-left:-5px;background:#fff;border-radius:100%;box-shadow:#fff 0 0 0 5px}.a-m{color:#9EABB3;font-size:0.8rem}.a-m a:hover{color:#9EABB3;text-decoration:underline}.a-h{margin-bottom:5px}.r-m{font-size:smaller}nav{position:relative;width:75%;margin:1rem auto;font-size:0.8rem;color:#9EABB3;text-align:center}.m-f{position:relative;margin:2rem 0 0 0;padding:1rem 1rem 2rem 1rem;border-top:#EBF2F6 1px solid;font-size:0.8rem;line-height:1.7em;color:#BBC7CC;text-align:center;background:#F7FAFB}.o-p,.n-p{position:absolute;display:inline-block;padding:0 0.5rem;border:#EBF2F6 2px solid;text-decoration:none;border-radius:30px;transition:border ease 0.3s}.o-p{right:0}.n-p{left:0}.t-h{width:80%;margin:0 auto}.highlight pre{background-color:#49483e;color:white;overflow:scroll}.ge{font-style:italic}.gs{font-weight:bold}.c,.cm,.cp,.c1,.gu,.cs{color:#75715e}.k,.kc,.kd,.kp,.kr,.no,.kt{color:#66d9ef}.l,.mf,.mh,.mi,.mo,.se,.il,.m{color:#ae81ff}.n,.nb,.ni,.nl,.nn,.py,.nv,.w,.bp,.vc,.vg,.vi,.p{color:#f8f8f2}.o,.nt,.ow,.gd,.kn{color:#f92672}.ld,.sb,.sc,.sd,.s2,.sh,.si,.sx,.sr,.s1,.ss,.s{color:#e6db74}.na,.nc,.nd,.ne,.nf,.nx,.gi{color:#a6e22e}
+
+    </style>
+
+    <!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>Developing with Docker on OSX - Chris Sainty</title>
+<meta property="og:title" content="Developing with Docker on OSX" />
+<meta name="description" content="Update:Much of this post is made irrelevant by the release of Docker for Mac beta. You no longer need a separate virtualization environment (virtualbox) you no longer need to tunnel ports (docker-pf) and you can now map volumes directly from OSX to docker and have watches etc all work.So just brew cask install docker and ignore most of this post!Docker is the talk of the town in recent times. Containerized deployments of micro services are quickly gaining momentum as best-practice architecture for certain classes of applications.As ever in software development though, understanding how to make a start with these tools isn&#39;t easy. Especially if you are working on an existing monolith.So in this post I will share some basic tips to start using Docker in your existing development workflow, gaining this understanding can be the stepping stone to using Docker in production or in your next project." />
+<meta property="og:description" content="Update:Much of this post is made irrelevant by the release of Docker for Mac beta. You no longer need a separate virtualization environment (virtualbox) you no longer need to tunnel ports (docker-pf) and you can now map volumes directly from OSX to docker and have watches etc all work.So just brew cask install docker and ignore most of this post!Docker is the talk of the town in recent times. Containerized deployments of micro services are quickly gaining momentum as best-practice architecture for certain classes of applications.As ever in software development though, understanding how to make a start with these tools isn&#39;t easy. Especially if you are working on an existing monolith.So in this post I will share some basic tips to start using Docker in your existing development workflow, gaining this understanding can be the stepping stone to using Docker in production or in your next project." />
+<link rel="canonical" href="https://blog.csainty.com/2015/10/docker-on-osx.html" />
+<meta property="og:url" content="https://blog.csainty.com/2015/10/docker-on-osx.html" />
+<meta property="og:site_name" content="Chris Sainty" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2015-10-01T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@csainty" />
+<meta name="twitter:creator" content="@Chris Sainty" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Developing with Docker on OSX",
+    "datePublished": "2015-10-01T00:00:00+00:00",
+    "description": "Update:Much of this post is made irrelevant by the release of Docker for Mac beta. You no longer need a separate virtualization environment (virtualbox) you no longer need to tunnel ports (docker-pf) and you can now map volumes directly from OSX to docker and have watches etc all work.So just brew cask install docker and ignore most of this post!Docker is the talk of the town in recent times. Containerized deployments of micro services are quickly gaining momentum as best-practice architecture for certain classes of applications.As ever in software development though, understanding how to make a start with these tools isn&#39;t easy. Especially if you are working on an existing monolith.So in this post I will share some basic tips to start using Docker in your existing development workflow, gaining this understanding can be the stepping stone to using Docker in production or in your next project.",
+    "url": "https://blog.csainty.com/2015/10/docker-on-osx.html"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+</head>
+<body>
+  <header class="m-h">
+    <h1><a href="https://blog.csainty.com">Chris Sainty</a></h1>
+    <h2>A technical blog covering full-stack web development.</h2>
+    <h2><a href="https://twitter.com/csainty" rel="external">twitter</a> | <a href="https://github.com/csainty" rel="external">github</a> | <a href="https://stackoverflow.com/users/625695/chris-sainty" rel="external">stackoverflow</a></h2>
+  </header>
+
+  <article>
+    <span><time datetime="01 Oct 2015">01 Oct 2015</time>  </span>
+    <h1>Developing with Docker on OSX</h1>
+    <section>
+        <hr>
+
+<p><strong>Update:</strong></p>
+
+<p>Much of this post is made irrelevant by the release of <a href="https://blog.docker.com/2016/03/docker-for-mac-windows-beta/">Docker for Mac beta</a>. You no longer need a separate virtualization environment (virtualbox) you no longer need to tunnel ports (docker-pf) and you can now map volumes directly from OSX to docker and have watches etc all work.<br>
+So just <code>brew cask install docker</code> and ignore most of this post!</p>
+
+<hr>
+
+<p>Docker is the talk of the town in recent times. Containerized deployments of micro services are quickly gaining momentum as best-practice architecture for certain classes of applications.</p>
+
+<p>As ever in software development though, understanding how to make a start with these tools isn&#39;t easy. Especially if you are working on an existing monolith.</p>
+
+<p>So in this post I will share some basic tips to start using Docker in your existing development workflow, gaining this understanding can be the stepping stone to using Docker in production or in your next project.</p>
+
+<!-- more -->
+
+<h3>Installation</h3>
+
+<p>As usual you want to reach for <a href="http://brew.sh/">Homebrew</a> to install any software on your mac.</p>
+<div class="highlight"><pre><code class="language-" data-lang="">brew install docker docker-machine
+brew cask install virtualbox
+</code></pre></div>
+<p><a href="/2015/08/homebrew-and-caskroom.html">See my post for more details</a></p>
+
+<h3>Virtualization layer</h3>
+
+<p>It is worth keeping in mind that docker is a linux technology. When you install and use docker on an OSX or Windows based machine, you need a linux virtual machine to serve as the docker host.<br>
+Luckily for us <a href="https://docs.docker.com/machine/">docker-machine</a> handles this detail.</p>
+<div class="highlight"><pre><code class="language-" data-lang="">docker-machine create -d virtualbox dev
+</code></pre></div>
+<p>This command will download and provision a suitable virtual machine for you. You can run multiple named docker hosts, in my examples I use the name <code>dev</code>.</p>
+
+<p>Now we have a machine, we need to configure the <code>docker</code> command line tools to point at the correct machine.</p>
+<div class="highlight"><pre><code class="language-" data-lang="">docker-machine env dev
+</code></pre></div>
+<p>This will print out a list of necessary environment variable to make this happen.</p>
+<div class="highlight"><pre><code class="language-" data-lang="">$(docker-machine env dev)
+</code></pre></div>
+<p>Wrapping it, interprets these and sets them in your shell session. You should consider adding this line to your <code>.bash_profile</code> or putting it in a <code>start-dev.sh</code> script.</p>
+
+<h3>Pull down some images</h3>
+
+<p>Now you have docker running, pick a piece of software already in use in your development environment and dockerize it. I&#39;ll choose <a href="http://memcached.org/">memcached</a> which is available on <a href="https://hub.docker.com/_/memcached/">docker hub</a>.</p>
+<div class="highlight"><pre><code class="language-" data-lang="">docker create --name memcached -p 11211:11211 memcached:latest
+docker start memcached
+</code></pre></div>
+<p>Here we create a new docker container, named <code>memcached</code>, we tunnel port <code>11211</code> in the container to port <code>11211</code> on the docker host, and we install the <code>memcached:latest</code> image in to the container.<br>
+Then we simply start our new container.<br>
+You can see the status of you container with</p>
+<div class="highlight"><pre><code class="language-" data-lang="">docker ps
+</code></pre></div>
+<h3>Ports</h3>
+
+<p>So far everything is simple. Here is the trick though, remember how I said you have a linux VM running as the docker host. Well when you tunnel ports out of docker containers to the host, that means they are in the VM. They are not available on localhost.<br>
+It&#39;s a small thing, but it is annoying. Any code you have that expects to find memcached on <code>localhost</code> for the development environment now needs to be changed, or parameterized. Who has time for that?</p>
+
+<p>So now we need to set up another tunnel, one that maps ports between <code>localhost</code> and the docker host.</p>
+
+<p>You could use ssh:</p>
+<div class="highlight"><pre><code class="language-" data-lang="">ssh -i $DOCKER_CERT_PATH/id_rsa -N -T -L *:11211:localhost:11211 docker@$(docker-machine ip dev)
+</code></pre></div>
+<p>Or socat:</p>
+<div class="highlight"><pre><code class="language-" data-lang="">socat tcp4-listen:11211,fork tcp4:$(docker-machine ip dev):11211
+</code></pre></div>
+<p>Alternatively you can grab this neat little node script my co-worker made <a href="https://github.com/noseglid/docker-pf">https://github.com/noseglid/docker-pf</a></p>
+<div class="highlight"><pre><code class="language-" data-lang="">git pull git@github.com:noseglid/docker-pf.git
+cd docker-pf
+npm install
+npm start
+</code></pre></div>
+<p>The nice thing about <code>docker-pf</code> is that it will inspect your docker host and tunnel all exposed ports automatically!</p>
+
+<h3>Wrap Up</h3>
+
+<p>So there you have it, a few simple steps and you can seamlessly move a piece of your development architecture in to a container. Go ahead and containerize all the services you are dependent on. With minimal time and effort you now have some pieces in place to experiment. Learn the docker tooling, understand the concepts and get yourself prepared for when you start containerizing your production environment.<br>
+As a bonus, you end up with a cleaner developer machine too! Need to have multiple versions of multiple services at hand to support all your apps? No problem just containerize them all and start/stop at will.</p>
+
+    </section>
+</article>
+
+
+  <footer class="m-f">
+      <section class="copyright">All content copyright <a href="/">Chris Sainty</a> &copy; 2006-2017 &bull; All rights reserved.</section>
+  </footer>
+</body>
+</html>

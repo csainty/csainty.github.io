@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <style>
+    html,body,li,p{margin:0;padding:0}p,ul,ol,.highlight{margin:1.6em 0}h1,h2,h3,h4{margin:0;padding:0;font-size:100%;font-weight:bold;text-rendering:optimizeLegibility;font-family:sans-serif}ul{list-style:none}html{box-sizing:border-box;font-size:62.5%}*{box-sizing:inherit}*:before,*:after{box-sizing:inherit}img{height:auto;max-width:100%}pre,code{font-family:monospace;margin:0}hr{display:block;height:1px;border:0;border-top:1px solid #efefef;margin:1rem 0;padding:0}blockquote{font-style:italic;margin:1.6em 0 1.6em -2.2em;padding:0 0 0 1.6em;border-left:#4a4a4a 0.4em solid}html{font-size:16px}@media screen and (min-width: 900px){html{font-size:18px}}@media screen and (min-width: 1200px){html{font-size:20px}}body{font-family:serif;color:#3A4145}h1{font-size:2rem;margin:10px 0 10px 0;letter-spacing:-1px}h2{font-size:1.4rem;letter-spacing:-1px}h3{font-size:1.2rem}h4{font-size:1.1rem}a:link,a:visited{color:inherit;text-decoration:none}a:hover{color:#57A3E8;transition:color ease 0.3s}p a:link,p a:visited{text-decoration:underline}pre{border:1px solid #E3EDF3;padding:10px;font-size:0.85em;border-radius:3px}code{padding:1px 3px;font-size:0.85em;white-space:pre;border:1px solid #E3EDF3;background:#F7FAFB;border-radius:2px}pre code{background:transparent;padding:0;border:0}.m-h{text-align:center;background-color:#303538;color:#fff;padding:1rem}.m-h h2{font-weight:normal;font-size:1.5rem}article{width:80%;margin:1rem auto;padding-bottom:1rem;border-bottom:#EBF2F6 1px solid;word-break:break-word;position:relative}article::after{display:block;content:"";width:7px;height:7px;border:#E7EEF2 1px solid;position:absolute;bottom:-5px;left:50%;margin-left:-5px;background:#fff;border-radius:100%;box-shadow:#fff 0 0 0 5px}.a-m{color:#9EABB3;font-size:0.8rem}.a-m a:hover{color:#9EABB3;text-decoration:underline}.a-h{margin-bottom:5px}.r-m{font-size:smaller}nav{position:relative;width:75%;margin:1rem auto;font-size:0.8rem;color:#9EABB3;text-align:center}.m-f{position:relative;margin:2rem 0 0 0;padding:1rem 1rem 2rem 1rem;border-top:#EBF2F6 1px solid;font-size:0.8rem;line-height:1.7em;color:#BBC7CC;text-align:center;background:#F7FAFB}.o-p,.n-p{position:absolute;display:inline-block;padding:0 0.5rem;border:#EBF2F6 2px solid;text-decoration:none;border-radius:30px;transition:border ease 0.3s}.o-p{right:0}.n-p{left:0}.t-h{width:80%;margin:0 auto}.highlight pre{background-color:#49483e;color:white;overflow:scroll}.ge{font-style:italic}.gs{font-weight:bold}.c,.cm,.cp,.c1,.gu,.cs{color:#75715e}.k,.kc,.kd,.kp,.kr,.no,.kt{color:#66d9ef}.l,.mf,.mh,.mi,.mo,.se,.il,.m{color:#ae81ff}.n,.nb,.ni,.nl,.nn,.py,.nv,.w,.bp,.vc,.vg,.vi,.p{color:#f8f8f2}.o,.nt,.ow,.gd,.kn{color:#f92672}.ld,.sb,.sc,.sd,.s2,.sh,.si,.sx,.sr,.s1,.ss,.s{color:#e6db74}.na,.nc,.nd,.ne,.nf,.nx,.gi{color:#a6e22e}
+
+    </style>
+
+    <!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>Learn Something New: Knockout JS - Chris Sainty</title>
+<meta property="og:title" content="Learn Something New: Knockout JS" />
+<meta name="description" content="First in my “Learn Something New” series is Knockout, a javascript MVVM framework.Knockout is beautifully simplistic. You define a ViewModel, bind it to your UI, and away it goes keeping the two in sync. It really is beautiful stuff for a javascript heavy UI." />
+<meta property="og:description" content="First in my “Learn Something New” series is Knockout, a javascript MVVM framework.Knockout is beautifully simplistic. You define a ViewModel, bind it to your UI, and away it goes keeping the two in sync. It really is beautiful stuff for a javascript heavy UI." />
+<link rel="canonical" href="https://blog.csainty.com/2011/10/learn-something-new-knockout-js.html" />
+<meta property="og:url" content="https://blog.csainty.com/2011/10/learn-something-new-knockout-js.html" />
+<meta property="og:site_name" content="Chris Sainty" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2011-10-07T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@csainty" />
+<meta name="twitter:creator" content="@Chris Sainty" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Learn Something New: Knockout JS",
+    "datePublished": "2011-10-07T00:00:00+00:00",
+    "description": "First in my “Learn Something New” series is Knockout, a javascript MVVM framework.Knockout is beautifully simplistic. You define a ViewModel, bind it to your UI, and away it goes keeping the two in sync. It really is beautiful stuff for a javascript heavy UI.",
+    "url": "https://blog.csainty.com/2011/10/learn-something-new-knockout-js.html"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+</head>
+<body>
+  <header class="m-h">
+    <h1><a href="https://blog.csainty.com">Chris Sainty</a></h1>
+    <h2>A technical blog covering full-stack web development.</h2>
+    <h2><a href="https://twitter.com/csainty" rel="external">twitter</a> | <a href="https://github.com/csainty" rel="external">github</a> | <a href="https://stackoverflow.com/users/625695/chris-sainty" rel="external">stackoverflow</a></h2>
+  </header>
+
+  <article>
+    <span><time datetime="07 Oct 2011">07 Oct 2011</time>  </span>
+    <h1>Learn Something New&#58; Knockout JS</h1>
+    <section>
+        <p>First in my <em>“Learn Something New”</em> series is <a href="http://knockoutjs.com/">Knockout</a>, a javascript MVVM framework.</p>
+
+<p>Knockout is beautifully simplistic. You define a ViewModel, bind it to your UI, and away it goes keeping the two in sync. It really is beautiful stuff for a javascript heavy UI.</p>
+
+<!-- more -->
+
+<p>To learn my way with Knockout, I decided to create a basic twitter search client in javascript. The twitter search API is a great resource for quickly adding data to a “hello world”-esque application. I am bound to revisit it later.</p>
+
+<p>Now let’s get a few more details out of the way, you can see the site up and running at <a href="http://twitches.apphb.com/">http://twitches.apphb.com/</a> and you can get the source code at <a href="https://github.com/csainty/Twitches">https://github.com/csainty/Twitches</a></p>
+
+<p>The interesting code lives in the only <a href="https://github.com/csainty/Twitches/blob/master/Twitches/Views/Home/Index.cshtml">View</a> and the <a href="https://github.com/csainty/Twitches/blob/master/Twitches/Scripts/Site.js">Javascript</a>.
+The page basically consists of a textbox to enter a search term, a button to run the search and a UL that is bound to the results. There is some other fluff in there, but this is the core functionality.</p>
+
+<p>Here is a trimmed down version of the javascript to highlight the main features.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">viewModel</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">searchTerm</span><span class="p">:</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">observable</span><span class="p">(</span><span class="s2">""</span><span class="p">),</span>
+    <span class="na">tweets</span><span class="p">:</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">observableArray</span><span class="p">([]),</span>
+    <span class="na">search</span><span class="p">:</span> <span class="nx">searchTwitter</span>
+<span class="p">}</span>
+<span class="nx">ko</span><span class="p">.</span><span class="nx">applyBindings</span><span class="p">(</span><span class="nx">viewModel</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">searchTwitter</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s1">'http://search.twitter.com/search.json'</span><span class="p">,</span>
+        <span class="na">dataType</span><span class="p">:</span> <span class="s1">'jsonp'</span><span class="p">,</span>
+        <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">q</span><span class="p">:</span> <span class="nx">viewModel</span><span class="p">.</span><span class="nx">searchTerm</span><span class="p">(),</span>
+            <span class="na">result_type</span><span class="p">:</span> <span class="s1">'recent'</span><span class="p">,</span>
+            <span class="na">rpp</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+            <span class="na">lang</span><span class="p">:</span> <span class="s1">'en'</span>
+        <span class="p">},</span>
+        <span class="na">success</span><span class="p">:</span> <span class="nx">handleTwitterResponse</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">handleTwitterResponse</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">index</span> <span class="o">=</span> <span class="nx">result</span><span class="p">.</span><span class="nx">results</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">index</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">index</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">viewModel</span><span class="p">.</span><span class="nx">tweets</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">results</span><span class="p">[</span><span class="nx">index</span><span class="p">]);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>So we define our <code>viewModel</code>, give it an observable value for the search string, an observable array for the results and a function to perform the search.
+We apply these bindings and that is it for the javascript. The actual binding to the UI happens in the UI, using HTML5 data attributes.</p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;ul</span> <span class="na">data-bind=</span><span class="s">"template: { name : 'tweetTemplate', foreach: tweets }"</span><span class="nt">&gt;&lt;/ul&gt;</span>
+
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">"search..."</span> <span class="na">data-bind=</span><span class="s">"value: searchTerm"</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;button</span> <span class="na">data-bind=</span><span class="s">"click: search"</span><span class="nt">&gt;</span>Search<span class="nt">&lt;/button&gt;</span>
+
+<span class="nt">&lt;script</span> <span class="na">type=</span><span class="s">"text/x-jquery-tmpl"</span> <span class="na">id=</span><span class="s">"tweetTemplate"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"tweet"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"${profile_image_url}"</span> <span class="na">alt=</span><span class="s">"${from_user}"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"content"</span><span class="nt">&gt;</span>
+            ${from_user}: ${text}<span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"datetime"</span><span class="nt">&gt;</span>${created_at}<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ui-helper-clearfix"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div>
+<p>Here are the key elements from the HTML, as you can see we bind the UI with a jQuery.tmpl template, and wire up the value for the textbox and the click event for the button.
+It really is as simple as that.</p>
+
+<p>I highly recommend the <a href="http://learn.knockoutjs.com/">tutorials</a> at the Knockout website, they have created a wonderful live tutorial that takes you through each step of the process.</p>
+
+<h4>Tools and Services Used</h4>
+
+<p><a href="http://knockoutjs.com/">Knockout JS</a><br>
+<a href="http://www.asp.net/mvc">ASP.NET MVC / C#</a><br>
+<a href="http://combres.codeplex.com/">Combres</a> (Javascript / CSS minifier and combiner)<br>
+<a href="https://appharbor.com/">AppHarbor</a><br>
+<a href="http://jquery.com/">jQuery</a><br>
+<a href="https://dev.twitter.com/docs">Twitter API</a></p>
+
+    </section>
+</article>
+
+
+  <footer class="m-f">
+      <section class="copyright">All content copyright <a href="/">Chris Sainty</a> &copy; 2006-2017 &bull; All rights reserved.</section>
+  </footer>
+</body>
+</html>

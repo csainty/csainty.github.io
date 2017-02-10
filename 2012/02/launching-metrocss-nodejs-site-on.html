@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <style>
+    html,body,li,p{margin:0;padding:0}p,ul,ol,.highlight{margin:1.6em 0}h1,h2,h3,h4{margin:0;padding:0;font-size:100%;font-weight:bold;text-rendering:optimizeLegibility;font-family:sans-serif}ul{list-style:none}html{box-sizing:border-box;font-size:62.5%}*{box-sizing:inherit}*:before,*:after{box-sizing:inherit}img{height:auto;max-width:100%}pre,code{font-family:monospace;margin:0}hr{display:block;height:1px;border:0;border-top:1px solid #efefef;margin:1rem 0;padding:0}blockquote{font-style:italic;margin:1.6em 0 1.6em -2.2em;padding:0 0 0 1.6em;border-left:#4a4a4a 0.4em solid}html{font-size:16px}@media screen and (min-width: 900px){html{font-size:18px}}@media screen and (min-width: 1200px){html{font-size:20px}}body{font-family:serif;color:#3A4145}h1{font-size:2rem;margin:10px 0 10px 0;letter-spacing:-1px}h2{font-size:1.4rem;letter-spacing:-1px}h3{font-size:1.2rem}h4{font-size:1.1rem}a:link,a:visited{color:inherit;text-decoration:none}a:hover{color:#57A3E8;transition:color ease 0.3s}p a:link,p a:visited{text-decoration:underline}pre{border:1px solid #E3EDF3;padding:10px;font-size:0.85em;border-radius:3px}code{padding:1px 3px;font-size:0.85em;white-space:pre;border:1px solid #E3EDF3;background:#F7FAFB;border-radius:2px}pre code{background:transparent;padding:0;border:0}.m-h{text-align:center;background-color:#303538;color:#fff;padding:1rem}.m-h h2{font-weight:normal;font-size:1.5rem}article{width:80%;margin:1rem auto;padding-bottom:1rem;border-bottom:#EBF2F6 1px solid;word-break:break-word;position:relative}article::after{display:block;content:"";width:7px;height:7px;border:#E7EEF2 1px solid;position:absolute;bottom:-5px;left:50%;margin-left:-5px;background:#fff;border-radius:100%;box-shadow:#fff 0 0 0 5px}.a-m{color:#9EABB3;font-size:0.8rem}.a-m a:hover{color:#9EABB3;text-decoration:underline}.a-h{margin-bottom:5px}.r-m{font-size:smaller}nav{position:relative;width:75%;margin:1rem auto;font-size:0.8rem;color:#9EABB3;text-align:center}.m-f{position:relative;margin:2rem 0 0 0;padding:1rem 1rem 2rem 1rem;border-top:#EBF2F6 1px solid;font-size:0.8rem;line-height:1.7em;color:#BBC7CC;text-align:center;background:#F7FAFB}.o-p,.n-p{position:absolute;display:inline-block;padding:0 0.5rem;border:#EBF2F6 2px solid;text-decoration:none;border-radius:30px;transition:border ease 0.3s}.o-p{right:0}.n-p{left:0}.t-h{width:80%;margin:0 auto}.highlight pre{background-color:#49483e;color:white;overflow:scroll}.ge{font-style:italic}.gs{font-weight:bold}.c,.cm,.cp,.c1,.gu,.cs{color:#75715e}.k,.kc,.kd,.kp,.kr,.no,.kt{color:#66d9ef}.l,.mf,.mh,.mi,.mo,.se,.il,.m{color:#ae81ff}.n,.nb,.ni,.nl,.nn,.py,.nv,.w,.bp,.vc,.vg,.vi,.p{color:#f8f8f2}.o,.nt,.ow,.gd,.kn{color:#f92672}.ld,.sb,.sc,.sd,.s2,.sh,.si,.sx,.sr,.s1,.ss,.s{color:#e6db74}.na,.nc,.nd,.ne,.nf,.nx,.gi{color:#a6e22e}
+
+    </style>
+
+    <!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>Launching a Metro.css + Node.js site on AppHarbor - Chris Sainty</title>
+<meta property="og:title" content="Launching a Metro.css + Node.js site on AppHarbor" />
+<meta name="description" content="Last week I contributed a tiny piece of code to the Code52 Metro.css project. My contribution was a node script that creates a boilerplate Node.js website for you using the Metro.css styles, Express and wires up the LESS compilation.  " />
+<meta property="og:description" content="Last week I contributed a tiny piece of code to the Code52 Metro.css project. My contribution was a node script that creates a boilerplate Node.js website for you using the Metro.css styles, Express and wires up the LESS compilation.  " />
+<link rel="canonical" href="https://blog.csainty.com/2012/02/launching-metrocss-nodejs-site-on.html" />
+<meta property="og:url" content="https://blog.csainty.com/2012/02/launching-metrocss-nodejs-site-on.html" />
+<meta property="og:site_name" content="Chris Sainty" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2012-02-16T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@csainty" />
+<meta name="twitter:creator" content="@Chris Sainty" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Launching a Metro.css + Node.js site on AppHarbor",
+    "datePublished": "2012-02-16T00:00:00+00:00",
+    "description": "Last week I contributed a tiny piece of code to the Code52 Metro.css project. My contribution was a node script that creates a boilerplate Node.js website for you using the Metro.css styles, Express and wires up the LESS compilation.  ",
+    "url": "https://blog.csainty.com/2012/02/launching-metrocss-nodejs-site-on.html"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+</head>
+<body>
+  <header class="m-h">
+    <h1><a href="https://blog.csainty.com">Chris Sainty</a></h1>
+    <h2>A technical blog covering full-stack web development.</h2>
+    <h2><a href="https://twitter.com/csainty" rel="external">twitter</a> | <a href="https://github.com/csainty" rel="external">github</a> | <a href="https://stackoverflow.com/users/625695/chris-sainty" rel="external">stackoverflow</a></h2>
+  </header>
+
+  <article>
+    <span><time datetime="16 Feb 2012">16 Feb 2012</time>  </span>
+    <h1>Launching a Metro.css + Node.js site on AppHarbor</h1>
+    <section>
+        <p>Last week I contributed a tiny piece of code to the <a href="http://code52.org/">Code52</a> <a href="https://github.com/Code52/metro.css">Metro.css</a> project. My contribution was a node script that creates a boilerplate Node.js website for you using the Metro.css styles, Express and wires up the LESS compilation.  </p>
+
+<!-- more -->
+
+<p>Today I am going to run you through using this code to generate a site and push it to AppHarbor, who now support hosting Node.js sites.  </p>
+
+<p>I assume that you have Node.js and npm installed on your dev machine and referenced in the path. All of which should happen if you use the excellent <a href="http://nodejs.org/#download">Windows Installer package</a>.  </p>
+
+<p>I also assume you have git installed and that you have created your AppHarbor account and added a new site. I have blogged about doing this <a href="/2011/11/tutorial-nancy-mongodb-appharbor.html">before</a>, their site has been updated since but the process is fairly similar.  </p>
+
+<p>While at AppHarbor you will need to do two things. The first is to take a copy of your repository URL, which is now accessed by pressing the button shown in this screenshot.  </p>
+
+<p><img src="/images/1382874051194.png" alt="Appharbor URL">  </p>
+
+<p>The second is to turn on file system write access. You do this from the settings page by enabling the checkbox shown below and hitting update application.  </p>
+
+<p><img src="/images/1382874051195.png" alt="AppHarbor Files">  </p>
+
+<p>What this does is allow the LESS compiler to generate and cache CSS files on demand, rather than having to compile them in a build step.  </p>
+
+<p>Now let’s jump to the command line.  </p>
+
+<p>First we need to clone the metro.css repo from GitHub and jump into the node folder, which contains the scripts we need.  </p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">git clone https://github.com/Code52/metro.css.git
+<span class="nb">cd </span>metro.css/node
+</code></pre></div>
+<p>Now we need to use npm to install the dependencies required by the script.  </p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">npm install
+</code></pre></div>
+<p>Next we generate our site, change to the generated folder and install the dependencies for our site.  </p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">node metro –i c:<span class="se">\p</span>rojects<span class="se">\m</span>etrosite
+<span class="nb">cd</span> <span class="se">\p</span>rojects<span class="se">\m</span>etrosite
+npm install
+</code></pre></div>
+<p>Simple as that, our site has been generated and is ready to be deployed. This whole process will look something like this.  </p>
+
+<p><img src="/images/1382874051196.png" alt="Site Creation">  </p>
+
+<p>If you want to see it running locally, just fire it up (node app.js) and point your browser to localhost using the port specified.  </p>
+
+<p><img src="/images/1382874051198.png" alt="Running Locally">  </p>
+
+<p>So to deploy to AppHarbor, we need to first create a git repository for our site, commit the changes and then push this commit up to AppHarbor. From the folder that contains our generated site (<code>c:\projects\metrosite</code> in my example) we do the following.  </p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">git init
+git add .
+git commit –m “Initial commit”
+git remote add origin &lt;YOUR APPHARBOUR REPOSITORY URL&gt;
+git push origin master
+</code></pre></div>
+<p>Which will look something like this, though I supressed the commit output for the purposes of the screenshot.  </p>
+
+<p><img src="/images/1382874051199.png" alt="Git CLI">  </p>
+
+<p>This sends your site up to AppHarbor, where it is loaded up and made live.  </p>
+
+<p>Back at AppHarbor, your application page will show the current build status. Usually the build will be fairly instant, but if the Status column has a little spinning indicator, then you will need to wait for the build to complete. Give it the occasional refresh.  </p>
+
+<p><img src="/images/1382874051200.png" alt="Build Status">  </p>
+
+<p>When that is done, click the “Go to your application link” and marvel at your creation.  </p>
+
+<p><img src="/images/1382874051201.png" alt="Metro Site">  </p>
+
+<p>See my copy live at <a href="http://nodemetro.apphb.com/">http://nodemetro.apphb.com/</a>  </p>
+
+    </section>
+</article>
+
+
+  <footer class="m-f">
+      <section class="copyright">All content copyright <a href="/">Chris Sainty</a> &copy; 2006-2017 &bull; All rights reserved.</section>
+  </footer>
+</body>
+</html>

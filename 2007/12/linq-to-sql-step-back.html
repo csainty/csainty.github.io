@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <style>
+    html,body,li,p{margin:0;padding:0}p,ul,ol,.highlight{margin:1.6em 0}h1,h2,h3,h4{margin:0;padding:0;font-size:100%;font-weight:bold;text-rendering:optimizeLegibility;font-family:sans-serif}ul{list-style:none}html{box-sizing:border-box;font-size:62.5%}*{box-sizing:inherit}*:before,*:after{box-sizing:inherit}img{height:auto;max-width:100%}pre,code{font-family:monospace;margin:0}hr{display:block;height:1px;border:0;border-top:1px solid #efefef;margin:1rem 0;padding:0}blockquote{font-style:italic;margin:1.6em 0 1.6em -2.2em;padding:0 0 0 1.6em;border-left:#4a4a4a 0.4em solid}html{font-size:16px}@media screen and (min-width: 900px){html{font-size:18px}}@media screen and (min-width: 1200px){html{font-size:20px}}body{font-family:serif;color:#3A4145}h1{font-size:2rem;margin:10px 0 10px 0;letter-spacing:-1px}h2{font-size:1.4rem;letter-spacing:-1px}h3{font-size:1.2rem}h4{font-size:1.1rem}a:link,a:visited{color:inherit;text-decoration:none}a:hover{color:#57A3E8;transition:color ease 0.3s}p a:link,p a:visited{text-decoration:underline}pre{border:1px solid #E3EDF3;padding:10px;font-size:0.85em;border-radius:3px}code{padding:1px 3px;font-size:0.85em;white-space:pre;border:1px solid #E3EDF3;background:#F7FAFB;border-radius:2px}pre code{background:transparent;padding:0;border:0}.m-h{text-align:center;background-color:#303538;color:#fff;padding:1rem}.m-h h2{font-weight:normal;font-size:1.5rem}article{width:80%;margin:1rem auto;padding-bottom:1rem;border-bottom:#EBF2F6 1px solid;word-break:break-word;position:relative}article::after{display:block;content:"";width:7px;height:7px;border:#E7EEF2 1px solid;position:absolute;bottom:-5px;left:50%;margin-left:-5px;background:#fff;border-radius:100%;box-shadow:#fff 0 0 0 5px}.a-m{color:#9EABB3;font-size:0.8rem}.a-m a:hover{color:#9EABB3;text-decoration:underline}.a-h{margin-bottom:5px}.r-m{font-size:smaller}nav{position:relative;width:75%;margin:1rem auto;font-size:0.8rem;color:#9EABB3;text-align:center}.m-f{position:relative;margin:2rem 0 0 0;padding:1rem 1rem 2rem 1rem;border-top:#EBF2F6 1px solid;font-size:0.8rem;line-height:1.7em;color:#BBC7CC;text-align:center;background:#F7FAFB}.o-p,.n-p{position:absolute;display:inline-block;padding:0 0.5rem;border:#EBF2F6 2px solid;text-decoration:none;border-radius:30px;transition:border ease 0.3s}.o-p{right:0}.n-p{left:0}.t-h{width:80%;margin:0 auto}.highlight pre{background-color:#49483e;color:white;overflow:scroll}.ge{font-style:italic}.gs{font-weight:bold}.c,.cm,.cp,.c1,.gu,.cs{color:#75715e}.k,.kc,.kd,.kp,.kr,.no,.kt{color:#66d9ef}.l,.mf,.mh,.mi,.mo,.se,.il,.m{color:#ae81ff}.n,.nb,.ni,.nl,.nn,.py,.nv,.w,.bp,.vc,.vg,.vi,.p{color:#f8f8f2}.o,.nt,.ow,.gd,.kn{color:#f92672}.ld,.sb,.sc,.sd,.s2,.sh,.si,.sx,.sr,.s1,.ss,.s{color:#e6db74}.na,.nc,.nd,.ne,.nf,.nx,.gi{color:#a6e22e}
+
+    </style>
+
+    <!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>LINQ to SQL: A Step Back - Chris Sainty</title>
+<meta property="og:title" content="LINQ to SQL: A Step Back" />
+<meta name="description" content="In this, my third article on LINQ-to-SQL, I am going to be taking a step away from the code and delve into a discussion about what I will think most people will miss when they first approach this new technology." />
+<meta property="og:description" content="In this, my third article on LINQ-to-SQL, I am going to be taking a step away from the code and delve into a discussion about what I will think most people will miss when they first approach this new technology." />
+<link rel="canonical" href="https://blog.csainty.com/2007/12/linq-to-sql-step-back.html" />
+<meta property="og:url" content="https://blog.csainty.com/2007/12/linq-to-sql-step-back.html" />
+<meta property="og:site_name" content="Chris Sainty" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2007-12-27T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@csainty" />
+<meta name="twitter:creator" content="@Chris Sainty" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "LINQ to SQL: A Step Back",
+    "datePublished": "2007-12-27T00:00:00+00:00",
+    "description": "In this, my third article on LINQ-to-SQL, I am going to be taking a step away from the code and delve into a discussion about what I will think most people will miss when they first approach this new technology.",
+    "url": "https://blog.csainty.com/2007/12/linq-to-sql-step-back.html"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+</head>
+<body>
+  <header class="m-h">
+    <h1><a href="https://blog.csainty.com">Chris Sainty</a></h1>
+    <h2>A technical blog covering full-stack web development.</h2>
+    <h2><a href="https://twitter.com/csainty" rel="external">twitter</a> | <a href="https://github.com/csainty" rel="external">github</a> | <a href="https://stackoverflow.com/users/625695/chris-sainty" rel="external">stackoverflow</a></h2>
+  </header>
+
+  <article>
+    <span><time datetime="27 Dec 2007">27 Dec 2007</time>  </span>
+    <h1>LINQ to SQL&#58; A Step Back</h1>
+    <section>
+        <p>In this, my third article on LINQ-to-SQL, I am going to be taking a step away from the code and delve into a discussion about what I will think most people will miss when they first approach this new technology.</p>
+
+<!-- more -->
+
+<p>What LINQ-to-SQL does is abstract the database away from the developer. It then provides a truly OO interface to your data.<br>
+To take the view that LINQ-to-SQL lets you integrate a query straight into your code is to miss the point entirely.</p>
+
+<p>Briefly, the wizard creates a new type for each table that represents a single record in the table with a property for each field. A top-level <code>DataContext</code> object is then created that acts as the starting point for your data access. To it is added a Collection for every table in the database. These Collections are typed to only accept objects of the appropriate record type. The Orders collection will only work with <code>Order</code> objects.</p>
+
+<p>What this achieves is data access that is type checked every step of the way. <code>Tables</code>, <code>Fields</code>, <code>Stored Procs</code>. Every read/write/delete is properly type checked. Something sorely missing from 1st party data access in .NET all these years.</p>
+
+<p>Where things get really special though, is in the mapping of relationships. If your database has an Order table with a relationship defined to a Customer table using a <code>CustomerID</code> field. Your <code>Order</code> type in LINQ-to-SQL will have two properties, a <code>CustomerID</code> property (likely you have used an int) and a <code>Customer</code> property that is of type <code>Customer</code>.<br>
+This allows you to find the name of the customer from an order, in a very OO manner <code>myOrder.Customer.CustomerName</code> LINQ-to-SQL uses the relationship information to generate and execute a SQL statement that joins these two tables based on <code>CustomerID</code> and pull off the appropriate field. Take a moment here to contrast this with what you would need to do to achieve this with your current data access technology.<br>
+<em>(This is where someone writes in to tell me about Framework X and its amazing data layer. Glad to hear it.)</em></p>
+
+<p>The important mental hurdle people will face is being able to stop thinking in SQL and start thinking in Objects. The benefits of doing so will be faster development, and thanks to type checking it will also be safer. I also believe it will greatly reduce the time it takes to bring a new developer up to speed on the database layout, they will be able to learn through intellisense as they go and avoid learning each table name, field name and join condition the old way (with a giant diagram).<br>
+I am reminded of an old lecturer of mine that promoted storing data in serialised collections as a better mechanism than databases for some convoluted reason involving ease-of-use and a total lack of understanding indexes. I promptly pointed out the complete lack forethought in this notion, but I guess he could now have the best of both worlds.</p>
+
+<p>Viewing a database as a giant connected set of objects and collections, brings it into line with how all other data is stored and accessed in applications. Passing objects around an application especially between a Presentation and Business Layer is very natural. Adding an object to a collection instead of serialising the object into an <code>INSERT</code> statement is equally natural. The same applies for deleting, sorting, filtering and many other standard SQL operations. We &quot;get&quot; objects, and although we may also &quot;get&quot; SQL there has long been a disconnect, two mind sets we needed to use.</p>
+
+<p>I am only scratching the surface on how LINQ-to-SQL will change the way you code.</p>
+
+<p>I am going to dig into building custom queries from UI selections (think about building the queries behind a complex reports using the old SQL string building methods), extending the base functionality of LINQ-to-SQL with Partial Classes and Partial Methods plus a whole host of other examples and techniques.</p>
+
+    </section>
+</article>
+
+
+  <footer class="m-f">
+      <section class="copyright">All content copyright <a href="/">Chris Sainty</a> &copy; 2006-2017 &bull; All rights reserved.</section>
+  </footer>
+</body>
+</html>

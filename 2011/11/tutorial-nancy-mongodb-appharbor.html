@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <style>
+    html,body,li,p{margin:0;padding:0}p,ul,ol,.highlight{margin:1.6em 0}h1,h2,h3,h4{margin:0;padding:0;font-size:100%;font-weight:bold;text-rendering:optimizeLegibility;font-family:sans-serif}ul{list-style:none}html{box-sizing:border-box;font-size:62.5%}*{box-sizing:inherit}*:before,*:after{box-sizing:inherit}img{height:auto;max-width:100%}pre,code{font-family:monospace;margin:0}hr{display:block;height:1px;border:0;border-top:1px solid #efefef;margin:1rem 0;padding:0}blockquote{font-style:italic;margin:1.6em 0 1.6em -2.2em;padding:0 0 0 1.6em;border-left:#4a4a4a 0.4em solid}html{font-size:16px}@media screen and (min-width: 900px){html{font-size:18px}}@media screen and (min-width: 1200px){html{font-size:20px}}body{font-family:serif;color:#3A4145}h1{font-size:2rem;margin:10px 0 10px 0;letter-spacing:-1px}h2{font-size:1.4rem;letter-spacing:-1px}h3{font-size:1.2rem}h4{font-size:1.1rem}a:link,a:visited{color:inherit;text-decoration:none}a:hover{color:#57A3E8;transition:color ease 0.3s}p a:link,p a:visited{text-decoration:underline}pre{border:1px solid #E3EDF3;padding:10px;font-size:0.85em;border-radius:3px}code{padding:1px 3px;font-size:0.85em;white-space:pre;border:1px solid #E3EDF3;background:#F7FAFB;border-radius:2px}pre code{background:transparent;padding:0;border:0}.m-h{text-align:center;background-color:#303538;color:#fff;padding:1rem}.m-h h2{font-weight:normal;font-size:1.5rem}article{width:80%;margin:1rem auto;padding-bottom:1rem;border-bottom:#EBF2F6 1px solid;word-break:break-word;position:relative}article::after{display:block;content:"";width:7px;height:7px;border:#E7EEF2 1px solid;position:absolute;bottom:-5px;left:50%;margin-left:-5px;background:#fff;border-radius:100%;box-shadow:#fff 0 0 0 5px}.a-m{color:#9EABB3;font-size:0.8rem}.a-m a:hover{color:#9EABB3;text-decoration:underline}.a-h{margin-bottom:5px}.r-m{font-size:smaller}nav{position:relative;width:75%;margin:1rem auto;font-size:0.8rem;color:#9EABB3;text-align:center}.m-f{position:relative;margin:2rem 0 0 0;padding:1rem 1rem 2rem 1rem;border-top:#EBF2F6 1px solid;font-size:0.8rem;line-height:1.7em;color:#BBC7CC;text-align:center;background:#F7FAFB}.o-p,.n-p{position:absolute;display:inline-block;padding:0 0.5rem;border:#EBF2F6 2px solid;text-decoration:none;border-radius:30px;transition:border ease 0.3s}.o-p{right:0}.n-p{left:0}.t-h{width:80%;margin:0 auto}.highlight pre{background-color:#49483e;color:white;overflow:scroll}.ge{font-style:italic}.gs{font-weight:bold}.c,.cm,.cp,.c1,.gu,.cs{color:#75715e}.k,.kc,.kd,.kp,.kr,.no,.kt{color:#66d9ef}.l,.mf,.mh,.mi,.mo,.se,.il,.m{color:#ae81ff}.n,.nb,.ni,.nl,.nn,.py,.nv,.w,.bp,.vc,.vg,.vi,.p{color:#f8f8f2}.o,.nt,.ow,.gd,.kn{color:#f92672}.ld,.sb,.sc,.sd,.s2,.sh,.si,.sx,.sr,.s1,.ss,.s{color:#e6db74}.na,.nc,.nd,.ne,.nf,.nx,.gi{color:#a6e22e}
+
+    </style>
+
+    <!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>Tutorial: Nancy + MongoDb + AppHarbor - Chris Sainty</title>
+<meta property="og:title" content="Tutorial: Nancy + MongoDb + AppHarbor" />
+<meta name="description" content="Time for a quick tutorial on how to get a site up and running on AppHarbor using Nancy and MongoDb.  " />
+<meta property="og:description" content="Time for a quick tutorial on how to get a site up and running on AppHarbor using Nancy and MongoDb.  " />
+<link rel="canonical" href="https://blog.csainty.com/2011/11/tutorial-nancy-mongodb-appharbor.html" />
+<meta property="og:url" content="https://blog.csainty.com/2011/11/tutorial-nancy-mongodb-appharbor.html" />
+<meta property="og:site_name" content="Chris Sainty" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2011-11-29T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@csainty" />
+<meta name="twitter:creator" content="@Chris Sainty" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Tutorial: Nancy + MongoDb + AppHarbor",
+    "datePublished": "2011-11-29T00:00:00+00:00",
+    "description": "Time for a quick tutorial on how to get a site up and running on AppHarbor using Nancy and MongoDb.  ",
+    "url": "https://blog.csainty.com/2011/11/tutorial-nancy-mongodb-appharbor.html"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+</head>
+<body>
+  <header class="m-h">
+    <h1><a href="https://blog.csainty.com">Chris Sainty</a></h1>
+    <h2>A technical blog covering full-stack web development.</h2>
+    <h2><a href="https://twitter.com/csainty" rel="external">twitter</a> | <a href="https://github.com/csainty" rel="external">github</a> | <a href="https://stackoverflow.com/users/625695/chris-sainty" rel="external">stackoverflow</a></h2>
+  </header>
+
+  <article>
+    <span><time datetime="29 Nov 2011">29 Nov 2011</time>  </span>
+    <h1>Tutorial&#58; Nancy + MongoDb + AppHarbor</h1>
+    <section>
+        <p>Time for a quick tutorial on how to get a site up and running on <a href="https://appharbor.com/">AppHarbor</a> using <a href="http://www.nancyfx.org/">Nancy</a> and <a href="http://www.mongodb.org/">MongoDb</a>.  </p>
+
+<!-- more -->
+
+<p>First up you are going to need Git installed. On windows my preference for Git is this kit <a href="http://code.google.com/p/gitextensions/">http://code.google.com/p/gitextensions/</a>. It installs everything you need and gives you a nice GUI to work with plus some basic integrations with Visual Studio.  </p>
+
+<p><em>(Just in case you have missed the craze that is Git, it is a version control system. A very good one. Go learn about it)</em> </p>
+
+<p>Next you will need <a href="http://nuget.org/">NuGet</a>.  </p>
+
+<p><em>(In case you missed nuget, it is a package manager for .NET development. Use it to maintain third party libraries you are using in your applications)</em>  </p>
+
+<p>Finally, you are also going to need an account at <a href="https://appharbor.com/user/new">AppHarbor</a>.  </p>
+
+<p><em>(In case you have missed AppHarbor, it is a new form of hosting for asp.net web applications. You push your code to their server, they build it, run your unit tests and then deploy it. From there you can scale the application and install add-ons etc.)</em></p>
+
+<p>The end result of this tutorial is the app hosted on AppHarbor here <a href="http://nancymongo.apphb.com/">http://nancymongo.apphb.com/</a> which is a basic message posting app that I have used before when playing around with Nancy. It super simple and boils down to two api methods with a page to interact with them.  </p>
+
+<p>All the code is on GitHub here <a href="https://github.com/csainty/NancyMongo">https://github.com/csainty/NancyMongo</a>  </p>
+
+<h4>Setting up AppHarbor</h4>
+
+<p>We are going to start with AppHarbor, once you have an account set up, go to the Applications page and create a new application.  </p>
+
+<p><img src="/images/1382874053642.png" alt="CreateAppHbApp">  </p>
+
+<p>This will give you the URL for your git repository where we will later be pushing the code. So keep this page open or the URL handy.  </p>
+
+<p><img src="/images/1382874053643.png" alt="GitUrl">  </p>
+
+<p>Down the bottom of this page is an Add-ons section. Hit “View Available Add-ons”  </p>
+
+<p>As you can see there are quite a few, since we are using Mongo here, Click through to MongoHQ.  </p>
+
+<p>MongoHQ are a hosted MongoDb provider, they are partnered up with AppHarbor so that it is a single click install to create an instance on their servers for your AppHarbor site. Even better, the build process on AppHarbor will perform a replacement on your <code>web.config</code> file to insert the correct URL to the instance. So you can have a development/testing server configured locally and when you push to the server it will switch to the production server for you!  </p>
+
+<p>Add the free sandbox MongoDb instance to your site.  </p>
+
+<p><img src="/images/1382874053645.png" alt="MongoHQ">  </p>
+
+<p>You should be sent back to the application page with a message saying your instance is configured. Now if you click through to the “Variables” tab you can see a <code>MONGOHQ_URL</code> variable. Any values set up in this tab will be added/replaced in the AppSettings section of your <code>web.config</code> file at build time.  </p>
+
+<p>We are going to break with convention here a little. Normally you do not need to know the value of that key since it is the production server. But to save us setting up test/dev MongoDb instance on our own machines, we are going to point at it for development as well. There is some CSS on the page that truncates the value, but if you view source and search for <code>mongodb://</code> you can get the full value.  </p>
+
+<p><img src="/images/1382874053646.png" alt="MongoURL">  </p>
+
+<p>It includes your username, password and database name. So don’t go sharing this value, and if you are pushing your code to the public, make sure you remove it first, like I have.  </p>
+
+<p>Keep that value at hand, it’s time to jump into Visual Studio.  </p>
+
+<h4>Building our App</h4>
+
+<p>Create a new ASP.NET Empty Web Application.  </p>
+
+<p><img src="/images/1382874053648.png" alt="EmptyWebApp">  </p>
+
+<p>Fire up NuGet, either the GUI from right clicking the references folder in your project and choosing Manage NuGet Packages, or from the command line.</p>
+
+<p>Install the following packages by searching for them and hitting the install button</p>
+
+<ul>
+<li>Nancy</li>
+<li>Nancy.Hosting.AspNet</li>
+<li>KnockoutJS</li>
+<li>Official MongoDb C# driver</li>
+<li>NuGetPowerTools<br></li>
+</ul>
+
+<p><img src="/images/1382874053649.png" alt="NuGet">  </p>
+
+<p>One more thing with NuGet, we are going to need to jump into the NuGet “Package Manager Console” from the Tools menu | Library Package Manager sub-menu  </p>
+
+<p><img src="/images/1382874053650.png" alt="Console">  </p>
+
+<p>Once the console loads type <code>enable-packagerestore</code> and hit enter.  </p>
+
+<p>This command was added by the nugetpowertools and adds a build step into your project file that ensures all the nuget dependencies have been downloaded. This is very useful since you are not going to be uploading a compiled application to AppHarbor, you are sending up your source which is built on their servers. So you have to give them the dependencies some way, and the alternative is to commit them all to your git repository. Doing this bloats your repository for no good reason. Trust me, this step is worth doing on every project you use NuGet for.  </p>
+
+<p>Once that completes you can close the package manager console.  </p>
+
+<p>Now open you your <code>web.config</code> file and add an AppSetting of <code>MONGOHQ_URL</code> with the value you grabbed from AppHarbor.  </p>
+
+<p><img src="/images/1382874053651.png" alt="webconfig">  </p>
+
+<p>Just to stress this point one more time, normally you are going to have a dev/test server. You would be putting it’s URL in here and letting AppHarbor override it with the production URL when you publish.  </p>
+
+<p>Now on to some code, to start with add a Models folder with a single <code>Message.cs</code> class.  </p>
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">using</span> <span class="nn">MongoDB.Bson.Serialization.Attributes</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">MongoDB.Bson.Serialization.IdGenerators</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">NancyMongo.Models</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">Message</span>
+    <span class="p">{</span>
+        <span class="p">[</span><span class="nf">BsonId</span><span class="p">(</span><span class="n">IdGenerator</span> <span class="p">=</span> <span class="k">typeof</span><span class="p">(</span><span class="n">StringObjectIdGenerator</span><span class="p">))]</span>
+        <span class="k">public</span> <span class="kt">string</span> <span class="n">Id</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+        <span class="k">public</span> <span class="kt">string</span> <span class="n">Content</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Note the Attribute on the <code>Id</code> field, this tells the MongoDb driver which field is the id and how to generate an id for that field. There are many different options for id generation, we are using one of the string methods.  </p>
+
+<p>Now we are going to need a bootstrapper <code>CustomBootstrapper.cs</code> to configure Nancy and our Dependency Injection.  </p>
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">using</span> <span class="nn">System.Configuration</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Linq</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">MongoDB.Driver</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Nancy</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Nancy.Conventions</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">NancyMongo.Models</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">TinyIoC</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">NancyMongo</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">CustomBootstrapper</span> <span class="p">:</span> <span class="n">DefaultNancyBootstrapper</span>
+    <span class="p">{</span>
+        <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">ConfigureConventions</span><span class="p">(</span><span class="n">NancyConventions</span> <span class="n">nancyConventions</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">nancyConventions</span><span class="p">.</span><span class="n">StaticContentsConventions</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">StaticContentConventionBuilder</span><span class="p">.</span><span class="nf">AddDirectory</span><span class="p">(</span><span class="s">"Scripts"</span><span class="p">));</span>
+        <span class="p">}</span>
+
+        <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">ConfigureApplicationContainer</span><span class="p">(</span><span class="n">TinyIoCContainer</span> <span class="n">container</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">var</span> <span class="n">connString</span> <span class="p">=</span> <span class="n">ConfigurationManager</span><span class="p">.</span><span class="n">AppSettings</span><span class="p">[</span><span class="s">"MONGOHQ_URL"</span><span class="p">];</span>
+            <span class="kt">var</span> <span class="n">databaseName</span> <span class="p">=</span> <span class="n">connString</span><span class="p">.</span><span class="nf">Split</span><span class="p">(</span><span class="sc">'/'</span><span class="p">).</span><span class="nf">Last</span><span class="p">();</span>
+            <span class="kt">var</span> <span class="n">server</span> <span class="p">=</span> <span class="n">MongoServer</span><span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="n">connString</span><span class="p">);</span>
+            <span class="kt">var</span> <span class="n">database</span> <span class="p">=</span> <span class="n">server</span><span class="p">.</span><span class="nf">GetDatabase</span><span class="p">(</span><span class="n">databaseName</span><span class="p">);</span>
+
+            <span class="k">if</span> <span class="p">(!</span><span class="n">database</span><span class="p">.</span><span class="nf">CollectionExists</span><span class="p">(</span><span class="s">"Messages"</span><span class="p">))</span>
+                <span class="n">database</span><span class="p">.</span><span class="nf">CreateCollection</span><span class="p">(</span><span class="s">"Messages"</span><span class="p">);</span>
+
+            <span class="n">container</span><span class="p">.</span><span class="n">Register</span><span class="p">&lt;</span><span class="n">MongoServer</span><span class="p">&gt;(</span><span class="n">server</span><span class="p">);</span>
+            <span class="n">container</span><span class="p">.</span><span class="n">Register</span><span class="p">&lt;</span><span class="n">MongoDatabase</span><span class="p">&gt;(</span><span class="n">database</span><span class="p">);</span>
+            <span class="n">container</span><span class="p">.</span><span class="n">Register</span><span class="p">&lt;</span><span class="n">MongoCollection</span><span class="p">&lt;</span><span class="n">Message</span><span class="p">&gt;&gt;(</span><span class="n">database</span><span class="p">.</span><span class="n">GetCollection</span><span class="p">&lt;</span><span class="n">Message</span><span class="p">&gt;(</span><span class="s">"Messages"</span><span class="p">));</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Bootstrappers are the starting point for all Nancy sites that do a bit more than Hello World.  </p>
+
+<p>First we are adding the <code>Scripts</code> folder as a static content folder. This tells Nancy to automatically handle requests to the <code>Scripts</code> folder as static file requests. The <code>Content</code> folder is added by default, though we don’t use it in this project. There are a number of overrides on the builder we are using here to customise how the mapping works.  </p>
+
+<p>Next we hook up dependency injection on the various MongoDb driver classes we might want to get a handle on. This localises all our creation and init code so that our Modules can just request what they need and let the injection container provide it.  </p>
+
+<p>Basically we are creating our <code>Server</code> instance using the connection string from <code>web.config</code> then pulling the database name off this connection string to grab our <code>Database</code> instance, we then create a <code>Collection</code> for our <code>Messages</code> to be stored in. The C# MongoDb driver actually manages it’s own object life time, so even if we called <code>MongoServer.Create()</code> multiple times we would always get back the same instance, but I still like to use Dependency Injection rather than have to create these time and time again in my module code.  </p>
+
+<p>So let’s look at the two Modules (<code>PageModule.cs</code> and <code>ApiModule.cs</code>)  </p>
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">using</span> <span class="nn">Nancy</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">NancyMongo</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">PageModule</span> <span class="p">:</span> <span class="n">NancyModule</span>
+    <span class="p">{</span>
+        <span class="k">public</span> <span class="nf">PageModule</span><span class="p">()</span> <span class="p">{</span>
+            <span class="n">Get</span><span class="p">[</span><span class="s">"/"</span><span class="p">]</span> <span class="p">=</span> <span class="n">HomePage</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">private</span> <span class="n">Response</span> <span class="nf">HomePage</span><span class="p">(</span><span class="kt">dynamic</span> <span class="n">parameters</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">View</span><span class="p">[</span><span class="s">"HomePage"</span><span class="p">];</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">using</span> <span class="nn">System.Linq</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">MongoDB.Driver</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Nancy</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">NancyMongo.Models</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">NancyMongo</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">ApiModule</span> <span class="p">:</span> <span class="n">NancyModule</span>
+    <span class="p">{</span>
+        <span class="k">private</span> <span class="k">readonly</span> <span class="n">MongoCollection</span><span class="p">&lt;</span><span class="n">Message</span><span class="p">&gt;</span> <span class="n">_Messages</span><span class="p">;</span>
+
+        <span class="k">public</span> <span class="nf">ApiModule</span><span class="p">(</span><span class="n">MongoCollection</span><span class="p">&lt;</span><span class="n">Message</span><span class="p">&gt;</span> <span class="n">messages</span><span class="p">)</span>
+            <span class="p">:</span> <span class="k">base</span><span class="p">(</span><span class="s">"/api"</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">_Messages</span> <span class="p">=</span> <span class="n">messages</span><span class="p">;</span>
+
+            <span class="n">Get</span><span class="p">[</span><span class="s">"/messages"</span><span class="p">]</span> <span class="p">=</span> <span class="n">GetMessages</span><span class="p">;</span>
+            <span class="n">Post</span><span class="p">[</span><span class="s">"/messages"</span><span class="p">]</span> <span class="p">=</span> <span class="n">AddMessage</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">private</span> <span class="n">Response</span> <span class="nf">GetMessages</span><span class="p">(</span><span class="kt">dynamic</span> <span class="n">parameters</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">Response</span><span class="p">.</span><span class="nf">AsJson</span><span class="p">(</span><span class="n">_Messages</span><span class="p">.</span><span class="nf">FindAll</span><span class="p">().</span><span class="nf">SetLimit</span><span class="p">(</span><span class="m">100</span><span class="p">).</span><span class="nf">ToArray</span><span class="p">());</span>
+        <span class="p">}</span>
+
+        <span class="k">private</span> <span class="n">Response</span> <span class="nf">AddMessage</span><span class="p">(</span><span class="kt">dynamic</span> <span class="n">parameters</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(!</span><span class="n">Request</span><span class="p">.</span><span class="n">Form</span><span class="p">.</span><span class="n">Message</span><span class="p">.</span><span class="n">HasValue</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">HttpStatusCode</span><span class="p">.</span><span class="n">BadRequest</span><span class="p">;</span>
+
+            <span class="n">_Messages</span><span class="p">.</span><span class="nf">Save</span><span class="p">(</span><span class="k">new</span> <span class="n">Message</span> <span class="p">{</span>
+                <span class="n">Content</span> <span class="p">=</span> <span class="n">Request</span><span class="p">.</span><span class="n">Form</span><span class="p">.</span><span class="n">Message</span>
+            <span class="p">});</span>
+
+            <span class="k">return</span> <span class="n">HttpStatusCode</span><span class="p">.</span><span class="n">OK</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>A Module in Nancy is where we wire up how the web server is going to response to requests. I cover it off in <a href="/2011/10/learn-something-new-nancy.html">this</a> blog post as well. We inject the Messages collection straight into our Api module without having to worry about how it is being created, or what it’s lifetime is.  </p>
+
+<p>Then finally we have the View (<code>Views/Homepage.html</code>), which is essentially a static HTML page and is processed by the built in view engine.  </p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;!DOCTYPE HTML&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Nancy Mongo Demo Page<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">"http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.10/themes/humanity/jquery-ui.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>Nancy Message Demo<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+        A demo page for using Nancy + MongoDb + AppHarbor. See <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://blog.csainty.com"</span><span class="nt">&gt;</span>here<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>Messages<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;ul</span> <span class="na">data-bind=</span><span class="s">"foreach: messages"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">data-bind=</span><span class="s">"text: Content"</span><span class="nt">&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>New Message<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+        Enter your message and hit submit. The message will be saved in MongoDb on the server and redisplayed.
+    <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">data-bind=</span><span class="s">"value: messageText"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">data-bind=</span><span class="s">"click: sendMessage"</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;script</span> <span class="na">src=</span><span class="s">"https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script</span> <span class="na">src=</span><span class="s">"https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script</span> <span class="na">src=</span><span class="s">"/Scripts/knockout-1.3.0beta.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+        var viewModel = {
+            messages: ko.observableArray([]),
+            messageText: ko.observable(''),
+            sendMessage: function () {
+                $.ajax({
+                    url: '/api/messages',
+                    data: { message: this.messageText() },
+                    type: 'POST',
+                    success: function (result) {
+                        viewModel.messages.push({ Content: viewModel.messageText() });
+                        viewModel.messageText('');
+                    }
+                });
+            }
+        };
+        ko.applyBindings(viewModel);
+
+        $(function () {
+            $('button').button();
+            getMessages();
+        });
+
+        function getMessages() {
+            $.ajax({
+                url: '/api/messages',
+                dataType: 'json',
+                cache: false,
+                type: 'GET',
+                success: function (result) {
+                    for (var i = 0; i <span class="nt">&lt; result.length</span><span class="err">;</span> <span class="err">i++)</span> <span class="err">{</span>
+                        <span class="err">viewModel.messages.push(result[i]);</span>
+                    <span class="err">}</span>
+                <span class="err">}</span>
+            <span class="err">});</span>
+        <span class="err">}</span>
+    <span class="err">&lt;/script</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div>
+<p>So now we have all the code files in place, run it up and make sure it all works, when it does, it is time to deploy.  </p>
+
+<h4>Creating our Git Repo</h4>
+
+<p>Now we have a working project, lets put it into Git and send it up to AppHarbor.  </p>
+
+<p>Fire up the GitExtensions GUI and select “Create new repository”  </p>
+
+<p><img src="/images/1382874053653.png" alt="New Repository">  </p>
+
+<p>Choose the folder your solution is in and Initialize as a personal repo. (Pro tip: Init a bare repository in your dropbox/mesh folder and push to it for easy offsite backup)  </p>
+
+<p><img src="/images/1382874053654.png" alt="New Repository Location">  </p>
+
+<p>Now you need to edit your .gitignore folder to tell it what files to include and exclude from your folders.  </p>
+
+<p><img src="/images/1382874053656.png" alt="GitIgnore">  </p>
+
+<p>Start by hitting the “Add default” button, remove the <code>*.exe</code> line as we want to include the <code>nuget.exe</code> which was added by NuGetPowerTools. Then add a line <code>[Pp]ackages\</code> at the bottom to filter out the packages folder. This folder contains all the NuGet packages which will be downloaded on the AppHarbor build server by NuGetPowerTools.  </p>
+
+<p>Now you should be able to Commit the changes from the Commands menu.  </p>
+
+<h4>Deploying to AppHarbor</h4>
+
+<p>Still in GitExtensions, from the Remotes menu choose “manage remote repositories”, click the new button, give it a name and paste in the Git url you were provided when creating your AppHarbor application. Remotes are simply other copies of a repository that you can push code to and pull code from.  </p>
+
+<p><img src="/images/1382874053658.png" alt="Remote">  </p>
+
+<p>You can then “Push” to this remote (again from the commands menu), which will being the build and deployment process on AppHarbor.  </p>
+
+<p>One thing to watch out for, with OpenSSH selected as your SSH client (chosen when installing Git Extensions) you will have a black window pop up during the push, this is actually asking you for your AppHarbor password, type it in, or right-click and paste (Dont Ctrl-V) and press enter. Not sure what happens if you are using PuTTY.  </p>
+
+<p>If I get a chance I hope to look into the GitExtensions code and improve this if at all possible.  </p>
+
+<h4>It Lives!</h4>
+
+<p>Now if you go back to your application page in AppHarbor and refresh you should be presented with something like this.  </p>
+
+<p><img src="/images/1382874053661.png" alt="PostBuild">  </p>
+
+<p>You will have the status of your build, which you can dig into to get the full console output from the build process. Assuming the build worked, you will also have a link to your app. Click it and be amazed.  </p>
+
+    </section>
+</article>
+
+
+  <footer class="m-f">
+      <section class="copyright">All content copyright <a href="/">Chris Sainty</a> &copy; 2006-2017 &bull; All rights reserved.</section>
+  </footer>
+</body>
+</html>

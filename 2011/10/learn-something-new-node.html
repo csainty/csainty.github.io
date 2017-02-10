@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <style>
+    html,body,li,p{margin:0;padding:0}p,ul,ol,.highlight{margin:1.6em 0}h1,h2,h3,h4{margin:0;padding:0;font-size:100%;font-weight:bold;text-rendering:optimizeLegibility;font-family:sans-serif}ul{list-style:none}html{box-sizing:border-box;font-size:62.5%}*{box-sizing:inherit}*:before,*:after{box-sizing:inherit}img{height:auto;max-width:100%}pre,code{font-family:monospace;margin:0}hr{display:block;height:1px;border:0;border-top:1px solid #efefef;margin:1rem 0;padding:0}blockquote{font-style:italic;margin:1.6em 0 1.6em -2.2em;padding:0 0 0 1.6em;border-left:#4a4a4a 0.4em solid}html{font-size:16px}@media screen and (min-width: 900px){html{font-size:18px}}@media screen and (min-width: 1200px){html{font-size:20px}}body{font-family:serif;color:#3A4145}h1{font-size:2rem;margin:10px 0 10px 0;letter-spacing:-1px}h2{font-size:1.4rem;letter-spacing:-1px}h3{font-size:1.2rem}h4{font-size:1.1rem}a:link,a:visited{color:inherit;text-decoration:none}a:hover{color:#57A3E8;transition:color ease 0.3s}p a:link,p a:visited{text-decoration:underline}pre{border:1px solid #E3EDF3;padding:10px;font-size:0.85em;border-radius:3px}code{padding:1px 3px;font-size:0.85em;white-space:pre;border:1px solid #E3EDF3;background:#F7FAFB;border-radius:2px}pre code{background:transparent;padding:0;border:0}.m-h{text-align:center;background-color:#303538;color:#fff;padding:1rem}.m-h h2{font-weight:normal;font-size:1.5rem}article{width:80%;margin:1rem auto;padding-bottom:1rem;border-bottom:#EBF2F6 1px solid;word-break:break-word;position:relative}article::after{display:block;content:"";width:7px;height:7px;border:#E7EEF2 1px solid;position:absolute;bottom:-5px;left:50%;margin-left:-5px;background:#fff;border-radius:100%;box-shadow:#fff 0 0 0 5px}.a-m{color:#9EABB3;font-size:0.8rem}.a-m a:hover{color:#9EABB3;text-decoration:underline}.a-h{margin-bottom:5px}.r-m{font-size:smaller}nav{position:relative;width:75%;margin:1rem auto;font-size:0.8rem;color:#9EABB3;text-align:center}.m-f{position:relative;margin:2rem 0 0 0;padding:1rem 1rem 2rem 1rem;border-top:#EBF2F6 1px solid;font-size:0.8rem;line-height:1.7em;color:#BBC7CC;text-align:center;background:#F7FAFB}.o-p,.n-p{position:absolute;display:inline-block;padding:0 0.5rem;border:#EBF2F6 2px solid;text-decoration:none;border-radius:30px;transition:border ease 0.3s}.o-p{right:0}.n-p{left:0}.t-h{width:80%;margin:0 auto}.highlight pre{background-color:#49483e;color:white;overflow:scroll}.ge{font-style:italic}.gs{font-weight:bold}.c,.cm,.cp,.c1,.gu,.cs{color:#75715e}.k,.kc,.kd,.kp,.kr,.no,.kt{color:#66d9ef}.l,.mf,.mh,.mi,.mo,.se,.il,.m{color:#ae81ff}.n,.nb,.ni,.nl,.nn,.py,.nv,.w,.bp,.vc,.vg,.vi,.p{color:#f8f8f2}.o,.nt,.ow,.gd,.kn{color:#f92672}.ld,.sb,.sc,.sd,.s2,.sh,.si,.sx,.sr,.s1,.ss,.s{color:#e6db74}.na,.nc,.nd,.ne,.nf,.nx,.gi{color:#a6e22e}
+
+    </style>
+
+    <!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>Learn Something New: Node - Chris Sainty</title>
+<meta property="og:title" content="Learn Something New: Node" />
+<meta name="description" content="Node seems to be everywhere at the moment. Long on my list of things to take a look at, I finally took the time to sit down with it yesterday and get it up and running and get a feel for what it does.  In the process I also took my first look at Heroku, which is the cloud hosting platform for Ruby, Node, Java etc.  that AppHarbor borrows heavily from in the .NET world.  " />
+<meta property="og:description" content="Node seems to be everywhere at the moment. Long on my list of things to take a look at, I finally took the time to sit down with it yesterday and get it up and running and get a feel for what it does.  In the process I also took my first look at Heroku, which is the cloud hosting platform for Ruby, Node, Java etc.  that AppHarbor borrows heavily from in the .NET world.  " />
+<link rel="canonical" href="https://blog.csainty.com/2011/10/learn-something-new-node.html" />
+<meta property="og:url" content="https://blog.csainty.com/2011/10/learn-something-new-node.html" />
+<meta property="og:site_name" content="Chris Sainty" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2011-10-27T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@csainty" />
+<meta name="twitter:creator" content="@Chris Sainty" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Learn Something New: Node",
+    "datePublished": "2011-10-27T00:00:00+00:00",
+    "description": "Node seems to be everywhere at the moment. Long on my list of things to take a look at, I finally took the time to sit down with it yesterday and get it up and running and get a feel for what it does.  In the process I also took my first look at Heroku, which is the cloud hosting platform for Ruby, Node, Java etc.  that AppHarbor borrows heavily from in the .NET world.  ",
+    "url": "https://blog.csainty.com/2011/10/learn-something-new-node.html"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+</head>
+<body>
+  <header class="m-h">
+    <h1><a href="https://blog.csainty.com">Chris Sainty</a></h1>
+    <h2>A technical blog covering full-stack web development.</h2>
+    <h2><a href="https://twitter.com/csainty" rel="external">twitter</a> | <a href="https://github.com/csainty" rel="external">github</a> | <a href="https://stackoverflow.com/users/625695/chris-sainty" rel="external">stackoverflow</a></h2>
+  </header>
+
+  <article>
+    <span><time datetime="27 Oct 2011">27 Oct 2011</time>  </span>
+    <h1>Learn Something New&#58; Node</h1>
+    <section>
+        <p><a href="http://nodejs.org/">Node</a> seems to be everywhere at the moment. Long on my list of things to take a look at, I finally took the time to sit down with it yesterday and get it up and running and get a feel for what it does.  </p>
+
+<p>In the process I also took my first look at <a href="http://www.heroku.com/">Heroku</a>, which is the cloud hosting platform for Ruby, Node, Java etc.  that <a href="https://appharbor.com/">AppHarbor</a> borrows heavily from in the .NET world.  </p>
+
+<!-- more -->
+
+<p>As always, my code is on <a href="https://github.com/csainty/Node.Test">GitHub</a>, and the site is live on <a href="http://blooming-mist-4131.herokuapp.com/">Heroku</a>. This sample is literally a Hello World, with so many moving parts, I really wanted to just focus on the raw details of getting Node running first in a Linux VM, then on Windows, then on Heroku.  </p>
+
+<p>Both Node and Heroku provide great instructions to get everything up and running, so they should be your first port of call.  </p>
+
+<p><a href="https://github.com/joyent/node/wiki/Installation">https://github.com/joyent/node/wiki/Installation</a>  </p>
+
+<p><a href="http://devcenter.heroku.com/articles/node-js">http://devcenter.heroku.com/articles/node-js</a>  </p>
+
+<p>With how easy Node is to get running on Windows now, there really is no excuse not to give it a go.  </p>
+
+<p>Simply download the stand-alone node.exe from <a href="http://nodejs.org/dist/v0.5.9/node.exe">here</a>.  </p>
+
+<p>Put it in a folder, and create a HelloWorld.js file with the following content.  </p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'http'</span><span class="p">);</span>
+
+<span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">response</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">=</span> <span class="mi">200</span><span class="p">;</span>
+    <span class="nx">response</span><span class="p">.</span><span class="nx">setHeader</span><span class="p">(</span><span class="s1">'Content-Type'</span><span class="p">,</span> <span class="s1">'text/plain'</span><span class="p">);</span>
+    <span class="nx">response</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="s1">'Hello World'</span><span class="p">);</span>
+<span class="p">}).</span><span class="nx">listen</span><span class="p">(</span><span class="mi">8080</span><span class="p">);</span>
+</code></pre></div>
+<p>Then run <code>node HelloWorld.js</code> and hit <a href="http://localhost:8080/">http://localhost:8080/</a> in your browser.  </p>
+
+<p>At it’s heart, Node is about IO and sockets. It is not specifically about the web, people have just seen how useful it can be for web development.  </p>
+
+<p>Before you get too far into it, you are likely to want to start plugging in some other packages, such as a routing framework to manage your requests and a view engine to render your HTML.</p>
+
+<p>This is where the Node Package Manager (<a href="http://npmjs.org/">npm</a>) comes in. The node install instructions linked above explain how to install this on windows, which has been seamless for me so far.  </p>
+
+<p>You probably want to look at <a href="http://expressjs.com/">express</a> for the general framework roles and <a href="http://jade-lang.com/">jade</a> for a view engine.  </p>
+
+<p>Another recent blog post I will call out to take a look at is <a href="http://weblogs.asp.net/jgalloway/archive/2011/10/26/using-node-js-in-an-asp-net-mvc-application-with-iisnode.aspx">Jon Galloway’s</a> effort today which includes a lot of detail and goes into hosting the <code>node.exe</code> process inside IIS on windows servers.  </p>
+
+<p>I had a real sense of joy when I fired up Node and started fiddling around. I am fairly comfortable in javascript, and going back into a straight text editor to write my code was a bit like stepping back in time to my teenage years hacking away in qbasic. While my initial investigations were only skin deep, I definitely see myself taking a much deeper look very soon.  </p>
+
+    </section>
+</article>
+
+
+  <footer class="m-f">
+      <section class="copyright">All content copyright <a href="/">Chris Sainty</a> &copy; 2006-2017 &bull; All rights reserved.</section>
+  </footer>
+</body>
+</html>

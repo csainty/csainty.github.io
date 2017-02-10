@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <style>
+    html,body,li,p{margin:0;padding:0}p,ul,ol,.highlight{margin:1.6em 0}h1,h2,h3,h4{margin:0;padding:0;font-size:100%;font-weight:bold;text-rendering:optimizeLegibility;font-family:sans-serif}ul{list-style:none}html{box-sizing:border-box;font-size:62.5%}*{box-sizing:inherit}*:before,*:after{box-sizing:inherit}img{height:auto;max-width:100%}pre,code{font-family:monospace;margin:0}hr{display:block;height:1px;border:0;border-top:1px solid #efefef;margin:1rem 0;padding:0}blockquote{font-style:italic;margin:1.6em 0 1.6em -2.2em;padding:0 0 0 1.6em;border-left:#4a4a4a 0.4em solid}html{font-size:16px}@media screen and (min-width: 900px){html{font-size:18px}}@media screen and (min-width: 1200px){html{font-size:20px}}body{font-family:serif;color:#3A4145}h1{font-size:2rem;margin:10px 0 10px 0;letter-spacing:-1px}h2{font-size:1.4rem;letter-spacing:-1px}h3{font-size:1.2rem}h4{font-size:1.1rem}a:link,a:visited{color:inherit;text-decoration:none}a:hover{color:#57A3E8;transition:color ease 0.3s}p a:link,p a:visited{text-decoration:underline}pre{border:1px solid #E3EDF3;padding:10px;font-size:0.85em;border-radius:3px}code{padding:1px 3px;font-size:0.85em;white-space:pre;border:1px solid #E3EDF3;background:#F7FAFB;border-radius:2px}pre code{background:transparent;padding:0;border:0}.m-h{text-align:center;background-color:#303538;color:#fff;padding:1rem}.m-h h2{font-weight:normal;font-size:1.5rem}article{width:80%;margin:1rem auto;padding-bottom:1rem;border-bottom:#EBF2F6 1px solid;word-break:break-word;position:relative}article::after{display:block;content:"";width:7px;height:7px;border:#E7EEF2 1px solid;position:absolute;bottom:-5px;left:50%;margin-left:-5px;background:#fff;border-radius:100%;box-shadow:#fff 0 0 0 5px}.a-m{color:#9EABB3;font-size:0.8rem}.a-m a:hover{color:#9EABB3;text-decoration:underline}.a-h{margin-bottom:5px}.r-m{font-size:smaller}nav{position:relative;width:75%;margin:1rem auto;font-size:0.8rem;color:#9EABB3;text-align:center}.m-f{position:relative;margin:2rem 0 0 0;padding:1rem 1rem 2rem 1rem;border-top:#EBF2F6 1px solid;font-size:0.8rem;line-height:1.7em;color:#BBC7CC;text-align:center;background:#F7FAFB}.o-p,.n-p{position:absolute;display:inline-block;padding:0 0.5rem;border:#EBF2F6 2px solid;text-decoration:none;border-radius:30px;transition:border ease 0.3s}.o-p{right:0}.n-p{left:0}.t-h{width:80%;margin:0 auto}.highlight pre{background-color:#49483e;color:white;overflow:scroll}.ge{font-style:italic}.gs{font-weight:bold}.c,.cm,.cp,.c1,.gu,.cs{color:#75715e}.k,.kc,.kd,.kp,.kr,.no,.kt{color:#66d9ef}.l,.mf,.mh,.mi,.mo,.se,.il,.m{color:#ae81ff}.n,.nb,.ni,.nl,.nn,.py,.nv,.w,.bp,.vc,.vg,.vi,.p{color:#f8f8f2}.o,.nt,.ow,.gd,.kn{color:#f92672}.ld,.sb,.sc,.sd,.s2,.sh,.si,.sx,.sr,.s1,.ss,.s{color:#e6db74}.na,.nc,.nd,.ne,.nf,.nx,.gi{color:#a6e22e}
+
+    </style>
+
+    <!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>Windows Phone 7–Images - Chris Sainty</title>
+<meta property="og:title" content="Windows Phone 7–Images" />
+<meta name="description" content="Now about that Image Control. I mentioned in my last post that it seems to download on the UI thread, or at least block the UI thread while downloading.  Personally I think this is going to be a major issue with v1 apps in the marketplace when used on 3G connections.  It is actually a difficult thing to test, so here is the methodology I have been using and the code I am using to get around the issue. " />
+<meta property="og:description" content="Now about that Image Control. I mentioned in my last post that it seems to download on the UI thread, or at least block the UI thread while downloading.  Personally I think this is going to be a major issue with v1 apps in the marketplace when used on 3G connections.  It is actually a difficult thing to test, so here is the methodology I have been using and the code I am using to get around the issue. " />
+<link rel="canonical" href="https://blog.csainty.com/2010/10/windows-phone-7images.html" />
+<meta property="og:url" content="https://blog.csainty.com/2010/10/windows-phone-7images.html" />
+<meta property="og:site_name" content="Chris Sainty" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2010-10-22T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@csainty" />
+<meta name="twitter:creator" content="@Chris Sainty" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Windows Phone 7–Images",
+    "datePublished": "2010-10-22T00:00:00+00:00",
+    "description": "Now about that Image Control. I mentioned in my last post that it seems to download on the UI thread, or at least block the UI thread while downloading.  Personally I think this is going to be a major issue with v1 apps in the marketplace when used on 3G connections.  It is actually a difficult thing to test, so here is the methodology I have been using and the code I am using to get around the issue. ",
+    "url": "https://blog.csainty.com/2010/10/windows-phone-7images.html"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+</head>
+<body>
+  <header class="m-h">
+    <h1><a href="https://blog.csainty.com">Chris Sainty</a></h1>
+    <h2>A technical blog covering full-stack web development.</h2>
+    <h2><a href="https://twitter.com/csainty" rel="external">twitter</a> | <a href="https://github.com/csainty" rel="external">github</a> | <a href="https://stackoverflow.com/users/625695/chris-sainty" rel="external">stackoverflow</a></h2>
+  </header>
+
+  <article>
+    <span><time datetime="22 Oct 2010">22 Oct 2010</time>  </span>
+    <h1>Windows Phone 7–Images</h1>
+    <section>
+        <p>Now about that Image Control. I mentioned in my last post that it seems to download on the UI thread, or at least block the UI thread while downloading.  </p>
+
+<p>Personally I think this is going to be a major issue with v1 apps in the marketplace when used on 3G connections.  </p>
+
+<p>It is actually a difficult thing to test, so here is the methodology I have been using and the code I am using to get around the issue. </p>
+
+<!-- more -->
+
+<p>First you are going to want a local IIS server, put an image on the server, and then we are ready to go with the phone tools. We are later going to throttle the bandwidth on the server, if you do not have a local server you will need to find a way to throttle your network connection on the PC you are using. I am sure it is possible but have not looked at it.  </p>
+
+<p>For this post I am just creating a basic Windows Phone Application, add the following XAML to the Grid in the MainPage.xaml and pop in your image URL.  </p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="c">&lt;!--ContentPanel - place additional content here--&gt;</span>
+
+<span class="nt">&lt;Grid</span> <span class="na">x:Name=</span><span class="s">"ContentPanel"</span> <span class="na">Grid.Row=</span><span class="s">"1"</span> <span class="na">Margin=</span><span class="s">"12,0,12,0"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;ScrollViewer&gt;</span>
+        <span class="nt">&lt;StackPanel&gt;</span>
+            <span class="nt">&lt;TextBlock</span> <span class="na">Text=</span><span class="s">"Above"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;Image</span> <span class="na">Source=</span><span class="s">"[Your Image URL]"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;TextBlock</span> <span class="na">Text=</span><span class="s">"Below"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/StackPanel&gt;</span>
+    <span class="nt">&lt;/ScrollViewer&gt;</span>
+<span class="nt">&lt;/Grid&gt;</span>
+</code></pre></div>
+<p>Now if you run this app, up will pop your image and you will be able to pan up and down since we are in a ScrollViewer.  </p>
+
+<p>Now let’s see what happens on a slow connection, for this you will want to set a bandwidth throttle on your web server. In IIS 6 you do this from the Performance tab of the site properties. In IIS 7 go into Advanced Settings | Connection Limits | Maximum Bandwidth. I have been setting it to between 1 and 5 kBps. This should make the image take a few seconds to download.  </p>
+
+<p>If we now run our application again (you will need to close the emulator and let it restart as it caches), before the image loads, try scroll the page. You should find that you can not, but then once the image loads you will be able to again. Now consider how that would appear to a user on a slow 3G connection if they had a page of images to load.  </p>
+
+<p>So on to our fix.  </p>
+
+<p>Add the following two classes to the project (changing the namespace as appropriate)  </p>
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.ComponentModel</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.IO</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Net</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Windows</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Windows.Controls</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Windows.Media.Imaging</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">BlogImageApp</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">class</span> <span class="nc">ImageExtension</span>
+    <span class="p">{</span>
+        <span class="k">public</span> <span class="k">static</span> <span class="kt">string</span> <span class="nf">GetSource</span><span class="p">(</span><span class="n">DependencyObject</span> <span class="n">obj</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="p">(</span><span class="kt">string</span><span class="p">)</span><span class="n">obj</span><span class="p">.</span><span class="nf">GetValue</span><span class="p">(</span><span class="n">SourceProperty</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">SetSource</span><span class="p">(</span><span class="n">DependencyObject</span> <span class="n">obj</span><span class="p">,</span> <span class="kt">string</span> <span class="k">value</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">obj</span><span class="p">.</span><span class="nf">SetValue</span><span class="p">(</span><span class="n">SourceProperty</span><span class="p">,</span> <span class="k">value</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Using a DependencyProperty as the backing store for Source.  This enables animation, styling, binding, etc...
+</span>        <span class="k">public</span> <span class="k">static</span> <span class="k">readonly</span> <span class="n">DependencyProperty</span> <span class="n">SourceProperty</span> <span class="p">=</span>
+            <span class="n">DependencyProperty</span><span class="p">.</span><span class="nf">RegisterAttached</span><span class="p">(</span><span class="s">"Source"</span><span class="p">,</span> <span class="k">typeof</span><span class="p">(</span><span class="kt">string</span><span class="p">),</span> <span class="k">typeof</span><span class="p">(</span><span class="n">ImageExtension</span><span class="p">),</span> <span class="k">new</span> <span class="nf">PropertyMetadata</span><span class="p">(</span><span class="n">SourceChange</span><span class="p">));</span>
+
+        <span class="k">private</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">SourceChange</span><span class="p">(</span><span class="n">DependencyObject</span> <span class="n">sender</span><span class="p">,</span> <span class="n">DependencyPropertyChangedEventArgs</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">Image</span> <span class="n">imageControl</span> <span class="p">=</span> <span class="n">sender</span> <span class="k">as</span> <span class="n">Image</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">imageControl</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+                <span class="k">return</span><span class="p">;</span>
+            <span class="kt">string</span> <span class="n">url</span> <span class="p">=</span> <span class="p">(</span><span class="kt">string</span><span class="p">)</span><span class="n">e</span><span class="p">.</span><span class="n">NewValue</span> <span class="k">as</span> <span class="kt">string</span><span class="p">;</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">DesignerProperties</span><span class="p">.</span><span class="n">IsInDesignTool</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">imageControl</span><span class="p">.</span><span class="n">Source</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">BitmapImage</span><span class="p">(</span><span class="k">new</span> <span class="nf">Uri</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">UriKind</span><span class="p">.</span><span class="n">Absolute</span><span class="p">));</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="n">HttpWebRequest</span> <span class="n">request</span> <span class="p">=</span> <span class="n">HttpWebRequest</span><span class="p">.</span><span class="nf">CreateHttp</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
+                <span class="n">request</span><span class="p">.</span><span class="n">AllowReadStreamBuffering</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+                <span class="n">request</span><span class="p">.</span><span class="nf">BeginGetResponse</span><span class="p">(</span><span class="n">RequestComplete</span><span class="p">,</span> <span class="k">new</span> <span class="n">CallbackData</span> <span class="p">{</span> <span class="n">Request</span> <span class="p">=</span> <span class="n">request</span><span class="p">,</span> <span class="n">ImageControl</span> <span class="p">=</span> <span class="n">imageControl</span> <span class="p">});</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">private</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">RequestComplete</span><span class="p">(</span><span class="n">IAsyncResult</span> <span class="n">result</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">CallbackData</span> <span class="n">data</span> <span class="p">=</span> <span class="p">(</span><span class="n">CallbackData</span><span class="p">)</span><span class="n">result</span><span class="p">.</span><span class="n">AsyncState</span><span class="p">;</span>
+
+            <span class="n">HttpWebResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="p">(</span><span class="n">HttpWebResponse</span><span class="p">)</span><span class="n">data</span><span class="p">.</span><span class="n">Request</span><span class="p">.</span><span class="nf">EndGetResponse</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+
+            <span class="n">data</span><span class="p">.</span><span class="n">ResponseStream</span> <span class="p">=</span> <span class="n">response</span><span class="p">.</span><span class="nf">GetResponseStream</span><span class="p">();</span>
+
+            <span class="p">((</span><span class="n">App</span><span class="p">)</span><span class="n">App</span><span class="p">.</span><span class="n">Current</span><span class="p">).</span><span class="n">RootFrame</span><span class="p">.</span><span class="n">Dispatcher</span><span class="p">.</span><span class="nf">BeginInvoke</span><span class="p">(</span><span class="k">new</span> <span class="n">Action</span><span class="p">&lt;</span><span class="n">CallbackData</span><span class="p">&gt;(</span><span class="n">x</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                <span class="n">BitmapImage</span> <span class="n">imagesource</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">BitmapImage</span><span class="p">();</span>
+                <span class="n">imagesource</span><span class="p">.</span><span class="nf">SetSource</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">ResponseStream</span><span class="p">);</span>
+                <span class="n">x</span><span class="p">.</span><span class="n">ImageControl</span><span class="p">.</span><span class="n">Source</span> <span class="p">=</span> <span class="n">imagesource</span><span class="p">;</span>
+            <span class="p">}),</span> <span class="n">data</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">CallbackData</span>
+    <span class="p">{</span>
+        <span class="k">public</span> <span class="n">HttpWebRequest</span> <span class="n">Request</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+        <span class="k">public</span> <span class="n">Image</span> <span class="n">ImageControl</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+        <span class="k">public</span> <span class="n">Stream</span> <span class="n">ResponseStream</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>What this code does is create a new attached property we can use on the Image control. When set it will download the image in the background and then set the source once it has downloaded. It would be fairly easy to hook this up to use a loading image in the meantime, but I have not done that here.  </p>
+
+<p>A few interesting lines  </p>
+
+<ul>
+<li>Line 31 – We check if we are in the designer and bypass all this if we are.</li>
+<li>Line 35 – This is needed for when we set the image source. You will get an exception without it.</li>
+<li>Line 36– I have, uncharacteristically for me, not used a lambda here. I decided in this case it was very difficult to read since I am passing a few bits of information around.</li>
+<li>Line 44 – You need to create the BitmapImage on the UI thread, otherwise you get an exception.</li>
+</ul>
+
+<p>With this in place and the project recompiled we need to add a reference to the namespace in our <code>MainPage.xaml</code>. Add the following line to the <a href="phone:PhoneApplicationPage">phone:PhoneApplicationPage</a> tag (again replacing the namespace as appropriate)  </p>
+
+<p><code>xmlns:local=&quot;clr-namespace:BlogImageApp&quot;</code></p>
+
+<p>Then we can change our Image control and set the new attached property instead of the default Source property.  </p>
+
+<p><code>&lt;Image local:ImageExtension.Source=&quot;[Your Image Url]&quot; /&gt;</code> </p>
+
+<p>Now run up the app, again after closing the emulator to clear the cache, and this time you should be able to scroll around to your heart’s content while waiting for the image to load.  </p>
+
+<p>I have only used this code to download a couple of images at a time, if you had a page with dozens of images I would suggest working with only a couple of downloaders and queue work items for them, otherwise you might tie up too many resources and block the whole phone, not just the UI.  </p>
+
+    </section>
+</article>
+
+
+  <footer class="m-f">
+      <section class="copyright">All content copyright <a href="/">Chris Sainty</a> &copy; 2006-2017 &bull; All rights reserved.</section>
+  </footer>
+</body>
+</html>

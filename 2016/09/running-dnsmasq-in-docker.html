@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <style>
+    html,body,li,p{margin:0;padding:0}p,ul,ol,.highlight{margin:1.6em 0}h1,h2,h3,h4{margin:0;padding:0;font-size:100%;font-weight:bold;text-rendering:optimizeLegibility;font-family:sans-serif}ul{list-style:none}html{box-sizing:border-box;font-size:62.5%}*{box-sizing:inherit}*:before,*:after{box-sizing:inherit}img{height:auto;max-width:100%}pre,code{font-family:monospace;margin:0}hr{display:block;height:1px;border:0;border-top:1px solid #efefef;margin:1rem 0;padding:0}blockquote{font-style:italic;margin:1.6em 0 1.6em -2.2em;padding:0 0 0 1.6em;border-left:#4a4a4a 0.4em solid}html{font-size:16px}@media screen and (min-width: 900px){html{font-size:18px}}@media screen and (min-width: 1200px){html{font-size:20px}}body{font-family:serif;color:#3A4145}h1{font-size:2rem;margin:10px 0 10px 0;letter-spacing:-1px}h2{font-size:1.4rem;letter-spacing:-1px}h3{font-size:1.2rem}h4{font-size:1.1rem}a:link,a:visited{color:inherit;text-decoration:none}a:hover{color:#57A3E8;transition:color ease 0.3s}p a:link,p a:visited{text-decoration:underline}pre{border:1px solid #E3EDF3;padding:10px;font-size:0.85em;border-radius:3px}code{padding:1px 3px;font-size:0.85em;white-space:pre;border:1px solid #E3EDF3;background:#F7FAFB;border-radius:2px}pre code{background:transparent;padding:0;border:0}.m-h{text-align:center;background-color:#303538;color:#fff;padding:1rem}.m-h h2{font-weight:normal;font-size:1.5rem}article{width:80%;margin:1rem auto;padding-bottom:1rem;border-bottom:#EBF2F6 1px solid;word-break:break-word;position:relative}article::after{display:block;content:"";width:7px;height:7px;border:#E7EEF2 1px solid;position:absolute;bottom:-5px;left:50%;margin-left:-5px;background:#fff;border-radius:100%;box-shadow:#fff 0 0 0 5px}.a-m{color:#9EABB3;font-size:0.8rem}.a-m a:hover{color:#9EABB3;text-decoration:underline}.a-h{margin-bottom:5px}.r-m{font-size:smaller}nav{position:relative;width:75%;margin:1rem auto;font-size:0.8rem;color:#9EABB3;text-align:center}.m-f{position:relative;margin:2rem 0 0 0;padding:1rem 1rem 2rem 1rem;border-top:#EBF2F6 1px solid;font-size:0.8rem;line-height:1.7em;color:#BBC7CC;text-align:center;background:#F7FAFB}.o-p,.n-p{position:absolute;display:inline-block;padding:0 0.5rem;border:#EBF2F6 2px solid;text-decoration:none;border-radius:30px;transition:border ease 0.3s}.o-p{right:0}.n-p{left:0}.t-h{width:80%;margin:0 auto}.highlight pre{background-color:#49483e;color:white;overflow:scroll}.ge{font-style:italic}.gs{font-weight:bold}.c,.cm,.cp,.c1,.gu,.cs{color:#75715e}.k,.kc,.kd,.kp,.kr,.no,.kt{color:#66d9ef}.l,.mf,.mh,.mi,.mo,.se,.il,.m{color:#ae81ff}.n,.nb,.ni,.nl,.nn,.py,.nv,.w,.bp,.vc,.vg,.vi,.p{color:#f8f8f2}.o,.nt,.ow,.gd,.kn{color:#f92672}.ld,.sb,.sc,.sd,.s2,.sh,.si,.sx,.sr,.s1,.ss,.s{color:#e6db74}.na,.nc,.nd,.ne,.nf,.nx,.gi{color:#a6e22e}
+
+    </style>
+
+    <!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>Running dnsmasq in Docker - Chris Sainty</title>
+<meta property="og:title" content="Running dnsmasq in Docker" />
+<meta name="description" content="Today we take a quick look at running dnsmasq as a docker container.dnsmasq is a simple lightweight DNS (amongst other features) that can be used to easily set up various DNS records within your infrastructure. Our particular usecase is to set the TXT records Eureka requires for DNS based bootstrapping." />
+<meta property="og:description" content="Today we take a quick look at running dnsmasq as a docker container.dnsmasq is a simple lightweight DNS (amongst other features) that can be used to easily set up various DNS records within your infrastructure. Our particular usecase is to set the TXT records Eureka requires for DNS based bootstrapping." />
+<link rel="canonical" href="https://blog.csainty.com/2016/09/running-dnsmasq-in-docker.html" />
+<meta property="og:url" content="https://blog.csainty.com/2016/09/running-dnsmasq-in-docker.html" />
+<meta property="og:site_name" content="Chris Sainty" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-09-03T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@csainty" />
+<meta name="twitter:creator" content="@Chris Sainty" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Running dnsmasq in Docker",
+    "datePublished": "2016-09-03T00:00:00+00:00",
+    "description": "Today we take a quick look at running dnsmasq as a docker container.dnsmasq is a simple lightweight DNS (amongst other features) that can be used to easily set up various DNS records within your infrastructure. Our particular usecase is to set the TXT records Eureka requires for DNS based bootstrapping.",
+    "url": "https://blog.csainty.com/2016/09/running-dnsmasq-in-docker.html"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+</head>
+<body>
+  <header class="m-h">
+    <h1><a href="https://blog.csainty.com">Chris Sainty</a></h1>
+    <h2>A technical blog covering full-stack web development.</h2>
+    <h2><a href="https://twitter.com/csainty" rel="external">twitter</a> | <a href="https://github.com/csainty" rel="external">github</a> | <a href="https://stackoverflow.com/users/625695/chris-sainty" rel="external">stackoverflow</a></h2>
+  </header>
+
+  <article>
+    <span><time datetime="03 Sep 2016">03 Sep 2016</time>  </span>
+    <h1>Running dnsmasq in Docker</h1>
+    <section>
+        <p>Today we take a quick look at running <a href="http://www.thekelleys.org.uk/dnsmasq/doc.html">dnsmasq</a> as a docker container.</p>
+
+<p>dnsmasq is a simple lightweight DNS (amongst other features) that can be used to easily set up various DNS records within your infrastructure. Our particular usecase is to set the TXT records <a href="https://github.com/Netflix/eureka">Eureka</a> requires for DNS based bootstrapping.</p>
+
+<!-- more -->
+
+<h3>Getting started</h3>
+
+<p>I&#39;ve built and release an alpine based dnsmasq image which configures itself from a directory of <code>.conf</code> files. I chose this approach so that different services can include themselves in dnsmasq during provisioning.</p>
+
+<p>You can see the Dockerfile here - <a href="https://github.com/storytel/dnsmasq">https://github.com/storytel/dnsmasq</a></p>
+
+<h3>Starting the container</h3>
+<div class="highlight"><pre><code class="language-" data-lang="">docker run --name dnsmasq --cap-add=NET_ADMIN --net=host -v /etc/dnsmasq:/etc/dnsmasq storytel/dnsmasq
+</code></pre></div>
+<p>There are three options here to note :-</p>
+
+<ol>
+<li><code>--cap-add=NET_ADMIN</code> is required for dnsmasq to interact with the network stack</li>
+<li><code>--net=host</code> runs the container with the host network stack, so that port <code>53</code> on the host becomes the DNS and is accessible from the rest of the network.</li>
+<li><code>-v /etc/dnsmasq:/etc/dnsmasq</code> maps our folder of <code>.conf</code> files inside the container.</li>
+</ol>
+
+<h3>Configuration</h3>
+
+<p>dnsmasq will read all the <code>.conf</code> files added to <code>/etc/dnsmasq</code> (a container restart is required to load changes). So we can add each service as it&#39;s own file, or put them all in one. Whichever suits your configuration needs.</p>
+<div class="highlight"><pre><code class="language-" data-lang=""># 0.base.conf
+domain-needed
+bogus-priv
+no-hosts
+keep-in-foreground
+no-resolv
+expand-hosts
+server=8.8.8.8
+server=8.8.4.4
+</code></pre></div><div class="highlight"><pre><code class="language-" data-lang=""># 1.eureka.conf
+address=/001.eureka.storytel/10.10.10.21
+address=/002.eureka.storytel/10.10.10.22
+address=/003.eureka.storytel/10.10.10.23
+txt-record=txt.global.eureka.storytel,sweden.eureka.storytel
+txt-record=txt.sweden.eureka.storytel,10.10.10.21,10.10.10.22,10.10.10.23
+</code></pre></div><div class="highlight"><pre><code class="language-" data-lang=""># 2.etcd.conf
+address=/001.etcd.storytel/10.10.10.21
+address=/002.etcd.storytel/10.10.10.22
+address=/003.etcd.storytel/10.10.10.23
+</code></pre></div>
+<h3>Access from another server</h3>
+
+<p>Once we have our container up and running we can then use the DNS from other servers on the network.</p>
+<div class="highlight"><pre><code class="language-" data-lang="">$ dig @10.10.10.1 TXT txt.global.eureka.storytel
+
+; &lt;&lt;&gt;&gt; DiG 9.10.2-P4 &lt;&lt;&gt;&gt; @10.10.10.1 TXT txt.global.eureka.storytel
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 13897
+;; flags: qr aa rd ra ad; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;txt.global.eureka.storytel.        IN      TXT
+
+;; ANSWER SECTION:
+txt.global.eureka.storytel. 0       IN      TXT     "sweden.eureka.storytel"
+
+;; Query time: 1 msec
+;; SERVER: 10.10.10.1#53(10.10.10.1)
+;; WHEN: Sat Sep 03 09:04:25 UTC 2016
+;; MSG SIZE  rcvd: 85
+</code></pre></div>
+    </section>
+</article>
+
+
+  <footer class="m-f">
+      <section class="copyright">All content copyright <a href="/">Chris Sainty</a> &copy; 2006-2017 &bull; All rights reserved.</section>
+  </footer>
+</body>
+</html>

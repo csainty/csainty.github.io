@@ -1,0 +1,837 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <style>
+    html,body,li,p{margin:0;padding:0}p,ul,ol,.highlight{margin:1.6em 0}h1,h2,h3,h4{margin:0;padding:0;font-size:100%;font-weight:bold;text-rendering:optimizeLegibility;font-family:sans-serif}ul{list-style:none}html{box-sizing:border-box;font-size:62.5%}*{box-sizing:inherit}*:before,*:after{box-sizing:inherit}img{height:auto;max-width:100%}pre,code{font-family:monospace;margin:0}hr{display:block;height:1px;border:0;border-top:1px solid #efefef;margin:1rem 0;padding:0}blockquote{font-style:italic;margin:1.6em 0 1.6em -2.2em;padding:0 0 0 1.6em;border-left:#4a4a4a 0.4em solid}html{font-size:16px}@media screen and (min-width: 900px){html{font-size:18px}}@media screen and (min-width: 1200px){html{font-size:20px}}body{font-family:serif;color:#3A4145}h1{font-size:2rem;margin:10px 0 10px 0;letter-spacing:-1px}h2{font-size:1.4rem;letter-spacing:-1px}h3{font-size:1.2rem}h4{font-size:1.1rem}a:link,a:visited{color:inherit;text-decoration:none}a:hover{color:#57A3E8;transition:color ease 0.3s}p a:link,p a:visited{text-decoration:underline}pre{border:1px solid #E3EDF3;padding:10px;font-size:0.85em;border-radius:3px}code{padding:1px 3px;font-size:0.85em;white-space:pre;border:1px solid #E3EDF3;background:#F7FAFB;border-radius:2px}pre code{background:transparent;padding:0;border:0}.m-h{text-align:center;background-color:#303538;color:#fff;padding:1rem}.m-h h2{font-weight:normal;font-size:1.5rem}article{width:80%;margin:1rem auto;padding-bottom:1rem;border-bottom:#EBF2F6 1px solid;word-break:break-word;position:relative}article::after{display:block;content:"";width:7px;height:7px;border:#E7EEF2 1px solid;position:absolute;bottom:-5px;left:50%;margin-left:-5px;background:#fff;border-radius:100%;box-shadow:#fff 0 0 0 5px}.a-m{color:#9EABB3;font-size:0.8rem}.a-m a:hover{color:#9EABB3;text-decoration:underline}.a-h{margin-bottom:5px}.r-m{font-size:smaller}nav{position:relative;width:75%;margin:1rem auto;font-size:0.8rem;color:#9EABB3;text-align:center}.m-f{position:relative;margin:2rem 0 0 0;padding:1rem 1rem 2rem 1rem;border-top:#EBF2F6 1px solid;font-size:0.8rem;line-height:1.7em;color:#BBC7CC;text-align:center;background:#F7FAFB}.o-p,.n-p{position:absolute;display:inline-block;padding:0 0.5rem;border:#EBF2F6 2px solid;text-decoration:none;border-radius:30px;transition:border ease 0.3s}.o-p{right:0}.n-p{left:0}.t-h{width:80%;margin:0 auto}.highlight pre{background-color:#49483e;color:white;overflow:scroll}.ge{font-style:italic}.gs{font-weight:bold}.c,.cm,.cp,.c1,.gu,.cs{color:#75715e}.k,.kc,.kd,.kp,.kr,.no,.kt{color:#66d9ef}.l,.mf,.mh,.mi,.mo,.se,.il,.m{color:#ae81ff}.n,.nb,.ni,.nl,.nn,.py,.nv,.w,.bp,.vc,.vg,.vi,.p{color:#f8f8f2}.o,.nt,.ow,.gd,.kn{color:#f92672}.ld,.sb,.sc,.sd,.s2,.sh,.si,.sx,.sr,.s1,.ss,.s{color:#e6db74}.na,.nc,.nd,.ne,.nf,.nx,.gi{color:#a6e22e}
+
+    </style>
+
+    <!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>Phonetics with Double Metaphone and VFP - Chris Sainty</title>
+<meta property="og:title" content="Phonetics with Double Metaphone and VFP" />
+<meta name="description" content="Something that has been floating around in my &quot;to-do&quot; list for quite some time is to write a class for phonetic keyword matching in a fox database.The idea is for it to be a step down from PhDbase (link) without losing the functionality I personally find most useful, phonetic matching." />
+<meta property="og:description" content="Something that has been floating around in my &quot;to-do&quot; list for quite some time is to write a class for phonetic keyword matching in a fox database.The idea is for it to be a step down from PhDbase (link) without losing the functionality I personally find most useful, phonetic matching." />
+<link rel="canonical" href="https://blog.csainty.com/2006/04/phonetics-with-double-metaphone-and.html" />
+<meta property="og:url" content="https://blog.csainty.com/2006/04/phonetics-with-double-metaphone-and.html" />
+<meta property="og:site_name" content="Chris Sainty" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2006-04-21T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@csainty" />
+<meta name="twitter:creator" content="@Chris Sainty" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Phonetics with Double Metaphone and VFP",
+    "datePublished": "2006-04-21T00:00:00+00:00",
+    "description": "Something that has been floating around in my &quot;to-do&quot; list for quite some time is to write a class for phonetic keyword matching in a fox database.The idea is for it to be a step down from PhDbase (link) without losing the functionality I personally find most useful, phonetic matching.",
+    "url": "https://blog.csainty.com/2006/04/phonetics-with-double-metaphone-and.html"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+</head>
+<body>
+  <header class="m-h">
+    <h1><a href="https://blog.csainty.com">Chris Sainty</a></h1>
+    <h2>A technical blog covering full-stack web development.</h2>
+    <h2><a href="https://twitter.com/csainty" rel="external">twitter</a> | <a href="https://github.com/csainty" rel="external">github</a> | <a href="https://stackoverflow.com/users/625695/chris-sainty" rel="external">stackoverflow</a></h2>
+  </header>
+
+  <article>
+    <span><time datetime="21 Apr 2006">21 Apr 2006</time>  </span>
+    <h1>Phonetics with Double Metaphone and VFP</h1>
+    <section>
+        <p>Something that has been floating around in my &quot;to-do&quot; list for quite some time is to write a class for phonetic keyword matching in a fox database.
+The idea is for it to be a step down from PhDbase (<a href="http://fox.wikis.com/wc.dll?Wiki%7EPhdBase%7EVFP">link</a>) without losing the functionality I personally find most useful, phonetic matching.</p>
+
+<!-- more -->
+
+<p>At the core of this class is a VFP version of the Double Metaphone algorithm (<a href="http://en.wikipedia.org/wiki/Double_Metaphone">link</a>) originally written by Lawrence Philips in C/C++.
+This isn&#39;t the tidiest piece of code floating around the internet, but it is still pretty clever, and I hope to someday soon find the time to wrap it in a class with some support for boolean logic and a good word boundary algorithm for indexing.</p>
+<div class="highlight"><pre><code class="language-XBase" data-lang="XBase">### Code
+
+function double_metaphone(cStr as String)
+  local cP, cS, nCur, nLen, cOrig, isSlavo, cRest
+  cP= ''
+  cS= ''
+  nCur= 1
+  nLen= len(m.cStr)
+  cOrig= upper(m.cStr) + space(5)
+  isSlavo= Slavo_Germanic(m.cOrig)
+  cRest= m.cOrig
+
+  * skip this at beginning of word
+  if inlist(m.cOrig, 'GN','KN','PN','WR','PS')
+    nCur = m.nCur + 1
+  endif
+
+  * Initial 'X' is pronounced 'Z' e.g. 'Xavier'
+  if (m.cOrig = 'X')
+    cP= m.cP + "S"
+    cS= m.cS + "S"
+    nCur = nCur + 1 
+  endif
+
+  * Main Loop
+  do while (len(m.cP) &lt; 4 or len(m.cS) &lt; 4) and m.nCur &lt;= m.nLen
+    local cLet
+    cLet= substr(m.cOrig, m.nCur, 1)
+    cRest= substr(m.cOrig, m.nCur)
+    do case
+    case m.cLet $ 'AEIOU'
+      * do nothing
+      nCur= m.nCur + 1
+
+    case m.cLet = 'Y'
+      if m.nCur = 1
+        cP= m.cP + 'A'
+        cS= m.cS + 'A'
+      endif
+      nCur = nCur + 1
+
+    case m.cLet = 'B'
+      * '-mb', e.g. "dumb", already skipped over ...
+      cP= m.cP + 'P'
+      cS= m.cS + 'P'
+
+      if m.cRest = 'BB'
+        nCur = nCur + 2
+      else
+        nCur = nCur + 1
+      endif     
+
+    case m.cLet = chr(199) &amp;&amp; 
+      cP= m.cP + 'S'
+      cS= m.cS + 'S'
+      nCur = nCur + 1 
+
+    case m.cLet = 'C'
+      * Various germanic
+      if m.nCur &gt; 2 and !is_vowel(m.cOrig, m.nCur - 2) ;
+          and substr(m.cOrig, m.nCur - 1, 3) = "ACH" ;
+          and (substr(m.cOrig, m.nCur + 2, 1) # 'I' ;
+          and (substr(m.cOrig, m.nCur + 2, 1) # 'E' ;
+          or inlist(substr(m.cOrig, m.nCur - 2, 6), "BACHER", "MACHER")))
+        cP= m.cP + 'K'
+        cS= m.cS + 'K'
+        nCur = m.nCur + 2
+        loop
+      endif
+
+      * special case 'caesar'
+      if m.nCur = 1 and m.cOrig = "CAESAR"
+        cP = cP + 'S'
+        cS = cS + 'S'
+        nCur= m.nCur + 2
+        loop
+       endif
+
+      * italian 'chianti'
+      if m.cRest = "CHIA"
+        cP = cP + 'K'
+        cS = cS + 'K'
+        nCur= m.nCur + 2
+        loop
+      endif
+
+      if m.cRest = "CH"
+        * Find michael
+        if m.nCur &gt; 1 and m.cRest = "CHAE"
+          cP= m.cP + "K"
+          cS= m.cS + "X"
+          nCur = nCur + 2
+          loop
+        endif
+
+        * greek roots e.g. 'chemistry', 'chorus'
+        if (m.nCur = 1 and ;
+            inlist(m.cRest, "CHARAC", "CHARIS", "CHOR", "CHYM", "CHIA", "CHEM") ;
+            and m.cOrig != "CHORE")
+          cP= m.cP + 'K'
+          cS= m.cS + 'K'
+          nCur = nCur + 2
+          loop
+        endif
+
+        if inlist(m.cOrig, "VAN ", "VON ", "SCH") ;
+            or inlist(substr(m.cOrig, m.nCur - 2, 6), "ORCHES", "ARCHIT", "ORCHID") ;
+            or substr(m.cOrig, m.nCur + 2, 1) $ "TS" ;
+            or (substr(m.cOrig, m.nCur - 1, 1) $ "AOUE" or m.nCur = 1)
+          cP= m.cP + 'K'
+          cS= m.cS + 'K'
+        else
+          if m.nCur &gt; 1
+            if m.cOrig = "MC"
+              cP= m.cP + 'K'
+              cS= m.cS + 'K'
+            else
+              cP= m.cP + 'X'
+              cS= m.cS + 'K'
+            endif
+          else
+            m.cP = m.cP + 'X'
+            m.cS = m.cS + 'X'
+          endif
+        endif
+        nCur = nCur + 2
+        loop
+      endif
+
+      * e.g. 'czerny'
+      if m.cRest = "CZ" ;
+          and substr(m.cOrig, m.nCur - 2, 4) # "WICZ"
+        cP= m.cP + "S"
+        cS= m.cS + "X"
+        nCur= m.nCur + 2
+        loop
+      endif
+
+      * eg focaccia
+      if m.cRest = "CCIA"
+        cP= m.cP + 'X'
+        cS= m.cS + 'X'        
+        nCur= m.nCur + 3
+        loop
+      endif
+
+      * double 'C', but not McClellan'
+      if m.cRest = "CC" and !(m.nCur = 2 and m.cOrig = "M")
+        * 'bellocchio' but not 'bacchus'
+        if substr(m.cOrig, m.nCur + 2, 1) $ 'IEH' ;
+            and substr(m.cOrig, m.nCur + 2, 2) # 'HU'
+          *'accident', 'accede', 'succeed'
+          if (m.nCur != 2 and substr(m.cOrig, m.nCur -1, 1) = "A") ;
+              or inlist(m.cOrig, "UCCEE", "UCCES")
+            cP= m.cP + "KS"
+            cS= m.cS + "KS"
+          else
+            cP= m.cP + "X"
+            cS= m.cS + "X"
+          endif
+          nCur= m.nCur + 3
+          loop
+        else
+          * Pierce's rule
+          cP= m.cP + 'K'
+          cS= m.cS + 'K'
+          nCur= m.nCur + 2
+          loop
+        endif
+      endif
+
+      if inlist(m.cRest, "CK", "CG", "CQ")
+        cP= m.cP + 'K'
+        cS= m.cS + 'K'
+        nCur= m.nCur + 2
+        loop
+      endif
+
+      if inlist(m.cRest, "CI", "CE", "CY")
+        if inlist(m.cRest, "CIO", "CIE", "CIA")
+          cP= m.cP + "S"
+          cS= m.cS + "X"
+        else
+          cP= m.cP + "S"
+          cS= m.cS + "S"
+        endif
+        nCur= m.nCur + 2
+        loop
+      endif
+
+      * else case
+      cP= m.cP + 'K'
+      cS= m.cS + 'K'
+
+      if inlist(m.cRest, "C C", "C Q", "C G")
+        nCur= m.nCur + 3
+      else
+        if inlist(m.cRest, "CC", "CK", "CQ")
+          nCur= m.nCur + 2
+        else
+          nCur= m.nCur + 1
+        endif
+      endif
+
+    case m.cLet = 'D'
+      if m.cRest = "DG"
+        if inlist(m.cRest, "DGI", "DGE", "DGY")
+          cP = cP + 'J'
+          cS = cS + 'J'
+          nCur = nCur + 2
+          loop
+        else
+          cP = cP + 'TK'
+          cS = cS + 'TK'
+          nCur= m.nCur + 2
+          loop
+        endif
+      endif
+
+      if inlist(m.cRest, "DT", "DD")
+        cP = cP + "T"
+        cS = cS + "T"
+        nCur = nCur + 2
+        loop
+      endif
+
+      cP = cP + "T"
+      cS = cS + "T"
+      nCur = nCur + 1
+
+    case m.cLet = 'F'
+      if m.cRest = "FF"
+        nCur= m.nCur + 2
+      else
+        nCur= m.nCur + 1
+      endif
+      cP= m.cP + "F"
+      cS= m.cS + "F"
+
+    case m.cLet = 'G'
+      if m.cRest = "GH"
+        if m.nCur &gt; 1 and !is_vowel(m.cOrig, m.nCur - 1)
+          cP= m.cP + "K"
+          cS= m.cS + "K"
+          nCur= m.nCur + 2
+          loop
+        endif
+
+        * 'ghislane', 'ghiradelli'
+        if m.nCur = 1
+          if m.cRest = "GHI"
+            cP= m.cP + "J"
+            cS= m.cS + "J"
+          else
+            cP=m.cP + "K"
+            cS= m.cS + "K"
+          endif
+          nCur= m.nCur + 2
+          loop
+        endif
+
+        if (m.nCur &gt; 2 and substr(m.cOrig, m.nCur - 2, 1) $ "BHD") ;
+            or (m.nCur &gt; 3 and substr(m.cOrig, m.nCur - 3, 1) $ 'BHD') ;
+            or (m.nCur &gt; 4 and substr(m.cOrig, m.nCur - 4, 1) $ 'BH')
+          nCur= m.nCur + 2
+          loop
+        else
+          if m.nCur &gt; 3 and substr(m.cOrig, m.nCur - 1, 1) = "U" ;
+              and substr(m.cOrig, m.nCur - 3, 1) $ 'CGLRT'
+            cP= m.cP + 'F'
+            cS= m.cS + 'F'
+          else
+            if (m.nCur &gt; 1) and substr(m.cOrig, m.nCur - 1, 1) # 'I'
+              cP= m.cP + 'K'
+              cS= m.cS + 'K'
+            endif
+          endif
+          m.nCur = m.nCur + 2
+          loop
+        endif
+      endif
+
+      if m.cRest = "GN"
+        if m.nCur = 2 and is_vowel(m.cOrig, 1) and !m.isSlavo
+          cP= m.cP + "KN"
+          cS= m.cS + "N"
+        else
+          if m.cRest != "GNEY" and !m.isSlavo
+            cP= m.cP + "N"
+            cS= m.cS + "KN"
+          else
+            cP= m.cP + "KN"
+            cS= m.cS + "KN"
+          endif
+        endif
+        nCur= m.nCur + 2
+        loop
+      endif
+
+      * tagliaro
+      if m.cRest= "GLI" and !m.isSlavo
+        cP= m.cP + "KL"
+        cS= m.cS + "L"
+        nCur= m.nCur + 2
+        loop
+      endif
+
+      * ges-, gep-, gel- at beginning
+      if inlist(m.cOrig, "GES","GEP","GEB","GEL","GEY","GIB","GIL","GIN","GIE","GEI","GER","GY")
+        cP= m.cP + "K"
+        cS= m.cS + "J"
+        nCur= m.nCur + 2
+        loop
+      endif
+
+      * -ger-, -gy-
+      if (m.cRest = "GER" or m.cRest = "GY") ;
+          and !inlist(m.cOrig, "DANGER","RANGER", "MANGER") ;
+          and !substr(m.cOrig, m.nCur - 1, 1) $ "EI" ;
+          and !inlist(substr(m.cOrig, m.nCur - 1, 3), "RGY", "OGY")
+        cP= m.cP + "K"
+        cS= m.cS + "J"
+        nCur= m.nCur + 2
+        loop
+      endif
+
+      * italian e.g. 'biaggi'
+      if inlist(m.cRest, "GE", "GI", "GY") ;
+          or inlist(substr(m.cOrig, m.nCur - 1, 4), "AGGI", "OGGI")
+        if inlist(m.cOrig, "VAN ", "VON ", "SCH") or m.cRest = "GET"
+          cP= m.cP + "K"
+          cS= m.cS + "K"
+        else
+          if m.cRest = "GIER "
+            cP= m.cP + "J"
+            cS= m.cS + "J"
+          else
+            cP= m.cP + "J"
+            cS= m.cS + "K"
+          endif
+        endif
+        nCur= m.nCur + 2
+        loop
+      endif
+
+      if m.cRest = "GG"
+        nCur= m.nCur + 2
+      else
+        nCur= m.nCur + 1
+      endif
+      cP= m.cP + "K"
+      cS= m.cS + "K"
+
+    case m.cLet = "H"
+      if (m.nCur = 1 or is_vowel(m.cOrig, m.nCur - 1)) and is_vowel(m.cOrig, m.nCur + 1)
+        cP= m.cP + "H"
+        cS= m.cS + "H"
+        nCur= m.nCur + 2
+      else
+        nCur= m.nCur + 1
+      endif
+
+    case m.cLet = "J"
+      * obvious spanish, 'jose', 'san jacinto'
+      if m.cRest = "JOSE" ;
+          or m.cOrig = "SAN "
+        if (m.nCur = 1 and substr(m.cOrig, m.nCur + 4, 1) = " ") ;
+            or m.cOrig = "SAN "
+          cP= m.cP + "H"
+          cS= m.cS + "H"
+        else
+          cP= m.cP + "J"
+          cS= m.cS + "H"
+        endif
+        nCur= m.nCur + 1
+        loop
+      endif
+
+      if m.nCur = 1 and m.cRest # "JOSE"
+        cP= m.cP + "J"
+        cS= m.cS + "A"
+      else
+        * spanish pron. of .e.g. 'bajador'
+        if is_vowel(m.cOrig, m.nCur - 1) ;
+            and !m.isSlavo ;
+            and (m.cRest = "JA" ;
+            or m.cRest = "JO")
+          cP= m.cP + "J"
+          cS= m.cS + "H"
+        else
+          if m.nCur = m.nLen
+            cP= m.cP + "J"
+            cS= m.cS + ""
+          else
+            if !inlist(m.cRest, "JL","JT","JK","JS","JN","JM","JB","JZ") ;
+                and !substr(m.cOrig, m.nCur - 1, 1) $ "SKL"
+              cP= m.cP + "J"
+              cS= m.cS + "J"
+            endif
+          endif
+        endif
+      endif
+
+      if m.cRest = "JJ"
+        nCur= m.nCur + 2
+      else
+        nCur = m.nCur + 1
+      endif
+
+    case m.cLet = "K"
+      if m.cRest = "KK"
+        nCur= m.nCur + 2
+      else
+        nCur= m.nCur + 1
+      endif
+      cP= m.cP + "K"
+      cS= m.cS + "K"
+
+    case m.cLet = "L"
+      if m.cRest = "LL"
+        &amp;&amp; spanish e.g. 'cabrillo', 'gallegos'
+        if (m.nCur = m.nLen - 3 ;
+            and inlist(substr(m.cOrig, m.nCur - 1, 4), "ILLO", "ILLA", "ALLE")) ;
+            or ((inlist(right(m.cOrig, 2), "AS", "OS") ;
+            or right(m.cOrig, 1) $ "AO") ;
+            and substr(m.cOrig, m.nCur - 1, 4) = "ALLE")
+          cP= m.cP + "L"
+          cS= m.cS + ""
+          nCur= m.nCur + 2
+          loop
+        endif
+        nCur= m.nCur + 2
+      else
+        nCur= m.nCur + 1
+      endif
+      cP= m.cP + "L"
+      cS= m.cS + "L"
+
+    case m.cLet = "M"
+      if (substr(m.cOrig, m.nCur - 1, 3) = "UMB" ;
+          and m.nCur + 1 = m.nLen) ;
+          or substr(m.cOrig, m.nCur + 2, 2) = "ER" ;
+          or m.cRest = "MM"
+        *'dumb', 'thumb'
+        nCur= m.nCur + 2
+      else
+        nCur= m.nCur + 1
+      endif
+      cP= m.cP + "M"
+      cS= m.cS + "M"
+
+    case m.cLet= "N"
+      if m.cRest = "NN"
+        nCur= m.nCur + 2
+      else
+        nCur= m.nCur + 1
+      endif
+      cP= m.cP + "N"
+      cS= m.cS + "N"
+
+    case m.cLet = chr(209) &amp;&amp; 
+      nCur= m.nCur + 1
+      cP= m.cP + "N"
+      cS= m.cS + "N"
+
+    case m.cLet = "P"
+      if m.cRest = "PH"
+        nCur= m.nCur + 2
+        cP= m.cP + "F"
+        cS= m.cS + "F"
+        loop
+      endif
+      * also account for "campbell" and "raspberry"
+      if inlist(m.cRest, "PP", "PB")
+        nCur= m.nCur + 2
+      else
+        nCur= m.nCur + 1
+      endif
+      cP= m.cP + "P"
+      cS= m.cS + "P"
+
+    case m.cLet = "Q"
+      if m.cRest = "QQ"
+        nCur= m.nCur + 2
+      else
+        nCur = m.nCur + 1
+      endif
+      cP= m.cP + "K"
+      cS= m.cS + "K"
+
+    case m.cLet = "R"
+      * french e.g. 'rogier', but exclude 'hochmeier'
+      if m.nCur = m.nLen and !m.isSlavo ;
+          and substr(m.cOrig, m.nCur - 2, 2) = "IE" ;
+          and !inlist(substr(m.cOrig, m.nCur - 4, 2), "ME", "MA")
+        cP= m.cP + ""
+        cS= m.cS + "R"
+      else
+        cP= m.cP + "R"
+        cS= m.cS + "R"
+      endif
+
+      if m.cRest = "RR"
+        nCur= m.nCur + 2
+      else
+        nCur= m.nCur + 1
+      endif
+
+    case m.cLet = "S"
+      * special cases 'island', 'isle', 'carlisle', 'carlysle'
+      if inlist(substr(m.cOrig, m.nCur - 1, 3), "ISL", "YSL")
+        nCur= m.nCur + 1
+        loop
+      endif
+
+      * special case 'sugar-'
+      if m.nCur = 1 and m.cOrig = "SUGAR"
+        cP= m.cP + "X"
+        cS= m.cS + "S"
+        nCur= m.nCur + 1
+        loop
+      endif
+
+      if m.cRest = "SH"
+        * germanic
+        if inlist(m.cRest, "SHEIM","SHOEK","SHOLM","SHOLZ")
+          cP= m.cP + "S"
+          cS= m.cS + "S"
+        else
+          cP= m.cP + "X"
+          cS= m.cS + "X"
+        endif
+        nCur= m.nCur + 2
+        loop
+      endif
+
+      * italian &amp; armenian 
+      if inlist(m.cRest, "SIO", "SIA")
+        if !m.isSlavo
+          cP= m.cP + "S"
+          cS= m.cS + "X"
+        else
+          cP= m.cP + "S"
+          cS= m.cS + "S"
+        endif
+        nCur= m.nCur + 3
+        loop
+      endif
+
+      * german &amp; anglicisations, e.g. 'smith' match 'schmidt', 'snider' match 'schneider'
+      * also, -sz- in slavic language altho in hungarian it is pronounced 's'
+      if (m.nCur = 1 and inlist(m.cRest, "SM","SN","SL","SW")) ;
+          or m.cRest = "SZ"
+        cP= m.cP + "S"
+        cS= m.cS + "X"
+
+        if m.cRest = "SZ"
+          nCur= m.nCur + 2
+        else
+          nCur= m.nCur + 1
+        endif
+        loop
+      endif
+
+      if m.cRest = "SC"
+        * Schlesinger's rule
+        if m.cRest = "SCH"
+          * dutch origin, e.g. 'school', 'schooner'
+          if inlist(m.cRest, "SCHOO","SCHER","SCHEN","SCHUY","SCHED","SCHEM")
+            * 'schermerhorn', 'schenker' 
+            if inlist(m.cRest, "SCHER", "SCHEN")
+              cP= m.cP + "X"
+              cS= m.cS + "SK"
+            else
+              cP= m.cP + "SK"
+              cS= m.cS + "SK"
+            endif
+            nCur= m.nCur + 3
+            loop
+          else
+            if m.nCur = 1 ;
+                and !is_vowel(m.cOrig, 3) ;
+                and m.cRest # "SCHW"
+              cP= m.cP + "X"
+              cS= m.cS + "S"
+            else
+              cP= m.cP + "X"
+              cS= m.cS + "X"
+            endif
+            nCur= m.nCur + 3
+            loop
+          endif
+        endif &amp;&amp; H
+
+        if inlist(m.cRest, "SCI", "SCE", "SCY")
+          cP= m.cP + "S"
+          cS= m.cS + "S"
+          nCur= m.nCur + 3
+          loop
+        endif
+
+        cP= m.cP + "SK"
+        cS= m.cS + "SK"
+        nCur= m.nCur + 3
+        loop
+      endif    &amp;&amp; "SC"
+
+      * french e.g. 'resnais', 'artois'
+      if m.nCur = m.nLen and inlist(right(m.cOrig, 2), "AI", "OI")
+        cP= m.cP + ""
+        cS= m.cS + "S"
+      else
+        cP= m.cP + "S"
+        cS= m.cS + "S"
+      endif
+
+      if inlist(m.cRest, "SS", "SZ")
+        nCur= m.nCur + 2
+      else
+        nCur= m.nCur + 1
+      endif
+
+    case m.cLet = "T"
+      if inlist(m.cRest, "TION", "TIA", "TCH")
+        cP= m.cP + "X"
+        cS= m.cS + "X"
+        nCur= m.nCur + 3
+        loop
+      endif
+
+      if m.cRest = "TH" or m.cRest = "TTH"
+        * special case 'thomas', 'thames' or germanic
+        if inlist(m.cRest, "THOM", "THAM") ;
+            or inlist(m.cOrig, "VAN ", "VON ", "SCH")
+          cP= m.cP + "T"
+          cS= m.cS + "T"
+        else
+          cS= m.cS + "O"
+          cS= m.cS + "T"
+        endif
+        nCur= m.nCur + 2
+        loop
+      endif
+
+      if inlist(m.cRest, "TT", "TD")
+        nCur= m.nCur + 2
+      else
+        nCur= m.nCur + 1
+      endif
+      cP= m.cP + "T"
+      cS= m.cS + "T"
+
+    case m.cLet = "V"
+      if m.cRest = "VV"
+        nCur= m.nCur + 2
+      else
+        nCur= m.nCur + 1
+      endif
+      cP= m.cP + "F"
+      cS= m.cS + "F"
+
+    case m.cLet = "W"
+      * can also be in middle of word
+      if m.cRest = "WR"
+        cP= m.cP + "R"
+        cS= m.cS + "R"
+        nCur= m.nCur + 2
+        loop
+      endif
+
+      if m.nCur = 1 ;
+          and (is_vowel(m.cOrig, m.nCur + 1) ;
+          or m.cRest = "WH")
+        * Wasserman should match Vasserman 
+        if is_vowel(m.cOrig, m.nCur + 1)
+          cP= m.cP + "A"
+          cS= m.cS + "F"
+        else
+          cP= m.cP + "A"
+          cS= m.cS + "A"
+        endif
+        nCur= m.nCur + 2
+        loop
+      endif
+
+      &amp;&amp; Arnow should match Arnoff
+      if (m.nCur = m.nLen and is_vowel(m.cOrig, m.nCur - 1)) ;
+          or inlist(substr(m.cOrig, m.nCur - 1, 5), "EWSKI","EWSKY","OWSKI","OWSKY") ;
+          or m.cOrig = "SCH"
+        cP= m.cP + ""
+        cS= m.cS + "F"
+        nCur= m.nCur + 1
+        loop
+      endif
+
+      if inlist(m.cRest, "WICZ","WITZ")
+        cP= m.cP + "TS"
+        cS= m.cS + "FX"
+        nCur= m.nCur + 4
+        loop
+      endif
+
+      nCur= m.nCur + 1
+
+    case m.cLet = "X"
+      * french e.g. breaux 
+      if !(m.nCur = m.nLen ;
+          and (inlist(substr(m.cOrig, m.nCur - 3, 3), "IAU", "EAU") ;
+          or inlist(substr(m.cOrig, m.nCur - 2, 2), "AU", "OU")))
+        cP= m.cP + "KS"
+        cS= m.cS + "KS"
+      endif
+
+      if inlist(m.cRest, "XX", "XC")
+        nCur= m.nCur + 2
+      else
+        nCur= m.nCur + 1
+      endif
+
+    case m.cLet = "Z"
+      * chinese pinyin e.g. 'zhao' 
+      if m.cRest = "ZH"
+        cP= m.cP + "J"
+        cS= m.cS + "J"
+        nCur= m.nCur + 2
+        loop
+      else
+        if inlist(m.cRest, "ZO", "ZA", "ZI") ;
+            or (m.isSlavo ;
+            and (m.nCur &gt; 1 and substr(m.cOrig, m.nCur - 1, 1) # "T"))
+          cP= m.cP + "S"
+          cS= m.cS + "TS"
+        else
+          cP= m.cP + "S"
+          cS= m.cS + "S"
+        endif
+      endif
+
+      if m.cRest = "ZZ"
+        nCur= m.nCur + 2
+      else
+        nCur= m.nCur + 1
+      endif
+
+    otherwise
+      nCur= m.nCur + 1
+    endcase
+  enddo
+  cP= padr(m.cP, 4)
+  cS= padr(m.cS, 4)
+
+  return m.cP
+endfunc
+
+function is_vowel(cStr, nPos)
+  return substr(m.cStr, m.nPos, 1) $ 'AEIOUY'
+endfunc
+
+function Slavo_Germanic(cStr)
+  return occurs("W", m.cStr) &gt; 0 ;
+    or occurs("K", m.cStr) &gt; 0 ;
+    or occurs("CZ", m.cStr) &gt; 0 ;
+    or occurs("WITZ", m.cStr) &gt; 0
+endfunc
+</code></pre></div><div class="highlight"><pre><code class="language-XBase" data-lang="XBase">### Example
+
+set procedure to Phonetics.prg
+clear
+?double_metaphone("foxpro")    &amp;&amp; FKSP
+?double_metaphone("phoxpro")  &amp;&amp; FKSP
+?double_metaphone("phocksprow")  &amp;&amp; FKSP
+</code></pre></div>
+    </section>
+</article>
+
+
+  <footer class="m-f">
+      <section class="copyright">All content copyright <a href="/">Chris Sainty</a> &copy; 2006-2017 &bull; All rights reserved.</section>
+  </footer>
+</body>
+</html>

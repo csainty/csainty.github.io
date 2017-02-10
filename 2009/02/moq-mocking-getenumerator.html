@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <style>
+    html,body,li,p{margin:0;padding:0}p,ul,ol,.highlight{margin:1.6em 0}h1,h2,h3,h4{margin:0;padding:0;font-size:100%;font-weight:bold;text-rendering:optimizeLegibility;font-family:sans-serif}ul{list-style:none}html{box-sizing:border-box;font-size:62.5%}*{box-sizing:inherit}*:before,*:after{box-sizing:inherit}img{height:auto;max-width:100%}pre,code{font-family:monospace;margin:0}hr{display:block;height:1px;border:0;border-top:1px solid #efefef;margin:1rem 0;padding:0}blockquote{font-style:italic;margin:1.6em 0 1.6em -2.2em;padding:0 0 0 1.6em;border-left:#4a4a4a 0.4em solid}html{font-size:16px}@media screen and (min-width: 900px){html{font-size:18px}}@media screen and (min-width: 1200px){html{font-size:20px}}body{font-family:serif;color:#3A4145}h1{font-size:2rem;margin:10px 0 10px 0;letter-spacing:-1px}h2{font-size:1.4rem;letter-spacing:-1px}h3{font-size:1.2rem}h4{font-size:1.1rem}a:link,a:visited{color:inherit;text-decoration:none}a:hover{color:#57A3E8;transition:color ease 0.3s}p a:link,p a:visited{text-decoration:underline}pre{border:1px solid #E3EDF3;padding:10px;font-size:0.85em;border-radius:3px}code{padding:1px 3px;font-size:0.85em;white-space:pre;border:1px solid #E3EDF3;background:#F7FAFB;border-radius:2px}pre code{background:transparent;padding:0;border:0}.m-h{text-align:center;background-color:#303538;color:#fff;padding:1rem}.m-h h2{font-weight:normal;font-size:1.5rem}article{width:80%;margin:1rem auto;padding-bottom:1rem;border-bottom:#EBF2F6 1px solid;word-break:break-word;position:relative}article::after{display:block;content:"";width:7px;height:7px;border:#E7EEF2 1px solid;position:absolute;bottom:-5px;left:50%;margin-left:-5px;background:#fff;border-radius:100%;box-shadow:#fff 0 0 0 5px}.a-m{color:#9EABB3;font-size:0.8rem}.a-m a:hover{color:#9EABB3;text-decoration:underline}.a-h{margin-bottom:5px}.r-m{font-size:smaller}nav{position:relative;width:75%;margin:1rem auto;font-size:0.8rem;color:#9EABB3;text-align:center}.m-f{position:relative;margin:2rem 0 0 0;padding:1rem 1rem 2rem 1rem;border-top:#EBF2F6 1px solid;font-size:0.8rem;line-height:1.7em;color:#BBC7CC;text-align:center;background:#F7FAFB}.o-p,.n-p{position:absolute;display:inline-block;padding:0 0.5rem;border:#EBF2F6 2px solid;text-decoration:none;border-radius:30px;transition:border ease 0.3s}.o-p{right:0}.n-p{left:0}.t-h{width:80%;margin:0 auto}.highlight pre{background-color:#49483e;color:white;overflow:scroll}.ge{font-style:italic}.gs{font-weight:bold}.c,.cm,.cp,.c1,.gu,.cs{color:#75715e}.k,.kc,.kd,.kp,.kr,.no,.kt{color:#66d9ef}.l,.mf,.mh,.mi,.mo,.se,.il,.m{color:#ae81ff}.n,.nb,.ni,.nl,.nn,.py,.nv,.w,.bp,.vc,.vg,.vi,.p{color:#f8f8f2}.o,.nt,.ow,.gd,.kn{color:#f92672}.ld,.sb,.sc,.sd,.s2,.sh,.si,.sx,.sr,.s1,.ss,.s{color:#e6db74}.na,.nc,.nd,.ne,.nf,.nx,.gi{color:#a6e22e}
+
+    </style>
+
+    <!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>Moq: Mocking GetEnumerator() - Chris Sainty</title>
+<meta property="og:title" content="Moq: Mocking GetEnumerator()" />
+<meta name="description" content="In my last post I made mention that it was easier not to use the Enumerators on HTTP context objects when you want to unit test with mocking. This is due to some annoyances with casting (as they predate generics) that can be avoided with simple for() loops instead of foreach().Today however, I am going to look at mocking GetEnumerator() in a more general sense should you ever need it." />
+<meta property="og:description" content="In my last post I made mention that it was easier not to use the Enumerators on HTTP context objects when you want to unit test with mocking. This is due to some annoyances with casting (as they predate generics) that can be avoided with simple for() loops instead of foreach().Today however, I am going to look at mocking GetEnumerator() in a more general sense should you ever need it." />
+<link rel="canonical" href="https://blog.csainty.com/2009/02/moq-mocking-getenumerator.html" />
+<meta property="og:url" content="https://blog.csainty.com/2009/02/moq-mocking-getenumerator.html" />
+<meta property="og:site_name" content="Chris Sainty" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2009-02-03T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@csainty" />
+<meta name="twitter:creator" content="@Chris Sainty" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Moq: Mocking GetEnumerator()",
+    "datePublished": "2009-02-03T00:00:00+00:00",
+    "description": "In my last post I made mention that it was easier not to use the Enumerators on HTTP context objects when you want to unit test with mocking. This is due to some annoyances with casting (as they predate generics) that can be avoided with simple for() loops instead of foreach().Today however, I am going to look at mocking GetEnumerator() in a more general sense should you ever need it.",
+    "url": "https://blog.csainty.com/2009/02/moq-mocking-getenumerator.html"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+</head>
+<body>
+  <header class="m-h">
+    <h1><a href="https://blog.csainty.com">Chris Sainty</a></h1>
+    <h2>A technical blog covering full-stack web development.</h2>
+    <h2><a href="https://twitter.com/csainty" rel="external">twitter</a> | <a href="https://github.com/csainty" rel="external">github</a> | <a href="https://stackoverflow.com/users/625695/chris-sainty" rel="external">stackoverflow</a></h2>
+  </header>
+
+  <article>
+    <span><time datetime="03 Feb 2009">03 Feb 2009</time>  </span>
+    <h1>Moq&#58; Mocking GetEnumerator()</h1>
+    <section>
+        <p>In my last post I made mention that it was easier not to use the Enumerators on HTTP context objects when you want to unit test with mocking. This is due to some annoyances with casting (as they predate generics) that can be avoided with simple <code>for()</code> loops instead of <code>foreach()</code>.</p>
+
+<p>Today however, I am going to look at mocking <code>GetEnumerator()</code> in a more general sense should you ever need it.</p>
+
+<!-- more -->
+
+<p>We start with a simple &quot;business object&quot; that iterates over a set of products returning a list of their names. Nice useless test code as always.  </p>
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">class</span> <span class="nc">BizProducts</span>
+<span class="p">{</span>
+   <span class="k">private</span> <span class="n">IProductsRepository</span> <span class="n">db</span><span class="p">;</span>
+
+   <span class="k">public</span> <span class="nf">BizProducts</span><span class="p">(</span><span class="n">IProductsRepository</span> <span class="n">repository</span><span class="p">)</span> <span class="p">{</span>
+       <span class="n">db</span> <span class="p">=</span> <span class="n">repository</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="k">public</span> <span class="kt">string</span> <span class="nf">List</span><span class="p">()</span> <span class="p">{</span>
+       <span class="n">StringBuilder</span> <span class="n">sb</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">StringBuilder</span><span class="p">();</span>
+       <span class="k">foreach</span> <span class="p">(</span><span class="n">Product</span> <span class="n">p</span> <span class="k">in</span> <span class="n">db</span><span class="p">)</span> <span class="p">{</span>
+           <span class="n">sb</span><span class="p">.</span><span class="nf">AppendLine</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">ProductName</span><span class="p">);</span>
+       <span class="p">}</span>
+
+       <span class="k">return</span> <span class="n">sb</span><span class="p">.</span><span class="nf">ToString</span><span class="p">();</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The business object expects to be passed its data store rather than creating the instance itself. This has two benefits, it becomes far easier to unit test as we can pass in a mocked set of data rather than the concrete class used in the real code, and we can also plug it into a dependency injection framework easily.</p>
+
+<p>The product repository interface and the underlying product class look like this. Note that the <code>IProductsRepository</code> implements the <code>IEnumerable&lt;Product&gt;</code> interface, which exposes a strongly typed <code>GetEnumerator()</code> method rather than the older object one. This comes from <code>System.Collections.Generic</code>.</p>
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">interface</span> <span class="n">IProductsRepository</span> <span class="p">:</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">Product</span><span class="p">&gt;</span>
+<span class="p">{</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">Product</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">int</span> <span class="n">ProductID</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">ProductName</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Now a concrete implementation of the <code>IProductsRepository</code> is likely to connect to SQL Server for its data, but this can be a pain with unit testing as it requires every developer who is sharing tests to have consistent data that can be coded into the unit tests. It also means a test for the business object needs to rely on a bug free data layer to succeed. It is better to test one thing at a time, leave testing the data layer to the data layer tests. This means we need to mock the data layer in business object tests, which means we need to sort out mocking the implicit <code>GetEnumerator()</code> called by the <code>foreach()</code> loop.  </p>
+
+<p>Here is a unit test you can use that will mock the <code>IProductsRepository</code> interface using <a href="http://code.google.com/p/moq/">Moq</a>. </p>
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="na">[TestClass]</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">BizProductsTests</span>
+<span class="p">{</span>
+
+    <span class="p">[</span><span class="n">TestMethod</span><span class="p">]</span>
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">TestList</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">Mock</span><span class="p">&lt;</span><span class="n">IProductsRepository</span><span class="p">&gt;</span> <span class="n">repository</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Mock</span><span class="p">&lt;</span><span class="n">IProductsRepository</span><span class="p">&gt;();</span>
+        <span class="n">repository</span><span class="p">.</span><span class="nf">Expect</span><span class="p">(</span><span class="n">d</span> <span class="p">=&gt;</span> <span class="n">d</span><span class="p">.</span><span class="nf">GetEnumerator</span><span class="p">()).</span><span class="nf">Returns</span><span class="p">(</span><span class="nf">ProductList</span><span class="p">());</span>
+
+        <span class="n">BizProducts</span> <span class="n">biz</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">BizProducts</span><span class="p">(</span><span class="n">repository</span><span class="p">.</span><span class="n">Object</span><span class="p">);</span>
+
+        <span class="kt">string</span> <span class="n">s</span> <span class="p">=</span> <span class="n">biz</span><span class="p">.</span><span class="nf">List</span><span class="p">();</span>
+        <span class="n">Assert</span><span class="p">.</span><span class="nf">AreEqual</span><span class="p">(</span><span class="s">"First Product\r\nSecond Product\r\n"</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="n">IEnumerator</span><span class="p">&lt;</span><span class="n">Product</span><span class="p">&gt;</span> <span class="nf">ProductList</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">yield</span> <span class="k">return</span> <span class="k">new</span> <span class="nf">Product</span><span class="p">()</span> <span class="p">{</span> <span class="n">ProductID</span> <span class="p">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">ProductName</span> <span class="p">=</span> <span class="s">"First Product"</span> <span class="p">};</span>
+        <span class="k">yield</span> <span class="k">return</span> <span class="k">new</span> <span class="nf">Product</span><span class="p">()</span> <span class="p">{</span> <span class="n">ProductID</span> <span class="p">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">ProductName</span> <span class="p">=</span> <span class="s">"Second Product"</span> <span class="p">};</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Line 7 sets up the expectation that the <code>GetEnumerator()</code> method should return the <code>IEnumerator&lt;Product&gt;</code> returned by the <code>ProductList()</code> method. It turns out one of the easiest ways to get your hands on an enumerator is with the lovely <a href="/2008/05/keyword.html">yield</a> statement. Better yet since it comes out of a method, you could set this list of products up once and use it through all appropriate unit tests.</p>
+
+<p>Another option not shown here is by using a generic collection such as <code>List&lt;Product&gt;</code> to store your products, and then return its <code>GetEnumerator()</code>, make sure you use a collection from <code>System.Collections.Generic</code> though, older collections will not implement the generic <code>IEnumerable&lt;&gt;</code> interface.</p>
+
+<p>I prefer the <code>yield</code> method as it is simpler to set up and keeps the actual unit test code shorter, but if you need to inspect the underlying objects afterwards or prefer to keep the code all in one place than the <code>List&lt;&gt;</code> option would be the way to go.  </p>
+
+    </section>
+</article>
+
+
+  <footer class="m-f">
+      <section class="copyright">All content copyright <a href="/">Chris Sainty</a> &copy; 2006-2017 &bull; All rights reserved.</section>
+  </footer>
+</body>
+</html>

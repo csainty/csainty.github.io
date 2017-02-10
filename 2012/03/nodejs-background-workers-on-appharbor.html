@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <style>
+    html,body,li,p{margin:0;padding:0}p,ul,ol,.highlight{margin:1.6em 0}h1,h2,h3,h4{margin:0;padding:0;font-size:100%;font-weight:bold;text-rendering:optimizeLegibility;font-family:sans-serif}ul{list-style:none}html{box-sizing:border-box;font-size:62.5%}*{box-sizing:inherit}*:before,*:after{box-sizing:inherit}img{height:auto;max-width:100%}pre,code{font-family:monospace;margin:0}hr{display:block;height:1px;border:0;border-top:1px solid #efefef;margin:1rem 0;padding:0}blockquote{font-style:italic;margin:1.6em 0 1.6em -2.2em;padding:0 0 0 1.6em;border-left:#4a4a4a 0.4em solid}html{font-size:16px}@media screen and (min-width: 900px){html{font-size:18px}}@media screen and (min-width: 1200px){html{font-size:20px}}body{font-family:serif;color:#3A4145}h1{font-size:2rem;margin:10px 0 10px 0;letter-spacing:-1px}h2{font-size:1.4rem;letter-spacing:-1px}h3{font-size:1.2rem}h4{font-size:1.1rem}a:link,a:visited{color:inherit;text-decoration:none}a:hover{color:#57A3E8;transition:color ease 0.3s}p a:link,p a:visited{text-decoration:underline}pre{border:1px solid #E3EDF3;padding:10px;font-size:0.85em;border-radius:3px}code{padding:1px 3px;font-size:0.85em;white-space:pre;border:1px solid #E3EDF3;background:#F7FAFB;border-radius:2px}pre code{background:transparent;padding:0;border:0}.m-h{text-align:center;background-color:#303538;color:#fff;padding:1rem}.m-h h2{font-weight:normal;font-size:1.5rem}article{width:80%;margin:1rem auto;padding-bottom:1rem;border-bottom:#EBF2F6 1px solid;word-break:break-word;position:relative}article::after{display:block;content:"";width:7px;height:7px;border:#E7EEF2 1px solid;position:absolute;bottom:-5px;left:50%;margin-left:-5px;background:#fff;border-radius:100%;box-shadow:#fff 0 0 0 5px}.a-m{color:#9EABB3;font-size:0.8rem}.a-m a:hover{color:#9EABB3;text-decoration:underline}.a-h{margin-bottom:5px}.r-m{font-size:smaller}nav{position:relative;width:75%;margin:1rem auto;font-size:0.8rem;color:#9EABB3;text-align:center}.m-f{position:relative;margin:2rem 0 0 0;padding:1rem 1rem 2rem 1rem;border-top:#EBF2F6 1px solid;font-size:0.8rem;line-height:1.7em;color:#BBC7CC;text-align:center;background:#F7FAFB}.o-p,.n-p{position:absolute;display:inline-block;padding:0 0.5rem;border:#EBF2F6 2px solid;text-decoration:none;border-radius:30px;transition:border ease 0.3s}.o-p{right:0}.n-p{left:0}.t-h{width:80%;margin:0 auto}.highlight pre{background-color:#49483e;color:white;overflow:scroll}.ge{font-style:italic}.gs{font-weight:bold}.c,.cm,.cp,.c1,.gu,.cs{color:#75715e}.k,.kc,.kd,.kp,.kr,.no,.kt{color:#66d9ef}.l,.mf,.mh,.mi,.mo,.se,.il,.m{color:#ae81ff}.n,.nb,.ni,.nl,.nn,.py,.nv,.w,.bp,.vc,.vg,.vi,.p{color:#f8f8f2}.o,.nt,.ow,.gd,.kn{color:#f92672}.ld,.sb,.sc,.sd,.s2,.sh,.si,.sx,.sr,.s1,.ss,.s{color:#e6db74}.na,.nc,.nd,.ne,.nf,.nx,.gi{color:#a6e22e}
+
+    </style>
+
+    <!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>Node.js Background Workers on AppHarbor - Chris Sainty</title>
+<meta property="og:title" content="Node.js Background Workers on AppHarbor" />
+<meta name="description" content="Today AppHarbor announced beta support for Background Workers, I have been eagerly awaiting this announcement as it is something I need all the time when hosting sites.  " />
+<meta property="og:description" content="Today AppHarbor announced beta support for Background Workers, I have been eagerly awaiting this announcement as it is something I need all the time when hosting sites.  " />
+<link rel="canonical" href="https://blog.csainty.com/2012/03/nodejs-background-workers-on-appharbor.html" />
+<meta property="og:url" content="https://blog.csainty.com/2012/03/nodejs-background-workers-on-appharbor.html" />
+<meta property="og:site_name" content="Chris Sainty" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2012-03-09T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@csainty" />
+<meta name="twitter:creator" content="@Chris Sainty" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Node.js Background Workers on AppHarbor",
+    "datePublished": "2012-03-09T00:00:00+00:00",
+    "description": "Today AppHarbor announced beta support for Background Workers, I have been eagerly awaiting this announcement as it is something I need all the time when hosting sites.  ",
+    "url": "https://blog.csainty.com/2012/03/nodejs-background-workers-on-appharbor.html"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+</head>
+<body>
+  <header class="m-h">
+    <h1><a href="https://blog.csainty.com">Chris Sainty</a></h1>
+    <h2>A technical blog covering full-stack web development.</h2>
+    <h2><a href="https://twitter.com/csainty" rel="external">twitter</a> | <a href="https://github.com/csainty" rel="external">github</a> | <a href="https://stackoverflow.com/users/625695/chris-sainty" rel="external">stackoverflow</a></h2>
+  </header>
+
+  <article>
+    <span><time datetime="09 Mar 2012">09 Mar 2012</time>  </span>
+    <h1>Node.js Background Workers on AppHarbor</h1>
+    <section>
+        <p>Today AppHarbor <a href="http://blog.appharbor.com/2012/03/08/background-workers-in-beta">announced</a> beta support for Background Workers, I have been eagerly awaiting this announcement as it is something I need all the time when hosting sites.  </p>
+
+<!-- more -->
+
+<p>Background Workers are simply <code>.exe</code> files that the server now knows to look for and run if you have a worker assigned to background tasks in your subscription. It should be noted that if you are using the free single worker plan, then you can not run both a web and background worker. You do have the option to run a web OR a background worker though. So you can still try these out on your free account.<br>
+It should also be noted that trying to run two free accounts (one for web, one for background) that are servicing the same site is against the terms of service.  </p>
+
+<p>As people who follow my blog probably know, I am right into Node at the moment. So straight away I set about getting a background worker up that can run node for me instead of C#.  </p>
+
+<p>It was rather easy in the end, a simple wrapper that launches a node.exe process. You can grab the code from <a href="https://github.com/csainty/NodeWorker">https://github.com/csainty/NodeWorker</a>.<br>
+You don’t even need Visual Studio installed or Windows, you push the source code to AppHarbor and they build it for you!  </p>
+
+<p>The demo app I used for testing is also available, it simply logs entries off to <a href="http://logentries.com/">logentries</a> (a free, one click install, addon from AppHarbor) so I can see if it is working. That code is at <a href="https://github.com/csainty/NodeWorkerDemo">https://github.com/csainty/NodeWorkerDemo</a>.  </p>
+
+<p>So how does it work?  </p>
+
+<p>First you need to clone down the project from GitHub.  </p>
+
+<p>Then you need to add your node.js code into the app folder. The assumed entry point is <code>app/index.js</code>, but you can quickly point it elsewhere and add extra parameters to the node process if needed.   See <a href="https://github.com/csainty/NodeWorkerDemo/blob/master/NodeWorkerRunner/Program.cs#L19">https://github.com/csainty/NodeWorkerDemo/blob/master/NodeWorkerRunner/Program.cs#L19</a>  </p>
+
+<p>Finally make sure your <code>node_modules</code> folder is in the commit (AppHarbor does not run npm for you yet) and that all the files are being copied into the build folder and you are done.   If you are unsure, check the build output on AppHarbor for lines like the following  </p>
+<div class="highlight"><pre><code class="language-" data-lang="">_CopyOutOfDateSourceItemsToOutputDirectoryAlways:
+  Creating directory "D:\temp\vxyr2fjf.bf2\output\app\node_modules\node-logentries".
+  Copying file from "D:\temp\vxyr2fjf.bf2\input\NodeWorkerRunner\app\node_modules\node-logentries\package.json" to "D:\temp\vxyr2fjf.bf2\output\app\node_modules\node-logentries\package.json".
+  Copying file from "D:\temp\vxyr2fjf.bf2\input\NodeWorkerRunner\app\node_modules\node-logentries\README.md" to "D:\temp\vxyr2fjf.bf2\output\app\node_modules\node-logentries\README.md".
+  Copying file from "D:\temp\vxyr2fjf.bf2\input\NodeWorkerRunner\app\index.js" to "D:\temp\vxyr2fjf.bf2\output\app\index.js".
+  Creating directory "D:\temp\vxyr2fjf.bf2\output\app\node_modules\node-logentries\lib".
+  Copying file from "D:\temp\vxyr2fjf.bf2\input\NodeWorkerRunner\app\node_modules\node-logentries\lib\logentries.js" to "D:\temp\vxyr2fjf.bf2\output\app\node_modules\node-logentries\lib\logentries.js".
+</code></pre></div>
+<p>Now push the whole project up to AppHarbor where it will be built and start running straight away.  </p>
+
+<p>The lifetime of a background worker is controlled by the exit code from your application. The wrapper will pass the exit code from your node process back out to AppHarbor, putting node in control. There are currently two supported values</p>
+
+<ul>
+<li>Exit Code: 0 – Stop running the worker until the next deploy is performed</li>
+<li>Anything else – Start the worker again immediately<br></li>
+</ul>
+
+<p>If you take a look <a href="https://github.com/csainty/NodeWorkerDemo/blob/master/NodeWorkerRunner/Program.cs#L40">here</a> you will see I chose to return 0 if there was a problem launching the node process. Meaning it will stop attempting to run your process. If this is not what you want, then you should change this value to be non-zero.  </p>
+
+<p>Finally similar to iisnode, all your <code>&lt;appSettings /&gt;</code> are added as environment variables when launching the node process which makes them available on process.env. Just like if you are hosting a node site on AppHarbor.  </p>
+
+    </section>
+</article>
+
+
+  <footer class="m-f">
+      <section class="copyright">All content copyright <a href="/">Chris Sainty</a> &copy; 2006-2017 &bull; All rights reserved.</section>
+  </footer>
+</body>
+</html>

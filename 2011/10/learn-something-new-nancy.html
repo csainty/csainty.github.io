@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <style>
+    html,body,li,p{margin:0;padding:0}p,ul,ol,.highlight{margin:1.6em 0}h1,h2,h3,h4{margin:0;padding:0;font-size:100%;font-weight:bold;text-rendering:optimizeLegibility;font-family:sans-serif}ul{list-style:none}html{box-sizing:border-box;font-size:62.5%}*{box-sizing:inherit}*:before,*:after{box-sizing:inherit}img{height:auto;max-width:100%}pre,code{font-family:monospace;margin:0}hr{display:block;height:1px;border:0;border-top:1px solid #efefef;margin:1rem 0;padding:0}blockquote{font-style:italic;margin:1.6em 0 1.6em -2.2em;padding:0 0 0 1.6em;border-left:#4a4a4a 0.4em solid}html{font-size:16px}@media screen and (min-width: 900px){html{font-size:18px}}@media screen and (min-width: 1200px){html{font-size:20px}}body{font-family:serif;color:#3A4145}h1{font-size:2rem;margin:10px 0 10px 0;letter-spacing:-1px}h2{font-size:1.4rem;letter-spacing:-1px}h3{font-size:1.2rem}h4{font-size:1.1rem}a:link,a:visited{color:inherit;text-decoration:none}a:hover{color:#57A3E8;transition:color ease 0.3s}p a:link,p a:visited{text-decoration:underline}pre{border:1px solid #E3EDF3;padding:10px;font-size:0.85em;border-radius:3px}code{padding:1px 3px;font-size:0.85em;white-space:pre;border:1px solid #E3EDF3;background:#F7FAFB;border-radius:2px}pre code{background:transparent;padding:0;border:0}.m-h{text-align:center;background-color:#303538;color:#fff;padding:1rem}.m-h h2{font-weight:normal;font-size:1.5rem}article{width:80%;margin:1rem auto;padding-bottom:1rem;border-bottom:#EBF2F6 1px solid;word-break:break-word;position:relative}article::after{display:block;content:"";width:7px;height:7px;border:#E7EEF2 1px solid;position:absolute;bottom:-5px;left:50%;margin-left:-5px;background:#fff;border-radius:100%;box-shadow:#fff 0 0 0 5px}.a-m{color:#9EABB3;font-size:0.8rem}.a-m a:hover{color:#9EABB3;text-decoration:underline}.a-h{margin-bottom:5px}.r-m{font-size:smaller}nav{position:relative;width:75%;margin:1rem auto;font-size:0.8rem;color:#9EABB3;text-align:center}.m-f{position:relative;margin:2rem 0 0 0;padding:1rem 1rem 2rem 1rem;border-top:#EBF2F6 1px solid;font-size:0.8rem;line-height:1.7em;color:#BBC7CC;text-align:center;background:#F7FAFB}.o-p,.n-p{position:absolute;display:inline-block;padding:0 0.5rem;border:#EBF2F6 2px solid;text-decoration:none;border-radius:30px;transition:border ease 0.3s}.o-p{right:0}.n-p{left:0}.t-h{width:80%;margin:0 auto}.highlight pre{background-color:#49483e;color:white;overflow:scroll}.ge{font-style:italic}.gs{font-weight:bold}.c,.cm,.cp,.c1,.gu,.cs{color:#75715e}.k,.kc,.kd,.kp,.kr,.no,.kt{color:#66d9ef}.l,.mf,.mh,.mi,.mo,.se,.il,.m{color:#ae81ff}.n,.nb,.ni,.nl,.nn,.py,.nv,.w,.bp,.vc,.vg,.vi,.p{color:#f8f8f2}.o,.nt,.ow,.gd,.kn{color:#f92672}.ld,.sb,.sc,.sd,.s2,.sh,.si,.sx,.sr,.s1,.ss,.s{color:#e6db74}.na,.nc,.nd,.ne,.nf,.nx,.gi{color:#a6e22e}
+
+    </style>
+
+    <!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>Learn Something New: Nancy - Chris Sainty</title>
+<meta property="og:title" content="Learn Something New: Nancy" />
+<meta name="description" content="Today my toolset of choice for a quick learning session is Nancy. Reading straight from the boxNancy is a lightweight, low-ceremony, framework for building HTTP based services on .Net and Mono. The goal of the framework is to stay out of the way as much as possible and provide a super-duper-happy-path to all interactions.Got that? Think of it as a replacement for WebForms or ASP.NET MVC." />
+<meta property="og:description" content="Today my toolset of choice for a quick learning session is Nancy. Reading straight from the boxNancy is a lightweight, low-ceremony, framework for building HTTP based services on .Net and Mono. The goal of the framework is to stay out of the way as much as possible and provide a super-duper-happy-path to all interactions.Got that? Think of it as a replacement for WebForms or ASP.NET MVC." />
+<link rel="canonical" href="https://blog.csainty.com/2011/10/learn-something-new-nancy.html" />
+<meta property="og:url" content="https://blog.csainty.com/2011/10/learn-something-new-nancy.html" />
+<meta property="og:site_name" content="Chris Sainty" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2011-10-10T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@csainty" />
+<meta name="twitter:creator" content="@Chris Sainty" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Learn Something New: Nancy",
+    "datePublished": "2011-10-10T00:00:00+00:00",
+    "description": "Today my toolset of choice for a quick learning session is Nancy. Reading straight from the boxNancy is a lightweight, low-ceremony, framework for building HTTP based services on .Net and Mono. The goal of the framework is to stay out of the way as much as possible and provide a super-duper-happy-path to all interactions.Got that? Think of it as a replacement for WebForms or ASP.NET MVC.",
+    "url": "https://blog.csainty.com/2011/10/learn-something-new-nancy.html"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+</head>
+<body>
+  <header class="m-h">
+    <h1><a href="https://blog.csainty.com">Chris Sainty</a></h1>
+    <h2>A technical blog covering full-stack web development.</h2>
+    <h2><a href="https://twitter.com/csainty" rel="external">twitter</a> | <a href="https://github.com/csainty" rel="external">github</a> | <a href="https://stackoverflow.com/users/625695/chris-sainty" rel="external">stackoverflow</a></h2>
+  </header>
+
+  <article>
+    <span><time datetime="10 Oct 2011">10 Oct 2011</time>  </span>
+    <h1>Learn Something New&#58; Nancy</h1>
+    <section>
+        <p>Today my toolset of choice for a quick learning session is Nancy. </p>
+
+<p>Reading straight from the box</p>
+
+<blockquote>
+<p>Nancy is a lightweight, low-ceremony, framework for building HTTP based services on .Net and Mono. The goal of the framework is to stay out of the way as much as possible and provide a super-duper-happy-path to all interactions.</p>
+</blockquote>
+
+<p>Got that? Think of it as a replacement for WebForms or ASP.NET MVC.</p>
+
+<!-- more -->
+
+<p>Nancy is available on <a href="http://nuget.org/List/Packages/Nancy">NuGet</a> or on <a href="https://github.com/NancyFx/Nancy">GitHub</a> if you want the source and docs. The docs are well worth a look over, and you are bound to need the aid of a sample project as you find your feet. Having said that, it is really quite simple so you should be up to speed in no time.</p>
+
+<p>These posts are not supposed to be walkthroughs, so I won’t go into detail getting you started other than to say that you start with an “ASP.NET Empty Web Application”, add the Nancy bits from NuGet (grab the <a href="http://nuget.org/List/Packages/Nancy.Hosting.Aspnet">AspNet</a> hosting package and <a href="http://nuget.org/List/Packages/Nancy.Viewengines.Razor">Razor view engine</a> as well for simplicity), create a subclass of <code>NancyModule</code> and away you go.</p>
+
+<p>You can see my demo live at <a href="http://nancydemo-1.apphb.com/">http://nancydemo-1.apphb.com/</a> and grab the source from <a href="https://github.com/csainty/NancyDemo">https://github.com/csainty/NancyDemo</a>.</p>
+
+<p>Where I think Nancy really shines is writing an API / REST service. As the box says, there is so little ceremony that you never feel like you are fighting the framework to perform simple tasks. Even in ASP.NET MVC I find this sort of thing a little clunky feeling. As for WebForms, I did my best to avoid them altogether.</p>
+
+<p>My sample site performs the simple task of allowing the user to type in a message, saving it away and displaying it to other users on the site. All this is handled with a single page and some javascript. Using <a href="/2011/10/learn-something-new-knockout-js.html">Knockout</a> JS again.</p>
+
+<p>The interesting code in this project mainly lies in the Modules.
+First we have a <code>PageModule</code>, which is serving requests for regular pages.</p>
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">class</span> <span class="nc">PageModule</span> <span class="p">:</span> <span class="n">NancyModule</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="nf">PageModule</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Get</span><span class="p">[</span><span class="s">"/"</span><span class="p">]</span> <span class="p">=</span> <span class="n">p</span> <span class="p">=&gt;</span> <span class="n">View</span><span class="p">[</span><span class="s">"Default"</span><span class="p">];</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>It really is as simple as that to catch requests to <code>/</code> and serve up a view in response.</p>
+
+<p>Second we have the <code>ApiModule</code>, which is handling the API requests being made by AJAX.</p>
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">class</span> <span class="nc">ApiModule</span> <span class="p">:</span> <span class="n">NancyModule</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="k">readonly</span> <span class="n">IDataStore</span> <span class="n">_Data</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="nf">ApiModule</span><span class="p">(</span><span class="n">IDataStore</span> <span class="n">data</span><span class="p">)</span> <span class="p">:</span> <span class="k">base</span><span class="p">(</span><span class="s">"/api"</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">_Data</span> <span class="p">=</span> <span class="n">data</span><span class="p">;</span>
+
+        <span class="n">Get</span><span class="p">[</span><span class="s">"/messages/list"</span><span class="p">]</span> <span class="p">=</span> <span class="n">p</span> <span class="p">=&gt;</span> <span class="n">Response</span><span class="p">.</span><span class="nf">AsJson</span><span class="p">(</span><span class="n">_Data</span><span class="p">.</span><span class="nf">GetMessages</span><span class="p">());</span>
+
+        <span class="n">Post</span><span class="p">[</span><span class="s">"/messages/save"</span><span class="p">]</span> <span class="p">=</span> <span class="n">p</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="n">_Data</span><span class="p">.</span><span class="nf">AddMessage</span><span class="p">(</span><span class="n">Request</span><span class="p">.</span><span class="n">Form</span><span class="p">[</span><span class="s">"Message"</span><span class="p">]);</span> <span class="k">return</span> <span class="s">"OK!"</span><span class="p">;</span> <span class="p">};</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Again, you can see that is very simple.</p>
+
+<p>To demonstrate Dependency Injection using Ninject, there is a simple data store interface and an in memory implementation.</p>
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">class</span> <span class="nc">CustomBootstrapper</span> <span class="p">:</span> <span class="n">NinjectNancyBootstrapper</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">InitialiseInternal</span><span class="p">(</span><span class="n">IKernel</span> <span class="n">container</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">base</span><span class="p">.</span><span class="nf">InitialiseInternal</span><span class="p">(</span><span class="n">container</span><span class="p">);</span>
+        <span class="n">container</span><span class="p">.</span><span class="n">Bind</span><span class="p">&lt;</span><span class="n">IDataStore</span><span class="p">&gt;().</span><span class="n">To</span><span class="p">&lt;</span><span class="n">InMemoryDataStore</span><span class="p">&gt;().</span><span class="nf">InSingletonScope</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Here we are subclassing the Ninject bootstrapper, there are other implementations, and adding in the bindings we need.</p>
+
+<p>Of course I have barely scratched the surface here on a very intriguing project. I am hoping to put it to real use in something very soon.</p>
+
+<h4>Tools and Services Used</h4>
+
+<p><a href="http://knockoutjs.com/">Knockout JS</a><br>
+<a href="https://github.com/NancyFx/Nancy">Nancy</a><br>
+<a href="https://appharbor.com/">AppHarbor</a><br>
+<a href="http://jquery.com/">jQuery</a>  </p>
+
+    </section>
+</article>
+
+
+  <footer class="m-f">
+      <section class="copyright">All content copyright <a href="/">Chris Sainty</a> &copy; 2006-2017 &bull; All rights reserved.</section>
+  </footer>
+</body>
+</html>

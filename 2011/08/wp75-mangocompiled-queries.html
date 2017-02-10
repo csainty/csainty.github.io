@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <style>
+    html,body,li,p{margin:0;padding:0}p,ul,ol,.highlight{margin:1.6em 0}h1,h2,h3,h4{margin:0;padding:0;font-size:100%;font-weight:bold;text-rendering:optimizeLegibility;font-family:sans-serif}ul{list-style:none}html{box-sizing:border-box;font-size:62.5%}*{box-sizing:inherit}*:before,*:after{box-sizing:inherit}img{height:auto;max-width:100%}pre,code{font-family:monospace;margin:0}hr{display:block;height:1px;border:0;border-top:1px solid #efefef;margin:1rem 0;padding:0}blockquote{font-style:italic;margin:1.6em 0 1.6em -2.2em;padding:0 0 0 1.6em;border-left:#4a4a4a 0.4em solid}html{font-size:16px}@media screen and (min-width: 900px){html{font-size:18px}}@media screen and (min-width: 1200px){html{font-size:20px}}body{font-family:serif;color:#3A4145}h1{font-size:2rem;margin:10px 0 10px 0;letter-spacing:-1px}h2{font-size:1.4rem;letter-spacing:-1px}h3{font-size:1.2rem}h4{font-size:1.1rem}a:link,a:visited{color:inherit;text-decoration:none}a:hover{color:#57A3E8;transition:color ease 0.3s}p a:link,p a:visited{text-decoration:underline}pre{border:1px solid #E3EDF3;padding:10px;font-size:0.85em;border-radius:3px}code{padding:1px 3px;font-size:0.85em;white-space:pre;border:1px solid #E3EDF3;background:#F7FAFB;border-radius:2px}pre code{background:transparent;padding:0;border:0}.m-h{text-align:center;background-color:#303538;color:#fff;padding:1rem}.m-h h2{font-weight:normal;font-size:1.5rem}article{width:80%;margin:1rem auto;padding-bottom:1rem;border-bottom:#EBF2F6 1px solid;word-break:break-word;position:relative}article::after{display:block;content:"";width:7px;height:7px;border:#E7EEF2 1px solid;position:absolute;bottom:-5px;left:50%;margin-left:-5px;background:#fff;border-radius:100%;box-shadow:#fff 0 0 0 5px}.a-m{color:#9EABB3;font-size:0.8rem}.a-m a:hover{color:#9EABB3;text-decoration:underline}.a-h{margin-bottom:5px}.r-m{font-size:smaller}nav{position:relative;width:75%;margin:1rem auto;font-size:0.8rem;color:#9EABB3;text-align:center}.m-f{position:relative;margin:2rem 0 0 0;padding:1rem 1rem 2rem 1rem;border-top:#EBF2F6 1px solid;font-size:0.8rem;line-height:1.7em;color:#BBC7CC;text-align:center;background:#F7FAFB}.o-p,.n-p{position:absolute;display:inline-block;padding:0 0.5rem;border:#EBF2F6 2px solid;text-decoration:none;border-radius:30px;transition:border ease 0.3s}.o-p{right:0}.n-p{left:0}.t-h{width:80%;margin:0 auto}.highlight pre{background-color:#49483e;color:white;overflow:scroll}.ge{font-style:italic}.gs{font-weight:bold}.c,.cm,.cp,.c1,.gu,.cs{color:#75715e}.k,.kc,.kd,.kp,.kr,.no,.kt{color:#66d9ef}.l,.mf,.mh,.mi,.mo,.se,.il,.m{color:#ae81ff}.n,.nb,.ni,.nl,.nn,.py,.nv,.w,.bp,.vc,.vg,.vi,.p{color:#f8f8f2}.o,.nt,.ow,.gd,.kn{color:#f92672}.ld,.sb,.sc,.sd,.s2,.sh,.si,.sx,.sr,.s1,.ss,.s{color:#e6db74}.na,.nc,.nd,.ne,.nf,.nx,.gi{color:#a6e22e}
+
+    </style>
+
+    <!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>WP7.5 Mango–Compiled Queries - Chris Sainty</title>
+<meta property="og:title" content="WP7.5 Mango–Compiled Queries" />
+<meta name="description" content="Over the last few weeks I have been doing a complete rewrite of gReadie, my Google Reader client for Windows Phone 7.  The original codebase for gReadie was really quite cluttered, and I wasn’t going to be able to take advantage of the new features Mango enables without pulling it all out and starting again.  With most of the rewrite behind me now, It is time to start putting together a few blog posts discussing the new features I am using and lessons learnt along the way.  " />
+<meta property="og:description" content="Over the last few weeks I have been doing a complete rewrite of gReadie, my Google Reader client for Windows Phone 7.  The original codebase for gReadie was really quite cluttered, and I wasn’t going to be able to take advantage of the new features Mango enables without pulling it all out and starting again.  With most of the rewrite behind me now, It is time to start putting together a few blog posts discussing the new features I am using and lessons learnt along the way.  " />
+<link rel="canonical" href="https://blog.csainty.com/2011/08/wp75-mangocompiled-queries.html" />
+<meta property="og:url" content="https://blog.csainty.com/2011/08/wp75-mangocompiled-queries.html" />
+<meta property="og:site_name" content="Chris Sainty" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2011-08-17T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@csainty" />
+<meta name="twitter:creator" content="@Chris Sainty" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "WP7.5 Mango–Compiled Queries",
+    "datePublished": "2011-08-17T00:00:00+00:00",
+    "description": "Over the last few weeks I have been doing a complete rewrite of gReadie, my Google Reader client for Windows Phone 7.  The original codebase for gReadie was really quite cluttered, and I wasn’t going to be able to take advantage of the new features Mango enables without pulling it all out and starting again.  With most of the rewrite behind me now, It is time to start putting together a few blog posts discussing the new features I am using and lessons learnt along the way.  ",
+    "url": "https://blog.csainty.com/2011/08/wp75-mangocompiled-queries.html"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+</head>
+<body>
+  <header class="m-h">
+    <h1><a href="https://blog.csainty.com">Chris Sainty</a></h1>
+    <h2>A technical blog covering full-stack web development.</h2>
+    <h2><a href="https://twitter.com/csainty" rel="external">twitter</a> | <a href="https://github.com/csainty" rel="external">github</a> | <a href="https://stackoverflow.com/users/625695/chris-sainty" rel="external">stackoverflow</a></h2>
+  </header>
+
+  <article>
+    <span><time datetime="17 Aug 2011">17 Aug 2011</time>  </span>
+    <h1>WP7.5 Mango–Compiled Queries</h1>
+    <section>
+        <p>Over the last few weeks I have been doing a complete rewrite of <a href="http://www.quidsmobile.com/greadie-v2-beta/">gReadie</a>, my Google Reader client for Windows Phone 7.  </p>
+
+<p>The original codebase for gReadie was really quite cluttered, and I wasn’t going to be able to take advantage of the new features Mango enables without pulling it all out and starting again.  </p>
+
+<p>With most of the rewrite behind me now, It is time to start putting together a few blog posts discussing the new features I am using and lessons learnt along the way.  </p>
+
+<!-- more -->
+
+<p>One of the features I was most looking forward to in the 7.5 release of the phone is developer access to the underling SQL CE database. Access is provided through LINQ-to-SQL, which I have covered in <a href="http://blog.csainty.com/tag/linqtosql.html">detail</a> previously. What I want to focus on today is improving the performance of your queries by compiling them and caching that result.  </p>
+
+<p>This post assumes you already have your <code>DataContext</code> created and working queries, if you do not, then please start by reading some of the Microsoft tutorials.  </p>
+
+<p>When you make a query with LINQ-to-SQL, the LINQ provider has to examine your LINQ expression and turn it into SQL, this process is done on every query. However, if you have a query you know you are going to call multiple times then you can run this process once, saving a parameterized result and avoid having to do this step on subsequent calls.  </p>
+
+<p>You define and call a Compiled Query like so  </p>
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">class</span> <span class="nc">Repository</span> <span class="p">{</span>
+    <span class="k">private</span> <span class="n">gReadieModelContext</span> <span class="n">_Ctx</span> <span class="p">=</span> <span class="n">gReadieModelContext</span><span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="n">gReadieModelContext</span><span class="p">.</span><span class="n">ConnectionString</span><span class="p">);</span>
+
+    <span class="k">public</span> <span class="n">Func</span><span class="p">&lt;</span><span class="n">gReadieModelContext</span><span class="p">,</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">Folder</span><span class="p">&gt;&gt;</span> <span class="n">Query_FoldersWithUnreadPosts</span> <span class="p">=</span> 
+        <span class="n">CompiledQuery</span><span class="p">.</span><span class="nf">Compile</span><span class="p">((</span><span class="n">gReadieModelContext</span> <span class="n">db</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">db</span><span class="p">.</span><span class="n">Folders</span><span class="p">.</span><span class="nf">Where</span><span class="p">(</span><span class="n">d</span> <span class="p">=&gt;</span> <span class="n">d</span><span class="p">.</span><span class="n">UnreadCount</span> <span class="p">!=</span> <span class="m">0</span><span class="p">).</span><span class="nf">AsEnumerable</span><span class="p">());</span>
+
+    <span class="k">public</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">Folder</span><span class="p">&gt;</span> <span class="nf">GetFoldersWithUnreadPosts</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span>  <span class="nf">Query_FoldersWithUnread</span><span class="p">(</span><span class="n">_Ctx</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></div>
+<p>The first step is to define a delegate that at the very least takes an instance of your <code>DataContext</code> as a parameter (though you can define more) and also defines the result type.  </p>
+
+<p>You then use the <code>CompiledQuery.Compile()</code> method to provide the body for this delegate. The compilation does not happen until your first call, so don’t worry about setting up a lot of these.  </p>
+
+<p>One thing to note is that you can only re-run a compiled query against the same <code>DataContext</code> instance it was compiled against. So you need to ensure they have the same lifespan, and that you are not needlessly recreating your <code>DataContext</code> if you want to run multiple queries.  </p>
+
+<p>From my experience with Background Agents this method also uses less memory than rerunning the compilation each call.  </p>
+
+<p>One final code snippet to show an example with a parameter  </p>
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">class</span> <span class="nc">Repository</span> <span class="p">{</span>
+    <span class="k">private</span> <span class="n">gReadieModelContext</span> <span class="n">_Ctx</span> <span class="p">=</span> <span class="n">gReadieModelContext</span><span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="n">gReadieModelContext</span><span class="p">.</span><span class="n">ConnectionString</span><span class="p">);</span>
+
+    <span class="k">public</span> <span class="n">Func</span><span class="p">&lt;</span><span class="n">gReadieModelContext</span><span class="p">,</span> <span class="kt">string</span><span class="p">,</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">Folder</span><span class="p">&gt;&gt;</span> <span class="n">Query_FoldersContainingPost</span> <span class="p">=</span> 
+        <span class="n">CompiledQuery</span><span class="p">.</span><span class="nf">Compile</span><span class="p">((</span><span class="n">gReadieModelContext</span> <span class="n">db</span><span class="p">,</span> <span class="kt">string</span> <span class="n">postId</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">db</span><span class="p">.</span><span class="n">Folders</span><span class="p">.</span><span class="nf">Where</span><span class="p">(</span><span class="n">d</span> <span class="p">=&gt;</span> <span class="n">d</span><span class="p">.</span><span class="n">Posts</span><span class="p">.</span><span class="nf">Any</span><span class="p">(</span><span class="n">e</span> <span class="p">=&gt;</span> <span class="n">e</span><span class="p">.</span><span class="n">PostId</span> <span class="p">==</span> <span class="n">postId</span><span class="p">)).</span><span class="nf">AsEnumerable</span><span class="p">());</span>
+
+    <span class="k">public</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">Folder</span><span class="p">&gt;</span> <span class="nf">GetFoldersContainingPost</span><span class="p">(</span><span class="kt">string</span> <span class="n">postId</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span>  <span class="nf">Query_FoldersContainingPost</span><span class="p">(</span><span class="n">_Ctx</span><span class="p">,</span> <span class="n">postId</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+    </section>
+</article>
+
+
+  <footer class="m-f">
+      <section class="copyright">All content copyright <a href="/">Chris Sainty</a> &copy; 2006-2017 &bull; All rights reserved.</section>
+  </footer>
+</body>
+</html>

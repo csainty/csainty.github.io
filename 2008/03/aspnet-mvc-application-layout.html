@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <style>
+    html,body,li,p{margin:0;padding:0}p,ul,ol,.highlight{margin:1.6em 0}h1,h2,h3,h4{margin:0;padding:0;font-size:100%;font-weight:bold;text-rendering:optimizeLegibility;font-family:sans-serif}ul{list-style:none}html{box-sizing:border-box;font-size:62.5%}*{box-sizing:inherit}*:before,*:after{box-sizing:inherit}img{height:auto;max-width:100%}pre,code{font-family:monospace;margin:0}hr{display:block;height:1px;border:0;border-top:1px solid #efefef;margin:1rem 0;padding:0}blockquote{font-style:italic;margin:1.6em 0 1.6em -2.2em;padding:0 0 0 1.6em;border-left:#4a4a4a 0.4em solid}html{font-size:16px}@media screen and (min-width: 900px){html{font-size:18px}}@media screen and (min-width: 1200px){html{font-size:20px}}body{font-family:serif;color:#3A4145}h1{font-size:2rem;margin:10px 0 10px 0;letter-spacing:-1px}h2{font-size:1.4rem;letter-spacing:-1px}h3{font-size:1.2rem}h4{font-size:1.1rem}a:link,a:visited{color:inherit;text-decoration:none}a:hover{color:#57A3E8;transition:color ease 0.3s}p a:link,p a:visited{text-decoration:underline}pre{border:1px solid #E3EDF3;padding:10px;font-size:0.85em;border-radius:3px}code{padding:1px 3px;font-size:0.85em;white-space:pre;border:1px solid #E3EDF3;background:#F7FAFB;border-radius:2px}pre code{background:transparent;padding:0;border:0}.m-h{text-align:center;background-color:#303538;color:#fff;padding:1rem}.m-h h2{font-weight:normal;font-size:1.5rem}article{width:80%;margin:1rem auto;padding-bottom:1rem;border-bottom:#EBF2F6 1px solid;word-break:break-word;position:relative}article::after{display:block;content:"";width:7px;height:7px;border:#E7EEF2 1px solid;position:absolute;bottom:-5px;left:50%;margin-left:-5px;background:#fff;border-radius:100%;box-shadow:#fff 0 0 0 5px}.a-m{color:#9EABB3;font-size:0.8rem}.a-m a:hover{color:#9EABB3;text-decoration:underline}.a-h{margin-bottom:5px}.r-m{font-size:smaller}nav{position:relative;width:75%;margin:1rem auto;font-size:0.8rem;color:#9EABB3;text-align:center}.m-f{position:relative;margin:2rem 0 0 0;padding:1rem 1rem 2rem 1rem;border-top:#EBF2F6 1px solid;font-size:0.8rem;line-height:1.7em;color:#BBC7CC;text-align:center;background:#F7FAFB}.o-p,.n-p{position:absolute;display:inline-block;padding:0 0.5rem;border:#EBF2F6 2px solid;text-decoration:none;border-radius:30px;transition:border ease 0.3s}.o-p{right:0}.n-p{left:0}.t-h{width:80%;margin:0 auto}.highlight pre{background-color:#49483e;color:white;overflow:scroll}.ge{font-style:italic}.gs{font-weight:bold}.c,.cm,.cp,.c1,.gu,.cs{color:#75715e}.k,.kc,.kd,.kp,.kr,.no,.kt{color:#66d9ef}.l,.mf,.mh,.mi,.mo,.se,.il,.m{color:#ae81ff}.n,.nb,.ni,.nl,.nn,.py,.nv,.w,.bp,.vc,.vg,.vi,.p{color:#f8f8f2}.o,.nt,.ow,.gd,.kn{color:#f92672}.ld,.sb,.sc,.sd,.s2,.sh,.si,.sx,.sr,.s1,.ss,.s{color:#e6db74}.na,.nc,.nd,.ne,.nf,.nx,.gi{color:#a6e22e}
+
+    </style>
+
+    <!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>ASP.NET MVC Application Layout - Chris Sainty</title>
+<meta property="og:title" content="ASP.NET MVC Application Layout" />
+<meta name="description" content="I am slowly evolving my general layout for ASP.NET MVC applications as I come more and more to grips with the framework and they ways I am most comfortable using it.  This post is going to be a bit of an overview of how I am laying out my project at the moment in case it is of use to anyone.  " />
+<meta property="og:description" content="I am slowly evolving my general layout for ASP.NET MVC applications as I come more and more to grips with the framework and they ways I am most comfortable using it.  This post is going to be a bit of an overview of how I am laying out my project at the moment in case it is of use to anyone.  " />
+<link rel="canonical" href="https://blog.csainty.com/2008/03/aspnet-mvc-application-layout.html" />
+<meta property="og:url" content="https://blog.csainty.com/2008/03/aspnet-mvc-application-layout.html" />
+<meta property="og:site_name" content="Chris Sainty" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2008-03-28T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@csainty" />
+<meta name="twitter:creator" content="@Chris Sainty" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "ASP.NET MVC Application Layout",
+    "datePublished": "2008-03-28T00:00:00+00:00",
+    "description": "I am slowly evolving my general layout for ASP.NET MVC applications as I come more and more to grips with the framework and they ways I am most comfortable using it.  This post is going to be a bit of an overview of how I am laying out my project at the moment in case it is of use to anyone.  ",
+    "url": "https://blog.csainty.com/2008/03/aspnet-mvc-application-layout.html"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+</head>
+<body>
+  <header class="m-h">
+    <h1><a href="https://blog.csainty.com">Chris Sainty</a></h1>
+    <h2>A technical blog covering full-stack web development.</h2>
+    <h2><a href="https://twitter.com/csainty" rel="external">twitter</a> | <a href="https://github.com/csainty" rel="external">github</a> | <a href="https://stackoverflow.com/users/625695/chris-sainty" rel="external">stackoverflow</a></h2>
+  </header>
+
+  <article>
+    <span><time datetime="28 Mar 2008">28 Mar 2008</time>  </span>
+    <h1>ASP.NET MVC Application Layout</h1>
+    <section>
+        <p>I am slowly evolving my general layout for ASP.NET MVC applications as I come more and more to grips with the framework and they ways I am most comfortable using it.  </p>
+
+<p>This post is going to be a bit of an overview of how I am laying out my project at the moment in case it is of use to anyone.  </p>
+
+<!-- more -->
+
+<h4>Controllers</h4>
+
+<p>I have reduced the work-load of my controllers substantially since my early attempts. My average controller action now performs three simple steps. Create a Model, Pass the relevant state data from the URL to the Model, Choose and render a View.   When combined with the new ActionFilters to handle things like Authentication and SSL, I can really see my controllers being replaced by some form of Inversion-of-Control class that is configured up and simply runs the same piece of code for every action using the configuration as a guide.  </p>
+
+<h4>Models</h4>
+
+<p>As my controllers have become simpler, my models have become more complicated. I am still using LINQ-to-SQL to connect to the database, but there is a bit more to models than just this.   My models have two sets of properties, those that are get/set which provide an interface for the controller to tell the model what state the user has requested (ie ProductID = 1) and those that are only get. The later provide the interface the View should use to present it&#39;s data. Often I don&#39;t load each piece of this data unless it is requested.  </p>
+
+<h4>Views</h4>
+
+<p>I have killed off code behind files. I still think strong typing views is a good idea though.   Rather than having a code behind file on every page just to set up this strong typing, I am using a single Views.cs file for each directory of Views, it contains empty definitions for each page eg     public partial class Home : ViewPage<HomeModel> { }    The main benefit here is that it removes clutter, both in terms of files in the project and cuts down the @Page declaration in the .aspx files    For the project at hand this is very useful as I will need to deal with designers who will be making lots of pages based around a small number of models. So I will have a basic set of page models and you simply point that page at the one that provides the appropriate data set.  </p>
+
+<h4>Testing</h4>
+
+<p>Testing of Controllers and Models is a fairly straight forward task now as they both have well defined roles. Testing a controller involves checking the correct View has been chosen and the a model has been correctly chosen and sent to the View. Testing a model involves setting different state configurations and then checking to see the data public data to be used by the view is correctly set.   Views are still causing head-aches for testing though. Getting a view to render down to a string from the context of a Unit Test is proving difficult. I should get my hands on a spare box to set up as a Continuous Integration and Test box soon though and if nothing else I will be able to use one of the UAT web tools to test Views along with the whole process flow and performance of the app.    I am also finding that using subclasses of the new Http*Base classes is an easier proposition than Mocking these classes. I have completely removed Mocking from my tests for the moment, though I learnt a lot from the excursion and will definitely find a use for the technique in the future.  </p>
+
+<h4>Drawbacks</h4>
+
+<p>The only real concern I have at the moment is exposing LINQ-to-SQL classes through the model for the view to consume. This is effectively tightly coupling my views to the LINQ-to-SQL back-end. I believe to be a &quot;truer&quot; MVC application the data source should be easier to replace. If I wanted to switch to a disconnected web service based data source (for an extreme example) I would currently need to create a set of data classes that matched the LINQ-to-SQL classes, a massive task. It&#39;s near impossible to resist the lure of LINQ-to-SQL though, it is just so nice to work with.   I am hoping that the forth coming LINQ-to-Entities will reduce my concerns by at least offering a path to a different database on the back-end even if I can still not move to a totally different type of data source.  </p>
+
+<h4>Conclusion</h4>
+
+<p>The more I use the framework, the more I like it. The recent release of the source code for the framework is a nice bonus, it has made debugging a few things easier and will make extending the framework much easier.  </p>
+
+    </section>
+</article>
+
+
+  <footer class="m-f">
+      <section class="copyright">All content copyright <a href="/">Chris Sainty</a> &copy; 2006-2017 &bull; All rights reserved.</section>
+  </footer>
+</body>
+</html>

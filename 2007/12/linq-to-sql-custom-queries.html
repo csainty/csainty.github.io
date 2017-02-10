@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <style>
+    html,body,li,p{margin:0;padding:0}p,ul,ol,.highlight{margin:1.6em 0}h1,h2,h3,h4{margin:0;padding:0;font-size:100%;font-weight:bold;text-rendering:optimizeLegibility;font-family:sans-serif}ul{list-style:none}html{box-sizing:border-box;font-size:62.5%}*{box-sizing:inherit}*:before,*:after{box-sizing:inherit}img{height:auto;max-width:100%}pre,code{font-family:monospace;margin:0}hr{display:block;height:1px;border:0;border-top:1px solid #efefef;margin:1rem 0;padding:0}blockquote{font-style:italic;margin:1.6em 0 1.6em -2.2em;padding:0 0 0 1.6em;border-left:#4a4a4a 0.4em solid}html{font-size:16px}@media screen and (min-width: 900px){html{font-size:18px}}@media screen and (min-width: 1200px){html{font-size:20px}}body{font-family:serif;color:#3A4145}h1{font-size:2rem;margin:10px 0 10px 0;letter-spacing:-1px}h2{font-size:1.4rem;letter-spacing:-1px}h3{font-size:1.2rem}h4{font-size:1.1rem}a:link,a:visited{color:inherit;text-decoration:none}a:hover{color:#57A3E8;transition:color ease 0.3s}p a:link,p a:visited{text-decoration:underline}pre{border:1px solid #E3EDF3;padding:10px;font-size:0.85em;border-radius:3px}code{padding:1px 3px;font-size:0.85em;white-space:pre;border:1px solid #E3EDF3;background:#F7FAFB;border-radius:2px}pre code{background:transparent;padding:0;border:0}.m-h{text-align:center;background-color:#303538;color:#fff;padding:1rem}.m-h h2{font-weight:normal;font-size:1.5rem}article{width:80%;margin:1rem auto;padding-bottom:1rem;border-bottom:#EBF2F6 1px solid;word-break:break-word;position:relative}article::after{display:block;content:"";width:7px;height:7px;border:#E7EEF2 1px solid;position:absolute;bottom:-5px;left:50%;margin-left:-5px;background:#fff;border-radius:100%;box-shadow:#fff 0 0 0 5px}.a-m{color:#9EABB3;font-size:0.8rem}.a-m a:hover{color:#9EABB3;text-decoration:underline}.a-h{margin-bottom:5px}.r-m{font-size:smaller}nav{position:relative;width:75%;margin:1rem auto;font-size:0.8rem;color:#9EABB3;text-align:center}.m-f{position:relative;margin:2rem 0 0 0;padding:1rem 1rem 2rem 1rem;border-top:#EBF2F6 1px solid;font-size:0.8rem;line-height:1.7em;color:#BBC7CC;text-align:center;background:#F7FAFB}.o-p,.n-p{position:absolute;display:inline-block;padding:0 0.5rem;border:#EBF2F6 2px solid;text-decoration:none;border-radius:30px;transition:border ease 0.3s}.o-p{right:0}.n-p{left:0}.t-h{width:80%;margin:0 auto}.highlight pre{background-color:#49483e;color:white;overflow:scroll}.ge{font-style:italic}.gs{font-weight:bold}.c,.cm,.cp,.c1,.gu,.cs{color:#75715e}.k,.kc,.kd,.kp,.kr,.no,.kt{color:#66d9ef}.l,.mf,.mh,.mi,.mo,.se,.il,.m{color:#ae81ff}.n,.nb,.ni,.nl,.nn,.py,.nv,.w,.bp,.vc,.vg,.vi,.p{color:#f8f8f2}.o,.nt,.ow,.gd,.kn{color:#f92672}.ld,.sb,.sc,.sd,.s2,.sh,.si,.sx,.sr,.s1,.ss,.s{color:#e6db74}.na,.nc,.nd,.ne,.nf,.nx,.gi{color:#a6e22e}
+
+    </style>
+
+    <!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>LINQ to SQL: Custom Queries - Chris Sainty</title>
+<meta property="og:title" content="LINQ to SQL: Custom Queries" />
+<meta name="description" content="Now I have some of the foundations out of the way, albeit in a rather brief overview that assumes a reasonable level of competency, it is time to move onto some of the more interesting code snippets.One thing I never liked much about writing SQL in either FoxPro or with PassThrough technologies is how you piece together a complex query from a number of UI selections. The most common occurrence of this is in reporting. The number of ways you can usually slice and dice a sales report makes for some fairly nasty code to build a string based SQL statement." />
+<meta property="og:description" content="Now I have some of the foundations out of the way, albeit in a rather brief overview that assumes a reasonable level of competency, it is time to move onto some of the more interesting code snippets.One thing I never liked much about writing SQL in either FoxPro or with PassThrough technologies is how you piece together a complex query from a number of UI selections. The most common occurrence of this is in reporting. The number of ways you can usually slice and dice a sales report makes for some fairly nasty code to build a string based SQL statement." />
+<link rel="canonical" href="https://blog.csainty.com/2007/12/linq-to-sql-custom-queries.html" />
+<meta property="og:url" content="https://blog.csainty.com/2007/12/linq-to-sql-custom-queries.html" />
+<meta property="og:site_name" content="Chris Sainty" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2007-12-31T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@csainty" />
+<meta name="twitter:creator" content="@Chris Sainty" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "LINQ to SQL: Custom Queries",
+    "datePublished": "2007-12-31T00:00:00+00:00",
+    "description": "Now I have some of the foundations out of the way, albeit in a rather brief overview that assumes a reasonable level of competency, it is time to move onto some of the more interesting code snippets.One thing I never liked much about writing SQL in either FoxPro or with PassThrough technologies is how you piece together a complex query from a number of UI selections. The most common occurrence of this is in reporting. The number of ways you can usually slice and dice a sales report makes for some fairly nasty code to build a string based SQL statement.",
+    "url": "https://blog.csainty.com/2007/12/linq-to-sql-custom-queries.html"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+</head>
+<body>
+  <header class="m-h">
+    <h1><a href="https://blog.csainty.com">Chris Sainty</a></h1>
+    <h2>A technical blog covering full-stack web development.</h2>
+    <h2><a href="https://twitter.com/csainty" rel="external">twitter</a> | <a href="https://github.com/csainty" rel="external">github</a> | <a href="https://stackoverflow.com/users/625695/chris-sainty" rel="external">stackoverflow</a></h2>
+  </header>
+
+  <article>
+    <span><time datetime="31 Dec 2007">31 Dec 2007</time>  </span>
+    <h1>LINQ to SQL&#58; Custom Queries</h1>
+    <section>
+        <p>Now I have some of the foundations out of the way, albeit in a rather brief overview that assumes a reasonable level of competency, it is time to move onto some of the more interesting code snippets.</p>
+
+<p>One thing I never liked much about writing SQL in either FoxPro or with PassThrough technologies is how you piece together a complex query from a number of UI selections. The most common occurrence of this is in reporting. The number of ways you can usually slice and dice a sales report makes for some fairly nasty code to build a string based SQL statement.</p>
+
+<!-- more -->
+
+<p>LINQ-to-SQL offers us a new paradigm for dealing with this sort of problem.</p>
+
+<p>First we need to add a few options to our UI in Window1.xaml</p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;Window</span> <span class="na">x:Class=</span><span class="s">"AdventureWorks.Window1"</span>
+    <span class="na">xmlns=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml/presentation"</span>
+    <span class="na">xmlns:x=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml"</span>
+    <span class="na">Title=</span><span class="s">"Window1"</span> <span class="na">Height=</span><span class="s">"233"</span> <span class="na">Width=</span><span class="s">"534"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;Grid&gt;</span>
+        <span class="nt">&lt;Grid.ColumnDefinitions&gt;</span>
+            <span class="nt">&lt;ColumnDefinition</span> <span class="na">Width=</span><span class="s">"255*"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;ColumnDefinition</span> <span class="na">Width=</span><span class="s">"257*"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/Grid.ColumnDefinitions&gt;</span>
+        <span class="nt">&lt;StackPanel</span> <span class="na">Grid.Column=</span><span class="s">"0"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;CheckBox</span> <span class="na">Name=</span><span class="s">"chkOnline"</span><span class="nt">&gt;</span>Online Orders Only<span class="nt">&lt;/CheckBox&gt;</span>
+            <span class="nt">&lt;StackPanel</span> <span class="na">Orientation=</span><span class="s">"Horizontal"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;Label</span> <span class="na">Width=</span><span class="s">"50"</span><span class="nt">&gt;</span>From<span class="nt">&lt;/Label&gt;</span>
+                <span class="nt">&lt;TextBox</span> <span class="na">Width=</span><span class="s">"200"</span> <span class="na">Name=</span><span class="s">"dateFrom"</span><span class="nt">&gt;</span>01/01/2001<span class="nt">&lt;/TextBox&gt;</span>
+            <span class="nt">&lt;/StackPanel&gt;</span>
+            <span class="nt">&lt;StackPanel</span> <span class="na">Orientation=</span><span class="s">"Horizontal"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;Label</span> <span class="na">Width=</span><span class="s">"50"</span><span class="nt">&gt;</span>To<span class="nt">&lt;/Label&gt;</span>
+                <span class="nt">&lt;TextBox</span> <span class="na">Width=</span><span class="s">"200"</span> <span class="na">Name=</span><span class="s">"dateTo"</span><span class="nt">&gt;</span>31/12/2001<span class="nt">&lt;/TextBox&gt;</span>
+            <span class="nt">&lt;/StackPanel&gt;</span>
+            <span class="nt">&lt;StackPanel</span> <span class="na">Orientation=</span><span class="s">"Horizontal"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;Label</span> <span class="na">Width=</span><span class="s">"50"</span><span class="nt">&gt;</span>City<span class="nt">&lt;/Label&gt;</span>
+                <span class="nt">&lt;TextBox</span> <span class="na">Name=</span><span class="s">"city"</span> <span class="na">Width=</span><span class="s">"200"</span><span class="nt">&gt;&lt;/TextBox&gt;</span>
+            <span class="nt">&lt;/StackPanel&gt;</span>
+        <span class="nt">&lt;/StackPanel&gt;</span>
+        <span class="nt">&lt;Button</span> <span class="na">Name=</span><span class="s">"button1"</span> <span class="na">Click=</span><span class="s">"button1_Click"</span> <span class="na">Grid.Column=</span><span class="s">"1"</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/Button&gt;</span>
+    <span class="nt">&lt;/Grid&gt;</span>
+<span class="nt">&lt;/Window&gt;</span>
+</code></pre></div>
+<p>Then we replace the click event with the following code.</p>
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">private</span> <span class="k">void</span> <span class="nf">button1_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">RoutedEventArgs</span> <span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">AdventureWorksDataContext</span> <span class="n">db</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">AdventureWorksDataContext</span><span class="p">();</span>
+    <span class="n">db</span><span class="p">.</span><span class="n">Log</span> <span class="p">=</span> <span class="n">Console</span><span class="p">.</span><span class="n">Out</span><span class="p">;</span>
+    <span class="n">DateTime</span> <span class="n">dFrom</span><span class="p">;</span>
+    <span class="n">DateTime</span> <span class="n">dTo</span><span class="p">;</span>
+    <span class="kt">var</span> <span class="n">query</span> <span class="p">=</span> <span class="n">db</span><span class="p">.</span><span class="n">SalesOrderHeaders</span><span class="p">.</span><span class="nf">AsQueryable</span><span class="p">();</span>
+
+    <span class="k">if</span> <span class="p">((</span><span class="kt">bool</span><span class="p">)</span><span class="n">chkOnline</span><span class="p">.</span><span class="n">IsChecked</span><span class="p">)</span>
+        <span class="n">query</span> <span class="p">=</span> <span class="n">query</span><span class="p">.</span><span class="nf">Where</span><span class="p">(</span><span class="n">s</span> <span class="p">=&gt;</span> <span class="n">s</span><span class="p">.</span><span class="n">OnlineOrderFlag</span> <span class="p">==</span> <span class="k">true</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">DateTime</span><span class="p">.</span><span class="nf">TryParse</span><span class="p">(</span><span class="n">dateFrom</span><span class="p">.</span><span class="n">Text</span><span class="p">,</span> <span class="k">out</span> <span class="n">dFrom</span><span class="p">))</span>
+        <span class="n">query</span> <span class="p">=</span> <span class="n">query</span><span class="p">.</span><span class="nf">Where</span><span class="p">(</span><span class="n">s</span> <span class="p">=&gt;</span> <span class="n">s</span><span class="p">.</span><span class="n">OrderDate</span> <span class="p">&gt;=</span> <span class="n">dFrom</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">DateTime</span><span class="p">.</span><span class="nf">TryParse</span><span class="p">(</span><span class="n">dateTo</span><span class="p">.</span><span class="n">Text</span><span class="p">,</span> <span class="k">out</span> <span class="n">dTo</span><span class="p">))</span>
+        <span class="n">query</span> <span class="p">=</span> <span class="n">query</span><span class="p">.</span><span class="nf">Where</span><span class="p">(</span><span class="n">s</span> <span class="p">=&gt;</span> <span class="n">s</span><span class="p">.</span><span class="n">OrderDate</span> <span class="p">&lt;=</span> <span class="n">dTo</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">city</span><span class="p">.</span><span class="n">Text</span><span class="p">.</span><span class="n">Length</span> <span class="p">&gt;</span> <span class="m">0</span><span class="p">)</span>
+        <span class="n">query</span> <span class="p">=</span> <span class="n">query</span><span class="p">.</span><span class="nf">Where</span><span class="p">(</span><span class="n">s</span> <span class="p">=&gt;</span> <span class="n">s</span><span class="p">.</span><span class="n">ShipToAddress</span><span class="p">.</span><span class="n">City</span> <span class="p">==</span> <span class="n">city</span><span class="p">.</span><span class="n">Text</span><span class="p">);</span>
+
+    <span class="kt">var</span> <span class="n">results</span> <span class="p">=</span> <span class="k">from</span> <span class="n">sale</span> <span class="k">in</span> <span class="n">query</span>
+                  <span class="k">select</span> <span class="k">new</span>
+                  <span class="p">{</span>
+                      <span class="n">OrderID</span> <span class="p">=</span> <span class="n">sale</span><span class="p">.</span><span class="n">SalesOrderNumber</span><span class="p">,</span>
+                      <span class="n">OrderValue</span> <span class="p">=</span> <span class="n">sale</span><span class="p">.</span><span class="n">SubTotal</span> <span class="p">+</span> <span class="n">sale</span><span class="p">.</span><span class="n">Freight</span><span class="p">,</span>
+                      <span class="n">City</span> <span class="p">=</span> <span class="n">sale</span><span class="p">.</span><span class="n">ShipToAddress</span><span class="p">.</span><span class="n">City</span>
+                  <span class="p">};</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">results</span><span class="p">.</span><span class="nf">Count</span><span class="p">()</span> <span class="p">&gt;=</span> <span class="m">1</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">var</span> <span class="n">rec</span> <span class="p">=</span> <span class="n">results</span><span class="p">.</span><span class="nf">First</span><span class="p">();</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">rec</span><span class="p">.</span><span class="n">OrderID</span> <span class="p">+</span> <span class="s">" - "</span> <span class="p">+</span> <span class="n">rec</span><span class="p">.</span><span class="n">City</span> <span class="p">+</span> <span class="s">" - $"</span> <span class="p">+</span> <span class="n">rec</span><span class="p">.</span><span class="n">OrderValue</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Note: This code snippet assumes you have made the changes to your data model as discussed <a href="/2007/12/linq-to-sql-customisation.html">here</a>.
+If we set this up, check the Online Order box and enter the city Seattle we get the following SQL generated. Note that because I only access the first record, LINQ-to-SQL executes a TOP 1. I hope you will agree this is pretty neat.</p>
+<div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="n">TOP</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">[</span><span class="n">t2</span><span class="p">].[</span><span class="n">SalesOrderNumber</span><span class="p">]</span> <span class="k">AS</span> <span class="p">[</span><span class="n">OrderID</span><span class="p">],</span> <span class="p">[</span><span class="n">t2</span><span class="p">].[</span><span class="n">value</span><span class="p">]</span> <span class="k">AS</span> <span class="p">[</span><span class="n">OrderValue</span><span class="p">],</span> <span class="p">[</span><span class="n">t2</span><span class="p">].[</span><span class="n">City</span><span class="p">]</span>
+<span class="k">FROM</span> <span class="p">(</span>
+    <span class="k">SELECT</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">SalesOrderNumber</span><span class="p">],</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">SubTotal</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">Freight</span><span class="p">]</span> <span class="k">AS</span> <span class="p">[</span><span class="n">value</span><span class="p">],</span> <span class="p">[</span><span class="n">t1</span><span class="p">].[</span><span class="n">City</span><span class="p">],</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">OrderDate</span><span class="p">],</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">OnlineOrderFlag</span><span class="p">]</span>
+    <span class="k">FROM</span> <span class="p">[</span><span class="n">Sales</span><span class="p">].[</span><span class="n">SalesOrderHeader</span><span class="p">]</span> <span class="k">AS</span> <span class="p">[</span><span class="n">t0</span><span class="p">]</span>
+    <span class="k">INNER</span> <span class="k">JOIN</span> <span class="p">[</span><span class="n">Person</span><span class="p">].[</span><span class="n">Address</span><span class="p">]</span> <span class="k">AS</span> <span class="p">[</span><span class="n">t1</span><span class="p">]</span> <span class="k">ON</span> <span class="p">[</span><span class="n">t1</span><span class="p">].[</span><span class="n">AddressID</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">ShipToAddressID</span><span class="p">]</span>
+    <span class="p">)</span> <span class="k">AS</span> <span class="p">[</span><span class="n">t2</span><span class="p">]</span>
+<span class="k">WHERE</span> <span class="p">([</span><span class="n">t2</span><span class="p">].[</span><span class="n">City</span><span class="p">]</span> <span class="o">=</span> <span class="o">@</span><span class="n">p0</span><span class="p">)</span> <span class="k">AND</span> <span class="p">([</span><span class="n">t2</span><span class="p">].[</span><span class="n">OrderDate</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="o">@</span><span class="n">p1</span><span class="p">)</span> <span class="k">AND</span> <span class="p">([</span><span class="n">t2</span><span class="p">].[</span><span class="n">OrderDate</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="o">@</span><span class="n">p2</span><span class="p">)</span> <span class="k">AND</span> <span class="p">([</span><span class="n">t2</span><span class="p">].[</span><span class="n">OnlineOrderFlag</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c1">-- @p0: Input NVarChar (Size = 7; Prec = 0; Scale = 0) [Seattle]</span>
+<span class="c1">-- @p1: Input DateTime (Size = 0; Prec = 0; Scale = 0) [31/12/2001 12:00:00 AM]</span>
+<span class="c1">-- @p2: Input DateTime (Size = 0; Prec = 0; Scale = 0) [1/01/2001 12:00:00 AM]</span>
+<span class="c1">-- Context: SqlProvider(Sql2005) Model: AttributedMetaModel Build: 3.5.21022.8</span>
+<span class="n">SO43768</span> <span class="o">-</span> <span class="n">Seattle</span> <span class="o">-</span> <span class="err">$</span><span class="mi">3667</span><span class="p">.</span><span class="mi">7268</span>
+</code></pre></div>
+<p>Now a few cool things to note. First, I did not specify the join. LINQ-to-SQL has seen my usage of the <code>SalesOrderHeader.ShipToAddress.City</code> field, and knows that to access that field it needs to <code>JOIN</code> to the address table using the <code>ShipToAddressID</code> field, because of this had I not used the field due to some set up of the conditions, no join would have been made. Very nice, especially if we are dealing with numerous tables that only become relevant if the user makes a certain selection.</p>
+
+<p>The extension of a code snippet like this is to have multiple &quot;query&quot; variables. These should be viewed more so as filters, so I could have an order filter, customer filter, product filter. Each filter could be optionally whittled down with Where() statements and then the final LINQ query could express the generall relationship between each filter and the projection (select) required from it.</p>
+
+<p>There is one very important piece of information that also needs discussing here, the difference between <code>IEnumerable</code> and <code>IQueryable</code>. In the above code snippet, if you use <code>.AsEnumerable()</code> instead of <code>.AsQueryable()</code> although you will see the same result, the performance will be greatly impacted, this is because all of the <code>Where()</code> clauses will be evaluated on the Client instead of passed to the Sever as SQL. You can think of the difference as being immediate or Just-In-Time execution. There is obviously more to it than that and the Help has much to say on the topic. For our purposes however you simply need to be aware that there is a difference and you should watch out for it.</p>
+
+    </section>
+</article>
+
+
+  <footer class="m-f">
+      <section class="copyright">All content copyright <a href="/">Chris Sainty</a> &copy; 2006-2017 &bull; All rights reserved.</section>
+  </footer>
+</body>
+</html>

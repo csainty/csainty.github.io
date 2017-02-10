@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <style>
+    html,body,li,p{margin:0;padding:0}p,ul,ol,.highlight{margin:1.6em 0}h1,h2,h3,h4{margin:0;padding:0;font-size:100%;font-weight:bold;text-rendering:optimizeLegibility;font-family:sans-serif}ul{list-style:none}html{box-sizing:border-box;font-size:62.5%}*{box-sizing:inherit}*:before,*:after{box-sizing:inherit}img{height:auto;max-width:100%}pre,code{font-family:monospace;margin:0}hr{display:block;height:1px;border:0;border-top:1px solid #efefef;margin:1rem 0;padding:0}blockquote{font-style:italic;margin:1.6em 0 1.6em -2.2em;padding:0 0 0 1.6em;border-left:#4a4a4a 0.4em solid}html{font-size:16px}@media screen and (min-width: 900px){html{font-size:18px}}@media screen and (min-width: 1200px){html{font-size:20px}}body{font-family:serif;color:#3A4145}h1{font-size:2rem;margin:10px 0 10px 0;letter-spacing:-1px}h2{font-size:1.4rem;letter-spacing:-1px}h3{font-size:1.2rem}h4{font-size:1.1rem}a:link,a:visited{color:inherit;text-decoration:none}a:hover{color:#57A3E8;transition:color ease 0.3s}p a:link,p a:visited{text-decoration:underline}pre{border:1px solid #E3EDF3;padding:10px;font-size:0.85em;border-radius:3px}code{padding:1px 3px;font-size:0.85em;white-space:pre;border:1px solid #E3EDF3;background:#F7FAFB;border-radius:2px}pre code{background:transparent;padding:0;border:0}.m-h{text-align:center;background-color:#303538;color:#fff;padding:1rem}.m-h h2{font-weight:normal;font-size:1.5rem}article{width:80%;margin:1rem auto;padding-bottom:1rem;border-bottom:#EBF2F6 1px solid;word-break:break-word;position:relative}article::after{display:block;content:"";width:7px;height:7px;border:#E7EEF2 1px solid;position:absolute;bottom:-5px;left:50%;margin-left:-5px;background:#fff;border-radius:100%;box-shadow:#fff 0 0 0 5px}.a-m{color:#9EABB3;font-size:0.8rem}.a-m a:hover{color:#9EABB3;text-decoration:underline}.a-h{margin-bottom:5px}.r-m{font-size:smaller}nav{position:relative;width:75%;margin:1rem auto;font-size:0.8rem;color:#9EABB3;text-align:center}.m-f{position:relative;margin:2rem 0 0 0;padding:1rem 1rem 2rem 1rem;border-top:#EBF2F6 1px solid;font-size:0.8rem;line-height:1.7em;color:#BBC7CC;text-align:center;background:#F7FAFB}.o-p,.n-p{position:absolute;display:inline-block;padding:0 0.5rem;border:#EBF2F6 2px solid;text-decoration:none;border-radius:30px;transition:border ease 0.3s}.o-p{right:0}.n-p{left:0}.t-h{width:80%;margin:0 auto}.highlight pre{background-color:#49483e;color:white;overflow:scroll}.ge{font-style:italic}.gs{font-weight:bold}.c,.cm,.cp,.c1,.gu,.cs{color:#75715e}.k,.kc,.kd,.kp,.kr,.no,.kt{color:#66d9ef}.l,.mf,.mh,.mi,.mo,.se,.il,.m{color:#ae81ff}.n,.nb,.ni,.nl,.nn,.py,.nv,.w,.bp,.vc,.vg,.vi,.p{color:#f8f8f2}.o,.nt,.ow,.gd,.kn{color:#f92672}.ld,.sb,.sc,.sd,.s2,.sh,.si,.sx,.sr,.s1,.ss,.s{color:#e6db74}.na,.nc,.nd,.ne,.nf,.nx,.gi{color:#a6e22e}
+
+    </style>
+
+    <!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>WP7 - Authenticated Push Notifications - Chris Sainty</title>
+<meta property="og:title" content="WP7 - Authenticated Push Notifications" />
+<meta name="description" content="This post is going to offer a few tips about changing your Windows Phone 7 push notification service from unauthenticated to authenticated.  Specifically it will focus on the challenges I ran into hosting a WCF service, in IIS7 on a cheap shared hosting account.  " />
+<meta property="og:description" content="This post is going to offer a few tips about changing your Windows Phone 7 push notification service from unauthenticated to authenticated.  Specifically it will focus on the challenges I ran into hosting a WCF service, in IIS7 on a cheap shared hosting account.  " />
+<link rel="canonical" href="https://blog.csainty.com/2011/01/wp7-authenticated-push-notifications.html" />
+<meta property="og:url" content="https://blog.csainty.com/2011/01/wp7-authenticated-push-notifications.html" />
+<meta property="og:site_name" content="Chris Sainty" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2011-01-11T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@csainty" />
+<meta name="twitter:creator" content="@Chris Sainty" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "WP7 - Authenticated Push Notifications",
+    "datePublished": "2011-01-11T00:00:00+00:00",
+    "description": "This post is going to offer a few tips about changing your Windows Phone 7 push notification service from unauthenticated to authenticated.  Specifically it will focus on the challenges I ran into hosting a WCF service, in IIS7 on a cheap shared hosting account.  ",
+    "url": "https://blog.csainty.com/2011/01/wp7-authenticated-push-notifications.html"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+</head>
+<body>
+  <header class="m-h">
+    <h1><a href="https://blog.csainty.com">Chris Sainty</a></h1>
+    <h2>A technical blog covering full-stack web development.</h2>
+    <h2><a href="https://twitter.com/csainty" rel="external">twitter</a> | <a href="https://github.com/csainty" rel="external">github</a> | <a href="https://stackoverflow.com/users/625695/chris-sainty" rel="external">stackoverflow</a></h2>
+  </header>
+
+  <article>
+    <span><time datetime="11 Jan 2011">11 Jan 2011</time>  </span>
+    <h1>WP7 - Authenticated Push Notifications</h1>
+    <section>
+        <p>This post is going to offer a few tips about changing your Windows Phone 7 push notification service from unauthenticated to authenticated.  </p>
+
+<p>Specifically it will focus on the challenges I ran into hosting a WCF service, in IIS7 on a cheap shared hosting account.  </p>
+
+<!-- more -->
+
+<p>It will not be a full step by step tutorial, there are a lot of those out there, though I found many missed a few steps. If you are starting out, see the <a href="http://msdn.microsoft.com/en-us/library/ff941099.aspx">MSDN</a> documentation.  </p>
+
+<p>The reason you will want an authenticated service is that it allows you to send an unlimited amount of updates to the phone. If the service is not authenticated it will be limited to 500 per device per day. Which might be plenty for some services, but was not going to be enough for me. Users do not like their Live Tiles pausing for half a day simply because they are a heavy user.  </p>
+
+<p>To authenticate your service, you need to add an SSL certificate to your web server and then upload a copy to your Windows Phone developer account. When it comes time to submit your application to the marketplace, you choose this certificate in the submission process and it becomes live in the Microsoft systems.  </p>
+
+<p>Your hosting provider should have a standard process to do this, you just need to make sure they send you a copy of the certificate.  </p>
+
+<p>The certificate I used came from <a href="http://www.rapidssl.com/">RapidSSL</a> and was just the default option for my hosting provider. Microsoft does have a list of <a href="http://msdn.microsoft.com/en-us/library/gg521150.aspx">valid providers</a>, so be sure to check.  </p>
+
+<h4>Problem #1 - Adding an SSL endpoint to an IIS7 WCF Service</h4>
+
+<p>The first problem you will come up against is that when WCF generates a WSDL for your secure service, it will pick up the machine name of the box it is on, and not your domain name.  </p>
+
+<p>This is a very widely talked about problem, and the usually offered solution is to run some vbs script that adds an SSL host header to your website because the IIS interface itself can not add host headers to SSL bindings.  </p>
+
+<p>What is not very well talked about is how to manage this on shared hosting. As helpful as my support guy was, he was not keen on running some random piece of vbs script for me.  </p>
+
+<p>So the real solution is actually to use a new (4.0) setting in the web.config file called <code>useRequestHeadersForMetadataAddress</code>, if you are not on a host that supports 4.0, find one that does.  </p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"> <span class="nt">&lt;behaviors&gt;</span>
+    <span class="nt">&lt;serviceBehaviors&gt;</span>
+        <span class="nt">&lt;behavior&gt;</span>
+            <span class="nt">&lt;useRequestHeadersForMetadataAddress&gt;</span>
+                <span class="nt">&lt;defaultPorts&gt;</span>
+                    <span class="nt">&lt;add</span> <span class="na">port=</span><span class="s">"443"</span> <span class="na">scheme=</span><span class="s">"https"</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;/defaultPorts&gt;</span>
+            <span class="nt">&lt;/useRequestHeadersForMetadataAddress&gt;</span>
+            <span class="nt">&lt;serviceMetadata</span> <span class="na">httpGetEnabled=</span><span class="s">"false"</span> <span class="na">httpsGetEnabled=</span><span class="s">"false"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;serviceDebug</span> <span class="na">includeExceptionDetailInFaults=</span><span class="s">"false"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/behavior&gt;</span>
+    <span class="nt">&lt;/serviceBehaviors&gt;</span>
+<span class="nt">&lt;/behaviors&gt;</span>
+</code></pre></div>
+<p>You also need to turn on Transport security for your binding. Though this is standard WCF, nothing special here.  </p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml">  <span class="nt">&lt;bindings&gt;</span>
+      <span class="nt">&lt;basicHttpBinding&gt;</span>
+          <span class="nt">&lt;binding&gt;</span>
+              <span class="nt">&lt;security</span> <span class="na">mode=</span><span class="s">"Transport"</span> <span class="nt">/&gt;</span>
+          <span class="nt">&lt;/binding&gt;</span>
+      <span class="nt">&lt;/basicHttpBinding&gt;</span>
+  <span class="nt">&lt;/bindings&gt;</span>
+</code></pre></div>
+<p>On the phone, if you grab the metadata from your secure service, then it should point everything correctly, but if you need to do it by hand, the service configuration file will be along these lines.  </p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml">  <span class="nt">&lt;system.serviceModel&gt;</span>
+      <span class="nt">&lt;bindings&gt;</span>
+          <span class="nt">&lt;basicHttpBinding&gt;</span>
+              <span class="nt">&lt;binding</span> 
+                      <span class="na">name=</span><span class="s">"BasicHttpBinding_Service"</span>
+                      <span class="na">maxBufferSize=</span><span class="s">"2147483647"</span>
+                      <span class="na">maxReceivedMessageSize=</span><span class="s">"2147483647"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;security</span> <span class="na">mode=</span><span class="s">"Transport"</span> <span class="nt">/&gt;</span>
+              <span class="nt">&lt;/binding&gt;</span>
+          <span class="nt">&lt;/basicHttpBinding&gt;</span>
+      <span class="nt">&lt;/bindings&gt;</span>
+      <span class="nt">&lt;client&gt;</span>
+          <span class="nt">&lt;endpoint</span> <span class="na">address=</span><span class="s">"https://[yourservicedomain]/[yourservicename].svc"</span>
+                              <span class="na">binding=</span><span class="s">"basicHttpBinding"</span> 
+                              <span class="na">bindingConfiguration=</span><span class="s">"BasicHttpBinding_Service"</span>
+                              <span class="na">contract=</span><span class="s">"[ContractName]"</span> 
+                              <span class="na">name=</span><span class="s">"BasicHttpBinding_Service"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;/client&gt;</span>
+  <span class="nt">&lt;/system.serviceModel&gt;</span>
+</code></pre></div>
+<p>Note the Transport security on line 8 and the https address on line 13.  </p>
+
+<h4>Problem #2 - (403) Forbidden</h4>
+
+<p>The next problem you will encounter, is that when you actually POST your notification to the Microsoft servers you will get a (403) Forbidden response back.  </p>
+
+<p>I could not find a single piece of Microsoft documentation on this, and a single obscure reference on a forum finally pointed me in the right direction.  </p>
+
+<p>When you make your POST, you actually need to attach the certificate to it. Microsoft will then match this against the one you uploaded to them to ensure you are who you say you are.  </p>
+
+<p>You do this using the <code>ClientCertificates</code> collection on your HTTP Request.  </p>
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="c1">// Standard header code
+</span><span class="n">request</span><span class="p">.</span><span class="n">ClientCertificates</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="k">new</span> <span class="nf">X509Certificate2</span><span class="p">(</span><span class="s">"[Path To Certificate]"</span><span class="p">,</span> <span class="s">"[Password]"</span><span class="p">));</span>
+
+<span class="k">using</span> <span class="p">(</span><span class="n">Stream</span> <span class="n">requestStream</span> <span class="p">=</span> <span class="n">request</span><span class="p">.</span><span class="nf">GetRequestStream</span><span class="p">())</span> <span class="p">{</span>
+    <span class="n">requestStream</span><span class="p">.</span><span class="nf">Write</span><span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="n">payload</span><span class="p">.</span><span class="n">Length</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">WebResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">request</span><span class="p">.</span><span class="nf">GetResponse</span><span class="p">();</span>
+</code></pre></div>
+<p>Once this is added in you should be finally able to send authenticated push notifications.  </p>
+
+<p>Hopefully this saves a few people some time as I pulled my hair out over the course of a weekend solving both of these.  </p>
+
+    </section>
+</article>
+
+
+  <footer class="m-f">
+      <section class="copyright">All content copyright <a href="/">Chris Sainty</a> &copy; 2006-2017 &bull; All rights reserved.</section>
+  </footer>
+</body>
+</html>

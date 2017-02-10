@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <style>
+    html,body,li,p{margin:0;padding:0}p,ul,ol,.highlight{margin:1.6em 0}h1,h2,h3,h4{margin:0;padding:0;font-size:100%;font-weight:bold;text-rendering:optimizeLegibility;font-family:sans-serif}ul{list-style:none}html{box-sizing:border-box;font-size:62.5%}*{box-sizing:inherit}*:before,*:after{box-sizing:inherit}img{height:auto;max-width:100%}pre,code{font-family:monospace;margin:0}hr{display:block;height:1px;border:0;border-top:1px solid #efefef;margin:1rem 0;padding:0}blockquote{font-style:italic;margin:1.6em 0 1.6em -2.2em;padding:0 0 0 1.6em;border-left:#4a4a4a 0.4em solid}html{font-size:16px}@media screen and (min-width: 900px){html{font-size:18px}}@media screen and (min-width: 1200px){html{font-size:20px}}body{font-family:serif;color:#3A4145}h1{font-size:2rem;margin:10px 0 10px 0;letter-spacing:-1px}h2{font-size:1.4rem;letter-spacing:-1px}h3{font-size:1.2rem}h4{font-size:1.1rem}a:link,a:visited{color:inherit;text-decoration:none}a:hover{color:#57A3E8;transition:color ease 0.3s}p a:link,p a:visited{text-decoration:underline}pre{border:1px solid #E3EDF3;padding:10px;font-size:0.85em;border-radius:3px}code{padding:1px 3px;font-size:0.85em;white-space:pre;border:1px solid #E3EDF3;background:#F7FAFB;border-radius:2px}pre code{background:transparent;padding:0;border:0}.m-h{text-align:center;background-color:#303538;color:#fff;padding:1rem}.m-h h2{font-weight:normal;font-size:1.5rem}article{width:80%;margin:1rem auto;padding-bottom:1rem;border-bottom:#EBF2F6 1px solid;word-break:break-word;position:relative}article::after{display:block;content:"";width:7px;height:7px;border:#E7EEF2 1px solid;position:absolute;bottom:-5px;left:50%;margin-left:-5px;background:#fff;border-radius:100%;box-shadow:#fff 0 0 0 5px}.a-m{color:#9EABB3;font-size:0.8rem}.a-m a:hover{color:#9EABB3;text-decoration:underline}.a-h{margin-bottom:5px}.r-m{font-size:smaller}nav{position:relative;width:75%;margin:1rem auto;font-size:0.8rem;color:#9EABB3;text-align:center}.m-f{position:relative;margin:2rem 0 0 0;padding:1rem 1rem 2rem 1rem;border-top:#EBF2F6 1px solid;font-size:0.8rem;line-height:1.7em;color:#BBC7CC;text-align:center;background:#F7FAFB}.o-p,.n-p{position:absolute;display:inline-block;padding:0 0.5rem;border:#EBF2F6 2px solid;text-decoration:none;border-radius:30px;transition:border ease 0.3s}.o-p{right:0}.n-p{left:0}.t-h{width:80%;margin:0 auto}.highlight pre{background-color:#49483e;color:white;overflow:scroll}.ge{font-style:italic}.gs{font-weight:bold}.c,.cm,.cp,.c1,.gu,.cs{color:#75715e}.k,.kc,.kd,.kp,.kr,.no,.kt{color:#66d9ef}.l,.mf,.mh,.mi,.mo,.se,.il,.m{color:#ae81ff}.n,.nb,.ni,.nl,.nn,.py,.nv,.w,.bp,.vc,.vg,.vi,.p{color:#f8f8f2}.o,.nt,.ow,.gd,.kn{color:#f92672}.ld,.sb,.sc,.sd,.s2,.sh,.si,.sx,.sr,.s1,.ss,.s{color:#e6db74}.na,.nc,.nd,.ne,.nf,.nx,.gi{color:#a6e22e}
+
+    </style>
+
+    <!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>Wrapping synchronous code in a Task returning method - Chris Sainty</title>
+<meta property="og:title" content="Wrapping synchronous code in a Task returning method" />
+<meta name="description" content="Imagine you have an interface.public interface IAsyncCommand{  Task ExecuteAsync();}" />
+<meta property="og:description" content="Imagine you have an interface.public interface IAsyncCommand{  Task ExecuteAsync();}" />
+<link rel="canonical" href="https://blog.csainty.com/2013/02/wrapping-synchronous-code-in-task.html" />
+<meta property="og:url" content="https://blog.csainty.com/2013/02/wrapping-synchronous-code-in-task.html" />
+<meta property="og:site_name" content="Chris Sainty" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2013-02-18T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@csainty" />
+<meta name="twitter:creator" content="@Chris Sainty" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Wrapping synchronous code in a Task returning method",
+    "datePublished": "2013-02-18T00:00:00+00:00",
+    "description": "Imagine you have an interface.public interface IAsyncCommand{  Task ExecuteAsync();}",
+    "url": "https://blog.csainty.com/2013/02/wrapping-synchronous-code-in-task.html"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+</head>
+<body>
+  <header class="m-h">
+    <h1><a href="https://blog.csainty.com">Chris Sainty</a></h1>
+    <h2>A technical blog covering full-stack web development.</h2>
+    <h2><a href="https://twitter.com/csainty" rel="external">twitter</a> | <a href="https://github.com/csainty" rel="external">github</a> | <a href="https://stackoverflow.com/users/625695/chris-sainty" rel="external">stackoverflow</a></h2>
+  </header>
+
+  <article>
+    <span><time datetime="18 Feb 2013">18 Feb 2013</time>  </span>
+    <h1>Wrapping synchronous code in a Task returning method</h1>
+    <section>
+        <p>Imagine you have an interface.</p>
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">interface</span> <span class="n">IAsyncCommand</span>
+<span class="p">{</span>
+  <span class="n">Task</span> <span class="nf">ExecuteAsync</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<!-- more -->
+
+<p>Now imagine you want to implement this interface, but the code to go in there is not actually asynchronous. Neither is it cpu-intensive and requiring it’s own thread. It is just a regular piece of synchronous code.
+There are three ways to do this that I know of.</p>
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">class</span> <span class="nc">AsyncCommand1</span> <span class="p">:</span> <span class="n">IAsyncCommand</span>
+<span class="p">{</span>
+  <span class="k">public</span> <span class="n">Task</span> <span class="nf">ExecuteAsync</span><span class="p">()</span>
+  <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">x</span> <span class="p">=</span> <span class="m">2</span> <span class="p">+</span> <span class="m">2</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">Task</span><span class="p">.</span><span class="nf">FromResult</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">AsyncCommand2</span> <span class="p">:</span> <span class="n">IAsyncCommand</span>
+<span class="p">{</span>
+  <span class="k">public</span> <span class="k">async</span> <span class="n">Task</span> <span class="nf">ExecuteAsync</span><span class="p">()</span>
+  <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">x</span> <span class="p">=</span> <span class="m">2</span> <span class="p">+</span> <span class="m">2</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">AsyncCommand3</span> <span class="p">:</span> <span class="n">IAsyncCommand</span>
+<span class="p">{</span>
+  <span class="k">public</span> <span class="n">Task</span> <span class="nf">ExecuteAsync</span><span class="p">()</span>
+  <span class="p">{</span>
+    <span class="k">return</span> <span class="n">Task</span><span class="p">.</span><span class="nf">Run</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="kt">int</span> <span class="n">x</span> <span class="p">=</span> <span class="m">2</span> <span class="p">+</span> <span class="m">2</span><span class="p">;</span> <span class="p">})</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>So what is the difference between these three?In terms of the IL being generated, the answer is quite a lot. In terms of relative performance though, the following falls strictly into the category of extreme micro-optimization.</p>
+
+<h4>The code</h4>
+
+<p>The first implementation is the most optimal approach. It turns out that Task has an internal constructor that takes a result. So the static FromResult() method is just a public wrapper around that constructor which returns a completed Task with your value. Task<T> is then cast to Task and off we go.</p>
+
+<p>I find the second approach to be the easiest to read because you just need your async and no weird faux-return. This one actually generates quite a bit of IL. You get a full state machine created, it gets initialized and then executed.</p>
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="na">[AsyncStateMachine(typeof (Class1.&lt;ExecuteAsync&gt;d__0))]</span>
+<span class="na">[DebuggerStepThrough]</span>
+<span class="k">public</span> <span class="n">Task</span> <span class="nf">ExecuteAsync</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="n">Class1</span><span class="p">.&lt;</span><span class="n">ExecuteAsync</span><span class="p">&gt;</span><span class="n">d__0</span> <span class="n">stateMachine</span><span class="p">;</span>
+  <span class="n">stateMachine</span><span class="p">.&lt;&gt;</span><span class="m">4</span><span class="n">__this</span> <span class="p">=</span> <span class="k">this</span><span class="p">;</span>
+  <span class="n">stateMachine</span><span class="p">.&lt;&gt;</span><span class="n">t__builder</span> <span class="p">=</span> <span class="n">AsyncTaskMethodBuilder</span><span class="p">.</span><span class="nf">Create</span><span class="p">();</span>
+  <span class="n">stateMachine</span><span class="p">.&lt;&gt;</span><span class="m">1</span><span class="n">__state</span> <span class="p">=</span> <span class="p">-</span><span class="m">1</span><span class="p">;</span>
+  <span class="n">stateMachine</span><span class="p">.&lt;&gt;</span><span class="n">t__builder</span><span class="p">.</span><span class="n">Start</span><span class="p">&lt;</span><span class="n">Class1</span><span class="p">.&lt;</span><span class="n">ExecuteAsync</span><span class="p">&gt;</span><span class="n">d__0</span><span class="p">&gt;(</span><span class="k">ref</span> <span class="n">stateMachine</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">stateMachine</span><span class="p">.&lt;&gt;</span><span class="n">t__builder</span><span class="p">.</span><span class="n">Task</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="na">[CompilerGenerated]</span>
+<span class="na">[StructLayout(LayoutKind.Auto)]</span>
+<span class="k">private</span> <span class="k">struct</span> <span class="err">&lt;</span><span class="nc">ExecuteAsync</span><span class="p">&gt;</span><span class="n">d__0</span> <span class="p">:</span> <span class="n">IAsyncStateMachine</span>
+<span class="p">{</span>
+  <span class="k">public</span> <span class="kt">int</span> <span class="p">&lt;&gt;</span><span class="m">1</span><span class="n">__state</span><span class="p">;</span>
+  <span class="k">public</span> <span class="n">AsyncTaskMethodBuilder</span> <span class="p">&lt;&gt;</span><span class="n">t__builder</span><span class="p">;</span>
+  <span class="k">public</span> <span class="n">Class1</span> <span class="p">&lt;&gt;</span><span class="m">4</span><span class="n">__this</span><span class="p">;</span>
+
+  <span class="k">void</span> <span class="n">IAsyncStateMachine</span><span class="p">.</span><span class="nf">MoveNext</span><span class="p">()</span>
+  <span class="p">{</span>
+    <span class="k">try</span>
+    <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.&lt;&gt;</span><span class="m">1</span><span class="n">__state</span> <span class="p">!=</span> <span class="p">-</span><span class="m">3</span><span class="p">)</span>
+        <span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="k">this</span><span class="p">.&lt;&gt;</span><span class="m">1</span><span class="n">__state</span> <span class="p">=</span> <span class="p">-</span><span class="m">2</span><span class="p">;</span>
+      <span class="k">this</span><span class="p">.&lt;&gt;</span><span class="n">t__builder</span><span class="p">.</span><span class="nf">SetException</span><span class="p">(</span><span class="n">ex</span><span class="p">);</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">this</span><span class="p">.&lt;&gt;</span><span class="m">1</span><span class="n">__state</span> <span class="p">=</span> <span class="p">-</span><span class="m">2</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.&lt;&gt;</span><span class="n">t__builder</span><span class="p">.</span><span class="nf">SetResult</span><span class="p">();</span>
+  <span class="p">}</span>
+
+  <span class="p">[</span><span class="n">DebuggerHidden</span><span class="p">]</span>
+  <span class="k">void</span> <span class="n">IAsyncStateMachine</span><span class="p">.</span><span class="nf">SetStateMachine</span><span class="p">(</span><span class="n">IAsyncStateMachine</span> <span class="n">param0</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="k">this</span><span class="p">.&lt;&gt;</span><span class="n">t__builder</span><span class="p">.</span><span class="nf">SetStateMachine</span><span class="p">(</span><span class="n">param0</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></div>
+<p>That is a lot of generated code just to save me explicitly returning a Task!</p>
+
+<p>The third option generates the code for the lambda, then passes it off to Task. The task is then handed to the scheduler and what happens next will depend on your scheduler. While this option is lighter on code-gen, the hand-off process makes this the slowest option.</p>
+
+<h4>Performance</h4>
+
+<p>I ran a couple of quick and dirty performance checks over these three. In each case firing off the method 100,000 times and blocking on the result in a tight for-loop.The first implementation runs in about 2ms, the second in about 15ms and the third in about 170ms. Like I said, firmly in the realms of micro-optimization.Something interesting to note though is that if you repeat the test with the debugger attached, the third option blows out to more like 30000ms! I guess there is some more context switching going on with the debugger attached which affects the performance.</p>
+
+<h4>Conclusion</h4>
+
+<p>Ideally you want to avoid doing any of this. Your best option is to support both synchronous and asynchronous implementations where appropriate. In practice I am finding that I often need to handle this wrapping process and so it is handy to understand exactly what I am asking of the compiler when I do. It may be a micro-optimization but it costs me nothing to do it the best way!</p>
+
+    </section>
+</article>
+
+
+  <footer class="m-f">
+      <section class="copyright">All content copyright <a href="/">Chris Sainty</a> &copy; 2006-2017 &bull; All rights reserved.</section>
+  </footer>
+</body>
+</html>

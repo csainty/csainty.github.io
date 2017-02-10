@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <style>
+    html,body,li,p{margin:0;padding:0}p,ul,ol,.highlight{margin:1.6em 0}h1,h2,h3,h4{margin:0;padding:0;font-size:100%;font-weight:bold;text-rendering:optimizeLegibility;font-family:sans-serif}ul{list-style:none}html{box-sizing:border-box;font-size:62.5%}*{box-sizing:inherit}*:before,*:after{box-sizing:inherit}img{height:auto;max-width:100%}pre,code{font-family:monospace;margin:0}hr{display:block;height:1px;border:0;border-top:1px solid #efefef;margin:1rem 0;padding:0}blockquote{font-style:italic;margin:1.6em 0 1.6em -2.2em;padding:0 0 0 1.6em;border-left:#4a4a4a 0.4em solid}html{font-size:16px}@media screen and (min-width: 900px){html{font-size:18px}}@media screen and (min-width: 1200px){html{font-size:20px}}body{font-family:serif;color:#3A4145}h1{font-size:2rem;margin:10px 0 10px 0;letter-spacing:-1px}h2{font-size:1.4rem;letter-spacing:-1px}h3{font-size:1.2rem}h4{font-size:1.1rem}a:link,a:visited{color:inherit;text-decoration:none}a:hover{color:#57A3E8;transition:color ease 0.3s}p a:link,p a:visited{text-decoration:underline}pre{border:1px solid #E3EDF3;padding:10px;font-size:0.85em;border-radius:3px}code{padding:1px 3px;font-size:0.85em;white-space:pre;border:1px solid #E3EDF3;background:#F7FAFB;border-radius:2px}pre code{background:transparent;padding:0;border:0}.m-h{text-align:center;background-color:#303538;color:#fff;padding:1rem}.m-h h2{font-weight:normal;font-size:1.5rem}article{width:80%;margin:1rem auto;padding-bottom:1rem;border-bottom:#EBF2F6 1px solid;word-break:break-word;position:relative}article::after{display:block;content:"";width:7px;height:7px;border:#E7EEF2 1px solid;position:absolute;bottom:-5px;left:50%;margin-left:-5px;background:#fff;border-radius:100%;box-shadow:#fff 0 0 0 5px}.a-m{color:#9EABB3;font-size:0.8rem}.a-m a:hover{color:#9EABB3;text-decoration:underline}.a-h{margin-bottom:5px}.r-m{font-size:smaller}nav{position:relative;width:75%;margin:1rem auto;font-size:0.8rem;color:#9EABB3;text-align:center}.m-f{position:relative;margin:2rem 0 0 0;padding:1rem 1rem 2rem 1rem;border-top:#EBF2F6 1px solid;font-size:0.8rem;line-height:1.7em;color:#BBC7CC;text-align:center;background:#F7FAFB}.o-p,.n-p{position:absolute;display:inline-block;padding:0 0.5rem;border:#EBF2F6 2px solid;text-decoration:none;border-radius:30px;transition:border ease 0.3s}.o-p{right:0}.n-p{left:0}.t-h{width:80%;margin:0 auto}.highlight pre{background-color:#49483e;color:white;overflow:scroll}.ge{font-style:italic}.gs{font-weight:bold}.c,.cm,.cp,.c1,.gu,.cs{color:#75715e}.k,.kc,.kd,.kp,.kr,.no,.kt{color:#66d9ef}.l,.mf,.mh,.mi,.mo,.se,.il,.m{color:#ae81ff}.n,.nb,.ni,.nl,.nn,.py,.nv,.w,.bp,.vc,.vg,.vi,.p{color:#f8f8f2}.o,.nt,.ow,.gd,.kn{color:#f92672}.ld,.sb,.sc,.sd,.s2,.sh,.si,.sx,.sr,.s1,.ss,.s{color:#e6db74}.na,.nc,.nd,.ne,.nf,.nx,.gi{color:#a6e22e}
+
+    </style>
+
+    <!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>LINQ to SQL: Insert/Update/Delete - Chris Sainty</title>
+<meta property="og:title" content="LINQ to SQL: Insert/Update/Delete" />
+<meta name="description" content="I have been looking at my web stats for the recent run of LINQ-to-SQL posts, and it seems a lot of people are making their way here from searches about some of the more standard features of LINQ-to-SQL. In the interest of addressing these visitors I am going to put together a post that covers the basics of data access." />
+<meta property="og:description" content="I have been looking at my web stats for the recent run of LINQ-to-SQL posts, and it seems a lot of people are making their way here from searches about some of the more standard features of LINQ-to-SQL. In the interest of addressing these visitors I am going to put together a post that covers the basics of data access." />
+<link rel="canonical" href="https://blog.csainty.com/2008/01/linq-to-sql-insertupdatedelete.html" />
+<meta property="og:url" content="https://blog.csainty.com/2008/01/linq-to-sql-insertupdatedelete.html" />
+<meta property="og:site_name" content="Chris Sainty" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2008-01-02T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@csainty" />
+<meta name="twitter:creator" content="@Chris Sainty" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "LINQ to SQL: Insert/Update/Delete",
+    "datePublished": "2008-01-02T00:00:00+00:00",
+    "description": "I have been looking at my web stats for the recent run of LINQ-to-SQL posts, and it seems a lot of people are making their way here from searches about some of the more standard features of LINQ-to-SQL. In the interest of addressing these visitors I am going to put together a post that covers the basics of data access.",
+    "url": "https://blog.csainty.com/2008/01/linq-to-sql-insertupdatedelete.html"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+</head>
+<body>
+  <header class="m-h">
+    <h1><a href="https://blog.csainty.com">Chris Sainty</a></h1>
+    <h2>A technical blog covering full-stack web development.</h2>
+    <h2><a href="https://twitter.com/csainty" rel="external">twitter</a> | <a href="https://github.com/csainty" rel="external">github</a> | <a href="https://stackoverflow.com/users/625695/chris-sainty" rel="external">stackoverflow</a></h2>
+  </header>
+
+  <article>
+    <span><time datetime="02 Jan 2008">02 Jan 2008</time>  </span>
+    <h1>LINQ to SQL&#58; Insert/Update/Delete</h1>
+    <section>
+        <p>I have been looking at my web stats for the recent run of LINQ-to-SQL posts, and it seems a lot of people are making their way here from searches about some of the more standard features of LINQ-to-SQL. In the interest of addressing these visitors I am going to put together a post that covers the basics of data access.</p>
+
+<!-- more -->
+
+<p>Make sure you see my earlier post about setting up the AdventureWorks database <a href="/2007/12/linq-to-sql-prep-work.html">here</a>.<br>
+First we will look at a complicated <code>INSERT</code>, adding a new customer to the AdventureWorks database.<br>
+<strong>Note:</strong> This is not a very good example from the standpoint of keeping the AdventureWorks database clean and correct, we are only interested in meeting each of the SQL Constraints, not the business logic.</p>
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="n">AdventureWorksDataContext</span> <span class="n">db</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">AdventureWorksDataContext</span><span class="p">();</span>
+<span class="n">db</span><span class="p">.</span><span class="n">Log</span> <span class="p">=</span> <span class="n">Console</span><span class="p">.</span><span class="n">Out</span><span class="p">;</span>
+
+<span class="c1">// LINQ query to get StateProvince
+</span><span class="n">StateProvince</span> <span class="n">state</span> <span class="p">=</span> <span class="p">(</span><span class="k">from</span> <span class="n">states</span> <span class="k">in</span> <span class="n">db</span><span class="p">.</span><span class="n">StateProvinces</span>
+                       <span class="k">where</span> <span class="n">states</span><span class="p">.</span><span class="n">CountryRegionCode</span> <span class="p">==</span> <span class="s">"AU"</span> <span class="p">&amp;&amp;</span> <span class="n">states</span><span class="p">.</span><span class="n">StateProvinceCode</span> <span class="p">==</span> <span class="s">"NSW"</span>
+                       <span class="k">select</span> <span class="n">states</span><span class="p">).</span><span class="nf">FirstOrDefault</span><span class="p">();</span>
+<span class="c1">// LINQ function to get AddressType
+</span><span class="n">AddressType</span> <span class="n">addrType</span> <span class="p">=</span> <span class="n">db</span><span class="p">.</span><span class="n">AddressTypes</span><span class="p">.</span><span class="nf">FirstOrDefault</span><span class="p">(</span><span class="n">s</span> <span class="p">=&gt;</span> <span class="n">s</span><span class="p">.</span><span class="n">Name</span> <span class="p">==</span> <span class="s">"Home"</span><span class="p">);</span>
+
+<span class="n">Customer</span> <span class="n">newCustomer</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Customer</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">ModifiedDate</span><span class="p">=</span> <span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">,</span>
+    <span class="n">AccountNumber</span><span class="p">=</span> <span class="s">"AW12354"</span><span class="p">,</span> 
+    <span class="n">CustomerType</span><span class="p">=</span><span class="sc">'I'</span><span class="p">,</span>
+    <span class="n">rowguid</span><span class="p">=</span> <span class="n">Guid</span><span class="p">.</span><span class="nf">NewGuid</span><span class="p">(),</span>
+    <span class="n">TerritoryID</span><span class="p">=</span> <span class="n">state</span><span class="p">.</span><span class="n">TerritoryID</span>    <span class="c1">// Relate record by Keys
+</span><span class="p">};</span>
+<span class="n">Contact</span> <span class="n">newContact</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Contact</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Title</span> <span class="p">=</span> <span class="s">"Mr"</span><span class="p">,</span>
+    <span class="n">FirstName</span> <span class="p">=</span> <span class="s">"New"</span><span class="p">,</span>
+    <span class="n">LastName</span> <span class="p">=</span> <span class="s">"Contact"</span><span class="p">,</span>
+    <span class="n">EmailAddress</span> <span class="p">=</span> <span class="s">"newContact@company.com"</span><span class="p">,</span>
+    <span class="n">Phone</span> <span class="p">=</span> <span class="s">"(12) 3456789"</span><span class="p">,</span> 
+    <span class="n">PasswordHash</span><span class="p">=</span> <span class="s">"xxx"</span><span class="p">,</span>
+    <span class="n">PasswordSalt</span><span class="p">=</span> <span class="s">"xxx"</span><span class="p">,</span>
+    <span class="n">rowguid</span> <span class="p">=</span> <span class="n">Guid</span><span class="p">.</span><span class="nf">NewGuid</span><span class="p">(),</span>
+    <span class="n">ModifiedDate</span> <span class="p">=</span> <span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span>
+<span class="p">};</span>
+<span class="n">Individual</span> <span class="n">newInd</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Individual</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Contact</span><span class="p">=</span> <span class="n">newContact</span><span class="p">,</span>    <span class="c1">// Relate records by objects (we dont actually know the Keys for the new records yet)
+</span>    <span class="n">Customer</span><span class="p">=</span> <span class="n">newCustomer</span><span class="p">,</span>
+    <span class="n">ModifiedDate</span><span class="p">=</span> <span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span>
+<span class="p">};</span>
+<span class="n">Address</span> <span class="n">newAddress</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Address</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">AddressLine1</span><span class="p">=</span> <span class="s">"12 First St"</span><span class="p">,</span>
+    <span class="n">City</span><span class="p">=</span> <span class="s">"Sydney"</span><span class="p">,</span>
+    <span class="n">PostalCode</span><span class="p">=</span> <span class="s">"2000"</span><span class="p">,</span> 
+    <span class="n">ModifiedDate</span><span class="p">=</span><span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">,</span>
+    <span class="n">StateProvince</span><span class="p">=</span> <span class="n">state</span><span class="p">,</span>
+    <span class="n">rowguid</span> <span class="p">=</span> <span class="n">Guid</span><span class="p">.</span><span class="nf">NewGuid</span><span class="p">()</span>
+<span class="p">};</span>
+
+<span class="c1">// Link our customer with their address via a new CustomerAddress record
+</span><span class="n">newCustomer</span><span class="p">.</span><span class="n">CustomerAddresses</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="k">new</span> <span class="nf">CustomerAddress</span><span class="p">()</span> <span class="p">{</span> <span class="n">Address</span> <span class="p">=</span> <span class="n">newAddress</span><span class="p">,</span> <span class="n">Customer</span> <span class="p">=</span> <span class="n">newCustomer</span><span class="p">,</span> <span class="n">AddressType</span> <span class="p">=</span> <span class="n">addrType</span><span class="p">,</span> <span class="n">ModifiedDate</span> <span class="p">=</span> <span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">,</span> <span class="n">rowguid</span> <span class="p">=</span> <span class="n">Guid</span><span class="p">.</span><span class="nf">NewGuid</span><span class="p">()</span> <span class="p">});</span>
+
+<span class="c1">// Save changes to the database
+</span><span class="n">db</span><span class="p">.</span><span class="nf">SubmitChanges</span><span class="p">();</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Customer ID - "</span> <span class="p">+</span> <span class="n">newCustomer</span><span class="p">.</span><span class="n">CustomerID</span><span class="p">.</span><span class="nf">ToString</span><span class="p">());</span>
+</code></pre></div>
+<p>This code generates and executes the following SQL.</p>
+<div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="n">TOP</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">StateProvinceID</span><span class="p">],</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">StateProvinceCode</span><span class="p">],</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">CountryRegionCode</span><span class="p">],</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">IsOnlyStateProvinceFlag</span><span class="p">],</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">Name</span><span class="p">],</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">TerritoryID</span><span class="p">],</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">rowguid</span><span class="p">],</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">ModifiedDate</span><span class="p">]</span>
+<span class="k">FROM</span> <span class="p">[</span><span class="n">Person</span><span class="p">].[</span><span class="n">StateProvince</span><span class="p">]</span> <span class="k">AS</span> <span class="p">[</span><span class="n">t0</span><span class="p">]</span>
+<span class="k">WHERE</span> <span class="p">([</span><span class="n">t0</span><span class="p">].[</span><span class="n">CountryRegionCode</span><span class="p">]</span> <span class="o">=</span> <span class="o">@</span><span class="n">p0</span><span class="p">)</span> <span class="k">AND</span> <span class="p">([</span><span class="n">t0</span><span class="p">].[</span><span class="n">StateProvinceCode</span><span class="p">]</span> <span class="o">=</span> <span class="o">@</span><span class="n">p1</span><span class="p">)</span>
+<span class="c1">-- @p0: Input NVarChar (Size = 2; Prec = 0; Scale = 0) [AU]</span>
+<span class="c1">-- @p1: Input NVarChar (Size = 3; Prec = 0; Scale = 0) [NSW]</span>
+<span class="c1">-- Context: SqlProvider(Sql2005) Model: AttributedMetaModel Build: 3.5.21022.8</span>
+
+<span class="k">SELECT</span> <span class="n">TOP</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">AddressTypeID</span><span class="p">],</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">Name</span><span class="p">],</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">rowguid</span><span class="p">],</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">ModifiedDate</span><span class="p">]</span>
+<span class="k">FROM</span> <span class="p">[</span><span class="n">Person</span><span class="p">].[</span><span class="n">AddressType</span><span class="p">]</span> <span class="k">AS</span> <span class="p">[</span><span class="n">t0</span><span class="p">]</span>
+<span class="k">WHERE</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">Name</span><span class="p">]</span> <span class="o">=</span> <span class="o">@</span><span class="n">p0</span>
+<span class="c1">-- @p0: Input NVarChar (Size = 4; Prec = 0; Scale = 0) [Home]</span>
+<span class="c1">-- Context: SqlProvider(Sql2005) Model: AttributedMetaModel Build: 3.5.21022.8</span>
+
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="p">[</span><span class="n">Person</span><span class="p">].[</span><span class="n">Address</span><span class="p">]([</span><span class="n">AddressLine1</span><span class="p">],</span> <span class="p">[</span><span class="n">AddressLine2</span><span class="p">],</span> <span class="p">[</span><span class="n">City</span><span class="p">],</span> <span class="p">[</span><span class="n">StateProvinceID</span><span class="p">],</span> <span class="p">[</span><span class="n">PostalCode</span><span class="p">],</span> <span class="p">[</span><span class="n">rowguid</span><span class="p">],</span> <span class="p">[</span><span class="n">ModifiedDate</span><span class="p">])</span>
+<span class="k">VALUES</span> <span class="p">(</span><span class="o">@</span><span class="n">p0</span><span class="p">,</span> <span class="o">@</span><span class="n">p1</span><span class="p">,</span> <span class="o">@</span><span class="n">p2</span><span class="p">,</span> <span class="o">@</span><span class="n">p3</span><span class="p">,</span> <span class="o">@</span><span class="n">p4</span><span class="p">,</span> <span class="o">@</span><span class="n">p5</span><span class="p">,</span> <span class="o">@</span><span class="n">p6</span><span class="p">)</span>
+
+<span class="k">SELECT</span> <span class="k">CONVERT</span><span class="p">(</span><span class="n">Int</span><span class="p">,</span><span class="n">SCOPE_IDENTITY</span><span class="p">())</span> <span class="k">AS</span> <span class="p">[</span><span class="n">value</span><span class="p">]</span>
+<span class="c1">-- @p0: Input NVarChar (Size = 11; Prec = 0; Scale = 0) [12 First St]</span>
+<span class="c1">-- @p1: Input NVarChar (Size = 0; Prec = 0; Scale = 0) [Null]</span>
+<span class="c1">-- @p2: Input NVarChar (Size = 6; Prec = 0; Scale = 0) [Sydney]</span>
+<span class="c1">-- @p3: Input Int (Size = 0; Prec = 0; Scale = 0) [50]</span>
+<span class="c1">-- @p4: Input NVarChar (Size = 4; Prec = 0; Scale = 0) [2000]</span>
+<span class="c1">-- @p5: Input UniqueIdentifier (Size = 0; Prec = 0; Scale = 0) [75061158-10f5-4fbc-8ab8-afaac45432ec]</span>
+<span class="c1">-- @p6: Input DateTime (Size = 0; Prec = 0; Scale = 0) [2/01/2008 11:34:04 AM]</span>
+<span class="c1">-- Context: SqlProvider(Sql2005) Model: AttributedMetaModel Build: 3.5.21022.8</span>
+
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="p">[</span><span class="n">Sales</span><span class="p">].[</span><span class="n">Customer</span><span class="p">]([</span><span class="n">TerritoryID</span><span class="p">],</span> <span class="p">[</span><span class="n">CustomerType</span><span class="p">],</span> <span class="p">[</span><span class="n">rowguid</span><span class="p">],</span> <span class="p">[</span><span class="n">ModifiedDate</span><span class="p">])</span>
+<span class="k">VALUES</span> <span class="p">(</span><span class="o">@</span><span class="n">p0</span><span class="p">,</span> <span class="o">@</span><span class="n">p1</span><span class="p">,</span> <span class="o">@</span><span class="n">p2</span><span class="p">,</span> <span class="o">@</span><span class="n">p3</span><span class="p">)</span>
+
+<span class="k">SELECT</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">CustomerID</span><span class="p">],</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">AccountNumber</span><span class="p">]</span>
+<span class="k">FROM</span> <span class="p">[</span><span class="n">Sales</span><span class="p">].[</span><span class="n">Customer</span><span class="p">]</span> <span class="k">AS</span> <span class="p">[</span><span class="n">t0</span><span class="p">]</span>
+<span class="k">WHERE</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">CustomerID</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">SCOPE_IDENTITY</span><span class="p">())</span>
+<span class="c1">-- @p0: Input Int (Size = 0; Prec = 0; Scale = 0) [9]</span>
+<span class="c1">-- @p1: Input NChar (Size = 1; Prec = 0; Scale = 0) [I]</span>
+<span class="c1">-- @p2: Input UniqueIdentifier (Size = 0; Prec = 0; Scale = 0) [6aa7321f-97ed-4374-bb4f-1dbade6c54b3]</span>
+<span class="c1">-- @p3: Input DateTime (Size = 0; Prec = 0; Scale = 0) [2/01/2008 11:34:04 AM]</span>
+<span class="c1">-- Context: SqlProvider(Sql2005) Model: AttributedMetaModel Build: 3.5.21022.8</span>
+
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="p">[</span><span class="n">Sales</span><span class="p">].[</span><span class="n">CustomerAddress</span><span class="p">]([</span><span class="n">CustomerID</span><span class="p">],</span> <span class="p">[</span><span class="n">AddressID</span><span class="p">],</span> <span class="p">[</span><span class="n">AddressTypeID</span><span class="p">],</span> <span class="p">[</span><span class="n">rowguid</span><span class="p">],</span> <span class="p">[</span><span class="n">ModifiedDate</span><span class="p">])</span>
+<span class="k">VALUES</span> <span class="p">(</span><span class="o">@</span><span class="n">p0</span><span class="p">,</span> <span class="o">@</span><span class="n">p1</span><span class="p">,</span> <span class="o">@</span><span class="n">p2</span><span class="p">,</span> <span class="o">@</span><span class="n">p3</span><span class="p">,</span> <span class="o">@</span><span class="n">p4</span><span class="p">)</span>
+<span class="c1">-- @p0: Input Int (Size = 0; Prec = 0; Scale = 0) [29487]</span>
+<span class="c1">-- @p1: Input Int (Size = 0; Prec = 0; Scale = 0) [32529]</span>
+<span class="c1">-- @p2: Input Int (Size = 0; Prec = 0; Scale = 0) [2]</span>
+<span class="c1">-- @p3: Input UniqueIdentifier (Size = 0; Prec = 0; Scale = 0) [7b475a95-eb2b-42bb-9291-2f75d3afb9c6]</span>
+<span class="c1">-- @p4: Input DateTime (Size = 0; Prec = 0; Scale = 0) [2/01/2008 11:34:04 AM]</span>
+<span class="c1">-- Context: SqlProvider(Sql2005) Model: AttributedMetaModel Build: 3.5.21022.8</span>
+
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="p">[</span><span class="n">Person</span><span class="p">].[</span><span class="n">Contact</span><span class="p">]([</span><span class="n">NameStyle</span><span class="p">],</span> <span class="p">[</span><span class="n">Title</span><span class="p">],</span> <span class="p">[</span><span class="n">FirstName</span><span class="p">],</span> <span class="p">[</span><span class="n">MiddleName</span><span class="p">],</span> <span class="p">[</span><span class="n">LastName</span><span class="p">],</span> <span class="p">[</span><span class="n">Suffix</span><span class="p">],</span> <span class="p">[</span><span class="n">EmailAddress</span><span class="p">],</span> <span class="p">[</span><span class="n">EmailPromotion</span><span class="p">],</span> <span class="p">[</span><span class="n">Phone</span><span class="p">],</span> <span class="p">[</span><span class="n">PasswordHash</span><span class="p">],</span> <span class="p">[</span><span class="n">PasswordSalt</span><span class="p">],</span> <span class="p">[</span><span class="n">AdditionalContactInfo</span><span class="p">],</span> <span class="p">[</span><span class="n">rowguid</span><span class="p">],</span> <span class="p">[</span><span class="n">ModifiedDate</span><span class="p">])</span>
+<span class="k">VALUES</span> <span class="p">(</span><span class="o">@</span><span class="n">p0</span><span class="p">,</span> <span class="o">@</span><span class="n">p1</span><span class="p">,</span> <span class="o">@</span><span class="n">p2</span><span class="p">,</span> <span class="o">@</span><span class="n">p3</span><span class="p">,</span> <span class="o">@</span><span class="n">p4</span><span class="p">,</span> <span class="o">@</span><span class="n">p5</span><span class="p">,</span> <span class="o">@</span><span class="n">p6</span><span class="p">,</span> <span class="o">@</span><span class="n">p7</span><span class="p">,</span> <span class="o">@</span><span class="n">p8</span><span class="p">,</span> <span class="o">@</span><span class="n">p9</span><span class="p">,</span> <span class="o">@</span><span class="n">p10</span><span class="p">,</span> <span class="o">@</span><span class="n">p11</span><span class="p">,</span> <span class="o">@</span><span class="n">p12</span><span class="p">,</span> <span class="o">@</span><span class="n">p13</span><span class="p">)</span>
+
+<span class="k">SELECT</span> <span class="k">CONVERT</span><span class="p">(</span><span class="n">Int</span><span class="p">,</span><span class="n">SCOPE_IDENTITY</span><span class="p">())</span> <span class="k">AS</span> <span class="p">[</span><span class="n">value</span><span class="p">]</span>
+<span class="c1">-- @p0: Input Bit (Size = 0; Prec = 0; Scale = 0) [False]</span>
+<span class="c1">-- @p1: Input NVarChar (Size = 2; Prec = 0; Scale = 0) [Mr]</span>
+<span class="c1">-- @p2: Input NVarChar (Size = 3; Prec = 0; Scale = 0) [New]</span>
+<span class="c1">-- @p3: Input NVarChar (Size = 0; Prec = 0; Scale = 0) [Null]</span>
+<span class="c1">-- @p4: Input NVarChar (Size = 7; Prec = 0; Scale = 0) [Contact]</span>
+<span class="c1">-- @p5: Input NVarChar (Size = 0; Prec = 0; Scale = 0) [Null]</span>
+<span class="c1">-- @p6: Input NVarChar (Size = 22; Prec = 0; Scale = 0) [newContact@company.com]</span>
+<span class="c1">-- @p7: Input Int (Size = 0; Prec = 0; Scale = 0) [0]</span>
+<span class="c1">-- @p8: Input NVarChar (Size = 12; Prec = 0; Scale = 0) [(12) 3456789]</span>
+<span class="c1">-- @p9: Input VarChar (Size = 3; Prec = 0; Scale = 0) [xxx]</span>
+<span class="c1">-- @p10: Input VarChar (Size = 3; Prec = 0; Scale = 0) [xxx]</span>
+<span class="c1">-- @p11: Input Xml (Size = 0; Prec = 0; Scale = 0) [System.Data.SqlTypes.SqlXml]</span>
+<span class="c1">-- @p12: Input UniqueIdentifier (Size = 0; Prec = 0; Scale = 0) [85ae7a1f-fdc9-4b20-b8aa-0ca6a8007022]</span>
+<span class="c1">-- @p13: Input DateTime (Size = 0; Prec = 0; Scale = 0) [2/01/2008 11:34:04 AM]</span>
+<span class="c1">-- Context: SqlProvider(Sql2005) Model: AttributedMetaModel Build: 3.5.21022.8</span>
+
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="p">[</span><span class="n">Sales</span><span class="p">].[</span><span class="n">Individual</span><span class="p">]([</span><span class="n">CustomerID</span><span class="p">],</span> <span class="p">[</span><span class="n">ContactID</span><span class="p">],</span> <span class="p">[</span><span class="n">Demographics</span><span class="p">],</span> <span class="p">[</span><span class="n">ModifiedDate</span><span class="p">])</span>
+<span class="k">VALUES</span> <span class="p">(</span><span class="o">@</span><span class="n">p0</span><span class="p">,</span> <span class="o">@</span><span class="n">p1</span><span class="p">,</span> <span class="o">@</span><span class="n">p2</span><span class="p">,</span> <span class="o">@</span><span class="n">p3</span><span class="p">)</span>
+<span class="c1">-- @p0: Input Int (Size = 0; Prec = 0; Scale = 0) [29487]</span>
+<span class="c1">-- @p1: Input Int (Size = 0; Prec = 0; Scale = 0) [19980]</span>
+<span class="c1">-- @p2: Input Xml (Size = 0; Prec = 0; Scale = 0) [System.Data.SqlTypes.SqlXml]</span>
+<span class="c1">-- @p3: Input DateTime (Size = 0; Prec = 0; Scale = 0) [2/01/2008 11:34:04 AM]</span>
+<span class="c1">-- Context: SqlProvider(Sql2005) Model: AttributedMetaModel Build: 3.5.21022.8</span>
+
+<span class="n">Customer</span> <span class="n">ID</span> <span class="o">-</span> <span class="mi">29487</span>
+</code></pre></div>
+<p>One of the first things to know is that <code>SubmitChanges()</code> will wrap up all of the changes you have made to the database and submit them as a single transaction, this is good news because if any of them changes fail, they all fail. (Exceptions are thrown to catch failures).<br>
+You may note the lack of any explicit <code>InsertOnSubmit()</code> calls, these are largely optional, though there are benefits from using them that you will see further down in the <code>DELETE</code> example.</p>
+
+<p>Running through the code snippet, you will see that the first thing we do is find a <code>StateProvince</code> record and an <code>AddressType</code> record, these are required to give the appropriate foreign keys to our <code>Address</code> record.<br>
+Creating a new record keeps with the mind set of working with objects, so you simply create a new object of the appropriate record type and set its properties.<br>
+When linking two records together, you have two choices, both of which I have given an example of. If you know the keys involved in the relationship you can explicitly set the Foreign Key field eg <code>TerritoryID = state.TerritoryID</code>. </p>
+
+<p>However, you do not always know the key, especially if the record has just been created, so you can actually link two objects together and LINQ-to-SQL will work out the keys for you. You can see this best when I create the <code>Individual</code> record and attach it to <code>newContact</code> and <code>newCustomer</code>, neither of which is in the database yet, and hence neither has a Primary Key.</p>
+
+<p>The <code>CustomerAddress</code> table is a Many-to-Many relationship table between <code>Customer</code> and <code>Address</code>. We can add a new record to it directly or via the <code>CustomerAddresses</code> collection that is on both <code>Customer</code> and <code>Address</code> records. I have used in-line syntax to create this record simply to show off another way of structuring your code.<br>
+Right at the end we write out the Primary Key for the <code>Customer</code> record, to show that LINQ-to-SQL will automatically query this value after it has inserted the record and pop it onto the object. Very useful.<br>
+The other cool feature here is that the order of the SQL statements is decided for you to ensure that all of the keys can be correctly set without tripping up the constraints along the way.<br>
+Update statements are even simpler, again keeping with the mindset of working with objects we simply get an object representing a row, changes it properties and save it back.</p>
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="n">AdventureWorksDataContext</span> <span class="n">db</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">AdventureWorksDataContext</span><span class="p">();</span>
+<span class="n">db</span><span class="p">.</span><span class="n">Log</span> <span class="p">=</span> <span class="n">Console</span><span class="p">.</span><span class="n">Out</span><span class="p">;</span>
+
+<span class="c1">// Get hte first customer record
+</span><span class="n">Customer</span> <span class="n">c</span> <span class="p">=</span> <span class="p">(</span><span class="k">from</span> <span class="n">cust</span> <span class="k">in</span> <span class="n">db</span><span class="p">.</span><span class="n">Customers</span> <span class="k">select</span> <span class="n">cust</span><span class="p">).</span><span class="nf">FirstOrDefault</span><span class="p">();</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">CustomerType</span><span class="p">);</span>
+<span class="n">c</span><span class="p">.</span><span class="n">CustomerType</span> <span class="p">=</span> <span class="sc">'I'</span><span class="p">;</span>
+<span class="n">db</span><span class="p">.</span><span class="nf">SubmitChanges</span><span class="p">();</span> <span class="c1">// Save the changes away
+</span></code></pre></div><div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="n">TOP</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">CustomerID</span><span class="p">],</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">TerritoryID</span><span class="p">],</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">AccountNumber</span><span class="p">],</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">CustomerType</span><span class="p">],</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">rowguid</span><span class="p">],</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">ModifiedDate</span><span class="p">]</span>
+<span class="k">FROM</span> <span class="p">[</span><span class="n">Sales</span><span class="p">].[</span><span class="n">Customer</span><span class="p">]</span> <span class="k">AS</span> <span class="p">[</span><span class="n">t0</span><span class="p">]</span>
+<span class="c1">-- Context: SqlProvider(Sql2005) Model: AttributedMetaModel Build: 3.5.21022.8</span>
+
+<span class="n">S</span>
+<span class="k">UPDATE</span> <span class="p">[</span><span class="n">Sales</span><span class="p">].[</span><span class="n">Customer</span><span class="p">]</span>
+<span class="k">SET</span> <span class="p">[</span><span class="n">CustomerType</span><span class="p">]</span> <span class="o">=</span> <span class="o">@</span><span class="n">p5</span>
+<span class="k">WHERE</span> <span class="p">([</span><span class="n">CustomerID</span><span class="p">]</span> <span class="o">=</span> <span class="o">@</span><span class="n">p0</span><span class="p">)</span> <span class="k">AND</span> <span class="p">([</span><span class="n">TerritoryID</span><span class="p">]</span> <span class="o">=</span> <span class="o">@</span><span class="n">p1</span><span class="p">)</span> <span class="k">AND</span> <span class="p">([</span><span class="n">CustomerType</span><span class="p">]</span> <span class="o">=</span> <span class="o">@</span><span class="n">p2</span><span class="p">)</span> <span class="k">AND</span> <span class="p">([</span><span class="n">rowguid</span><span class="p">]</span> <span class="o">=</span> <span class="o">@</span><span class="n">p3</span><span class="p">)</span> <span class="k">AND</span> <span class="p">([</span><span class="n">ModifiedDate</span><span class="p">]</span> <span class="o">=</span> <span class="o">@</span><span class="n">p4</span><span class="p">)</span>
+
+<span class="k">SELECT</span> <span class="p">[</span><span class="n">t1</span><span class="p">].[</span><span class="n">AccountNumber</span><span class="p">]</span>
+<span class="k">FROM</span> <span class="p">[</span><span class="n">Sales</span><span class="p">].[</span><span class="n">Customer</span><span class="p">]</span> <span class="k">AS</span> <span class="p">[</span><span class="n">t1</span><span class="p">]</span>
+<span class="k">WHERE</span> <span class="p">((</span><span class="o">@@</span><span class="n">ROWCOUNT</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="k">AND</span> <span class="p">([</span><span class="n">t1</span><span class="p">].[</span><span class="n">CustomerID</span><span class="p">]</span> <span class="o">=</span> <span class="o">@</span><span class="n">p6</span><span class="p">)</span>
+<span class="c1">-- @p0: Input Int (Size = 0; Prec = 0; Scale = 0) [1]</span>
+<span class="c1">-- @p1: Input Int (Size = 0; Prec = 0; Scale = 0) [1]</span>
+<span class="c1">-- @p2: Input NChar (Size = 1; Prec = 0; Scale = 0) [S]</span>
+<span class="c1">-- @p3: Input UniqueIdentifier (Size = 0; Prec = 0; Scale = 0) [3f5ae95e-b87d-4aed-95b4-c3797afcb74f]</span>
+<span class="c1">-- @p4: Input DateTime (Size = 0; Prec = 0; Scale = 0) [13/10/2004 11:15:07 AM]</span>
+<span class="c1">-- @p5: Input NChar (Size = 1; Prec = 0; Scale = 0) [I]</span>
+<span class="c1">-- @p6: Input Int (Size = 0; Prec = 0; Scale = 0) [1]</span>
+<span class="c1">-- Context: SqlProvider(Sql2005) Model: AttributedMetaModel Build: 3.5.21022.8</span>
+</code></pre></div>
+<p>Now for a <code>DELETE</code>, first we will create a record that we can later delete. This will show you why using <code>InsertOnSubmit()</code> explicity can be a good idea.</p>
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="n">AdventureWorksDataContext</span> <span class="n">db</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">AdventureWorksDataContext</span><span class="p">();</span>
+<span class="n">db</span><span class="p">.</span><span class="n">Log</span> <span class="p">=</span> <span class="n">Console</span><span class="p">.</span><span class="n">Out</span><span class="p">;</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Count Start - "</span> <span class="p">+</span> <span class="n">db</span><span class="p">.</span><span class="n">Currencies</span><span class="p">.</span><span class="nf">Count</span><span class="p">().</span><span class="nf">ToString</span><span class="p">());</span>
+<span class="n">Currency</span> <span class="n">c</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Currency</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">CurrencyCode</span> <span class="p">=</span> <span class="s">"XXX"</span><span class="p">,</span>
+    <span class="n">Name</span> <span class="p">=</span> <span class="s">"My Currency"</span><span class="p">,</span>
+    <span class="n">ModifiedDate</span> <span class="p">=</span> <span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span>
+<span class="p">};</span>
+<span class="n">db</span><span class="p">.</span><span class="n">Currencies</span><span class="p">.</span><span class="nf">InsertOnSubmit</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+<span class="n">db</span><span class="p">.</span><span class="nf">SubmitChanges</span><span class="p">();</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Count Middle - "</span> <span class="p">+</span> <span class="n">db</span><span class="p">.</span><span class="n">Currencies</span><span class="p">.</span><span class="nf">Count</span><span class="p">().</span><span class="nf">ToString</span><span class="p">());</span>
+
+<span class="n">db</span><span class="p">.</span><span class="n">Currencies</span><span class="p">.</span><span class="nf">DeleteOnSubmit</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+<span class="n">db</span><span class="p">.</span><span class="nf">SubmitChanges</span><span class="p">();</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Count End - "</span> <span class="p">+</span> <span class="n">db</span><span class="p">.</span><span class="n">Currencies</span><span class="p">.</span><span class="nf">Count</span><span class="p">().</span><span class="nf">ToString</span><span class="p">());</span>
+</code></pre></div><div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="p">[</span><span class="n">value</span><span class="p">]</span>
+<span class="k">FROM</span> <span class="p">[</span><span class="n">Sales</span><span class="p">].[</span><span class="n">Currency</span><span class="p">]</span> <span class="k">AS</span> <span class="p">[</span><span class="n">t0</span><span class="p">]</span>
+<span class="c1">-- Context: SqlProvider(Sql2005) Model: AttributedMetaModel Build: 3.5.21022.8</span>
+
+<span class="k">Count</span> <span class="k">Start</span> <span class="o">-</span> <span class="mi">105</span>
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="p">[</span><span class="n">Sales</span><span class="p">].[</span><span class="n">Currency</span><span class="p">]([</span><span class="n">CurrencyCode</span><span class="p">],</span> <span class="p">[</span><span class="n">Name</span><span class="p">],</span> <span class="p">[</span><span class="n">ModifiedDate</span><span class="p">])</span>
+<span class="k">VALUES</span> <span class="p">(</span><span class="o">@</span><span class="n">p0</span><span class="p">,</span> <span class="o">@</span><span class="n">p1</span><span class="p">,</span> <span class="o">@</span><span class="n">p2</span><span class="p">)</span>
+<span class="c1">-- @p0: Input NChar (Size = 3; Prec = 0; Scale = 0) [XXX]</span>
+<span class="c1">-- @p1: Input NVarChar (Size = 11; Prec = 0; Scale = 0) [My Currency]</span>
+<span class="c1">-- @p2: Input DateTime (Size = 0; Prec = 0; Scale = 0) [2/01/2008 12:09:17 PM]</span>
+<span class="c1">-- Context: SqlProvider(Sql2005) Model: AttributedMetaModel Build: 3.5.21022.8</span>
+
+<span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="p">[</span><span class="n">value</span><span class="p">]</span>
+<span class="k">FROM</span> <span class="p">[</span><span class="n">Sales</span><span class="p">].[</span><span class="n">Currency</span><span class="p">]</span> <span class="k">AS</span> <span class="p">[</span><span class="n">t0</span><span class="p">]</span>
+<span class="c1">-- Context: SqlProvider(Sql2005) Model: AttributedMetaModel Build: 3.5.21022.8</span>
+
+<span class="k">Count</span> <span class="n">Middle</span> <span class="o">-</span> <span class="mi">106</span>
+<span class="k">DELETE</span> <span class="k">FROM</span> <span class="p">[</span><span class="n">Sales</span><span class="p">].[</span><span class="n">Currency</span><span class="p">]</span> <span class="k">WHERE</span> <span class="p">([</span><span class="n">CurrencyCode</span><span class="p">]</span> <span class="o">=</span> <span class="o">@</span><span class="n">p0</span><span class="p">)</span> <span class="k">AND</span> <span class="p">([</span><span class="n">Name</span><span class="p">]</span> <span class="o">=</span> <span class="o">@</span><span class="n">p1</span><span class="p">)</span> <span class="k">AND</span> <span class="p">([</span><span class="n">ModifiedDate</span><span class="p">]</span> <span class="o">=</span> <span class="o">@</span><span class="n">p2</span><span class="p">)</span>
+<span class="c1">-- @p0: Input NChar (Size = 3; Prec = 0; Scale = 0) [XXX]</span>
+<span class="c1">-- @p1: Input NVarChar (Size = 11; Prec = 0; Scale = 0) [My Currency]</span>
+<span class="c1">-- @p2: Input DateTime (Size = 0; Prec = 0; Scale = 0) [2/01/2008 12:09:17 PM]</span>
+<span class="c1">-- Context: SqlProvider(Sql2005) Model: AttributedMetaModel Build: 3.5.21022.8</span>
+
+<span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="p">[</span><span class="n">value</span><span class="p">]</span>
+<span class="k">FROM</span> <span class="p">[</span><span class="n">Sales</span><span class="p">].[</span><span class="n">Currency</span><span class="p">]</span> <span class="k">AS</span> <span class="p">[</span><span class="n">t0</span><span class="p">]</span>
+<span class="c1">-- Context: SqlProvider(Sql2005) Model: AttributedMetaModel Build: 3.5.21022.8</span>
+
+<span class="k">Count</span> <span class="k">End</span> <span class="o">-</span> <span class="mi">105</span>
+</code></pre></div>
+<p>You may notice here that I have used <code>InsertOnSumbit()</code> when creating my currency record to be deleted, this is because by doing this you &quot;attach&quot; the object to the database, which is required to do some operations with that object later on, such as <code>DeleteOnSubmit()</code>. It was not required in my <code>Insert()</code> example however. If you attempt to use <code>DeleteOnSubmit()</code> with an object that is not attached to your data context, it will throw an exception.<br>
+There is also a <code>DeleteAllOnSubmit()</code> method which takes a collection of records to be deleted.</p>
+
+<p>So there you have it, a quick look at three basic functions. The one of real interest should be the <code>INSERT</code> statements and how you link up a complex set of related objects to insert into the database.</p>
+
+<p>I will have another post similar to this next that looks at functions like <code>Count()</code>, <code>Sum()</code>, <code>Average()</code> etc. Again I have had some hits from people looking for examples of these so I feel I should cover them off before moving on to future topics.</p>
+
+    </section>
+</article>
+
+
+  <footer class="m-f">
+      <section class="copyright">All content copyright <a href="/">Chris Sainty</a> &copy; 2006-2017 &bull; All rights reserved.</section>
+  </footer>
+</body>
+</html>

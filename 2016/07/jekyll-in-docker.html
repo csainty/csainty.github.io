@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <style>
+    html,body,li,p{margin:0;padding:0}p,ul,ol,.highlight{margin:1.6em 0}h1,h2,h3,h4{margin:0;padding:0;font-size:100%;font-weight:bold;text-rendering:optimizeLegibility;font-family:sans-serif}ul{list-style:none}html{box-sizing:border-box;font-size:62.5%}*{box-sizing:inherit}*:before,*:after{box-sizing:inherit}img{height:auto;max-width:100%}pre,code{font-family:monospace;margin:0}hr{display:block;height:1px;border:0;border-top:1px solid #efefef;margin:1rem 0;padding:0}blockquote{font-style:italic;margin:1.6em 0 1.6em -2.2em;padding:0 0 0 1.6em;border-left:#4a4a4a 0.4em solid}html{font-size:16px}@media screen and (min-width: 900px){html{font-size:18px}}@media screen and (min-width: 1200px){html{font-size:20px}}body{font-family:serif;color:#3A4145}h1{font-size:2rem;margin:10px 0 10px 0;letter-spacing:-1px}h2{font-size:1.4rem;letter-spacing:-1px}h3{font-size:1.2rem}h4{font-size:1.1rem}a:link,a:visited{color:inherit;text-decoration:none}a:hover{color:#57A3E8;transition:color ease 0.3s}p a:link,p a:visited{text-decoration:underline}pre{border:1px solid #E3EDF3;padding:10px;font-size:0.85em;border-radius:3px}code{padding:1px 3px;font-size:0.85em;white-space:pre;border:1px solid #E3EDF3;background:#F7FAFB;border-radius:2px}pre code{background:transparent;padding:0;border:0}.m-h{text-align:center;background-color:#303538;color:#fff;padding:1rem}.m-h h2{font-weight:normal;font-size:1.5rem}article{width:80%;margin:1rem auto;padding-bottom:1rem;border-bottom:#EBF2F6 1px solid;word-break:break-word;position:relative}article::after{display:block;content:"";width:7px;height:7px;border:#E7EEF2 1px solid;position:absolute;bottom:-5px;left:50%;margin-left:-5px;background:#fff;border-radius:100%;box-shadow:#fff 0 0 0 5px}.a-m{color:#9EABB3;font-size:0.8rem}.a-m a:hover{color:#9EABB3;text-decoration:underline}.a-h{margin-bottom:5px}.r-m{font-size:smaller}nav{position:relative;width:75%;margin:1rem auto;font-size:0.8rem;color:#9EABB3;text-align:center}.m-f{position:relative;margin:2rem 0 0 0;padding:1rem 1rem 2rem 1rem;border-top:#EBF2F6 1px solid;font-size:0.8rem;line-height:1.7em;color:#BBC7CC;text-align:center;background:#F7FAFB}.o-p,.n-p{position:absolute;display:inline-block;padding:0 0.5rem;border:#EBF2F6 2px solid;text-decoration:none;border-radius:30px;transition:border ease 0.3s}.o-p{right:0}.n-p{left:0}.t-h{width:80%;margin:0 auto}.highlight pre{background-color:#49483e;color:white;overflow:scroll}.ge{font-style:italic}.gs{font-weight:bold}.c,.cm,.cp,.c1,.gu,.cs{color:#75715e}.k,.kc,.kd,.kp,.kr,.no,.kt{color:#66d9ef}.l,.mf,.mh,.mi,.mo,.se,.il,.m{color:#ae81ff}.n,.nb,.ni,.nl,.nn,.py,.nv,.w,.bp,.vc,.vg,.vi,.p{color:#f8f8f2}.o,.nt,.ow,.gd,.kn{color:#f92672}.ld,.sb,.sc,.sd,.s2,.sh,.si,.sx,.sr,.s1,.ss,.s{color:#e6db74}.na,.nc,.nd,.ne,.nf,.nx,.gi{color:#a6e22e}
+
+    </style>
+
+    <!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>Running jekyll with docker - Chris Sainty</title>
+<meta property="og:title" content="Running jekyll with docker" />
+<meta name="description" content="Previously I moved my jekyll installation inside a Vagrant image. At the time this was a big improvement over installing and maintaining ruby/jekyll locally on my machines.For a while now I have wanted to move this installation inside Docker instead. I actually use Docker daily in my work and am very comfortable in that environment.It wasn&#39;t until the recent release of Docker for Mac beta that this became practical though with the improvements to volume mapping.So this morning I finally made the switch." />
+<meta property="og:description" content="Previously I moved my jekyll installation inside a Vagrant image. At the time this was a big improvement over installing and maintaining ruby/jekyll locally on my machines.For a while now I have wanted to move this installation inside Docker instead. I actually use Docker daily in my work and am very comfortable in that environment.It wasn&#39;t until the recent release of Docker for Mac beta that this became practical though with the improvements to volume mapping.So this morning I finally made the switch." />
+<link rel="canonical" href="https://blog.csainty.com/2016/07/jekyll-in-docker.html" />
+<meta property="og:url" content="https://blog.csainty.com/2016/07/jekyll-in-docker.html" />
+<meta property="og:site_name" content="Chris Sainty" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-07-09T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@csainty" />
+<meta name="twitter:creator" content="@Chris Sainty" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Running jekyll with docker",
+    "datePublished": "2016-07-09T00:00:00+00:00",
+    "description": "Previously I moved my jekyll installation inside a Vagrant image. At the time this was a big improvement over installing and maintaining ruby/jekyll locally on my machines.For a while now I have wanted to move this installation inside Docker instead. I actually use Docker daily in my work and am very comfortable in that environment.It wasn&#39;t until the recent release of Docker for Mac beta that this became practical though with the improvements to volume mapping.So this morning I finally made the switch.",
+    "url": "https://blog.csainty.com/2016/07/jekyll-in-docker.html"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+</head>
+<body>
+  <header class="m-h">
+    <h1><a href="https://blog.csainty.com">Chris Sainty</a></h1>
+    <h2>A technical blog covering full-stack web development.</h2>
+    <h2><a href="https://twitter.com/csainty" rel="external">twitter</a> | <a href="https://github.com/csainty" rel="external">github</a> | <a href="https://stackoverflow.com/users/625695/chris-sainty" rel="external">stackoverflow</a></h2>
+  </header>
+
+  <article>
+    <span><time datetime="09 Jul 2016">09 Jul 2016</time>  </span>
+    <h1>Running jekyll with docker</h1>
+    <section>
+        <p>Previously I moved my <a href="/2015/08/jekyll-with-vagrant.html">jekyll installation</a> inside a Vagrant image. At the time this was a big improvement over installing and maintaining ruby/jekyll locally on my machines.</p>
+
+<p>For a while now I have wanted to move this installation inside Docker instead. I actually use Docker daily in my work and am very comfortable in that environment.<br>
+It wasn&#39;t until the recent release of <a href="https://blog.docker.com/2016/03/docker-for-mac-windows-beta/">Docker for Mac</a> beta that this became practical though with the improvements to volume mapping.</p>
+
+<p>So this morning I finally made the switch.</p>
+
+<!-- more -->
+
+<h3>Install Docker for Mac</h3>
+
+<p>As usual you want to reach for <a href="http://brew.sh/">Homebrew</a> to install any software on your mac.</p>
+<div class="highlight"><pre><code class="language-" data-lang="">brew cask install docker
+</code></pre></div>
+<p><a href="/2015/08/homebrew-and-caskroom.html">See my post for more details</a></p>
+
+<p>Gone are all the complexities I discussed <a href="/2015/10/docker-on-osx.html">previously</a> around creating machines, virtualization etc.</p>
+
+<h3>The Dockerfile</h3>
+
+<p>Creating the <a href="https://github.com/csainty/csainty.github.io/blob/source/Dockerfile">Dockerfile</a> was just a matter of trial and error and tidying up some of my blog code to meet API changes in Jekyll.</p>
+
+<p>As ever when I am sitting down to write a Dockerfile I start by running up the shell in my chosen base image <code>docker run --rm -it alpine sh</code> this gives me a test environment I can quickly use to check what packages I need to install and what additional config is needed. I can simply <code>exit</code> and re-run to clean it and start over. As I verify each command I add it to my <code>Dockerfile</code> I am editing in my text editor a screen across.</p>
+
+<p>With the <code>Dockerfile</code> written it is a simple matter to build it <code>docker build -t csainty/blog .</code> then run it with my source mapped in and the Jekyll port mapped out <code>docker run --rm -it -p 4000:4000 -v $(pwd):/src csainty/blog</code></p>
+
+<h3>Workflow</h3>
+
+<p>With that done it now behaves exactly like if I was running Jekyll locally. Watched files work, I can browse to http://localhost:4000 to see the site, the generated <code>_site</code> folder is updated ready for publishing with <code>git</code>.</p>
+
+<h3>Wrap up</h3>
+
+<p>Docker for Mac opens a whole host of new options for small portable development environments that were previously tedious due to the remote host needed when running docker on OSX. I can see myself running many development tools from inside docker containers in the future.</p>
+
+    </section>
+</article>
+
+
+  <footer class="m-f">
+      <section class="copyright">All content copyright <a href="/">Chris Sainty</a> &copy; 2006-2017 &bull; All rights reserved.</section>
+  </footer>
+</body>
+</html>
