@@ -18,7 +18,7 @@ social:
   links:
     - https://linkedin.com/in/csainty
     - https://www.twitter.com/csainty
-gems:
+plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-assets
@@ -31,11 +31,4 @@ exclude:
   - .asset-cache
   - .DS_Store
 assets:
-  compress:
-    css: true
-    js: true
-  digest: false
-  assets:
-    - bundle.css.scss
-  sources:
-    - _assets/stylesheets
+  source_maps: false
